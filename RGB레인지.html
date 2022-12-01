@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+.container{
+width: 550px;
+height: 500px;
+border: 1px solid black;
+background-color: #f5f6f7;
+border-radius: 5%;
+display: inline-flex;
+}
+
+.result{
+    /*background-color: red;*/
+    
+    width: 300px;
+    height: 500px;
+}
+.bar{
+   /* background-color: rgba(0, 0, 255, 0.39);*/
+   
+    width: 250px;
+    height: 500px;
+}
+
+#result{
+    width: 200px;
+    height: 200px;
+    background-color: white;
+   
+    border-radius: 50%;
+    margin-left: 20%;
+    margin-top: 50%;
+  
+}
+.bar_box{
+    margin-top:80%;
+}
+
+input{
+    appearance: none;
+    background-color: white;
+    width: 200px;
+    height: 20px;
+    
+}
+input::-webkit-slider-thumb{
+    -webkit-appearance: none;
+   
+    width: 20px;
+    height: 20px;
+   border: 1px solid black;
+   background-color: black;
+   border-radius: 50%;
+    
+}
+</style>
+<body>
+
+    <div class="container">
+        <div class="result">
+            <div id="result" ></div>
+        </div>
+        <div class="bar">
+<div class="bar_box">
+    R <input type="range" size="" value=""  min="0" max="255" id="red" oninput="document.getElementById('r_box').innerHTML=this.value;"><span id="r_box">---</span><br><br>
+    G <input type="range" size="" value=""  min="0" max="255" id="green" oninput="document.getElementById('g_box').innerHTML=this.value;"><span id="g_box">---</span><br><br>
+    B <input type="range" size="" value=""  min="0" max="255" id="blue" oninput="document.getElementById('b_box').innerHTML=this.value;"><span id="b_box">---</span><br><br>
+   
+</div>
+         
+        </div>
+    </div>
+
+
+
+<script>
+
+var result = document.querySelector('#result');
+        var red = document.getElementById('red')
+        var green = document.getElementById('green')
+        var blue = document.getElementById('blue')
+
+red.addEventListener('input',() => {
+    var r = red.value;
+  
+    result.style.backgroundColor = (`rgb(${red.value}, 0, 0)`)
+})
+green.addEventListener('input',() => {
+   
+    var g = green.value;
+    
+    result.style.backgroundColor = (`rgb(0, ${g}, 0)`)
+})
+blue.addEventListener('input',() => {
+ 
+    var b = blue.value;
+    result.style.backgroundColor = (`rgb(0, 0, ${b})`)
+})
+
+
+
+    console.log(red.value)
+    console.log(green.value)
+    console.log(blue.value)
+</script>
+</body>
+</html>
