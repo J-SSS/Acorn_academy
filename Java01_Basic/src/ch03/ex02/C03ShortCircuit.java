@@ -7,5 +7,14 @@ public class C03ShortCircuit {
 		boolean b = false;
 		int x=0, y=0;
 		
+		b = (++x < 0) && (++y<0);
+		System.out.printf("x :1 , y:1, b: false ",x,y,b);
+		
+		x= y = 0;
+		b = ++x >0 || y++ < 0 ;
+		System.out.printf("x :1 , y:1, b: false ",x,y,b);
+		
+		
+		
 	}
 }
