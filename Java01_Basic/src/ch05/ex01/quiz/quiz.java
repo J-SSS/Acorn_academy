@@ -119,8 +119,7 @@ public class quiz {
 				if(score[i] < score[j]) {
 					rank++;
 				}
-				
-				
+	
 			}
 			System.out.printf("%s %s %d\n",name[i],score[i],rank);
 			rank=1;
