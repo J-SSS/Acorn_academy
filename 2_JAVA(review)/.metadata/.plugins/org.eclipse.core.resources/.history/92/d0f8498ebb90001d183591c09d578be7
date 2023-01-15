@@ -1,0 +1,5 @@
+package project02.domain;
+
+public interface Code {
+
+}

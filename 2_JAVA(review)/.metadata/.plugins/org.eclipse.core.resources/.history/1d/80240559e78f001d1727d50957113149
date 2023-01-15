@@ -1,0 +1,17 @@
+package ch04.ex01;
+
+public class ExceptionTest02 {
+	
+	public static void go() {
+		
+	}
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+	}
+}

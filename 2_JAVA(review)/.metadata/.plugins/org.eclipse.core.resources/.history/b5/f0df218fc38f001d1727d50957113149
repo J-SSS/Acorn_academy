@@ -1,0 +1,29 @@
+package ch01.ex03;
+
+public class Student {
+	// 필드_멤버변수
+	private int stuId;
+	private String stuName;
+	
+	public Student() {}
+	
+	public Student(int stuId, String stuName) {
+		this.stuId = stuId;
+		this.stuName = stuName;
+	}
+	
+	public int getStuId() {
+		return stuId;
+	}
+	public String getStuName() {
+		return stuName;
+	}
+	public void setStuId(int stuId) {
+		this.stuId = stuId;
+	}
+	public void setStuName(String stuName) {
+		this.stuName = stuName;
+	}
+	
+	
+}

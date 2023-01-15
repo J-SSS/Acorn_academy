@@ -1,0 +1,17 @@
+package project02.domain;
+
+import java.time.LocalDate;
+
+public class Employee {
+	
+	int empId;			// 사원ID (sequence로 자동으로)
+	String empName;		// 사원명
+	LocalDate hireDate; // 입사일
+	
+	public Employee(String empName, LocalDate hireDate) {
+		this.empName = empName;
+		this.hireDate = hireDate;
+	}
+	
+	
+}

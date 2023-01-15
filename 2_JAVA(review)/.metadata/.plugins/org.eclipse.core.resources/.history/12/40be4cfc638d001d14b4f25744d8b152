@@ -1,0 +1,20 @@
+package ch02.ex03.case01;
+
+class OuterClass {
+	
+	Runnable getRunnable() {
+		
+		class MyRunnable implements Runnable {
+			@Override
+			public void run() {
+				System.out.println("Runnable Class");
+			}
+		}		
+		return new MyRunnable();
+	}
+}
+
+
+public class AnonymousInnerMain {
+
+}

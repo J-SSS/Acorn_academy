@@ -1,0 +1,20 @@
+package ch02.ex03.case01;
+
+class OuterClass {
+	
+	// 메소드
+	Runnable getRunnable() {				
+		return new Runnable() { // 익명내부클래스(anonymous inner class)
+			@Override
+			public void run() {
+				System.out.println("Runnable Class");
+			}
+		};
+	}
+}
+
+public class AnonymousInnerMain {
+	public static void main(String[] args) {
+		
+	}
+}

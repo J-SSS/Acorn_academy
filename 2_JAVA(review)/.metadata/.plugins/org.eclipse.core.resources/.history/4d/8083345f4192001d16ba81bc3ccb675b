@@ -1,0 +1,9 @@
+package ch02.ex02.case01;
+
+public class Yellow {
+	
+	@Override
+	public String toString() {
+		
+	}
+}

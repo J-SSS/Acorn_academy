@@ -1,0 +1,16 @@
+package ch01.sub2.case01;
+
+public class Customer {
+	// 필드_멤버변수(속성)
+	int customerID;
+	String customerName;
+	String customerGrade;
+	int bonusPoint;
+	double bonusRatio;
+	
+	// 생성자
+	public Customer() {
+		customerGrade = "SILVER";
+		
+	}
+}

@@ -1,0 +1,10 @@
+package ch02.ex02.case01;
+
+public class ColorPrinter {
+	
+	private Yellow ink;
+	
+	public Yellow getInk() {
+		return ink;
+	}
+}

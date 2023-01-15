@@ -1,0 +1,47 @@
+package project02.dao.employee;
+
+import java.util.List;
+
+import project02.domain.Employee;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+	// field
+	private List<Employee> empList; // Has-A 관계. DB 대체
+	
+	// constructor
+	public EmployeeDaoImpl(List<Employee> empList) { // DI
+		this.empList = empList;
+	}
+	
+	// method
+	@Override
+	public List<Employee> getEmployees() {
+		return empList;
+	}
+
+	@Override
+	public Employee getEmployee(int empId) {
+		Employee emp = null;
+		
+		return emp;
+	}
+
+	@Override
+	public boolean insertEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean updateEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteEmployee(int empId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

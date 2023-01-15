@@ -1,0 +1,10 @@
+package ch02.ex02;
+
+public interface MyList<T> {
+	
+	void add(T t);
+	void insert();
+	boolean delete(T t);
+	String get(int index);
+	int size();
+}

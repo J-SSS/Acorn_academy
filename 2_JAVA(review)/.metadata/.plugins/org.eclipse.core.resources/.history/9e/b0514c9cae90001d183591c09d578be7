@@ -1,0 +1,11 @@
+package project02.dao.employee;
+
+import java.util.List;
+
+import project02.domain.Employee;
+
+public interface EmployeeDao {
+	
+	List<Employee> getEmployees();  // 사원목록 읽기
+	Employee getEmployee();			// 사원 1명 읽기
+}

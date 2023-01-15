@@ -1,0 +1,11 @@
+package ch02.quiz.case04;
+
+public interface PlayerLevel {
+	
+	void run();
+	void jump();
+	void turn();
+	void showLevelMessage();
+}
+
+// interface: public abstract이 생략

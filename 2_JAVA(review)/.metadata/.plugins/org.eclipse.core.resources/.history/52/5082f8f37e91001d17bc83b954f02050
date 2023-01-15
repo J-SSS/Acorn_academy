@@ -1,0 +1,8 @@
+package ch05.case01;
+
+public class SystemInTest {
+	public static void main(String[] args) {
+		
+		
+	}
+}

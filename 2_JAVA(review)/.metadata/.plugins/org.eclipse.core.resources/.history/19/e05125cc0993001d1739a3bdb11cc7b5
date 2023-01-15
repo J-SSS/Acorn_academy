@@ -1,0 +1,9 @@
+package ch06.ex02.case01;
+
+public class PriorityThread extends Thread {
+
+	@Override
+	public void run() {
+		
+	}
+}

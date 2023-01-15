@@ -1,0 +1,10 @@
+package ch03.ex01.case01;
+
+import java.util.Vector;
+
+public class VectorTest {
+	public static void main(String[] args) {
+		
+		Vector<String> v = new Vector<>();
+	}
+}

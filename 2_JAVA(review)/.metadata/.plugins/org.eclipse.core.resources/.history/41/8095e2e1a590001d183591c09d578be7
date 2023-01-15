@@ -1,0 +1,8 @@
+package ch04.ex03.case02;
+
+public class FileExceptionHandling02 {
+	public static void main(String[] args) {
+		
+		
+	}
+}

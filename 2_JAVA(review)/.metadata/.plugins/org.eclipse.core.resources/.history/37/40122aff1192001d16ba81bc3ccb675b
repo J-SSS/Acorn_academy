@@ -1,0 +1,13 @@
+package ch02.quiz.case04;
+
+public abstract class PlayerLevel {
+	
+	public abstract void run();
+	public abstract void jump();
+	public abstract void turn();
+	public abstract void showLevelMessage();
+}
+
+// 추상메소드
+// interface: public abstract이 생략
+// 추상클래스: abstract을 붙여줘야 함

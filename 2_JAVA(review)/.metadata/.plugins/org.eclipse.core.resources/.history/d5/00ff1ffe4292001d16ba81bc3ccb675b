@@ -1,0 +1,17 @@
+package ch02.ex02.case01;
+
+public class Main02 {
+	public static void main(String[] args) {
+		
+		Yellow yInk = new Yellow();
+		Pink pInk = new Pink();
+		ColorPrinter03 printer = new ColorPrinter03();
+		
+		printer.setInk(yInk);
+		printer.setInk(pInk);
+		
+		printer.getInk();
+		
+		System.out.println(printer);
+	}
+}

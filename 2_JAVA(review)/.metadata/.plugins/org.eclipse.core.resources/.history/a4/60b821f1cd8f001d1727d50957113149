@@ -1,0 +1,22 @@
+package ch02.sub.step2;
+
+public class StopWatch {
+	// milliseconds 도메인
+	long startTime;
+	long endTime;
+	
+	public void startMilli() {
+		startTime = System.currentTimeMillis();
+	}
+	
+	public void stopMilli() {
+		endTime = System.currentTimeMillis();
+	}
+	
+	public long getElapsedTime() {
+		return endTime - startTime;
+	}
+	
+	// nanoseconds 도메인
+	
+}

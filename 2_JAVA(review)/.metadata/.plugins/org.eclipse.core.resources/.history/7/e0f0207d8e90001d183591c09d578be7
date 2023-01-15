@@ -1,0 +1,21 @@
+package ch03.sub;
+
+public class SnackVM extends VM implements Software {
+
+	@Override
+	public void insert(String snackName) {
+		vm.add(snackName);
+	}
+
+	@Override
+	public String takeOut() {
+		return null;
+	}
+
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

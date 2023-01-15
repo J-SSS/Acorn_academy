@@ -1,0 +1,8 @@
+package ch04.ex02.case04;
+
+public class NumberExceptionHandling {
+	public static void main(String[] args) {
+		
+		
+	}
+}

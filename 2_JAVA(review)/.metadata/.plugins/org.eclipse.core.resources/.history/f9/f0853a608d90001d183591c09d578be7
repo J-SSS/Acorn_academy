@@ -1,0 +1,12 @@
+package ch03.sub;
+
+import java.util.ArrayList;
+
+public class VM { // Vending Machine(자판기)
+	
+	ArrayList<String> vm;
+	
+	public VM() {
+		vm = new ArrayList<>();
+	}
+}

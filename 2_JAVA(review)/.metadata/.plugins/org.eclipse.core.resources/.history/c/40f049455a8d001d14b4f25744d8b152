@@ -1,0 +1,9 @@
+package ch02.ex01.case01;
+
+public class InnerClassMain {
+	public static void main(String[] args) {
+		
+		OuterClass out = new OuterClass();
+		out.callInnerMethod();
+	}
+}

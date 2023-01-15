@@ -1,0 +1,14 @@
+package project02.presentation.employee;
+
+import project02.service.employee.EmployeeService;
+
+public class EmployeeIo {
+	
+	private EmployeeService empService; // Has-A 관계
+	private String[] menuItem;
+	
+	public EmployeeIo(EmployeeService empService, String[] menuItem) { // DI
+		this.empService = empService;
+		this.menuItem = menuItem;
+	}
+}

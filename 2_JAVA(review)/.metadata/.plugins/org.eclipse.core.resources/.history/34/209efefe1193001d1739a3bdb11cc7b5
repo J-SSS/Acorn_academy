@@ -1,0 +1,9 @@
+package ch06.ex04;
+
+public class Adam extends Thread {
+
+	@Override
+	public void run() {
+		System.out.println("Save Start");		
+	}
+}

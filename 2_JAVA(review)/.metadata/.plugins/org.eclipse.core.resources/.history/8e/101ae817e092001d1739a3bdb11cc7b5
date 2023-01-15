@@ -1,0 +1,15 @@
+package ch05.ex04.case03;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class FileWriterTest {
+	public static void main(String[] args) {
+		
+		try (FileWriter fw = new FileWriter("writer.txt")) {
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+}

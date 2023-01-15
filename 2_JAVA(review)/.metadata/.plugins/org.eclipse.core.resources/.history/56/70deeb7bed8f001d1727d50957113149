@@ -1,0 +1,8 @@
+package ch04.ex02.case02;
+
+public class ArithExceptionHandling {
+	public static void main(String[] args) {
+		
+		
+	}
+}

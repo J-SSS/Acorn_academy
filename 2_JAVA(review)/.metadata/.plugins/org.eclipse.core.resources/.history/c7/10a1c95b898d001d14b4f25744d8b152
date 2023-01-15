@@ -1,0 +1,10 @@
+package ch03.quiz;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Customer c1 = new Customer("새로이", 40, 100);
+		Customer c2 = new Customer("이서", 20, 100);
+		Customer c3 = new Customer("근수", 12, 50);
+	}
+}

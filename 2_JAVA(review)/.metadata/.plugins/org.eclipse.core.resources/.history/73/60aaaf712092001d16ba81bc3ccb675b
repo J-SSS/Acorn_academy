@@ -1,0 +1,5 @@
+package ch02.ex01;
+
+public class InsertionSort { // 삽입 정렬
+
+}

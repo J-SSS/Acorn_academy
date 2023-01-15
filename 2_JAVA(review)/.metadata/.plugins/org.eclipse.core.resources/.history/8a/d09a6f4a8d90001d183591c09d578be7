@@ -1,0 +1,6 @@
+package ch03.sub;
+
+public class VM { // Vending Machine(자판기)
+	
+	
+}

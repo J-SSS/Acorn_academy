@@ -1,0 +1,9 @@
+package ch06.ex04;
+
+public class AdamWife extends Thread {
+
+	@Override
+	public void run() {
+		System.out.println("Minus Start");
+	}
+}

@@ -1,0 +1,15 @@
+package ch03.ex02.case01;
+
+import java.util.ArrayList;
+
+public class ArryaListStreamTest {
+	public static void main(String[] args) {
+		
+		ArrayList<String> list = new ArrayList<>();
+		list.add("Arnie");
+		list.add("Jake");
+		list.add("Pancho");
+		
+		
+	}
+}

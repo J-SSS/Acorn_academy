@@ -1,0 +1,20 @@
+package ch02.ex02.case02;
+
+public class OuterClass {
+	// 필드
+	int outNum = 100;
+	
+	
+	// 메소드
+	Runnable getRuannable(int i) {
+		
+		class LocalInner implements Runnable { // 지역내부클래스(local inner class)
+			@Override
+			public void run() {
+				
+			} 
+		}
+		
+		return new LocalInner(); // 업캐스팅
+	}
+}

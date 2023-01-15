@@ -1,0 +1,10 @@
+package ch02.ex02.case03;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		YellowInk y = new YellowInk();
+		GenericPrinter<YellowInk> yPrinter = new GenericPrinter<>();
+		yPrinter.setInk(y);
+	}
+}

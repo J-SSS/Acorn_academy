@@ -1,0 +1,15 @@
+package ch05.ex04.case02;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+public class FileReaderTest {
+	public static void main(String[] args) {
+		
+		try {
+			FileReader fr = new FileReader("reader.txt");
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+}

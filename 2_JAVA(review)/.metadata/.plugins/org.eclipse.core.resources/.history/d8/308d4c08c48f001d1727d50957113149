@@ -1,0 +1,8 @@
+package ch01.ex03;
+
+public class StudentTest {
+	public static void main(String[] args) {
+		
+		
+	}
+}

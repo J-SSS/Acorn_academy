@@ -1,0 +1,11 @@
+package ch01.ex03;
+
+// Class 클래스의 newInstance() 메소드로 객체(인스턴스) 생성
+public class StudentTest {
+	public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException {
+		
+		Class c1 = Class.forName("ch01.ex03.Student");
+		
+		Student s1 = (Student) c1.newInstance(); // 객체 생성
+	}
+}

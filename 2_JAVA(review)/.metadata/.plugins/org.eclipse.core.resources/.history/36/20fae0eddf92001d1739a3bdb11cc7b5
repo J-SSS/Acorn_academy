@@ -1,0 +1,8 @@
+package ch05.ex04.case03;
+
+public class FileWriterTest {
+	public static void main(String[] args) {
+		
+		
+	}
+}

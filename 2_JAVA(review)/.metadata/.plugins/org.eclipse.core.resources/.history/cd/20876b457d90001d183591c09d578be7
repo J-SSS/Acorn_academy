@@ -1,0 +1,9 @@
+package ch02.ex02.case04;
+
+public class Player {
+	
+	// 메소드
+	void pass() {}
+	
+	void kick() {}
+}

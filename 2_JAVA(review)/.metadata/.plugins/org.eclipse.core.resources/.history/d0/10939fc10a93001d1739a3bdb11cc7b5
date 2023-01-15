@@ -1,0 +1,6 @@
+package ch06.ex02.case02;
+
+public class MyThread extends Thread {
+
+	
+}

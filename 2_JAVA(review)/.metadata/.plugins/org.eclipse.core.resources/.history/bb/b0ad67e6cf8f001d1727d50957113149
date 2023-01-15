@@ -1,0 +1,19 @@
+package ch02.sub.step3;
+
+public class NanoStopWatch {
+	// nanoseconds 도메인
+	long startNanoTime;
+	long endNanoTime;
+	
+	public void startNano() {
+		startNanoTime = System.nanoTime();
+	}
+	
+	public void stopNano() {
+		endNanoTime = System.nanoTime();
+	}
+	
+	public long getElapsedNanoTime() {
+		return endNanoTime - startNanoTime;
+	}
+}

@@ -1,0 +1,9 @@
+package ch02.quiz.case04;
+
+public class PlayerLevel {
+	
+	void run();
+	void jump();
+	void turn();
+	void showLevelMessage();
+}

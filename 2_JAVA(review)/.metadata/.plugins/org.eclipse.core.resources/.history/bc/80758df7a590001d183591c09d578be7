@@ -1,0 +1,9 @@
+package ch04.ex03.case02;
+
+// try-with-resources문
+public class FileExceptionHandling02 {
+	public static void main(String[] args) {
+		
+		System.out.println();
+	}
+}

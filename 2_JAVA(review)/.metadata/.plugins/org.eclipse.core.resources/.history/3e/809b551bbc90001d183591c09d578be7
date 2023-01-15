@@ -1,0 +1,50 @@
+package project02.presentation.employee;
+
+import project02.domain.Code;
+import project02.presentation.Console;
+import project02.service.employee.EmployeeService;
+
+public class EmployeeIo {
+	
+	private EmployeeService empService; // Has-A 관계
+	private String[] menuItem;
+	private String menu;
+	
+	public EmployeeIo(EmployeeService empService, String[] menuItem) { // DI
+		this.empService = empService;
+		this.menuItem = menuItem;
+		this.menu = Console.menu(menuItem);
+	}
+
+	public void play() {
+		int choice = 0;
+		while ((choice = Console.choose(menu, menuItem.length)) != 0) {
+			switch (choice) {
+			case Code.LIST: this.listEmployees(); break;
+			case Code.ADD: this.addEmployee(); break;
+			case Code.MOD: this.modEmployee(); break;
+			case Code.DEL: this.delEmployee();
+			}
+		}
+	}
+
+	private void listEmployees() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void addEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void modEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void delEmployee() {
+		// TODO Auto-generated method stub
+		
+	}
+}

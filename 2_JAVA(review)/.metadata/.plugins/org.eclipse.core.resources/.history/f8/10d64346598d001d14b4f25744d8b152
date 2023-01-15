@@ -1,0 +1,7 @@
+package ch02.ex01.case01;
+
+public class OuterClass {
+	
+	private int num;
+	private static int sNum;
+}

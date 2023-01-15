@@ -1,0 +1,14 @@
+package ch04.ex05.case01;
+
+public class ExceptionMaker {
+	
+	private String password;
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		
+	}
+}

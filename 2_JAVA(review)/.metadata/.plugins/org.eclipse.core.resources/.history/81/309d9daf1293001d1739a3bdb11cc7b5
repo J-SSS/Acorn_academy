@@ -1,0 +1,14 @@
+package ch06.ex04;
+
+public class Test {
+	
+	public static Account account = new Account();	
+	
+	public static void main(String[] args) {
+		
+		Adam a = new Adam();	
+		a.start(); // Adam이 먼저 3000을 입금
+		
+		AdamWife aw = new AdamWife();		
+	}
+}

@@ -1,0 +1,18 @@
+package ch02.ex03.case01;
+
+class OuterClass {
+	
+	Runnable getRunnable() {
+		
+		class MyRunnable implements Runnable {
+			
+		}
+		
+		return null;
+	}
+}
+
+
+public class AnonymousInnerMain {
+
+}

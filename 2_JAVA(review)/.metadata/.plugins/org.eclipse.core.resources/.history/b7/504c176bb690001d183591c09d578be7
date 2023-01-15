@@ -1,0 +1,41 @@
+package project02.service.employee;
+
+import java.util.List;
+
+import project02.domain.Employee;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+	
+	
+	@Override
+	public List<Employee> listEmployees() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee findEmployee(int empId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public boolean addEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean modEmployee(Employee emp) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean delEmployee(int empId) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+}

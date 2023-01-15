@@ -1,0 +1,13 @@
+package project02;
+
+import java.util.ArrayList;
+
+import project02.domain.Employee;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		String[] empMenuItem = {"사원목록", "추가", "수정", "삭제"};
+		ArrayList<Employee> empList = new ArrayList<>();
+	}
+}

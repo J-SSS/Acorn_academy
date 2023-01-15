@@ -1,0 +1,20 @@
+package ch02.sub.step5;
+
+public class NanoStopWatch extends StopWatch {
+	
+	public void start() {
+		startTime = System.nanoTime();
+	}
+	
+	public void stop() {
+		endTime = System.nanoTime();
+	}
+	
+	public long getElapsedTime() {
+		return endTime - startTime;
+	}
+
+	void execute() {
+		
+	}
+}

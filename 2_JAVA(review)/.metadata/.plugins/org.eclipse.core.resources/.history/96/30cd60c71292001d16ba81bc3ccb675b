@@ -1,0 +1,28 @@
+package ch02.quiz.case04;
+
+public class BeginnerLevel extends PlayerLevel {
+
+	@Override
+	public void run() {
+		System.out.println("천천히 달립니다.");
+	}
+
+	@Override
+	public void jump() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void turn() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void showLevelMessage() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

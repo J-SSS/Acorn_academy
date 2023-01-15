@@ -1,0 +1,10 @@
+package ch02.ex02.case01;
+
+public class OuterClass {
+
+	void method() {
+		class InnerClass {
+			
+		}
+	}
+}

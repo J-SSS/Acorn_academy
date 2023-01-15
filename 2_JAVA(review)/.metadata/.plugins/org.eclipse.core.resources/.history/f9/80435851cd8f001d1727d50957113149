@@ -1,0 +1,11 @@
+package ch02.sub.step2;
+
+public class StopWatch {
+	// 필드
+	long startTime;
+	long endTime;
+	
+	public long getElapsedTime() {
+		return endTime - startTime;
+	}
+}

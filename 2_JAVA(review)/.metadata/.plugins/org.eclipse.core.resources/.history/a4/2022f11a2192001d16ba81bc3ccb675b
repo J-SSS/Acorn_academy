@@ -1,0 +1,13 @@
+package ch02.ex01;
+
+public class InsertionSort implements MySort { // 삽입 정렬
+
+	@Override
+	public void sort(int[] arr) {
+		int n = arr.length;
+		
+		for (int i=1; i<n; ++i) {
+			int key = arr[i]; // 삽입할 위치를 찾아줄 데이터
+		}
+	} 
+}

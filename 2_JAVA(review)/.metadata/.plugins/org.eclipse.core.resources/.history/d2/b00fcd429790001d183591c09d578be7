@@ -1,0 +1,10 @@
+package ch04.ex03.case01;
+
+import java.io.FileInputStream;
+
+public class FileException02 {
+	public static void main(String[] args) {
+		
+		FileInputStream fis = null;
+	}
+}

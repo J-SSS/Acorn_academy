@@ -1,0 +1,39 @@
+Step2 요구사항
+	- MilliStopWatch와 NanoStopWatch를 StopWatch로 일원화하고
+	- StopWatch 클래스에서 위 두 클래스의 필드 및 메소드를 함께 구현하고
+	- Main 클래스에서 시작시간과 종료시간을 필드에 할당했는데,
+	- StopWatch 클래스에서 추가로 메소드로 만들어, Main에서 그 메소드를 호출하여 
+	- 시작시간과 종료시간을 구하도록 변경하세요.
+	- 클래스 생성: StopWatch, Main 클래스
+	
+Step3 요구사항
+	- StopWatch를 다시 MilliStopWatch와 NanoStopWatch 클래스로 이원화하여
+	- Main 클래스에서 각각 객체 생성 후,
+	- 필요 메소드 호출하여 경과시간을 구하세요.
+	- 클래스 생성: MilliStopWatch, NanoStopWatch, Main 클래스
+	
+Step4 요구사항
+	- Step3의 Main 클래스에서 객체 생성을 제외한 나머지 코드들을 실행하는 메소드를
+	- Step4의 Main 클래스에 void 타입의 run()이라는 이름으로 2개 만드세요.
+	- 그리고 Main 클래스의 main() 메소드에서 
+	- MilliStopWatch와 NanoStopWatch 객체를 각각 생성한 후, 각각 run() 메소드를 호출하여
+	- 기존의 실행결과와 동일한 결과가 출력되도록 한다.
+	
+Step5 요구사항
+	- StopWatch 클래스(추상 클래스)를 만들고
+	- MilliStopWatch와 NanoStopWatch 클래스가 공통으로 갖고 있는 (이름이 동일한)
+	- 필드와 메소드를 선언, 추상메소드화 하고,
+	- execute()라는 추상메소드도 추가로 만든다.
+	
+	- Main 클래스에서는
+	- Step4의 Main 클래스에서 만들었던 2개의 run 메소드를 
+	- run(StopWatch s) 메소드로 일원화하며, 
+	- 그 일원화한 메소드의 구현 내용은 StopWath 클래스의 execute() 메소드를 호출하는 것이며,	
+	- main() 메소드의 코드 내용은 Step4와 동일하며,
+	- 동일한 결과가 출력되도록 한다.
+	
+	- 위 변경내용에 대한 코드 작성과 더불어
+	- 위 변경내용이 반영된 상태에서 동일한 결과가 출력되도록
+	- MilliStopWatch와 NanoStopWatch 클래스의 코드 역시 적정하게 수정하세요.
+	
+	- 클래스 생성: StopWatch, MilliStopWatch, NanoStopWatch, Main 클래스

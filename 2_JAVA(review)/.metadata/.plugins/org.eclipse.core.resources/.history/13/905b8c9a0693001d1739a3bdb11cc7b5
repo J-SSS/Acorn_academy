@@ -1,0 +1,18 @@
+package ch06.ex01.case02;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		System.out.println("main start");
+		
+		MyThread runnable = new MyThread();
+		
+		MyThread t1 = new MyThread();
+		t1.run();
+		
+		MyThread t2 = new MyThread();
+		t2.run();
+		
+		System.out.println("main end");
+	}
+}

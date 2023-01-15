@@ -1,0 +1,10 @@
+package ch04.ex03.case03;
+
+public class AutoCloseableImpl implements AutoCloseable {
+
+	@Override
+	public void close() throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+}

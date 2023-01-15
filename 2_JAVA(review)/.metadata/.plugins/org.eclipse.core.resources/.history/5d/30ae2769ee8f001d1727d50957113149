@@ -1,0 +1,7 @@
+package ch04.ex02.case03;
+
+public class NullException {
+	public static void main(String[] args) {
+		
+	}
+}

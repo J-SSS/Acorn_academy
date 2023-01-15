@@ -1,0 +1,15 @@
+package ch01.sub2.case04;
+
+import java.util.ArrayList;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		ArrayList<Customer> list = new ArrayList<>();
+		
+		Customer c1 = new Customer(0, null);
+		VIPCustomer v1 = new VIPCustomer(0, null);
+		GoldCustomer g1 = new GoldCustomer(0, null);
+				
+	}
+}

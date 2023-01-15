@@ -1,0 +1,13 @@
+package ch06.ex02.case02;
+
+import ch06.ex02.case01.PriorityThread;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		int i;
+		for (i=Thread.MIN_PRIORITY; i<=Thread.MAX_PRIORITY; i++) {
+			MyThread mt = new MyThread();
+		}
+	}
+}
