@@ -1,8 +1,0 @@
-package ch03.ex03;
-
-public class HashMapTest {
-	public static void main(String[] args) {
-		
-		
-	}
-}

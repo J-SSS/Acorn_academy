@@ -1,9 +1,0 @@
-package ch01.ex03.case01;
-
-public interface PrintString {
-
-	void printString(String str);
-	void printString2(String str);
-	void printString3(String str);
-	void printString4(String str);
-}

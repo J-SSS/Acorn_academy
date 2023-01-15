@@ -1,9 +1,0 @@
-package ch05.ex02.case02;
-
-public class FileInputStreamTest02 {
-	public static void main(String[] args) {
-		// 파일의 내용 끝까지 한 바이트씩 data 읽기
-		
-		
-	}
-}

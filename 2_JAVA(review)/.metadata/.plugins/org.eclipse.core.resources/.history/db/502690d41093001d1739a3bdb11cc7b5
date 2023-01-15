@@ -1,6 +1,0 @@
-package ch06.ex04;
-
-public class Account {
-	
-	private int money = 10000;
-}

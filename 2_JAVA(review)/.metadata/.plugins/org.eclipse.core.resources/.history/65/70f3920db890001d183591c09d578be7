@@ -1,6 +1,0 @@
-package project02.presentation;
-
-public interface Console {
-
-	
-}

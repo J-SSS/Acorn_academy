@@ -1,8 +1,0 @@
-package ch05.ex03.case01;
-
-public class FileOUtputStreamTest {
-	public static void main(String[] args) {
-		// 파일에다가 한 바이트씩 쓰기
-		
-	}
-}

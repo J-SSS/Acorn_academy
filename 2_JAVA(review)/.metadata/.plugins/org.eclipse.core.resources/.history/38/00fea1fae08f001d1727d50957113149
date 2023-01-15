@@ -1,9 +1,0 @@
-package ch02.sub.step5;
-
-public abstract class StopWatch {
-	// 필드
-	long startTime;
-	long endTime;
-	
-	
-}

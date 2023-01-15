@@ -1,8 +1,0 @@
-package ch02.ex02;
-
-import java.util.ArrayList;
-
-public interface MyList {
-	
-	ArrayList a = new ArrayList<>();
-}

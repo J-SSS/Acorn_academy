@@ -1,6 +1,0 @@
-package ch01.sub2.case01;
-
-public class VIPCustomer extends Customer {
-	
-	
-}

@@ -1,5 +1,0 @@
-package project02.domain;
-
-public interface Code {
-	// 필드(상수)
-}

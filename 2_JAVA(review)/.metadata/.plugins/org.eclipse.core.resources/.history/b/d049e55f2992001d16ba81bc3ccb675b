@@ -1,9 +1,0 @@
-package ch02.ex02;
-
-public interface MyList<String> {
-	
-	void add(String s);
-	void insert();
-	boolean delete(String s);
-	
-}

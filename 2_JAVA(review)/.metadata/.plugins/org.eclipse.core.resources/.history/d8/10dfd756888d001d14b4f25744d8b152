@@ -1,8 +1,0 @@
-package ch03.quiz;
-
-public class Customer {
-	
-	private String name;
-	private int age;
-	private int price;
-}

@@ -1,8 +1,0 @@
-package ch06.ex01.case01;
-
-public class MyThread extends Thread {
-	@Override
-	public void run() {
-		
-	}
-}

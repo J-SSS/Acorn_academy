@@ -1,7 +1,0 @@
-package ch04;
-
-public class BoxingTest {
-	public static void main(String[] args) {
-		
-	}
-}

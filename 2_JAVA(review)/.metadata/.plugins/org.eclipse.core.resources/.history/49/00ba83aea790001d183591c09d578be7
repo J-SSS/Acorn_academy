@@ -1,8 +1,0 @@
-package ch04.ex03.case03;
-
-public class Main {
-	public static void main(String[] args) {
-		
-		AutoCloseableImpl obj = new AutoCloseableImpl();
-	}
-}
