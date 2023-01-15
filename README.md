@@ -1,5 +1,4 @@
-### Hi there 👋
-학원 수업자료 저장용
+에이콘 아카데미 교육내용 저장공간입니다.
 
 <!--
 **J-SSS/J-SSS** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
