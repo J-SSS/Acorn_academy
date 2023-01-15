@@ -1,4 +1,4 @@
-package ch02.ex01;
+package ch02.ex01_Sort;
 
 public class InsertionSort implements MySort { // 삽입 정렬
 

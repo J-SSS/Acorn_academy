@@ -1,4 +1,4 @@
-package ch02.ex01;
+package ch02.ex01_Sort;
 
 public interface MySort {
 
