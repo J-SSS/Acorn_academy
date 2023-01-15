@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 개발자 장동일</title>
+    <script
+      src="https://kit.fontawesome.com/43cb3c60a4.js"
+      crossorigin="anonymous"
+    ></script></head
+  ><style>
+    @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Oswald:wght@500&family=Sunflower:wght@500&display=swap");
+    * {
+      font-family: Oswald;
+      margin: 0;
+    }
+
+    body {
+      background-image: url(../images/background10.png);
+      background-size: cover;
+      animation: fade 3s linear;
+      opacity: 1;
+    }
+    @keyframes fade {
+      0%{opacity: 0;
+
+      }
+      100%{
+        opacity: 1;
+      }
+    }
+
+    header {
+      background-color: #fffffff0;
+      font-size: 30px;
+      width: 100%;
+      height: 50px;
+      display: inline-flex;
+      justify-content: space-between;
+      line-height: 50px;
+      border-bottom: 2px solid gray;
+    }
+    .header_logo,
+    .header_menu {
+      margin: 0px 20px 0px 40px;
+      text-shadow: 2px 1px gray;
+    }
+    .logo_t{
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+    }
+    small {
+      text-shadow: 0px 0px gray;
+    }
+
+    main {
+      opacity: 1;
+    }
+
+    main > div {
+      margin-top: 15px;
+      border-radius: 2%;
+    }
+    .about {
+      position: absolute;
+      /* background-color: rgba(255, 166, 0, 0.429);*/
+
+      width: 99%;
+      height: 700px;
+      margin-left: 10px;
+    }
+    .skills {
+      position: absolute;
+      /* background-color: rgba(255, 255, 0, 0.603);*/
+
+      width: 99%;
+      height: 700px;
+      margin-left: 10px;
+    }
+    .portfolio {
+      position: absolute;
+      /*background-color: rgba(0, 128, 0, 0.502);*/
+
+      width: 99%;
+      height: 700px;
+      margin-left: 10px;
+    }
+    .etc {
+      position: absolute;
+      /*background-color: rgba(0, 0, 255, 0.374);*/
+
+      width: 99%;
+      height: 700px;
+      margin-left: 10px;
+    }
+
+    .about_tip {
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 110px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+      margin-top: 0px;
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+    .about_text {
+      box-sizing: border-box;
+      border: 2px solid black;
+      width: calc(100% - 40px);
+      height: 100%;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      background-color: whitesmoke;
+    }
+
+    .skills_tip {
+    
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 90px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+      margin-top: 0px;
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      margin-top: 112px;
+    }
+
+
+    }
+    .skills_text {
+      text-align: center;
+      box-sizing: border-box;
+      border: 2px solid black;
+      width: calc(100% - 40px);
+      height: 100%;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .portfolio_tip {
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 110px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+      margin-top: 0px;
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-top: 204px;
+    }
+    .portfolio_text {
+      box-sizing: border-box;
+      border: 2px solid black;
+      width: calc(100% - 40px);
+      height: 100%;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .etc_tip {z-index: -1;
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 90px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+      margin-top: 0px;
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-top: 316px;
+    }
+    .etc_text {
+      box-sizing: border-box;
+      border: 2px solid black;
+      width: calc(100% - 40px);
+      height: 100%;
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .top {
+      position: fixed;
+      top: 90%;
+      left: 95%;
+      border: 2px dashed black;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 35px;
+      background-color: black;
+      color: white;
+      font-size: 20px;
+      
+    }
+
+    .dark {
+      position: fixed;
+      top: 83%;
+      left: 95%;
+      border: 1px dashed black;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      line-height: 35px;
+      background-color: white;
+      color: black;
+      font-size: 20px;
+      
+    }
+      .top:hover, .dark:hover{
+        animation: top 1s linear infinite alternate;
+        transform: scale(1.4);
+      }
+  
+   @keyframes top{
+    100%{transform:rotateY(180deg)
+   }
+    }
+
+
+    .about_tip:hover {
+      background-color: gray;
+    
+    }
+  </style>
+  <body>
+    <header>
+      <div class="header_logo">
+        <u></u> P O R T F O L I O <small><small><b>이름ㅇㄷ?</b></small></small>
+      </div>
+      <div class="header_title">타이틀? 이름?</div>
+      <div class="header_menu">
+        
+        <img class="logo_t" src="/images/t.svg" alt="">&emsp;&emsp;
+        <i class="fa-brands fa-github"></i>&emsp;&emsp;
+        <i class="fa-regular fa-envelope"></i>&emsp;&emsp;
+        <i class="fa-regular fa-comments"></i>&emsp;&emsp;&emsp;
+      </div>
+    </header>
+
+    <main>
+      <div class="etc">
+        <div class="etc_tip">ETC</div>
+        <div class="etc_text"></div>
+      </div>
+      <div class="portfolio">
+        <div class="portfolio_tip">PORTFOLIO</div>
+        <div class="portfolio_text"></div>
+      </div>
+      <div class="skills">
+        <div class="skills_tip">SKILLS</div>
+        <div class="skills_text"></div>
+      </div>
+      <div class="about">
+        <div class="about_tip">ABOUT ME</div>
+        <div class="about_text"></div>
+      </div>
+    </main>
+
+    <footer>
+      <a href="">
+        <div class="top"><u>Top</u></div>
+        <div class="dark"><u>?</u></div>
+      </a>
+    </footer>
+  </body>
+</html>

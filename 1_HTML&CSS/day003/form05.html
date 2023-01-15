@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h2>여름방학 특강 신청</h2>
+
+    <fieldset>
+        <legend>수강신청인</legend>
+
+        <ul>
+            <li>
+                <label for="id">학번</label>
+                <input type="text" id="id" autofocus>
+            </li>
+            <li>
+                <label for="name">이름</label>
+                <input type="text" id="name">
+            </li>
+            <!--optgroup : label속성을 이용해 그룹의 제목을 붙인다
+            size : 화면에 표시될 항목 개수 지정
+            multiple : ctrl누르면서 드롭다운 메뉴에 있는 여러 항목 선택
+            value : 옵션을 선택 했을 때 서버로 넘겨질 값 지정
+            selected : 화면에 표시될 때 기본으로 선택되어 있는 옵션 지정-->
+            <li>
+                <label for="class">학과</label>
+                <select name="" id="class" size="1">
+                    <optgroup label="공과대학">
+                    <option value="">전자공학과</option>
+                    <option value="">경제학과</option>
+                    <option value="">건축공학과</option>
+                    <option value="">기계공학과</option>
+                    <option value="" selected>산업공학과</option>
+                    <option value="">신소재공학과</option>
+                </optgroup>
+                <optgroup label="인문대학">
+                    <option value="">전자공학과</option>
+                    <option value="">경제학과</option>
+                    <option value="">건축공학과</option>
+                    <option value="">기계공학과</option>
+                    <option value="">산업공학과</option>
+                    <option value="">신소재공학과</option>
+                </optgroup>
+            </li>
+        </ul>
+
+    
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>학습 단계 선택</legend>
+
+        초급
+            초급1
+            초급2
+            초급3
+        중급
+            중급1
+            중급2
+            중급3
+        고급
+            고급1
+            고급2
+            고급3
+    </fieldset>
+</body>
+</html>

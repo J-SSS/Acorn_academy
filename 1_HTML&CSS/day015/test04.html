@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ *{
+    margin: 0px;
+    padding: 0px;
+ }
+#result{
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+ 
+    background-color: rgb(0, 0, 0);
+    opacity: 0.5;
+    font-size: 440px;
+    text-align: center;
+    line-height: 350px;
+    color: white;
+    margin: auto;
+ }
+
+
+
+ fieldset{
+    margin: 50px 50px 50px 50px;
+    width: 550px;
+    height: 600px;
+  
+    border-radius: 10%;
+    border: 1px dashed black;
+    background-color: transparent;
+ }
+ legend{
+    font-size: 30px;
+    font-weight: bolder;
+    color: black;
+    
+ }
+
+ button{
+    width: 150px;
+    height: 70px;
+    font-size: 50px;
+    text-align: center;
+    display: block;
+    margin-left: calc(50% - 75px);
+    
+ 
+ }
+</style>
+
+
+
+<body>
+    <fieldset>
+      
+        
+        <div id="result">0</div><br>
+        <button id="up" onclick="up()">색상</button>
+        <button id="down" onclick="down()">숫자</button>
+        </fieldset>
+
+
+
+
+<script>
+function up(){
+    var arrColor = ["red", "orange", "yellow", "green", "blue", "navy", "purple"];
+    var colorNum = Math.floor(Math.random()*arrColor.length);
+
+    document.querySelector('#result').style.backgroundColor = arrColor[colorNum];
+}
+var num = 0
+function down(){
+    
+    num += 1;
+    document.querySelector('#result').innerHTML = num;
+}
+</script>
+
+</body>
+</html>

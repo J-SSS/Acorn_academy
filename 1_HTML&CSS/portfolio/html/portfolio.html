@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 개발자 장동일</title>
+    <script
+      src="https://kit.fontawesome.com/43cb3c60a4.js"
+      crossorigin="anonymous"
+    ></script></head
+  ><style>
+        @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Oswald:wght@500&family=Sunflower:wght@500&display=swap");
+        * {
+          font-family: Oswald;
+          margin: 0px;
+          padding: 0px;
+
+        }
+
+    }
+        body {
+          background-image: url(../images/background10.png);
+          background-size: contain;
+
+        }
+
+        header {
+          background-color: #fffffff0;
+          font-size: 30px;
+          width: 100%;
+          height: 50px;
+          display: inline-flex;
+          justify-content: space-around;
+          line-height: 50px;
+          border-bottom: 2px solid gray;
+          position: fixed;
+          z-index: 100;
+
+        }
+        .header_logo,
+        .header_menu {
+          margin: 0px 20px 0px 20px;
+        }
+        .header_logo{
+          margin-left: 60px;
+        }
+        .header_logo,
+        .header_menu,
+        .header_title {
+          width: 33%;
+        }
+        .header_title {
+          text-align: center;
+
+        }
+        .header_menu {
+          text-align: right;
+
+        }
+
+        .logo_t {
+          width: 32px;
+          height: 30px;
+          vertical-align: middle;
+        }
+
+
+        .about_tip {
+          position: absolute;
+          text-align: center;
+          background-color: white;
+          box-sizing: border-box;
+          width: 40px;
+          height: 110px;
+          font-size: 20px;
+          color: black;
+
+          float: right;
+          writing-mode: vertical-lr;
+
+          padding: 5px;
+          border-width: 2px 2px 2px 0px;
+          border-style: solid;
+          border-color: black;
+
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+        }
+
+        .skills_tip {
+          position: absolute;
+
+          text-align: center;
+          background-color: white;
+          box-sizing: border-box;
+          width: 40px;
+          height: 90px;
+          font-size: 20px;
+          color: black;
+
+          float: right;
+          writing-mode: vertical-lr;
+
+          padding: 5px;
+          border-width: 2px 2px 2px 0px;
+          border-style: solid;
+          border-color: black;
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+
+          margin-top: 112px;
+        }
+
+        .portfolio_tip {
+          position: absolute;
+          text-align: center;
+          background-color: white;
+          box-sizing: border-box;
+          width: 40px;
+          height: 110px;
+          font-size: 20px;
+          color: black;
+
+          float: right;
+          writing-mode: vertical-lr;
+
+          padding: 5px;
+          border-width: 2px 2px 2px 0px;
+          border-style: solid;
+          border-color: black;
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+          margin-top: 204px;
+        }
+
+        .etc_tip {
+          position: absolute;
+          text-align: center;
+          background-color: white;
+          box-sizing: border-box;
+          width: 40px;
+          height: 90px;
+          font-size: 20px;
+          color: black;
+
+          float: right;
+          writing-mode: vertical-lr;
+
+          padding: 5px;
+          border-width: 2px 2px 2px 0px;
+          border-style: solid;
+          border-color: black;
+          border-top-right-radius: 15px;
+          border-bottom-right-radius: 15px;
+          margin-top: 316px;
+        }
+
+
+        .about_tip:hover,
+        .portfolio_tip:hover,
+        .skills_tip:hover,
+        .etc_tip:hover {
+          background-color: gray;
+        }
+
+        .back {
+          background-color: ;
+          /*background-image: url(/images/background10.png);*/
+          font-size: 25px;
+          margin-left: 20px;
+        }
+        .title_box {
+          /*입력창 테두리*/
+          border-top: 2px solid rgba(211, 211, 211, 0.747);
+          border-bottom: 2px solid rgba(211, 211, 211, 0.724);
+        }
+
+        .blue {
+          color: rgba(0, 0, 255, 0.651);
+        }
+        .sky {
+          color: rgb(68, 186, 233);
+        }
+        .green {
+          color: green;
+          font-size: 30px;
+        }
+        .gray {
+          color: gray;
+          font-size: 20px;
+        }
+
+        .h_l {
+          width: 100px;
+
+        }
+
+        /*-----------*/
+
+        .about_1 {
+          background-color: rgba(38, 0, 255, 0.068);
+        }
+        .about_2 {
+          background-color: rgba(0, 255, 106, 0.486);
+
+        }
+        .about_3 {
+          background-color: rgba(0, 174, 255, 0.068);
+        }
+        main {
+          margin-top: 50px;
+          width: 100%;
+          display: inline-flex;
+        }
+
+        nav {
+          width: 5%;
+          min-height: 600px;
+          margin-right: 0px;
+          margin-top: 60px;
+        }
+
+        section {
+          width: 95%;
+          min-height: 85vh;
+          border: 1px solid gray;
+          background-color: white;
+          margin-top: 20px;
+          margin-left: 5%;
+          border-radius: 50px;
+          display: inline-flex;
+          flex-wrap: wrap;
+
+        }
+        article{
+          animation: access 2s linear;
+        }
+
+        .about_1 {
+          width: 100%;
+          height: 85vh;
+          margin: 0px;
+          display:inline-flex;
+          vertical-align: bottom;
+
+        }
+
+        .about_11 { /*프로필사진*/
+          width: 60%;
+          height: 100%;
+
+          background-color: antiquewhite;
+
+        }
+        .about_12 { /*프로필내용*/
+
+
+          width: 40%;
+          height: 800px;
+
+        }
+        .img_profile {
+          border-radius: 20%;
+          height: 50%;
+          margin-top: 5%;
+          margin-left: 50%;
+          transform: translate(-50%, 0%);
+          box-shadow: 5px 5px 5px 5px gray;
+
+        }
+        .about_121 {
+          text-align: center;
+          font-size: 40px;
+
+          background-color: rgba(0, 255, 255, 0.384);
+          margin-top: 10px;
+        }
+
+        .about_122 {
+          background-color: rgba(255, 0, 0, 0.103);
+          font-size: 30px;
+        }
+
+        .about_2, .about_3{
+          height: 85vh;
+          width: 100%;
+        }
+  </style>
+  <body>
+    <header>
+      <div class="header_logo">
+        <img src="/images/logo.png" alt="" class="h_l" />
+      </div>
+      <div class="header_title">PORTFOLIO</div>
+      <div class="header_menu">
+        <img class="logo_t" src="/images/t.svg" alt="" />&emsp;
+        <i class="fa-brands fa-github"></i>&emsp;
+        <i class="fa-regular fa-envelope"></i>&emsp;
+        <i class="fa-regular fa-comments"></i>&emsp;
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <article class="about_1">
+          <div class="about_12">
+            <div class="about_121">개발자의 책장</div>
+            <div>
+              Web이라는 무한한 지식의 바다 위에서, 
+              '책'은 가장 믿음직한 지식의 길잡이라고 생각합니다.
+              공부한 도서와 그 결과물들을 정리했습니다. 
+            </div>
+            <div class="about_122">
+              1. 프로필 내용 <br />
+              1. 프로필 내용 <br />
+              1. 프로필 내용 <br />
+              1. 프로필 내용 <br />
+              1. 프로필 내용 <br />
+            </div>
+          </div>
+          <div class="about_11"></div>
+        </article>
+
+        <article class="about_2">
+          <div class="about_21">
+          교육 에이콘아카데미
+          
+          
+          </div>
+        </article>
+        <article class="about_3"><div class="about_31">내용3</div></article>
+     
+     
+      </section>
+
+      <nav>
+        <div class="etc_tip">ETC</div>
+        <div class="portfolio_tip">PORTFOLIO</div>
+        <div class="skills_tip">SKILLS</div>
+        <div class="about_tip">ABOUT_ME</div>
+      </nav>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>

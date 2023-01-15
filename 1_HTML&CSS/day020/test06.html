@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    *{
+        padding: 20px;
+    }
+
+section{
+    width: 1200px;
+    display: flex;
+}
+
+article{
+    background-color: rgba(255, 255, 0, 0.61);
+    flex: 1;
+    
+    width: 600px;
+    
+}
+.box1{
+    background-color: rgba(255, 255, 0, 0.61);
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    width: 600px;
+    
+}
+.box2{
+    background-color: skyblue;
+    width: 600px;
+
+}
+.box3{
+    background-color: pink;
+    width: 600px;
+}
+
+@media all and (max-width:768px) {
+   section{
+    width: 600px ;
+    flex-wrap: wrap;
+   }
+   }
+    
+</style>
+
+
+<body>
+ <section>
+    <article><h2>제목</h2><p>내용내용내용내용내용</p></article>
+    <article class="box1">
+        <div class="box2"><h2>제목</h2><p>내용내용내용내용내용</p></div>
+        <div class="box3"><h2>제목</h2><p>내용내용내용내용내용</p></div>
+    </article>
+ </section>
+</body>
+</html>

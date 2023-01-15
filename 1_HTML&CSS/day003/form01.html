@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이디와 비밀번호</title>
+</head>
+<body>
+    
+    <h2>아이디와 비밀번호</h2>
+<!--get 공개 post 비공개 보완처리방식을 의미
+    id, name값은 자바스크립토 폼을 제어 할 때 사용
+    action : 서버에 넘겨줄 파일 명
+    target : action속성에서 지정한 스크립트 파일 창(_blank 새창으로 열기)
+-->
+<form action="phone.php" method="post" name="user_form" id="user_form">
+
+    <!--태그 안에 폼 넣기
+    label로 텍스트와 input을 연결해준다.
+    laber for와 input의 id값을 같게 해준다-->
+    <label for=""> 아이디 : <input type="text"></label> <br>
+
+    <label for=""> 비밀번호 : <input type="password" ></label>
+    
+    <hr><br>
+
+    <!--태그와 폼 따로 넣기-->
+    <label for="user-id">아이디 :</label>
+    <input type="text" id="user-id" name="user-id" placeholder="이름을 입력하세요"><br>
+
+    <label for="user-pw">비밀번호 : </label>
+    <input type="password" id="user-pw" placeholder="비밀번호를 입력하세요">
+
+    <hr><br>
+    
+    <button>버튼</button>
+    <input type="submit" class="submitBtn">
+    <input type="reset" class="resetBtn">
+
+    <hr><br>
+
+    <h5><mark>다양한 용도에 입력 type값 넣기</mark></h5>
+
+    전화번호 : <input type="tel" placeholder="000-0000-0000" size="12" maxlength="12" autocomplete="off"><br>
+    <!--autocomplete : 자동완성 on/off
+    maxlength : 입력할 수 있는 값의 길이
+    placeholder : 입려강에 나타나는 텍스트
+    size : 보이는 입력폼의 사이즈
+    -->
+    휴대폰번호 : <input type="phone" placeholder="010-0000-0000" size="13" maxlength="13" autocomplete="off">
+
+    <hr><br>
+
+    <h5><mark>검색기능</mark></h5>
+    <input type="search"><br>
+
+    <hr><br>
+    
+    <h5><mark>이메일</mark></h5>
+    <input type="email" placeholder="aaaa@bbbb.ccc">
+    
+    <hr><br>
+
+
+    <h5><mark>주소</mark></h5>
+    
+    <input type="addr" placeholder="주소를 입력해주세요">
+    <hr><br>
+    
+
+    <!-- 
+    radio 버튼을 하나만 선택하게 하려면 name값을 같게 해준다
+    check는 여러개 선택 : label의 for와 input의 id값을 맞춰주고 선택항목마다 다른 값을 설정
+    radio,check의 value값은 선택한 버튼을 서버에게 넘겨주는 값을 지정한다(영문이나 숫자여야하며 필수속성이다)
+    반면, 버튼의 value값은 해당버튼에 보여지는 이름을 결정
+    checked 옵션은 기본으로 제크하고 싶은 항목에 넣기-->
+
+    <h5><mark>radio버튼 만들기</mark></h5>
+    <p>성별을 선택해주세요.</p>
+   <label for="male">남성<input type="radio" name="gender" id="male" value="s_1"></label>
+   <label for=""> 여성<input type="radio" name="gender" id="female" value="s_2"></label>
+    <hr><br>
+
+    <h5><mark>체크박스 만들기</mark></h5>
+    <p>이동수단을 선택해주세요</p>
+    <label for="vehicle1"><input type="checkbox" id="vehicle1" value="w_1">자동차</label>
+    <label for="vehicle2"><input type="checkbox" id="vehicle2" value="w_2">비행기</label>
+    <label for="vehicle3"><input type="checkbox" id="vehicle3" value="w_3">기차</label>
+    <hr><br>
+  
+    
+    
+
+
+
+
+    <h5><mark>드롭다운 만들기</mark></h5>
+    <label for="path"> 가입경로</label>
+    <select name="" id="path">
+        <option value="">블로그</option>
+        <option value="">검색</option>
+        <option value="">SNS</option>
+        <option value="">지인추천</option>
+        <option value="">기타</option>
+    </select>
+    
+    <hr><br>
+
+    <h5><mark>숫자 입력하는 number속성</mark></h5>
+    <label for=""><input type="number" min="0" max="30" value="10">최대 30까지 선택하세요</label>
+    <hr><br>
+
+    <h5><mark>슬라이드 막대 range 속성</mark></h5>
+    <label for=""><input type="range" min="0" max="50" value="15"> 최대 50까지 선택 해주세요</label>
+    <hr><br>
+    <h5><mark>드롭다운 만들기</mark></h5>
+
+    <!--버튼의 이름은 value값으로 정한다
+    submit : 폼을 서버로 전송
+    reset : 입력된 모든 내용 초기화
+    button의 형태만 만들 뿐 기능은 없음-->
+    
+    <button onclick="window.open('form02.html')"> 공지열기</button>
+
+    <h5><mark>색상 선택</mark></h5>
+    
+    <p>색상을 선택해 주세요</p>
+    <input type="color">
+    <br><hr>
+    <h5><mark>날짜와 시간 선택</mark></h5>
+    <p>날짜를 선택해 주세요</p>
+    <input type="date">
+    <input type="datetime-local">
+    <input type="time">
+    <input type="week">
+    <br><hr>
+
+    <h5><mark>파일 선택</mark></h5>
+    <input type="file">
+    <br><hr>
+
+    <!--폼 제출 시 사용자가 변경해서는 안되는 데이터를 함께 보낼때 사용-->
+    <h5><mark>숨겨진 입력 필드</mark></h5>
+    <input type="hidden">
+
+    <progress value="50" max="60"></progress>
+    <!--
+        전체60 중 50진행 progress : 작업의 진행 상태를 나타내며 부동 소수점으로 표현 
+    0보다 크거나 같고 max값보다 작거나 같아야 한다
+max값이 지정되지 않았다면 1.0보다 작아야한다
+max : 작업이 완료되려면 얼마나 많은 작업을 해야하는지 부동 소수점으로 표현한다.
+0보다 커야한다.-->
+</form>
+
+
+
+
+
+</body>
+</html>

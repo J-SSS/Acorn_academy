@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+*{
+    font-size: larger;
+}
+
+.new::after{
+    position: relative;
+    padding: auto;
+    margin-left: 1%;
+    
+    content: "New!";
+    border: 1px solid red;
+    background-color: red;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+    
+}
+div h1::5th{
+    color: red;
+    background-color: blue;
+    
+}
+
+</style>
+<body>
+    <div>
+    <h1>제품 목록</h1>
+    <ul>
+        <li class="new">제품 A</li>
+        <li>제품 B</li>
+        <li>제품 C</li>
+        <li class="new">제품 D</li>
+        
+    </ul>
+</div>
+</body>
+</html>

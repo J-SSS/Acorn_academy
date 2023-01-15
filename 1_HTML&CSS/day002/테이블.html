@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 연습</title>
+</head>
+
+<style>
+    td{
+        width: 100px;
+        border: solid 1px;
+        padding: 5px;
+    }
+
+    table{
+        border: solid 1px;
+        padding: 10px ;
+        
+    }
+
+    th{
+        padding: 10px 10px;
+        border: solid 1px;
+    }
+</style>
+<body>
+    
+    <table border="">
+    <caption> 색깔의 종류  </caption>
+        <thead>
+        <tr>
+            <th>종류</th> <th colspan="2">밝은계열</th> <th>어두운 계열</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr>
+            <td>1</td> <td>빨강</td> <td>분홍</td> <td>검정</td>
+        </tr>
+
+        <tr>
+            <td>2</td> <td>파랑</td> <td rowspan="2">하늘색</td> <td>남색</td>
+        </tr>
+
+        <tr>
+            <td>3</td> <td>노랑</td>  <td>회색</td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+        <tr>
+            <td>합계</td> <td>3개</td> <td>3개</td> <td>3개</td>
+        </tr>
+        </tfoot>
+
+
+    </table>
+
+
+    <br><br><br>
+
+실습1-2-1 <h2>테이블(표) 만들기</h2>
+
+<fieldset>
+<h3>상품 구성</h3>
+<caption>실속형과 고급형 상품 구성</caption>
+
+<table border="" >
+    <tr style="background-color: red;">
+    <th>용도</th> <th>중량</th> <th>개수</th> <th>가격</th>
+    </tr>
+
+    <tr style="background-color: orange;">
+        <td rowspan="2">실속형</td> <td>3kg</td> <td>11~16과</td> <td>17,000원</td>
+    </tr>
+
+    <tr style="background-color: yellow;">
+         <td>5kg</td> <td>18~25과</td> <td>25,000원</td>
+    </tr>
+
+    <tr style="background-color: green;">
+        <td rowspan="2">고급형</td> <td>3kg</td> <td>11~16과</td> <td>28,000원</td>
+    </tr>
+
+    <tr style="background-color: blue;"r>
+        <td>5kg</td> <td>18~25과</td> <td>47,000원</td>
+    </tr>
+
+</table>
+
+
+</fieldset>
+    
+</body>
+</html>

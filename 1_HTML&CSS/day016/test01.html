@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .pie-chart {
+  position: relative;
+  display:inline-block;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.center1{
+  background: #fff;
+  display : block;
+  position: absolute;
+  top:50%; left:50%;
+  width:290px; height:290px;
+  border-radius: 50%;
+  text-align:center; 
+  line-height: 295px;
+  font-size:60px;
+   transform: translate(-50%, -50%);
+}
+.pie-chart1{
+  animation: pie1 0.5s forwards;
+}
+@keyframes pie1{
+  0%{background : conic-gradient(black 0% 0%, #ffffff 0% 100%)}
+  5%{background : conic-gradient(black 0% 5%, #ffffff 0% 100%)}
+  10%{background : conic-gradient(black 0% 10%, #ffffff 0% 100%)}
+  15%{background : conic-gradient(black 0% 15%, #ffffff 0% 100%)}
+  20%{background : conic-gradient(black 0% 20%, #ffffff 0% 100%)}
+  25%{background : conic-gradient(black 0% 25%, #ffffff 0% 100%)}
+  30%{background : conic-gradient(black 0% 30%, #ffffff 0% 100%)}
+  35%{background : conic-gradient(black 0% 35%, #ffffff 0% 100%)}
+  40%{background : conic-gradient(black 0% 40%, #ffffff 0% 100%)}
+  45%{background : conic-gradient(black 0% 45%, #ffffff 0% 100%)}
+  50%{background : conic-gradient(black 0% 50%, #ffffff 0% 100%)}
+  55%{background : conic-gradient(black 0% 55%, #ffffff 0% 100%)}
+  60%{background : conic-gradient(black 0% 60%, #ffffff 0% 100%)}
+  65%{background : conic-gradient(black 0% 65%, #ffffff 0% 100%)}
+  70%{background : conic-gradient(black 0% 70%, #ffffff 0% 100%)}
+  75%{background : conic-gradient(black 0% 75%, #ffffff 0% 100%)}
+  80%{background : conic-gradient(black 0% 80%, #ffffff 80% 100%)}
+  85%{background : conic-gradient(black 0% 85%, #ffffff 80% 100%)}
+  90%{background : conic-gradient(black 0% 90%, #ffffff 80% 100%)}
+  95%{background : conic-gradient(black 0% 95%, #ffffff 80% 100%)}
+  100%{background : conic-gradient(black 0% 100%, #ffffff 80% 100%)}
+}
+
+.pie-chart2 {
+  position: relative;
+  display:inline-block;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.center2{
+  background: transparent;
+  display : block;
+  position: absolute;
+  top:50%; left:50%;
+  width:290px; height:290px;
+  border-radius: 50%;
+  text-align:center; 
+  line-height: 295px;
+  font-size:60px;
+color: white;
+   transform: translate(-50%, -50%);
+}
+
+.pie-chart3{
+  animation: pie2 0.5s forwards;
+  animation-delay: 2s;
+}
+
+@keyframes pie2{
+  0%{background : conic-gradient(transparent 0% 100%, black 0% 100%)}
+  5%{background : conic-gradient(transparent 0% 95%, black 0% 100%)}
+  10%{background : conic-gradient(transparent 0% 90%, black 0% 100%)}
+  15%{background : conic-gradient(transparent 0% 85%, black 0% 100%)}
+  20%{background : conic-gradient(transparent 0% 80%, black 0% 100%)}
+  25%{background : conic-gradient(transparent 0% 75%, black 0% 100%)}
+  30%{background : conic-gradient(transparent 0% 70%, black 0% 100%)}
+  35%{background : conic-gradient(transparent 0% 65%, black 0% 100%)}
+  40%{background : conic-gradient(transparent 0% 60%, black 0% 100%)}
+  45%{background : conic-gradient(transparent 0% 55%, black 0% 100%)}
+  50%{background : conic-gradient(transparent 0% 50%, black 0% 100%)}
+  55%{background : conic-gradient(transparent 0% 45%, black 0% 100%)}
+  60%{background : conic-gradient(transparent 0% 40%, black 0% 100%)}
+  65%{background : conic-gradient(transparent 0% 35%, black 0% 100%)}
+  70%{background : conic-gradient(transparent 0% 30%, black 0% 100%)}
+  75%{background : conic-gradient(transparent 0% 25%, black 0% 100%)}
+  80%{background : conic-gradient(transparent 0% 20%, black 0% 100%)}
+  85%{background : conic-gradient(transparent 0% 15%, black 0% 100%)}
+  90%{background : conic-gradient(transparent 0% 10%, black 0% 100%)}
+  95%{background : conic-gradient(transparent 0% 5%, black 0% 100%)}
+  100%{background : conic-gradient(transparent 0% 0%, black 0% 100%)}
+}
+
+fieldset{
+
+    width: 700px;
+    height: 6   00px;
+    font-size: 60px;
+    text-align: center;
+}
+
+legend{
+    font-size: 40px;
+    margin: auto;
+}
+
+.text{
+    width: 700px;
+    height: 400px;
+    text-align: left;
+   
+}
+</style>
+
+<body>
+
+    <fieldset>
+        <legend>원의 둘레와 넓이 구하기</legend>
+
+        <div class="pie-chart pie-chart1"><span class="center1"> 둘레</span></div>
+        <div class="pie-chart2 pie-chart3"> <span class="center2"> 넓이</span></div>
+        <div class="text">d</div>
+
+    </fieldset>
+
+  
+
+
+
+
+    <script>
+        let r = prompt("원의 반지름은??");
+        let circle1 = new Circle(r);
+
+        document.querySelector('.text').innerHTML = `반지름이  ${r}  cm 일 때  <br>원의 둘레 :  약  ${circle1.circumference()}  cm <br> 원의 넓이 : 약 ${circle1.area()}  cm<sup>2</sup>`
+
+        
+       
+
+        function Circle(radius) {
+            this.radius = radius;
+            this.circumference = function() {
+                return Math.floor(this.radius * 2 * Math.PI)
+            }
+            this.area = function() {
+                return Math.floor(Math.pow(this.radius, 2) * Math.PI);
+            }
+        }
+
+
+    </script>
+</body>
+</html>

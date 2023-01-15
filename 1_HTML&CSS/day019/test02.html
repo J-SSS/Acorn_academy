@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+   
+    <div id="data-viewer">
+        <h3>title</h3>
+        <section>
+            <article>
+                
+            </article>
+            <div>
+                <img src="" alt="">
+            </div>
+        </section>
+    </div>
+    
+  
+    
+    <script>
+      let news = [];
+      async function postData(url = "", data = {}) {
+        // Default options are marked with *
+        const response = await fetch(url, {
+          method: "GET", // *GET, POST, PUT, DELETE, etc.
+          mode: "cors", // no-cors, *cors, same-origin
+          //  cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+          //  credentials: 'same-origin', // include, *same-origin, omit
+          headers: {
+            Authorization: "KakaoAK 0e4a6742ab38bd388ee83214df7a1f52",
+            
+          },
+          
+        });
+        return response.json(); // parses JSON response into native JavaScript objects
+      }
+
+      postData("https://dapi.kakao.com/v2/search/vclip?query=날씨", {
+        answer: 42,
+      }).then((data) => {
+        console.log(data); // JSON 데이터가 `data.json()` 호출에 의해 파싱됨
+        news = data.documents;
+        console.log(news);
+        render();
+      });
+
+      const render = () => {
+        let newsHTML = '';
+                newsHTML = news.map((item) => {
+            return  `<div id="data-viewer">
+                <h3>${item.title}</h3>
+                <section>
+                    <article>
+                    </article>
+                        <div>
+                            <img src = "${item.thumbnail}">
+                            <a href = "${item.url}"> 자세히보기 </a>
+                            ${item.author}        
+                            ${item.datetime}     
+                        </div>   
+                </section>
+            </div>`;
+          })
+          .join('');
+        document.getElementById("data-viewer").innerHTML = newsHTML;
+      };
+    </script>
+  </body>
+</html>

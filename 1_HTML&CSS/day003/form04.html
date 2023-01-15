@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/43cb3c60a4.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Sunflower:wght@300;500&display=swap');
+
+body{
+    background-color: beige;
+    font-family: sunflower;
+    line-height: 35px;
+}
+ 
+h2{
+    margin-left: 150px;
+    font-size: 30px;
+}
+    fieldset{
+        width: 400px;
+        font-size: 20px;
+        border: 5px outset;
+        border-radius: 10px;
+    }
+
+    .field01{
+        background-color: rgba(93, 166, 207, 0.342);
+    }
+
+    .field02{
+        background-color: rgba(93, 166, 207, 0.342);
+    }
+
+    .field03{
+        font-size: 16px;
+        background-color: rgba(230, 156, 121, 0.267);
+    }
+
+    legend{
+        font-size: 25px;
+        text-shadow: 1px 1px darkcyan;
+        
+    }
+
+    input{
+        background-color: rgba(221, 181, 169, 0.281);
+    border-radius: 5px;
+    margin-left: 15px;
+    border: 2px inset;
+    font-family: sunflower;
+    
+  }
+
+  textarea{
+    background-color: rgba(221, 181, 169, 0.281);
+    border-radius: 5px;
+    margin-left: 15px;
+    border: 2px inset;
+  }
+  
+  button{
+    font-family: sunflower;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-left: 15px;
+    border: 4px outset;
+
+  }
+    
+  div{
+    margin-left: 80px;
+  }
+
+</style>
+<body>
+    
+
+    <h2>상 품 주 문</h2>
+
+  <fieldset class="field01">
+        <legend>개 인 정 보</legend>
+    <table>
+        <tr>
+        <td><i class="fa-solid fa-user"></i> 이 름</td>
+        <td>:</td>
+        <td><input type="text" placeholder="여백 없이 입력" size="20">
+    </tr>
+    <tr>
+        <td><i class="fa-solid fa-phone"></i> 연락처</td>
+        <td>:</td>
+        <td><input type="text" placeholder="연락 가능한 번호" size="20"></td>
+    </tr>
+       
+    </table>
+    </fieldset>
+    <br>
+
+    <fieldset class="field02">
+        <legend>배 송 지 정 보</legend>
+<table>
+    <tr>
+        <td><i class="fa-solid fa-truck"></i> 주 소</td>
+        <td>:</td>
+        <td><input type="text" size="20"><br></td>
+    </tr>
+    <tr>
+        <td><i class="fa-solid fa-phone"></i> 전화번호</td>
+        <td>:</td>
+        <td> <input type="text" size="20"><br></td>
+    </tr>
+    <tr>
+        <td><i class="fa-solid fa-pen-to-square"></i> 메 모</td>
+        <td>:</td>
+        <td><textarea name="" id="" cols="30" rows="5"></textarea></td>
+    </tr>
+</table>
+   
+    </fieldset><br>
+
+    <fieldset class="field03">
+        <legend>주 문 정 보</legend>
+<table>
+    <tr>
+        <td><input type="checkbox"> 과테말라 안티구아 (100g)</td><td>&emsp;&emsp;<input type="number" value="0" size="" min="1" max="100">개<br></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"> 인도네시아 만델링 (100g)</td><td>&emsp;&emsp;<input type="number" value="0" size="" min="1" max="100">개<br></td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"> 탐라는도다(블렌딩) (100g)</td><td>&emsp;&emsp;<input type="number" value="0" size="" min="1" max="100">개<br></td>
+    </tr>
+</table>
+         
+         
+         
+        
+    </fieldset>
+<br>
+   <div> <button>주문하기</button> &nbsp;
+    <button>다시 작성</button></div>
+</body>
+</html>

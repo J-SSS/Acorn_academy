@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form input[type="number"]{
+        width: 180px;
+        height: 40px;
+        font-size: 25px;
+        text-align: center;
+        border: 1px solid green;
+    }
+
+    form input:in-range{
+        color: blue;
+        background-color: lightblue;
+    }
+
+    form input[type="email"]{
+        background-color: aqua;
+        width: 500px;
+        height: 50px;
+        font-size: 20px;
+        text-align: center;
+        border: 1px solid red;
+    }
+
+    form input:invalid{
+        color: red;
+        background-color: blue;
+        border: 1px;
+    }
+
+
+</style>
+<body>
+   <!-- <form action="">
+        <label for="num">좋아하는 숫자</label>
+        <input type="number" name="num" min="1" max="100" value="7">
+    </form> -->
+
+    <form action="">
+        <label for="mail">이메일</label>
+        <input type="email" name="mail" id="mail"><br><br>
+        <label for="mail2">이메일</label>
+        <input type="email" name="mail2" id="mail2"><br><br>
+    </form>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+       .container{
+        text-align: center;
+    }
+    #box{
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        margin-bottom: 40px;
+        display: inline-block;
+        transform-style:preserve-3d
+    }
+ 
+</style>
+
+<body>
+    <div class="container">
+        <div id="box">
+        
+        </div><br>
+    
+    <button id="btnTop">상</button>
+    <button id="btnBottom">하</button>
+    <button id="btnLeft">좌</button>
+    <button id="btnRight">우</button>
+
+    <!--<a href="#" id="btnLeft">좌</a>
+    <a href="#" id="btnRight">우</a>-->
+    </div>
+
+
+    <script>
+
+        const $btnLeft = document.querySelector("#btnLeft");
+        const $btnRight = document.querySelector("#btnRight");
+        const $btnTop = document.querySelector("#btnTop");
+        const $btnBottom = document.querySelector("#btnBottom");
+        const $box = document.querySelector("#box")
+       let num = 10
+       let num2 =10
+       
+
+        $btnLeft.addEventListener("click", () =>{
+          num+=10;
+          console.log(num)
+           
+            $box.style.transform = `rotateX(${num}deg)`;
+        })
+
+        $btnRight.addEventListener("click", () =>{
+          num+=10;
+          console.log(num)
+           
+            $box.style.transform = `rotateX(-${num}deg)`;
+        })
+
+        $btnTop.addEventListener("click", () =>{
+          num2 +=10;
+          console.log(num)
+           
+            $box.style.transform = `rotateY(-${num2}deg)`;
+        })
+
+
+        $btnBottom.addEventListener("click", () =>{
+          num2 +=10;
+          console.log(num)
+           
+            $box.style.transform = `rotateY(-${num2}deg)`;
+        })
+
+
+    </script>
+
+</body>
+</html>

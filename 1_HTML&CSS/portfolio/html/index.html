@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 개발자 장동일</title>
+    <script
+      src="https://kit.fontawesome.com/43cb3c60a4.js"
+      crossorigin="anonymous"
+    ></script></head
+  ><style>
+    @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Oswald:wght@500&family=Sunflower:wght@500&display=swap");
+    * {
+      font-family: Oswald;
+      margin: 0;
+    }
+
+    body {
+      background-image: url(../images/background10.png);
+      background-size: contain;
+    }
+
+    header {
+      background-color: #fffffff0;
+      font-size: 30px;
+      width: 100%;
+      height: 50px;
+      display: inline-flex;
+      justify-content: space-around;
+      line-height: 50px;
+      border-bottom: 2px solid gray;
+      position: fixed;
+    }
+    .header_logo,
+    .header_menu {
+      margin: 0px 20px 0px 20px;
+      
+    }
+    .header_logo{
+      margin-left: 60px;
+    }
+    .header_logo,
+    .header_menu, .header_title{
+      width: 33%;
+      
+    }
+    .header_title{
+      text-align: center;
+    }
+    .header_menu{
+      text-align: right;
+      visibility: hidden;
+    }
+    
+    .logo_t {
+      width: 32px;
+      height: 30px;
+      vertical-align: middle;
+    }
+
+    main {
+      width: 100%;
+      display: inline-flex;
+      margin-top: 50px;
+    }
+
+    nav {
+    
+      width: 5%;
+      min-height: 600px;
+      margin-right: 0px;
+      margin-top: 60px;
+      visibility: hidden;
+    }
+
+    section {
+      width: 95%;
+      height: 85vh;
+      border: 0px solid gray;
+      background-color: transparent;
+      margin-top: 20px;
+      margin-left: 5%;
+      border-radius: 50px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+     
+      
+    }
+
+    .about_tip {
+      position: absolute;
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 110px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .skills_tip {
+      position: absolute;
+
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 90px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      margin-top: 112px;
+    }
+
+    .portfolio_tip {
+      position: absolute;
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 110px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-top: 204px;
+    }
+
+    .etc_tip {
+      position: absolute;
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 90px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-top: 316px;
+    }
+
+   
+    .about_tip:hover,
+    .portfolio_tip:hover,
+    .skills_tip:hover,
+    .etc_tip:hover {
+      background-color: gray;
+    }
+
+    .back {
+      
+     
+            font-size: 40px;
+        margin-left: 20px;
+        width: 100%;
+    }
+    .title_box { /*입력창 테두리*/
+      border-top: 2px solid rgba(211, 211, 211, 0.747);
+      border-bottom: 2px solid rgba(211, 211, 211, 0.724);
+      background-color: rgba(211, 211, 211, 0.096);
+     
+    }
+
+    .blue {
+      color: rgba(0, 0, 255, 0.651);
+    }
+    .sky {
+      color: rgb(68, 186, 233);
+    }
+    .green {
+      color: green;
+      font-size: 40px;
+    }
+    .gray {
+      color: gray;
+      font-size: 35px;
+    }
+    .space {
+      display: inline-block;
+      position: absolute;
+      width: 4px;
+      height: 55px;
+      background-color: transparent;
+      animation: space 1s linear infinite;
+      animation-fill-mode: forwards;
+      margin: 0px;
+      padding: 0px;
+      animation-delay: 4s;
+    }
+    @keyframes space {
+      0% {
+        background-color: transparent;
+      }
+      20% {
+        background-color: gray;
+      }
+      100% {
+        background-color: gray;
+      }
+    }
+
+    .text-box {
+      position: absolute;
+      display: inline-block;
+    }
+    .text-box2 {
+      position: absolute;
+      display: inline-block;
+    }
+
+    .text_1 text {
+      font-family: Oswald;
+      font-size: 40px;
+      font-weight: bold;
+      fill: transparent;
+      stroke-dasharray: 326px;
+      animation: complete 0.1s linear;
+      animation-fill-mode: forwards;
+    }
+    .text_1 text:nth-child(1) {
+      animation-delay: 0.6s;
+    }
+    .text_1 text:nth-child(2) {
+      animation-delay: 1s;
+    }
+    .text_1 text:nth-child(3) {
+      animation-delay: 1.6s;
+    }
+    .text_1 text:nth-child(4) {
+      animation-delay: 2s;
+    }
+    .text_1 text:nth-child(5) {
+      animation-delay: 2.6s;
+    }
+    .text_1 text:nth-child(6) {
+      animation-delay: 3.2s;
+    }
+    .text_1 text:nth-child(7) {
+      animation-delay: 3.8s;
+    }
+
+    @keyframes complete {
+      0% {
+      }
+      70% {
+      }
+      98% {
+      }
+      100% {
+        fill: black;
+      }
+    }
+
+    .text_2 text {
+      font-family: Oswald;
+      font-weight: bold;
+      font-size: 40px;
+
+      fill: transparent;
+      stroke-dasharray: 326px;
+      animation: mid 0.1s linear;
+      animation-fill-mode: forwards;
+    }
+    
+
+    
+    .text_2 text:nth-child(1) {
+      animation-delay: 0s;
+    }
+    .text_2 text:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    .text_2 text:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+    .text_2 text:nth-child(4) {
+      /*웹*/
+      animation-delay: 0.6s;
+    }
+    .text_2 text:nth-child(5) {
+      animation-delay: 0.8s;
+    }
+    .text_2 text:nth-child(6) {
+      /*개*/
+      animation-delay: 1s;
+    }
+    .text_2 text:nth-child(7) {
+      animation-delay: 1.2s;
+    }
+    .text_2 text:nth-child(8) {
+      animation-delay: 1.4s;
+    }
+    .text_2 text:nth-child(9) {
+      /*발*/
+      animation-delay: 1.6s;
+    }
+    .text_2 text:nth-child(10) {
+      animation-delay: 1.8s;
+    }
+    .text_2 text:nth-child(11) {
+      /*자*/
+      animation-delay: 2s;
+    }
+    .text_2 text:nth-child(12) {
+      animation-delay: 2.2s;
+    }
+    .text_2 text:nth-child(13) {
+      animation-delay: 2.4s;
+    }
+    .text_2 text:nth-child(14) {
+      /*장*/
+      animation-delay: 2.6s;
+    }
+    .text_2 text:nth-child(15) {
+      animation-delay: 2.8s;
+    }
+    .text_2 text:nth-child(16) {
+      animation-delay: 3s;
+    }
+    .text_2 text:nth-child(17) {
+      /*동*/
+      animation-delay: 3.2s;
+    }
+    .text_2 text:nth-child(18) {
+      animation-delay: 3.4s;
+    }
+    .text_2 text:nth-child(19) {
+      animation-delay: 3.6s;
+    }
+    .text_2 text:nth-child(20) {
+      /*일*/
+      animation-delay: 3.8s;
+    }
+
+    @keyframes mid {
+      0% {
+        fill: black;
+      }
+      70% {
+        fill: black;
+      }
+      90% {
+        fill: black;
+      }
+      100% {
+        fill: transparent;
+      }
+    }
+    .title_end {
+      animation: title 8s step-start;
+      animation-fill-mode: forwards;
+    }
+    @keyframes title {
+      0% {
+        margin-left: 0px;
+      }
+      5% {
+        margin-left: 0px;
+      }
+      10% {
+        margin-left: 0px;
+      }
+      15% {
+        margin-left: 60px;
+      }
+      20% {
+        margin-left: 100px;
+      }
+      25% {
+        margin-left: 140px;
+      }
+      30% {
+        margin-left: 140px;
+      }
+      30% {
+        margin-left: 200px;
+      }
+      35% {
+        margin-left: 240px;
+      }
+      40% {
+        margin-left: 240px;
+      }
+      100% {
+        margin-left: 280px;
+      }
+    }
+    .h_l {
+      width: 100px;
+    
+    }
+a {
+  width: 100%;
+  height: 100vh;
+  background-color: transparent;
+  position: fixed;
+  left: 10px;
+  right: 10px;
+  z-index: 10;
+}
+  </style>
+  <body>
+    <header>
+      <div class="header_logo">
+        <img src="/images/logo.png" alt="" class="h_l" />
+        <!--<u><i class="fa-solid fa-braille"></i></u>-->
+  
+      </div>
+      <div class="header_title"></div>
+      <div class="header_menu">
+        <img class="logo_t" src="/images/t.svg" alt="" />&emsp;
+        <i class="fa-brands fa-github"></i>&emsp;
+        <i class="fa-regular fa-envelope"></i>&emsp;
+        <i class="fa-regular fa-comments"></i>&emsp;
+      </div>
+    </header>
+
+    <main>
+     <section>
+        <div class="back">
+          <span class="gray">01</span>&emsp;<br />
+          <span class="gray">02</span>&emsp;&#60;!<span class="blue"
+            >DOCTYPE</span
+          >
+          <span class="sky">html</span>&#62;
+          <br />
+          <span class="gray">03</span>&emsp;&nbsp;&#60;<span class="blue"
+            >html</span
+          >
+          <span class="sky">lang="ko"</span>&#62;
+          <br />
+          <span class="gray">04</span>&emsp;&emsp; &#60;<span class="blue"
+            >head</span
+          >&#62;
+          <br />
+          <div class="title_box">
+            <span class="gray">05</span>&emsp;&emsp;&emsp; &#60;<span
+              class="blue"
+              >title</span
+            >&#62;
+
+            <div class="text-box">
+              <div class="text-wrap">
+                <svg
+                  width="320"
+                  height="50"
+                  viewBox="0 0 320 50"
+                  class="text_1"
+                >
+                  <text x="0" y="80%">웹</text>
+                  <text x="60" y="80%">개</text>
+                  <text x="100" y="80%">발</text>
+                  <text x="140" y="80%">자</text>
+                  <text x="200" y="80%">장</text>
+                  <text x="240" y="80%">동</text>
+                  <text x="280" y="80%">일</text>
+                </svg>
+              </div>
+            </div>
+
+            <div class="text-box2">
+              <div class="text-wrap">
+                <svg
+                  width="320"
+                  height="50"
+                  viewBox="0 0 320 50"
+                  class="text_2"
+                >
+                  <text x="0" y="80%">ㅇ</text>
+                  <text x="0" y="80%">우</text>
+                  <text x="0" y="80%">웨</text>
+                  <text x="0" y="80%">웹</text>
+                  <text x="60" y="80%">ㄱ</text>
+                  <text x="60" y="80%">개</text>
+                  <text x="100" y="80%">ㅂ</text>
+                  <text x="100" y="80%">바</text>
+                  <text x="100" y="80%">발</text>
+                  <text x="140" y="80%">ㅈ</text>
+                  <text x="140" y="80%">자</text>
+                  <text x="200" y="80%">ㅈ</text>
+                  <text x="200" y="80%">자</text>
+                  <text x="200" y="80%">장</text>
+                  <text x="240" y="80%">ㄷ</text>
+                  <text x="240" y="80%">도</text>
+                  <text x="240" y="80%">동</text>
+                  <text x="280" y="80%">ㅇ</text>
+                  <text x="280" y="80%">이</text>
+                  <text x="280" y="80%">일</text>
+                </svg>
+              </div>
+            </div>
+
+            &emsp;
+            <span class="title_end">
+              <div class="space"></div>
+               &nbsp;&#60;&#47;<span class="blue">title</span>&#62;</span
+            >
+          </div>
+
+          <span class="gray">06</span>&emsp;&emsp;&#60;&#47;<span class="blue"
+            >head</span
+          >&#62;<br />
+          <span class="gray">07</span>&emsp;<br />
+          <span class="gray">08</span>&emsp;&emsp; &#60;<span class="blue"
+            >body</span
+          >&#62;<br />
+
+          <span class="gray">09</span> &emsp;&emsp;&emsp;
+          <span class="green">
+            &#60;!--여기에 슬로건 슬로건
+            <br />
+            <span class="gray">10</span> &emsp; &emsp;&emsp; 슬로건 슬로건 슬로건 슬로건 --&#62;</span
+          >
+          <br />
+          <span class="gray">11</span>&emsp; &emsp; &#60;&#47;<span class="blue"
+            >body</span
+          >&#62;
+          <br />
+          <span class="gray">12</span>&emsp; &nbsp;&#60;&#47;<span class="blue"
+            >html</span
+          >&#62; <br /><span class="gray">13</span> <br /><span class="gray"
+            >14</span
+          >
+          <br /><span class="gray">15</span> <br /><span class="gray">16</span>
+          <br /><span class="gray">17</span> <br /><span class="gray">18</span>
+          <br /><span class="gray">19</span> <br /><span class="gray">20</span>
+          <br /><span class="gray">21</span> <br /><span class="gray">22</span>
+         
+         
+   
+        </div>
+        <a href="about.html"><div class="link"></div></a>
+      </section>
+
+      <nav>
+        <div class="etc_tip">ETC</div>
+        <div class="portfolio_tip">PORTFOLIO</div>
+        <div class="skills_tip">SKILLS</div>
+        <div class="about_tip">ABOUT ME</div>
+      </nav>
+    </main>
+
+  
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    section{
+        display: flex;
+       /* justify-content:flex-start;*/
+        align-items:flex-start;
+        flex-direction: column;
+        
+    }
+    /* justify-content 속성
+    flex-end : 전체가 오른쪽 창 끝으로
+    flex-between : 적당한 공백 있으면서 정렬*/
+    
+    /*flex-direction 속성
+    column : 세로정렬*/
+
+    /*flex-direction과 justify-content를 조합해서 사용하면 가로세로를 조절할 수 있음*/
+    div{
+        border: 1px solid black;
+        width: 150px;
+        height: 150px;
+    }
+    .box1{
+        background-color: lightcoral;
+        
+    }
+    .box2{
+        background-color: lightcyan;
+        
+    }
+    .box3{
+        background-color: lightgray;
+        
+    }
+    .box4{
+        background-color: lawngreen;
+        
+    }
+    .box5{
+        background-color: lightsalmon;
+        
+    }
+</style>
+
+
+<body>
+    <section>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+</section>
+
+</body>
+</html>

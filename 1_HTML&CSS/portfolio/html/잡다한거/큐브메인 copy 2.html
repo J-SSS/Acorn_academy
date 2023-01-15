@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      src="https://kit.fontawesome.com/43cb3c60a4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Oswald:wght@500&family=Sunflower:wght@500&display=swap");
+    * {
+      font-family: Oswald;
+      margin: 0;
+      
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      background-color: rgba(0, 0, 0, 0.651);
+      background: radial-gradient(gray, rgba(0, 0, 0, 0.747));
+      height: 100%;
+      
+    }
+    .cube_box {
+      position: relative;
+      border: 5px dashed black;
+
+      width: 500px;
+      height: 500px;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(40deg) rotateY(40deg);
+      left: calc(50% - 250px);
+      top: calc(50% - 250px);
+      transition: 1s;
+      animation: rotates 6s ease-in-out infinite alternate;
+    }
+    
+    /*@keyframes rotates {
+      0% {
+        transform: rotateX(0) rotateY(0);
+      }
+      100% {
+        transform: rotateX(00deg) rotateY(00deg);
+      }}*/
+
+    .cube_box > div {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      font-size: 100px;
+      color: black;
+      text-align: center;
+      line-height: 250px;
+      font-weight: bolder;
+      border-radius: 1%;
+      opacity: 1;
+    }
+
+    .cube_1 {
+      background-color: gray;
+      transform: translate3d(0, 0, 125px);
+      left: 125px;
+      top: 125px;
+      animation: click 5s ease-in-out infinite alternate;
+      animation-delay: 1s;
+    }
+    @keyframes click {
+      0% {
+        transform: translate3d(0, 0, 125px);
+      }
+      50% {
+        opacity: 0.2;
+        transform: scale(0.1);
+        left: 0px;
+        left: 125px;
+        top: 125px;
+        border-radius: 50%;
+      }
+      100% {
+        
+        background-color: red;
+        transform: translate3d(0, 0, 0px);
+        left: 0px;
+        top: 0px;
+        scale: 0.9;
+      }
+    }
+
+    .cube_2 {
+      background-color: rgb(136, 119, 110);
+
+      transform: translate3d(0, 0, -125px);
+      left: 125px;
+      top: 125px;
+      animation: click2 5s ease-in-out infinite alternate;
+      animation-delay: 1s;
+    }
+
+    @keyframes click2 {
+      0% {
+        transform: translate3d(0, 0, -125px);
+        left: 125px;
+        top: 125px;
+      }
+      50% {
+        opacity: 0.2;
+        transform: scale(0.1);
+        left: 125px;
+        top: 125px;
+        border-radius: 50%;
+      }
+      100% {
+        background-color: orange;
+        transform: translate3d(0, 0, 0px);
+        left: 250px;
+        top: 0px;
+        scale: 0.9;
+      }
+    }
+
+    .cube_3 {
+      background-color: rgb(128, 124, 97);
+
+      transform: rotateX(90deg) translate3d(0, 0, 125px);
+      left: 125px;
+      top: 125px;
+      animation: click3 5s ease-in-out infinite alternate;
+      animation-delay: 1s;
+    }
+
+    @keyframes click3 {
+      0% {
+        transform: rotateX(90deg) translate3d(0, 0, 125px);
+        left: 125px;
+        top: 125px;
+      }
+      50% {
+        opacity: 0.2;
+        transform: scale(0.1);
+        left: 125px;
+        top: 125px;
+        border-radius: 50%;
+      }
+
+      100% {
+        background-color: yellow;
+        transform: rotateX(0deg) translate3d(0, 0, 0px);
+        left: 500px;
+        top: 0px;
+        scale: 0.9;
+      }
+    }
+    .cube_4 {
+      background-color: rgb(106, 129, 101);
+
+      transform: rotateX(90deg) translate3d(0, 0, -125px);
+      left: 125px;
+      top: 125px;
+      animation: click4 5s ease-in-out infinite alternate;
+      animation-delay: 1s;
+    }
+
+    @keyframes click4 {
+      0% {
+        transform: rotateX(90deg) translate3d(0, 0, -125px);
+        left: 125px;
+        top: 125px;
+      }
+      50% {
+        opacity: 0.2;
+        transform: scale(0.1);
+        left: 125px;
+        top: 125px;
+        border-radius: 50%;
+      }
+      100% {
+        background-color: green;
+        transform: rotateX(0deg) translate3d(0, 0, 0px);
+        left: 0px;
+        top: 250px;
+        scale: 0.9;
+      }
+    }
+
+    .cube_5 {
+      background-color: gray;
+
+      transform: rotateY(90deg) translate3d(0, 0, 125px);
+      left: 125px;
+      top: 125px;
+      animation: click5 5s ease-in-out infinite alternate;
+      animation-delay: 1s;
+    }
+
+    @keyframes click5 {
+      0% {
+        transform: rotateY(90deg) translate3d(0, 0, 125px);
+        left: 125px;
+        top: 125px;
+      }
+      50% {
+        opacity: 0.2;
+        transform: scale(0.1);
+        left: 125px;
+        top: 125px;
+        border-radius: 50%;
+      }
+      100% {
+        background-color: blue;
+        transform: rotateY(0deg) translate3d(0, 0, 0px);
+        left: 250px;
+        top: 250px;
+        scale: 0.9;
+      }
+    }
+
+    .cube_6 {
+      background-color: gray;
+
+      transform: rotateY(90deg) translate3d(0, 0, -125px);
+      left: 125px;
+      top: 125px;
+      animation: click6 5s ease-in-out infinite alternate;
+      animation-delay: 1s;
+    }
+
+    @keyframes click6 {
+      0% {
+        transform: rotateY(90deg) translate3d(0, 0, -125px);
+        left: 125px;
+        top: 125px;
+      }
+      50% {
+        opacity: 0.2;
+        transform: scale(0.1);
+        left: 125px;
+        top: 125px;
+        border-radius: 50%;
+      }
+      100% {
+        background-color: purple;
+        transform: rotateX(0deg) translate3d(0, 0, 0px);
+        left: 500px;
+        top: 250px;
+        scale: 0.9;
+      }
+    }
+
+    header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-weight: bold;
+      margin-bottom: -70px;
+    }
+
+    .header_logo {
+      margin-left: 50px;
+      margin-top: 30px;
+      font-size: 30px;
+      text-shadow: 3px 5px black;
+    }
+    .header_menu {
+      margin-right: 50px;
+      margin-top: 30px;
+      font-size: 30px;
+      text-shadow: 3px 5px black;
+    }
+    small{
+      color: rgba(0, 0, 0, 0.562);
+      text-shadow: 1px 1px gray;
+    }
+  </style>
+  <body>
+    <header>
+      <div class="header_logo">
+        <u></u> P O R T F O L I O <small><small> Dongil Jang</small></small>
+      </div>
+      <div class="header_menu"> <i class="fa-solid fa-house"></i>&emsp;
+        <i class="fa-brands fa-github"></i>&emsp;
+        <i class="fa-regular fa-envelope"></i>&emsp;
+        <i class="fa-regular fa-comments"></i>&emsp;</div>
+    </header>
+
+
+    <div class="cube_box">
+      <div class="cube_1"><u>1</u></div>
+      <div class="cube_2"><u>2</u></div>
+      <div class="cube_3"><u>3</u></div>
+      <div class="cube_4"><u>4</u></div>
+      <div class="cube_5"><u>5</u></div>
+      <div class="cube_6"><u>6</u></div>
+    </div>
+
+    <div class="cube_shadow"></div>
+
+    <div class="guide_top"></div>
+
+    <div class="guide_lef"></div>
+  </body>
+</html>

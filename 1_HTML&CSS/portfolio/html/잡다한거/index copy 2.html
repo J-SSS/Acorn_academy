@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      src="https://kit.fontawesome.com/43cb3c60a4.js"
+      crossorigin="anonymous"
+
+
+    ></script>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Oswald:wght@500&family=Sunflower:wght@500&display=swap");
+    * {
+      font-family: d2coding;
+      font-size: 40px;
+      line-height: 45px;
+      margin: 0;
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      background-color: rgba(211, 211, 211, 0.525);
+
+      background-image: url(../images/background10.png);
+
+      height: 100%;
+    }
+a{
+  color: black;
+}
+
+
+    .cube_box {
+      position: relative;
+      border: 0px dashed black;
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(30deg) rotateY(30deg);
+      left: calc(75% - 100px);
+      top: calc(50% - 100px);
+      transition: 1s;
+      animation: rotates 5s linear infinite;
+    }
+
+    @keyframes rotates {
+      0% {
+        transform: rotateX(0) rotateY(0);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg) ;
+      }
+    }
+
+    .cube_box:hover{
+     animation: rotates 5s linear infinite;
+      transform:translateX(100px)
+    }
+
+    .cube_box > div {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      font-size: 80px;
+      font-family: Oswald;
+
+      text-align: center;
+      line-height: 200px;
+      font-weight: bolder;
+      border-radius: 1%;
+      opacity: 0.9;
+    }
+
+    .cube_1 {
+      background-color: black;
+      transform: translate3d(0, 0, 100px);
+      color: white;
+    }
+    .cube_2 {
+      background-color: orange;
+      transform: translate3d(0, 0, -100px);
+    }
+    .cube_3 {
+      background-color: yellow;
+      transform: rotateX(90deg) translate3d(0, 0, 100px);
+    }
+    .cube_4 {
+      background-color: green;
+      transform: rotateX(90deg) translate3d(0, 0, -100px);
+    }
+    .cube_5 {
+      background-color: blue;
+      transform: rotateY(90deg) translate3d(0, 0, 100px);
+    }
+    .cube_6 {
+      background-color: red;
+      transform: rotateY(90deg) translate3d(0, 0, -100px);
+    }
+
+    header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-weight: bold;
+      margin-bottom: -70px;
+    }
+
+    .header_logo {
+      margin-left: 50px;
+      margin-top: 30px;
+      font-size: 30px;
+      text-shadow: 3px 5px black;
+    }
+    .header_menu {
+      margin-right: 50px;
+      margin-top: 30px;
+      font-size: 30px;
+      text-shadow: 3px 5px black;
+    }
+    small {
+      color: rgba(0, 0, 0, 0.562);
+      text-shadow: 1px 1px gray;
+    }
+
+    .pointer {
+      position: absolute;
+      left: 20%;
+      top: 10%;
+      color: black;
+      font-size: 60px;
+      transform: rotateZ(-30deg);
+      animation: pointe 0.4s linear infinite alternate;
+      text-shadow: 3px 2px gray;
+    }
+
+    @keyframes pointe {
+      0% {
+        left: 40%;
+        top: 70%;
+      }
+      100% {
+        left: 45%;
+        top: 65%;
+      }
+    }
+
+    /*가이드 */
+    /*
+    .guide_top {
+      position: absolute;
+      left: 50%;
+      top: 0%;
+      width: 0px;
+      height: 100%;
+      border: 1px dashed black;
+    }
+
+    .guide_lef {
+      position: absolute;
+
+      top: 50%;
+      width: 100%;
+      height: 0px;
+      border: 1px dashed black;
+    }
+*/
+    .back {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      font-size: 35px;
+      opacity: 0.8;
+      margin-left: 0px;
+      
+    }
+    .blue{
+      color: rgba(0, 0, 255, 0.651);
+    }
+    .sky{
+      color: rgb(68, 186, 233);
+    }
+    .green{
+      color: green;
+    }
+    .text-box {
+      position: absolute;
+            display: inline-block;
+         
+        }
+        .text-box2 {
+           position: absolute;
+           display: inline-block;
+        
+       }
+
+        .text_1 text {
+            font-family: d2coding;
+            font-size: 40px;
+            fill:transparent;
+            stroke-dasharray: 326px;
+            animation: complete 0.1s linear;
+            animation-fill-mode: forwards;
+        }
+        .text_1 text:nth-child(1) {
+            animation-delay: 0.6s;
+        }
+        .text_1 text:nth-child(2) {
+            animation-delay: 1s;
+        }
+        .text_1 text:nth-child(3) {
+            animation-delay: 1.6s;
+        }
+        .text_1 text:nth-child(4) {
+            animation-delay: 2.0s;
+        }
+        .text_1 text:nth-child(5) {
+            animation-delay: 2.6s;
+        }
+        .text_1 text:nth-child(6) {
+            animation-delay: 3.2s;
+        }
+        .text_1 text:nth-child(7) {
+            animation-delay: 3.8s;
+        }
+  
+        @keyframes complete {
+            0%   {
+                /*stroke:black;
+                stroke-width: 3px;
+                stroke-dashoffset: 326px;*/
+            }
+            70% {
+               /* fill: black*/
+            }
+            98% {
+               /* stroke:black;
+                stroke-width: 3px;*/
+            }
+            100% {
+                fill: black;
+/*stroke-dashoffset: 0px;*/
+            }
+        }
+
+        .text_2 text {
+            font-family: d2coding;
+            font-size: 40px;
+            fill:transparent;
+            stroke-dasharray: 326px;
+            animation: mid 0.1s linear;
+            animation-fill-mode: forwards;
+        }
+        .text_2 text:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .text_2 text:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .text_2 text:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        .text_2 text:nth-child(4) {/*웹*/
+            animation-delay: 0.6s;
+        }
+        .text_2 text:nth-child(5) {
+            animation-delay: 0.8s;
+        }
+        .text_2 text:nth-child(6) { /*개*/
+            animation-delay: 1s;
+        }
+        .text_2 text:nth-child(7) {
+            animation-delay: 1.2s;
+        }
+        .text_2 text:nth-child(8) {
+            animation-delay: 1.4s;
+        }
+        .text_2 text:nth-child(9) { /*발*/
+            animation-delay: 1.6s;
+        }
+        .text_2 text:nth-child(10) {
+            animation-delay: 1.8s;
+        }
+        .text_2 text:nth-child(11) { /*자*/
+            animation-delay: 2s;
+        }
+        .text_2 text:nth-child(12) {
+            animation-delay: 2.2s;
+        }
+        .text_2 text:nth-child(13) {
+            animation-delay: 2.4s;
+        }
+        .text_2 text:nth-child(14) { /*장*/
+            animation-delay: 2.6s;
+        }
+        .text_2 text:nth-child(15) {
+            animation-delay: 2.8s;
+        }
+        .text_2 text:nth-child(16) {
+            animation-delay: 3.0s;
+        }
+        .text_2 text:nth-child(17) { /*동*/
+            animation-delay: 3.2s;
+        }
+        .text_2 text:nth-child(18) {
+            animation-delay: 3.4s;
+        }
+        .text_2 text:nth-child(19) {
+            animation-delay: 3.6s;
+        }
+        .text_2 text:nth-child(20) { /*일*/
+            animation-delay: 3.8s;
+        }
+  
+        @keyframes mid {
+            0%   {
+              fill: black;
+            }
+            70% {
+              fill: black;
+            }
+            90% {
+              fill: black;
+            }
+            100% {
+                fill: transparent;
+
+            }
+        }
+.title_end{
+  animation: title 8s step-start;
+  animation-fill-mode: forwards;
+}
+@keyframes title{
+  0%{
+    margin-left: 0px;
+  }
+  5%{
+    margin-left: 0px;
+
+  }
+  10%{
+    margin-left: 0px;
+
+  }
+  15%{
+    margin-left: 60px;
+
+  }
+  20%{
+    margin-left: 100px;
+
+  }
+  25%{
+    margin-left: 140px;
+
+  }
+  30%{
+    margin-left: 140px;
+
+  }
+  30%{
+    margin-left: 200px;
+
+  }
+  35%{
+    margin-left: 240px;
+
+  }
+  40%{
+    margin-left: 240px;
+
+  }
+  100%{
+    margin-left: 280px;
+
+  }
+
+}
+.title_box{
+  border-top: 3px solid rgba(211, 211, 211, 0.747);
+  border-bottom: 3px solid rgba(211, 211, 211, 0.724);
+}
+
+.gray{
+  color: gray;
+  font-size: 30px;
+  
+}
+.space{
+  display: inline-block;
+  position: absolute;
+  width: 4px;
+  height: 50px;
+  background-color: transparent;
+  animation: space 1s linear infinite;
+  animation-fill-mode: forwards;
+  margin: 0px;
+  padding: 0px;
+  animation-delay: 4s;
+}
+@keyframes space{
+  0%{
+    background-color: transparent;
+  }
+  20%{
+    background-color: gray;
+  }
+  100%{
+    background-color: gray;
+  }
+}
+  </style>
+  <body>
+    
+    <div class="back">
+      <span class="gray">01</span>&emsp;<br>
+      <span class="gray">02</span>&emsp;&#60;!<span class="blue">DOCTYPE</span> <span class="sky">html</span>&#62;
+      <br>
+      <span class="gray">03</span>&emsp;&nbsp;&#60;<span class="blue">html</span> <span class="sky">lang="ko"</span>&#62;
+      <br>
+      <span class="gray">04</span>&emsp;&emsp; &#60;<span class="blue">head</span>&#62;
+      <br>
+      <div class="title_box">
+        <span class="gray">05</span>&emsp;&emsp;&emsp; &#60;<span class="blue">title</span>&#62; 
+      
+    
+      <div class="text-box">
+        <div class="text-wrap">
+            <svg width=320 height=50 viewBox="0 0 320 50" class="text_1">
+              <text x="0" y="80%">웹</text>
+              <text x="60" y="80%">개</text>
+                <text x="100" y="80%">발</text>
+                <text x="140" y="80%">자</text>
+                <text x="200" y="80%">장</text>
+                <text x="240" y="80%">동</text>
+                <text x="280" y="80%">일</text>
+            </svg>
+        </div>   
+    </div>
+
+
+    <div class="text-box2">
+      <div class="text-wrap">
+          <svg width=320 height=50 viewBox="0 0 320 50" class="text_2">
+            <text x="0" y="80%">ㅇ</text>
+            <text x="0" y="80%">우</text>
+            <text x="0" y="80%">웨</text>
+            <text x="0" y="80%">웹</text>
+            <text x="60" y="80%">ㄱ</text>
+            <text x="60" y="80%">개</text>
+              <text x="100" y="80%">ㅂ</text>
+              <text x="100" y="80%">바</text>
+              <text x="100" y="80%">발</text>
+              <text x="140" y="80%">ㅈ</text>
+              <text x="140" y="80%">자</text>
+              <text x="200" y="80%">ㅈ</text>
+              <text x="200" y="80%">자</text>
+              <text x="200" y="80%">장</text>
+              <text x="240" y="80%">ㄷ</text>
+              <text x="240" y="80%">도</text>
+              <text x="240" y="80%">동</text>
+              <text x="280" y="80%">ㅇ</text>
+              <text x="280" y="80%">이</text>
+              <text x="280" y="80%">일</text>
+          </svg>
+      </div>   
+  </div>
+
+  &emsp;
+   <span class="title_end"> <div class="space"></div>&nbsp;&#60;&#47;<span class="blue">title</span>&#62;</span> </div>
+      
+      <span class="gray">06</span>&emsp;&emsp;&#60;&#47;<span class="blue">head</span>&#62;<br />
+      <span class="gray">07</span>&emsp;<br>
+      <span class="gray">08</span>&emsp;&emsp; &#60;<span class="blue">body</span>&#62;<br />
+      
+      <span class="gray">09</span> &emsp;&emsp;&emsp; <span class="green"> &#60;!--여기다가 그럴듯한
+        <br>
+        <span class="gray">10</span> &emsp; &emsp;&emsp;  슬로건 같은거 넣을 예정임 --&#62;</span>
+      <br>
+      <span class="gray">11</span>&emsp; &emsp; &#60;&#47;<span class="blue">body</span>&#62;
+      <br />
+      <span class="gray">12</span>&emsp; &nbsp;&#60;&#47;<span class="blue">html</span>&#62;
+      <br><span class="gray">13</span>
+      <br><span class="gray">14</span>
+      <br><span class="gray">15</span>
+      <br><span class="gray">16</span>
+      <br><span class="gray">17</span>
+      <br><span class="gray">18</span>
+      <br><span class="gray">19</span>
+
+    </div>
+
+    <div class="pointer">
+      Mark up! <i class="fa-regular fa-hand-point-right"></i>
+    </div>
+    <a href="main.html">
+      <div class="cube_box">
+      <div class="cube_1">HTML</div>
+      <div class="cube_2">Js</div>
+      <div class="cube_3">CSS</div>
+      <div class="cube_4">G</div>
+      <div class="cube_5">B</div>
+      <div class="cube_6">R</div>
+    </div></a>
+
+  
+    <div class="cube_shadow"></div>
+
+    <div class="guide_top"></div>
+
+    <div class="guide_lef"></div>
+
+
+ 
+  </body>
+</html>

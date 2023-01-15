@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+form { 
+    text-align: center;
+}
+fieldset{
+    margin: 20px auto;
+    padding: 20px 40px 20px 40px;
+    border: 1px solid black;
+}
+
+legend{
+    font-size: 22px;
+    color: gray;
+    text-align: left;
+    padding-right: 10px;
+    letter-spacing: 1px;
+}
+input:nth-of-type(4){ /*4번째 자식요소*/
+    margin-left: 20px
+}
+
+input:default+label{ /*input요소 체크박스나 라디오버튼 기본입력요소 label 선택*/
+    color: magenta;
+}
+
+input:checked+label{ /*input요소 체크박스나 라디오버튼 체크된요소의 label 선택l*/
+    color: red;
+}
+
+#input3 input:enabled+label{ /*input요소 체크박스나 라디오버튼 활성화된요소의 label 선택*/
+    color: rgb(150, 189, 135);
+}
+
+#input3 input:disabled+label{ /*input요소 체크박스나 라디오버튼 비활성화된요소의 label 선택*/
+    color: rgb(4, 0, 255);
+}
+
+#signup input[required] /*필수입력요소에 적용*/
+
+#signup input[readonly] /*읽기전용. 테두리삭제됨*/
+
+
+</style>
+<body>
+    <form action="">
+    
+    <fieldset id="input1">
+        <legend>[예제1] DEFAULT</legend>
+        
+        <input type="checkbox" id="idsavechk1" value="아이디저장" name="idsave">
+        <label for="idsavechk1">아이디저장</label>
+        
+        <input type="checkbox" id="autosavechk1" name="autosave" value="자동로그인">
+        <label for="autosavechk1">자동로그인</label>
+        <input type="checkbox" id="secconnectchk1" value="보안접속" name="secconnect">
+        <label for="secconnectchk1">보안접속</label>
+        <input type="radio" id="travelchk1" name="chek" value="여행">
+        <label for="travelchk1">여행</label>
+        <input type="radio" id="exercisechk1" name="chek" value="운동">
+        <label for="exercisechk1">운동</label>
+    </fieldset>
+<br>
+
+<fieldset id="input2">
+    <legend>[예제2] DEFAULT & CHECKED</legend>
+    
+    <input type="checkbox" id="idsavechk2" value="아이디저장" name="idsave" checked>
+    <label for="idsavechk2">아이디저장</label>
+    
+    <input type="checkbox" id="autosavechk2" name="autosave" value="자동로그인" checked>
+    <label for="autosavechk2">자동로그인</label>
+    <input type="checkbox" id="secconnectchk2" value="보안접속" name="secconnect">
+    <label for="secconnectchk2">보안접속</label>
+    <input type="radio" id="travelchk2" name="chek" value="여행">
+    <label for="travelchk2">여행</label>
+    <input type="radio" id="exercisechk2" name="chek" value="운동" checked>
+    <label for="exercisechk2">운동</label>
+</fieldset>
+<br>
+
+<fieldset id="input3">
+    <legend>[예제1] ENABLED DISABLED</legend>
+    
+    <input type="checkbox" id="idsavechk3" value="아이디저장" name="idsave" enabled>
+    <label for="idsavechk3">아이디저장</label>
+    
+    <input type="checkbox" id="autosavechk3" name="autosave" value="자동로그인" disabled>
+    <label for="autosavechk3">자동로그인</label>
+    <input type="checkbox" id="secconnectchk3" value="보안접속" name="secconnect" disabled>
+    <label for="secconnectchk3">보안접속</label>
+    <input type="radio" id="travelchk3" name="chek" value="여행"enabled>
+    <label for="travelchk3">여행</label>
+    <input type="radio" id="exercisechk3" name="chek" value="운동" enabled>
+    <label for="exercisechk3">운동</label>
+</fieldset>
+<br>
+</form>
+
+
+</body>
+</html>

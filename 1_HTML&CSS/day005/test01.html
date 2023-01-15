@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gothic+A1:wght@300&family=Gugi&family=Nanum+Gothic+Coding&family=Noto+Sans+KR:wght@500;700&family=Sunflower:wght@300;500&display=swap');
+
+    *{
+        box-sizing: border-box;
+        font-family: noto sans kr;
+        background-color: rgb(0, 0, 0);
+        color: white;
+    }/*
+    border-box :테두리까지 포함해서 너비값을 지정한다
+    content-box가 기본값으로 설정돼있음*/
+    div{
+        width: 150px;
+        height: 80px;
+        border: 1px solid gray;
+        margin: 10px;
+        text-align: center;
+        font-size: 15px;
+        padding: 15px;
+        display: inline-block;
+        border-radius: 5px;
+       
+        /*
+        inline
+        block
+        inline-block : 인라인과 블럭요소 같이 사용
+        */
+    }
+  
+    .box1{
+        border: solid 5px gray;
+        border-color: red;
+    }    
+    
+    .box2{
+        border: dotted 5px gray;
+        border-color: orange;
+    }
+
+    .box3{
+        border: dashed 5px gray;
+        border-color: rgb(255, 255, 0);
+    }
+
+    .box4{
+        border: double 5px gray;
+        border-color: greenyellow;
+    }
+
+    .box5{
+        border: groove 15px gray;
+        border-color:blue;
+    }
+
+    .box6{
+        border: ridge 15px gray;
+        border-color: rgb(97, 97, 224)  ;
+    }
+
+
+    .box7{
+        border: inset 15px gray;
+        border-color: gray;
+    }    
+    
+    .box8{
+        border: outset 15px gray;
+        border-color: purple;
+    }
+
+    .box9{
+        border: solid  white;
+        border-width: thick;
+    }
+
+    .box10{
+        border: solid  white;
+        border-width: thick thin;
+    }
+
+    .box11{
+        border: solid  white;
+        border-width: thick thin  thick;
+    }    
+    
+    .box12{
+        border: solid  white;
+        border-width: thick thin thick thick;
+    }
+    /* 4개를 입력 할 때 적용순서는 margin과 같음*/
+
+    .box13{
+        border-bottom-left-radius: 100%;
+        border-top-right-radius: 100%;
+        border-top-left-radius: 100%;
+        border-bottom-right-radius: 10%;
+    }
+   
+
+
+
+</style>
+
+
+<body>
+    
+
+    <div class="box1"><span>실 선</span> <br>(solid)</div>
+    <div class="box2">점 선 <br>(dotted)</div>
+    <div class="box3">점 선 <br>(dashed)</div>
+    <div class="box4">실 선 <br>(double)</div>
+
+    <br>
+
+    <div class="box9">굵 기 <br> (전체)</div>
+    <div class="box10">굵 기 <br> (상하/좌우)</div>
+    <div class="box11">굵 기 <br> (상/좌우/하)</div>
+    <div class="box12">굵 기 <br> (상/좌/우/하)</div>
+    
+
+    <br>
+
+    <div class="box5">groove</div>
+    <div class="box6">ridge</div>
+    <div class="box7">inset</div>
+    <div class="box8">outset</div>
+
+    <br>
+
+    
+        <img src="../images/귤.jpg" alt="" class="box13">
+    
+
+</body>
+</html>

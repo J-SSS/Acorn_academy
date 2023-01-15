@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이미지 맵 직사각형 영역 생성하기</title>
+</head>
+<body>
+    <!--shape 구역 형태 지정 : rect(사각형), circle(원형)-->
+    <!--coords 좌상 모서리 xy값과 우하 모서리 xy값 입력(x,y,x,y)-->
+    <!--coords 원형인경우 중심좌표와 반지름값(x,y,r)-->
+    <div>
+        <div>
+            <img src="/images/restaurant-img4.jpg" alt="" width="744" height="710" usemap="#rect2map">
+            <map name="rect2map">
+                <area shape="rect" coords="21,191,350,594" href="https://naver.com" alt="">
+                <area shape="rect" coords="345,90,715,518" href="https://daum.net" alt="">
+                <area shape="circle" coords="540,50,40" href="https://google.com" alt="">
+                <area shape="circle" coords="395,608,70" href="https://google.com" alt="">
+            </map>
+            
+        </div>
+    </div>
+
+    <div>
+        <img src="/images/map.gif" alt="" usemap="#testmap">
+        <map name="testmap">
+            <area shape="circle" coords="215,52,35" href="https://google.com" alt="">
+
+        </map>
+    </div>
+</body>
+</html>

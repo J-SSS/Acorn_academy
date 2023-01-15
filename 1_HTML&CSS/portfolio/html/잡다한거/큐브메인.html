@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script src="https://kit.fontawesome.com/43cb3c60a4.js" crossorigin="anonymous"></script>
+
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Oswald:wght@500&family=Sunflower:wght@500&display=swap");
+    * {
+      font-family: Oswald;
+      margin: 0;
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      background-color: white;
+
+      height: 100%;
+    }
+    .cube_box {
+      position: relative;
+      border: 5px dashed black;
+      border-radius: 50%;
+
+      width: 250px;
+      height: 250px;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(deg) rotateY(deg);
+      left: calc(50% - 125px);
+      top: calc(50% - 125px);
+      transition: 1s;
+      animation: rotates 5s linear infinite;
+    }
+
+    @keyframes rotates {
+      0% {
+        transform: rotateX(0) rotateY(0);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    .cube_box > div {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      font-size: 100px;
+      color: white;
+      text-align: center;
+      line-height: 250px;
+      font-weight: bolder;
+      border-radius: 20%;
+      opacity: 0.9;
+    }
+
+    .cube_1 {
+      background-color: rgba(255, 0, 0, 0.404);
+      transform: translate3d(0, 0, 125px);
+    }
+    .cube_2 {
+      background-color: rgba(255, 68, 0, 0.39);
+      transform: translate3d(0, 0, -125px);
+    }
+    .cube_3 {
+      background-color: rgba(255, 255, 0, 0.397);
+      transform: rotateX(90deg) translate3d(0, 0, 125px);
+    }
+    .cube_4 {
+      background-color: rgba(0, 128, 0, 0.397);
+      transform: rotateX(90deg) translate3d(0, 0, -125px);
+    }
+    .cube_5 {
+      background-color: rgba(0, 0, 255, 0.466);
+      transform: rotateY(90deg) translate3d(0, 0, 125px);
+    }
+    .cube_6 {
+      background-color: rgba(128, 0, 128, 0.377);
+      transform: rotateY(90deg) translate3d(0, 0, -125px);
+    }
+
+    header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-weight: bold;
+      margin-bottom: -70px;
+    }
+
+    .header_logo {
+      margin-left: 50px;
+      margin-top: 30px;
+      font-size: 30px;
+    }
+    .header_menu {
+      margin-right: 50px;
+      margin-top: 30px;
+      font-size: 30px;
+    }
+
+.pointer{
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    color: white;
+    font-size: 60px;
+    transform:rotateZ(30deg);
+    animation: pointe 0.4s linear infinite alternate;
+}
+
+@keyframes pointe {
+    0% {
+    left: 20%;
+    top: 20%;
+  }
+  100% {
+    left: 25%;
+    top: 25%;
+}
+}
+
+
+    /*가이드 */
+
+    .guide_top {
+      position: absolute;
+      left: 50%;
+      top: 0%;
+      width: 0px;
+      height: 100%;
+      border: 1px dashed white;
+    }
+
+    .guide_lef {
+      position: absolute;
+
+      top: 50%;
+      width: 100%;
+      height: 0px;
+      border: 1px dashed white;
+    }
+
+    .cube_shadow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(black, gray);
+      left: calc(50% - 200px);
+      top: 55%;
+      opacity: 0.3;
+      border-radius: 50%;
+      transform-style: preserve-3d;
+      transform: perspective(300px) rotateY(00deg) rotateX(70deg);
+    }
+  </style>
+  <body>
+    <header>
+      <div class="header_logo">
+        <u></u> P O R T F O L I O <small><small> 장 동 일</small></small>
+      </div>
+      <div class="header_menu">icon1 icon2 icon3</div>
+    </header>
+
+    <div class="pointer">
+        <i class="fa-regular fa-hand-point-right"></i></i>
+    </div>
+
+    <div class="cube_box">
+      <div class="cube_1">?</div>
+      <div class="cube_2">?</div>
+      <div class="cube_3">?</div>
+      <div class="cube_4">?</div>
+      <div class="cube_5">?</div>
+      <div class="cube_6">?</div>
+    </div>
+
+    <div class="cube_shadow"></div>
+
+    <div class="guide_top"></div>
+
+    <div class="guide_lef"></div>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <tr>
+        <img src="" alt="">
+        <th></th>
+        <td></td>
+    </tr>
+<ul class="list">
+    <li><a href="https://naver.com">item1</a></li>
+    <li><a href="#">item2</a></li>
+    <li><a href="#">item3</a></li>
+    <li><a href="#">item4</a></li>
+</ul>
+
+<script>
+    const list = document.querySelectorAll(".list li")
+
+    for (let el of list) { //el은 변수명, (for of문) for문 in
+        el.addEventListener("click", e =>{
+            e.preventDefault();
+            console.log(e.currentTarget.innerText);
+        }
+        )
+    }
+document.g
+    //currentTarget : 선택한 텍스트를 불러온다.
+    //텍스트내용 변경하고자 할 때
+    //선택자. innerText = "변경할 텍스트"
+</script>
+
+</body>
+</html>

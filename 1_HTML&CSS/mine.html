@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 추첨기</title>
+</head>
+<body>
+    <fieldset>
+        <input type="number" placeholder="가로크기" id="hor">
+        <input type="number" placeholder="세로크기" id="ver">
+        <input type="number" placeholder="지뢰갯수" id="mine">
+        
+        <button id="start">시작하기</button>
+    <table id="table">
+        <tbody></tbody>
+    </table>
+    <id id="result"></id>
+
+<script>  //ㅡㅡㅡㅡㅡ지뢰판 만들기ㅡㅡㅡㅡㅡ
+//pareInt() : string을 number 타입으로 바꾸는 함수임
+
+const tbody = document.querySelector('#table tbody')
+let dataSet = [];
+let stopFlag = false;
+let openedOne = 0;
+
+//딕셔너리를 만들어서 데이터를 한번에 정리한다
+
+const codeTable = {
+    open : -1,
+    question : -2,
+    flag : -3,
+    mineFlag : -4,
+    questionMine : -5,
+    mine : 1,
+    ready : 0,
+}
+//
+document.querySelector('#start').addEventListener('click', function() {
+    //화면 초기화
+    tbody.innerHTML = '';
+    dataSet = [];
+    let dataSet = [];
+    let stopFlag = false;
+    let openedOne = 0;
+    //입력값을 넘버타입으로 바꾸는 함수
+    document.querySelector('#result').textContent = '';
+    const hor = parseInt(document.querySelector('#hor').value);
+    const ver = parseInt(document.querySelector('#ver').value);
+    const mine = parseInt(document.querySelector('#mine').value);
+    //지뢰 뽑기
+
+    let candidates = Array(hor * ver).fill().map(function(num, index) {
+        return num = index;
+    });
+
+    //숫자 섞어서 지뢰배치
+    let mixedNum = [];
+    while (candidates.length > hor * ver - mine) {
+        let randomNum = candidates.splice(Math.floor(math.random() * candidates.length) ,1)[0];
+        mixedNum.push(randomNum);
+    }
+
+    //데이터를 화면에 시뮬레이션
+
+    for (let i = 0; i < ver; i += i) {
+        let arr = [];
+        dataSet.push(arr);
+        let tr = document.createElement('tr');
+        for(let j = 0; j < hor ; j+=1) {
+            arr.push(codeTable.ready);
+            let td = document.createElement('td');
+            td.addEventListener('contextmenu', function(e) {
+                e.preventDefault();
+
+                if(stopFlag){
+                    return;
+                }
+
+
+                let parentTr = e.currentTarget.parentNode;
+                let parentTbody = e.currentTarget.parentNode.parentNode;
+
+
+                let rowSpot = Array.prototype.indexOf.call(parentTbody.children, tr);
+                        let colSpot = Array.prototype.indexOf.call(parentTr.children, e.currentTarget);
+
+
+                        if (e.currentTarget.textContent === '' || e.currentTarget.textContent === 'X') {
+                            e.currentTarget.textContent = '!';
+                            e.currentTarget.classList.add('flag');
+                            if (dataSet[rowSpot][colSpot] === codeTable.mine) {
+                                dataSet[rowSpot][colSpot] = codeTable.mineFlag;
+                            } else {
+                                dataSet[rowSpot][colSpot] = codeTable.flag;
+                            }
+                        } else if (e.currentTarget.textContent === '!') {
+                            e.currentTarget.textContent = '?';
+                            e.currentTarget.classList.remove('flag');
+                            e.currentTarget.classList.add('question');
+                            //dataSet[rowSpot][colSpot] = '?';
+                            if (dataSet[rowSpot][colSpot] === codeTable.mineFlag) {
+                                dataSet[rowSpot][colSpot] = codeTable.questionMine;
+                            } else {
+                                dataSet[rowSpot][colSpot] = codeTable.question;
+                            }
+                        } else if (e.currentTarget.textContent === '?') {
+                            e.currentTarget.classList.remove('question');
+                            if (dataSet[rowSpot][colSpot] === codeTable.questionMine) {
+                                e.currentTarget.textContent = 'X';
+                                dataSet[rowSpot][colSpot] = codeTable.mine;
+                            } else {
+                                e.currentTarget.textContent = '';
+                                dataSet[rowSpot][colSpot] = codeTable.ready;
+                            }
+                        }
+
+            });
+            td.addEventListener('click', function(e) {
+                        if (stopFlag) {
+                            return; //return; 에서 함수 중단
+                        }
+                        let parentTr = e.currentTarget.parentNode;
+                        let parentTbody = e.currentTarget.parentNode.parentNode;
+                        let rowSpot = Array.prototype.indexOf.call(parentTbody.children, tr);
+                        let colSpot = Array.prototype.indexOf.call(parentTr.children, e.currentTarget);
+                        if ([codeTable.open, codeTable.flag, codeTable.mineFlag, codeTable.questionMine, codeTable.question].includes(dataSet[rowSpot][colSpot])) {
+                            return;
+                        }
+
+                        e.currentTarget.classList.add('opened');
+                        openedOne += 1;
+
+                        if (dataSet[rowSpot][colSpot] === codeTable.mine) {
+                            e.currentTarget.textContent = '펑'
+                            document.querySelector('#result').textContent = '실패하였습니다. ㅠ'
+                            //게임을 중단 시키기위해 stopFlag
+                            stopFlag = true;
+                        } else {
+                            //클릭한 칸을 둘러싸고 있는 8칸안에 지뢰('X')가 몇개인지 알려줌
+                            //1. 주위 8칸을 배열이 담기
+                            //2. 배열에서 filter로 지뢰가 들은 칸의 개수 찾기
+                            //여기서 문제점    : first row, last row가 undefined error 뜸 -> 이유 배열에 -1이 있으면 안되기 떄문에
+                            //                            let mineSet = [
+                            //                                dataSet[rowSpot - 1][colSpot - 1], dataSet[rowSpot - 1][colSpot], dataSet[rowSpot - 1][colSpot + 1],
+                            //                                dataSet[rowSpot][colSpot - 1], dataSet[rowSpot][colSpot + 1],
+                            //                                dataSet[rowSpot + 1][colSpot - 1], dataSet[rowSpot + 1][colSpot], dataSet[rowSpot + 1][colSpot + 1],
+                            //                            ]
+                            let mineSet = [
+                                //dataSet[rowSpot - 1][colSpot - 1], dataSet[rowSpot - 1][colSpot], dataSet[rowSpot - 1][colSpot + 1],
+                                dataSet[rowSpot][colSpot - 1], dataSet[rowSpot][colSpot + 1],
+                                //dataSet[rowSpot + 1][colSpot - 1], dataSet[rowSpot + 1][colSpot], dataSet[rowSpot + 1][colSpot + 1],
+                            ]
+                            //push로 재배열
+                            //                            if(dataSet[rowSpot-1]) {
+                            //                               mineSet.push(dataSet[rowSpot - 1][colSpot - 1], dataSet[rowSpot - 1][colSpot], dataSet[rowSpot - 1][colSpot + 1]);
+                            //                               }
+                            //                            if(dataSet[rowSpot+1]) {
+                            //                               mineSet.push(dataSet[rowSpot + 1][colSpot - 1], dataSet[rowSpot + 1][colSpot], dataSet[rowSpot + 1][colSpot + 1]);
+                            //                               }
+
+                            //concat으로 재배열 concat은 기존의 배열이 변경하는게 아니고, 새로운 배열을 만든다.
+                            if (dataSet[rowSpot - 1]) {
+                                mineSet = mineSet.concat(dataSet[rowSpot - 1][colSpot - 1], dataSet[rowSpot - 1][colSpot], dataSet[rowSpot - 1][colSpot + 1]);
+                            }
+                            if (dataSet[rowSpot + 1]) {
+                                mineSet = mineSet.concat(dataSet[rowSpot + 1][colSpot - 1], dataSet[rowSpot + 1][colSpot], dataSet[rowSpot + 1][colSpot + 1]);
+                            }
+                            //여기서 주의 mineSet.filter()후 mineSet original Array는 변함없고, return된 배열은 새 배열 다른 변수에 넣어주어야함
+                            let mineQty = mineSet.filter(function(el) {
+                                //return el === codeTable.mine;
+                                //return el === (codeTable.mine || codeTable.mineFlag || codeTable.questionMine);
+                                return [codeTable.mine, codeTable.mineFlag, codeTable.questionMine].includes(el);
+                            });
+                            console.log(mineQty.length);
+                            //A || B;
+                            //조건문같은 것에서 A의 값이 거짓: 0, '', undefined, null, false, NaN일 경우
+                            //B 값을 써라.
+                            // 0의 값을 공란으로 만들어 주기 위해 사용
+                            e.currentTarget.textContent = mineQty.length || '';
+                            dataSet[rowSpot][colSpot] = codeTable.open;
+                            if (mineQty.length === 0) {
+                                console.log('주변칸을 엽니다.');
+                                //클릭한 칸의 지뢰개수가 0일 때, 주변 8칸 동시 오픈(재귀함수=반복문을 함수로 표현하는 방법)
+                                //주변칸들을 모아 배열로 만들기
+                                let clickAround = [];
+                                if (tbody.children[rowSpot - 1]) {
+                                    clickAround = clickAround.concat([
+                                        tbody.children[rowSpot - 1].children[colSpot - 1],
+                                        tbody.children[rowSpot - 1].children[colSpot],
+                                        tbody.children[rowSpot - 1].children[colSpot + 1],
+                                    ]);
+                                }
+                                clickAround = clickAround.concat([
+                                    tbody.children[rowSpot].children[colSpot - 1],
+                                    tbody.children[rowSpot].children[colSpot + 1],
+                                ]);
+                                if (tbody.children[rowSpot + 1]) {
+                                    clickAround = clickAround.concat([
+                                        tbody.children[rowSpot + 1].children[colSpot - 1],
+                                        tbody.children[rowSpot + 1].children[colSpot],
+                                        tbody.children[rowSpot + 1].children[colSpot + 1],
+                                    ]);
+                                }
+
+                                //clickAround.filter((v) => !!v); //배열에서 undefined, null, 빈문자열을 제거하는 코드
+                                //클릭한 칸의 지뢰개수가 0일때, 주변 8칸을 열때 forEach()로 또다시 클릭
+                                //함수안에서 클릭 실행을 계속 시킴
+                                //                                clickAround.filter(function(el) {
+                                //                                    return !!el;
+                                //                                }).forEach(function(around) {
+                                //                                    around.click();
+                                //                                });
+
+                                //리팩토링
+                                //위의 코드로 이미 오픈된 칸을 또 오픈하려고 하다보니 시간이 지연되고 비효율적
+                                //dataset을 이용하여 dataset을 한번 연 칸은 1로 설정해둠 
+                                //                                dataSet[rowSpot][colSpot] = 1;
+                                //                                clickAround.filter(function(el) {
+                                //                                    return !!el;
+                                //                                }).forEach(function(around) {
+                                //                                    let parentTr = around.parentNode;
+                                //                                    let parentTbody = around.parentNode.parentNode;
+                                //                                    let rowSpot = Array.prototype.indexOf.call(parentTbody.children, tr);
+                                //                                    let colSpot = Array.prototype.indexOf.call(parentTr.children, around);
+                                //                                    if(dataSet[rowSpot][colSpot] !== 1) {
+                                //                                        around.click();
+                                //                                       }                       
+                                //                                });
+
+
+                                clickAround.filter(function(el) {
+                                    return el = !!el;
+                                }).forEach(function(around) {
+                                    let aroundTr = around.parentNode;
+                                    let aroundTbody = around.parentNode.parentNode;
+                                    let aroundRow = Array.prototype.indexOf.call(aroundTbody.children, tr);
+                                    let aroundCol = Array.prototype.indexOf.call(aroundTr.children, around);
+                                    if (dataSet[aroundRow][aroundCol] !== codeTable.open) {
+                                        around.click();
+                                    }
+                                });
+                            }
+
+                        }
+                        if (openedOne === hor * ver - mine) {
+                            stopFlag = true;
+                            document.querySelector('#result').textContent = '승리했습니다!'
+                        }         
+        });
+        tr.appendChild(td);
+    }
+    tbody.appendChild(tr);
+}
+for (let k = 0; k < mixedNum.length; k++) {
+                let col = Math.floor(mixedNum[k] / ver); //몇번째 줄
+                let row = (mixedNum[k] % ver); //%는 나머지 몇번째 칸
+                console.log(col, row);
+                //중요.화면과 데이터를 일치시켜야함
+                //데이터(dataSet)은 항상 콘솔로그로 출력해서 화면단과 비교
+                //화면에 나타내기
+                //tbody.children = tr, tr.children = td
+                tbody.children[col].children[row].textContent = 'X';
+                //데이터
+                //dataSet[col][col].textContent = 'X' 아님
+                dataSet[col][row] = codeTable.mine;
+            }
+            console.log(dataSet);
+        });
+
+          
+       
+
+
+
+
+
+</script>
+
+</fieldset>
+</body>
+</html>

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>웹 개발자 장동일</title>
+    <script
+      src="https://kit.fontawesome.com/43cb3c60a4.js"
+      crossorigin="anonymous"
+    ></script></head
+  ><style>
+    @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Oswald:wght@500&family=Sunflower:wght@500&display=swap");
+    * {
+      font-family: Oswald;
+      margin: 0px;
+      padding: 0px;
+      
+    }
+@keyframes access {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+    body {
+      background-image: url(./images/background10.png);
+      background-size: contain;
+      
+    }
+
+    header {
+      background-color: #fffffff0;
+      font-size: 30px;
+      width: 100%;
+      height: 50px;
+      display: inline-flex;
+      justify-content: space-around;
+      line-height: 50px;
+      border-bottom: 2px solid gray;
+      position: fixed;
+      z-index: 100;
+      
+    }
+    .header_logo,
+    .header_menu {
+      margin: 0px 20px 0px 20px;
+    }
+    .header_logo{
+      margin-left: 60px;
+    }
+    .header_logo,
+    .header_menu,
+    .header_title {
+      width: 33%;
+    }
+    .header_title {
+      text-align: center;
+      animation: access 3s linear;
+    }
+    .header_menu {
+      text-align: right;
+      
+    }
+
+    .logo_t {
+      width: 32px;
+      height: 30px;
+      vertical-align: middle;
+    }
+  
+
+    .about_tip {
+      position: absolute;
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 110px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+
+    .skills_tip {
+      position: absolute;
+
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 90px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+
+      margin-top: 112px;
+    }
+
+    .portfolio_tip {
+      position: absolute;
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 110px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-top: 204px;
+    }
+
+    .etc_tip {
+      position: absolute;
+      text-align: center;
+      background-color: white;
+      box-sizing: border-box;
+      width: 40px;
+      height: 90px;
+      font-size: 20px;
+      color: black;
+
+      float: right;
+      writing-mode: vertical-lr;
+
+      padding: 5px;
+      border-width: 2px 2px 2px 0px;
+      border-style: solid;
+      border-color: black;
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+      margin-top: 316px;
+    }
+
+    
+    .about_tip:hover,
+    .portfolio_tip:hover,
+    .skills_tip:hover,
+    .etc_tip:hover {
+      background-color: gray;
+    }
+
+
+ 
+    .h_l {
+      width: 100px;
+    
+    }
+
+    /*-----------*/
+
+    .about_1 {
+      background-color: rgba(38, 0, 255, 0.068);
+    }
+    .about_2 {
+      background-color: rgba(0, 255, 106, 0.486);
+      
+    }
+    .about_3 {
+      background-color: rgba(0, 174, 255, 0.068);
+    }
+    main {
+      margin-top: 50px;
+      width: 100%;
+      display: inline-flex;
+    }
+
+    nav {
+      width: 5%;
+      min-height: 600px;
+      margin-right: 0px;
+      margin-top: 60px;
+    }
+
+    section {
+      width: 95%;
+      min-height: 85vh;
+      border: 1px solid gray;
+      background-color: white;
+      margin-top: 20px;
+      margin-left: 5%;
+      border-radius: 50px;
+      display: inline-flex;
+      flex-wrap: wrap;
+      
+    }
+    article{
+      animation: access 2s linear;
+    }
+
+    .about_1 {
+      width: 100%;
+      height: 85vh;
+      margin: 0px;
+      display:inline-flex;
+      vertical-align: bottom;
+      
+    }
+
+    .about_11 { /*프로필사진*/
+      width: 60%;
+      height: 100%;
+      
+      background-color: antiquewhite;
+      
+    }
+    .about_12 { /*프로필내용*/
+      
+     
+      width: 40%;
+      height: 800px;
+     
+    }
+    .img_profile {
+      border-radius: 20%;
+      height: 50%;
+      margin-top: 5%;
+      margin-left: 50%;
+      transform: translate(-50%, 0%);
+      box-shadow: 5px 5px 5px 5px gray;
+      
+    }
+    .about_121 {
+      text-align: center;
+      font-size: 40px;
+
+      background-color: rgba(0, 255, 255, 0.384);
+      margin-top: 10px;
+    }
+
+    .about_122 {
+      background-color: rgba(255, 0, 0, 0.103);
+      font-size: 30px;
+    }
+    
+    .about_2, .about_3{
+      height: 85vh;
+      width: 100%;
+    }
+/*애니메이션파트*/
+
+
+      /*큐브*/
+      
+    .cube_box {
+      position: fixed;
+      border: 0px dashed black;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(30deg) rotateY(30deg);
+      left: calc((95% - 10px));
+      top: calc(90% - 30px);
+      transition: 1s;
+      animation: rotates 5s linear infinite;
+    }
+
+   
+    @keyframes rotates {
+      0% {
+        transform: rotateX(0) rotateY(0);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg) ;
+      }
+    }
+    
+    .cube_box > div { 
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      font-size: 25px;
+      font-family: Oswald;
+
+      text-align: center;
+      line-height: 60px;
+      font-weight: bolder;
+      border-radius: 1%;
+      opacity: 0.1;
+    }
+
+    .cube_1 {
+      background-color: black;
+      transform: translate3d(0, 0, 30px);
+      color: white;
+    }
+    .cube_2 {
+      background-color: orange;
+      transform: translate3d(0, 0, -30px);
+    }
+    .cube_3 {
+      background-color: yellow;
+      transform: rotateX(90deg) translate3d(0, 0, 30px);
+    }
+    .cube_4 {
+      background-color: green;
+      transform: rotateX(90deg) translate3d(0, 0, -30px);
+    }
+    .cube_5 {
+      background-color: blue;
+      transform: rotateY(90deg) translate3d(0, 0, 30px);
+    }
+    .cube_6 {
+      background-color: red;
+      transform: rotateY(90deg) translate3d(0, 0, -30px);
+    }
+
+  </style>
+  <body>
+    <header>
+      <div class="header_logo">
+        <img src="images/logo.png" alt="" class="h_l" />
+        
+      </div>
+      <div class="header_title">ABOUT_ME</div>
+      <div class="header_menu">
+        <img class="logo_t" src="images/t.svg" alt="" />&emsp;
+        <i class="fa-brands fa-github"></i>&emsp;
+        <i class="fa-regular fa-envelope"></i>&emsp;
+        <i class="fa-regular fa-comments"></i>&emsp;
+      </div>
+    </header>
+
+    <main>
+      <section>
+        <article class="about_1">
+          <div class="about_11">
+            <img src="images/profile.jpg" alt="" class="img_profile">
+           
+          </div>
+
+          <div class="about_12">
+            <div class="about_121"><u>Profile</u></div>
+            <div class="about_122">
+              1.  <br>
+              2. 나이 <br>
+              3. 거주지 <br>
+              4. 연락처 <br>
+              5. 이메일 <br>
+                      </div>
+          </div>
+        </article>
+       
+        <article class="about_2"> <div class="about_21">내용2</div> </article>
+        <article class="about_3"> <div class="about_31">내용3</div> </article>
+      </section>
+
+      <nav>
+        <div class="etc_tip">ETC</div>
+        <div class="portfolio_tip">PORTFOLIO</div>
+        <div class="skills_tip">SKILLS</div>
+        <div class="about_tip">ABOUT_ME</div>
+      </nav>
+    </main>
+
+    <footer>
+      <a href="#" class="top">
+        <div class="cube_box">
+          <div class="cube_1"><u>Top</u></div>
+          <div class="cube_2"><u>Top</u></div>
+          <div class="cube_3"><u>Top</u></div>
+          <div class="cube_4"><u>Top</u></div>
+          <div class="cube_5"><u>Top</u></div>
+          <div class="cube_6"><u>Top</u></div>
+        </div>
+      </a>
+     
+    </footer>
+  </body>
+</html>

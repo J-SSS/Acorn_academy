@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  *{
+    color: #222;
+    font-size: 1em;
+   
+   
+  }
+
+form{
+    box-sizing: border-box;
+margin: auto;
+margin-top: 10%;
+padding: 25px;
+    width: 800px;
+ 
+    background-color: #f5f5f5;
+   
+}
+input{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+    border: #ddd;
+    border-radius: 5px;
+}
+p input{
+    width: 20px;
+}
+
+button{
+    width: 300px;
+    padding: 10px;
+    background-color: #2991b1;
+    color: #ffff;
+    font-size: 24px;
+    cursor: pointer;
+    border: #ddd ;
+    border-radius: 5px;
+}
+
+button:hover{
+    background-color: #2c778e;
+}
+input:hover{
+    border: dodgerblue;
+    box-shadow: 0px 0px 5px 0px dodgerblue;
+}
+input:placeholder-shown:focus{
+    color: transparent;
+}
+
+
+
+</style>
+
+<body>
+    <form action="">
+        <span> Email</span> <br>
+        <input type="email" placeholder="Email Address"><br><br>
+        <span> Password</span> <br>
+        <input type="paossword" placeholder="Password">
+        <p><label for="check"><input type="checkbox" id="check"> Keep me Logged in </label>  <a href="">Forgot Your Password?</a></p>
+        <button> Log in</button>
+    </form>
+</body>
+</html>

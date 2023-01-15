@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: lightblue;
+       margin-left: 5%;
+    }
+
+    p{
+        font-size: 35px;
+        margin-left: 2%
+    }
+    .box{
+        background-color: white;
+        width: 250px;
+        height: 500px;
+        display: inline-block;
+        margin: 10px;
+        box-shadow: 1px 1px 5px 1px gray;
+        position: relative;
+    }
+
+   /* .box::after{
+        content: "";
+        background-color: white;
+        width: 250px;
+        height: 500px;
+        display: inline-block;
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        z-index: -1;
+    }*/
+
+    .box:hover{
+        transform: scale(2,2);
+        perspective: 300px;
+        transition: all 0.3s;
+        opacity: 0.1;
+        
+
+        background-image: url(../images/귤.jpg);
+        
+    }
+
+    .box_title{
+        font-weight: bold;
+        font-size: 25px;
+        margin-top: 5%;
+    }
+
+    .box_subtitle{
+        font-weight: lighter;
+        font-size: 20px;
+        color: gray;
+    }
+
+
+    .box_text_title{
+        color: blue;
+        font-size: 20px;
+    }
+
+    .box_text_main{
+        
+        font-size: 30px;
+        color: blue;
+    }
+    .box_title , .box_subtitle , .box_text_title , .box_text_main{
+        margin-left: 5%;
+    }
+</style>
+<body>
+<p>국민과 함께 성장하는 <b>글로벌 주택금융 리더</b></p>
+
+<div class="box">
+
+<div class="box_title">아낌e-보금자리론</div><br>
+
+<div class="box_subtitle">0.1% 더 저렴한 금리</div><br>
+    <div class="box_text_title">최대</div><br>
+    <div class="box_text_main">주택가격 6억원</div>
+
+
+</div>
+<div class="box">
+
+    <div class="box_title">아낌e-보금자리론</div><br>
+    
+    <div class="box_subtitle">0.1% 더 저렴한 금리</div><br>
+        <div class="box_text_title">최대</div><br>
+        <div class="box_text_main">주택가격 6억원</div>
+    
+    
+    </div>
+    <div class="box">
+
+        <div class="box_title">아낌e-보금자리론</div><br>
+        
+        <div class="box_subtitle">0.1% 더 저렴한 금리</div><br>
+            <div class="box_text_title">최대</div><br>
+            <div class="box_text_main">주택가격 6억원</div>
+        
+        
+        </div>
+            
+
+</body>
+</html>

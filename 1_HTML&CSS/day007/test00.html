@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+.main{
+    transform-style: preserve-3d;
+    transform: perspective(500px) rotateX(0deg) rotateY(-10deg);
+    position: relative;
+    left: 50vw;
+    top: 50vh
+}
+
+
+
+.main > div{
+    border: 0px solid black;
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    position: absolute;
+   
+}
+.cir1{
+    transform: rotateX(-100deg);
+    background-color: rgba(255, 0, 0, 0.418);
+}
+.cir2{
+    transform: rotateX(-90deg);
+    background-color: rgba(255, 166, 0, 0.425);
+}
+.cir3{
+    transform: rotateX(-80deg);
+    background-color: rgba(255, 255, 0, 0.418);
+}
+.cir4{
+    transform: rotateX(-70deg);
+    background-color: rgba(0, 128, 0, 0.548);
+}
+.cir5{
+    transform: rotateX(-60deg);
+}
+.cir6{
+    transform: rotateX(-50deg);
+}
+
+</style>
+
+<body>
+
+    <div class="main">
+    <div class="cir1"></div>
+    <div class="cir2"></div>
+    <div class="cir3"></div>
+    <div class="cir4"></div>
+    <div class="cir5"></div>
+</div>
+</body>
+</html>

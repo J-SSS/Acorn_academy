@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹개발자 장동일</title>
+</head>
+<style>
+
+    .box_header .btn_menu, .box_header .btn_search {
+    position: absolute;
+    top: 50%;
+    margin-top: -24px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #666;
+    transition: color .2s ease-out;
+    cursor: pointer; }
+  .box_header .btn_menu {
+    right: 56px; }
+  .box_header .btn_search {
+    right: 116px; }
+</style>
+
+
+<body>
+
+       <!-- box_header -->
+       <header class="box_header">
+        <h1 class="title_logo">
+          <a href="" class="link_logo">P O R T F O L I O <img src="[##_var_logoImage_##]" class="img_logo" alt=""></a>
+        </h1>
+
+        <!-- <h1 class="title_logo" style="background-image:url('/images/logo.jpg')"></h1> -->
+        <button class="btn_search"></button>
+        
+
+        <!-- 메뉴 및 검색 버튼 클릭시 area_sidebar / area_popup 논처리 삭제 / body 에 style="overflow:hidden" 추가 -->
+        <button type="button" class="btn_menu" title="메뉴"><span class="blind">메뉴</span></button>
+        
+      </header>
+
+    
+</body>
+</html>

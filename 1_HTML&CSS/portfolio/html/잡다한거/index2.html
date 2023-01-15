@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script
+      src="https://kit.fontawesome.com/43cb3c60a4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Oswald:wght@500&family=Sunflower:wght@500&display=swap");
+    * {
+      font-family: Oswald;
+      margin: 0;
+    }
+    html {
+      height: 100%;
+    }
+    body {
+      background-color: white(0, 0, 0);
+      background-image: url(/images/background10.png);
+
+      height: 100%;
+    }
+
+    .cube_box {
+      position: relative;
+      border: 0px dashed black;
+      border-radius: 50%;
+      width: 250px;
+      height: 250px;
+      transform-style: preserve-3d;
+      transform: perspective(1000px) rotateX(30deg) rotateY(30deg);
+      left: calc(50% - 125px);
+      top: calc(50% - 125px);
+      transition: 1s;
+      animation: rotates 5s linear infinite;
+    }
+
+    @keyframes rotates {
+      0% {
+        transform: rotateX(0) rotateY(0);
+      }
+      100% {
+        transform: rotateX(360deg) rotateY(360deg);
+      }
+    }
+
+    .cube_box > div {
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      font-size: 100px;
+
+      text-align: center;
+      line-height: 250px;
+      font-weight: bolder;
+      border-radius: 1%;
+      opacity: 0.7;
+    }
+
+    .cube_1 {
+      background-color: black;
+      transform: translate3d(0, 0, 125px);
+      color: white;
+    }
+    .cube_2 {
+      background-color: orange;
+      transform: translate3d(0, 0, -125px);
+    }
+    .cube_3 {
+      background-color: yellow;
+      transform: rotateX(90deg) translate3d(0, 0, 125px);
+    }
+    .cube_4 {
+      background-color: green;
+      transform: rotateX(90deg) translate3d(0, 0, -125px);
+    }
+    .cube_5 {
+      background-color: blue;
+      transform: rotateY(90deg) translate3d(0, 0, 125px);
+    }
+    .cube_6 {
+      background-color: red;
+      transform: rotateY(90deg) translate3d(0, 0, -125px);
+    }
+
+    header {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      color: white;
+      font-weight: bold;
+      margin-bottom: -70px;
+    }
+
+    .header_logo {
+      margin-left: 50px;
+      margin-top: 30px;
+      font-size: 30px;
+      text-shadow: 3px 5px black;
+    }
+    .header_menu {
+      margin-right: 50px;
+      margin-top: 30px;
+      font-size: 30px;
+      text-shadow: 3px 5px black;
+    }
+    small {
+      color: rgba(0, 0, 0, 0.562);
+      text-shadow: 1px 1px gray;
+    }
+
+    .pointer {
+      position: absolute;
+      left: 20%;
+      top: 10%;
+      color: black;
+      font-size: 60px;
+      transform: rotateZ(20deg);
+      animation: pointe 0.4s linear infinite alternate;
+      text-shadow: 3px 2px gray;
+    }
+
+    @keyframes pointe {
+      0% {
+        left: 10%;
+        top: 35%;
+      }
+      100% {
+        left: 15%;
+        top: 40%;
+      }
+    }
+
+    /*가이드 */
+    /*
+    .guide_top {
+      position: absolute;
+      left: 50%;
+      top: 0%;
+      width: 0px;
+      height: 100%;
+      border: 1px dashed black;
+    }
+
+    .guide_lef {
+      position: absolute;
+
+      top: 50%;
+      width: 100%;
+      height: 0px;
+      border: 1px dashed black;
+    }
+*/
+    .back {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      font-size: 35px;
+      opacity: 0.5;
+      margin-left: 20px;
+    }
+    .blue{
+      color: rgba(0, 0, 255, 0.651);
+    }
+    .sky{
+      color: rgb(68, 186, 233);
+    }
+    .green{
+      color: green;
+    }
+  </style>
+  <body>
+    <div class="back">
+      <br>
+      &#60;!<span class="blue">DOCTYPE</span> <span class="sky">html</span>&#62;
+      <br>
+      &nbsp;&#60;<span class="blue">html</span> <span class="sky">lang="ko"</span>&#62;
+      <br>
+      &emsp; &#60;<span class="blue">head</span>&#62;
+      <br>
+      &emsp;&emsp; &#60;<span class="blue">title</span>&#62; 웹 개발자 장동일 &#60;&#47;<span class="blue">title</span>&#62;
+      <br>
+      &emsp;&#60;&#47;<span class="blue">head</span>&#62;<br />
+      <br>
+      &emsp; &#60;<span class="blue">body</span>&#62;<br />
+      
+      &emsp;&emsp; <span class="green"> &#60;!--아직 미완성입니다ㅎㅎ--&#62;</span>
+      <br>
+      &emsp; &#60;&#47;<span class="blue">body</span>&#62;
+      <br />
+      &nbsp;&#60;&#47;<span class="blue">html</span>&#62;
+    </div>
+
+    <div class="pointer">
+      Mark up! <i class="fa-regular fa-hand-point-right"></i>
+    </div>
+    <a href="/main.html">  <div class="cube_box">
+      <div class="cube_1">HTML</div>
+      <div class="cube_2"><u>R</u></div>
+      <div class="cube_3">CSS</div>
+      <div class="cube_4"><u>G</u></div>
+      <div class="cube_5"><u>B</u></div>
+      <div class="cube_6"><u>R</u></div>
+    </div>
+</a>
+  
+    <div class="cube_shadow"></div>
+
+    <div class="guide_top"></div>
+
+    <div class="guide_lef"></div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    a{
+        font-size: 100px;
+        color: red;
+    }
+</style>
+<body>
+    
+    <a href="https://naver.com">click</a>
+
+    <script>
+
+        const link = document.querySelector("a");
+        e.preventDefault(); 
+        link.addEventListener("click", (e) =>{
+            console.log("링크를 클릭했습니다.")
+        });
+
+        //링크 클릭시 기본 기능인 링크이동을 차단하고, 콘솔창에 텍스트가 나타나도록 한다
+        //e 값은 이벤트 객체
+        //preventDefault는 기본기능을 실행하지 말라는 명령어임.
+        //이벤트명 뒤에 있는 괄호에서 전달되는 값 하나이면 괄호생략가능
+    </script>
+</body>
+</html>

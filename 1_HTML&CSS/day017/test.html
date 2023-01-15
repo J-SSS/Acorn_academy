@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="display"></div>
+
+    <form name="myform" action="">
+        상품명 : <input type="text" name="title"><br>
+        상품 가격 :<input type="text" name="pay"><br>
+        이메일 : <input type="email" name="email" id="email" onblur="myEmailCheck">
+        <input type="button" onclick="myCheck()" value="데이터등록">
+        <input type="reset" onchange="myClear()" value="입력취소">
+    </form>
+
+    <script>
+        function myCheck(){
+            let myt = document.myform.title.value;
+            if(myt == "" || myt == null){
+                alert("상품명 데이터 공백입니다. \n 정확하게 입력해주세요")
+                document.myform.title.focus(); 
+                return;
+            }
+            else{
+                document.myform.pay.focus();
+            }
+
+            let myp = document.myform.pay.value;
+            let size = myform.pay.value.length;
+            if( myp == "" || myp == null){
+                alert("가격 데이터 공백입니다. \n 정확하게 입력해주세요")
+                document.myform.pay.focus(); 
+                return false;
+            }
+            else{
+                if (size < 3 || size > 5){
+                    alert('자릿수는 3~5자릿수 적절합니다.')
+                    myp = ""; 
+                    myform.pay.focus();
+                }
+            }
+
+            let message = '상품명 데이터:' + myt + '<br> 상품 가격 데이터:' + myp;            
+            document.getElementById('display').innerHTML='<h2>' + message + '</h2>'
+        }
+    </script>
+</body>
+</html>

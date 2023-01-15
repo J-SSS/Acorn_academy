@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Nanum+Gothic+Coding&family=Nanum+Pen+Script&family=Sunflower:wght@300;500&display=swap');
+
+body{
+    font-family: sunflower;
+}
+ 
+    fieldset{
+        width: 600px;
+        font-size: 20px;
+    }
+
+    .field01{
+        background-color: rgba(68, 150, 123, 0.096);
+    }
+
+    .field02{
+        background-color: rgba(193, 215, 235, 0.705);
+    }
+
+    legend{
+        font-size: 25px;
+        text-shadow: 1px 1px darkcyan;
+        
+    }
+</style>
+<body>
+    <h2>회원정보입력</h2>
+
+    <fieldset class="field01">
+        <legend>로그인정보</legend>
+        아 이 디 : <input type="text" size="20"><br><br>
+        비밀번호 : <input type="password" size="19">
+        <button>로그인</button><br>
+    </fieldset>
+    <br>
+
+    <fieldset class="field02">
+        <legend>추가 정보</legend>
+        메일 주소 : <input type="email"><br>
+        <small> 메일 수신 :
+        <input type="radio" name="email">메일수신 동의
+        <input type="radio" name="email">메일수신 거부</small>
+        <br><br>
+        
+        연락처 : <input type="tel" placeholder="하이픈을 빼고 입력해주세요"><br><br>
+        생년월일 : <input type="text" placeholder="YYYY-MM-DD"><br> <br>
+        취미 : 
+        <label for="book"><input type="checkbox" id="book">독서</label>  
+        <label for="music"><input type="checkbox" id="music">음악감상</label>  
+        <label for="health"><input type="checkbox" id="health">운동</label>  
+        <br><br>
+
+        가입경로 :
+        <select name="" id="">
+            <option value="">블로그</option>
+            <option value="">검색</option>
+            <option value="">지인소개</option>
+            <option value="">기타</option>
+        </select><br><br>
+        메모 <br>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        
+    </fieldset><br>
+    <input type="submit">
+</body>
+</html>

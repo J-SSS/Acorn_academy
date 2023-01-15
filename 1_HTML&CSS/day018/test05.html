@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .result{
+        font-size: 50px;
+    }
+    .container{
+        text-align: center;
+border: 2px dashed black;
+
+
+        
+    }
+</style>
+<body>
+    <div class="container">
+
+   
+
+    <div class="result">0</div>
+    
+    
+    <a href="#" class="btnPlus"><button>+</button></a>
+    <a href="#" class="btnMinus"><button>-</button></a>
+</div>
+
+
+    <script>
+        const $btnPlus = document.querySelector(".btnPlus")
+        const $btnMinus = document.querySelector(".btnMinus")
+        let num = 0;
+
+        $btnPlus.addEventListener("click", e=>{
+            e.preventDefault();
+            
+            num++;
+            console.log(num);
+            document.querySelector(".result").innerHTML = num
+        })
+
+        $btnMinus.addEventListener("click", e=>{
+            e.preventDefault();
+           
+            num--;
+            console.log(num);
+            document.querySelector(".result").innerHTML = num
+        })
+
+        
+    </script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-package ch04.ex04;
+package ch04.ex03.quiz;
 
 public class C03While {
 	public static void main(String[] args) {
