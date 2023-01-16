@@ -1,4 +1,4 @@
-package ch02.ex02.case01;
+package ch02.ex02_Generic.case02;
 
 public class Yellow {
 	

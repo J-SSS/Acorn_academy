@@ -1,7 +1,7 @@
-package ch02.ex02.case02;
+package ch02.ex02_Generic.case03;
 
-public class GenericPrinter<T> { // 객체 생성하는 쪽에서 사용할 타입을 T에 지정
-
+public class GenericPrinter<T extends Ink> {
+	
 	private T ink;
 	
 	public T getInk() {

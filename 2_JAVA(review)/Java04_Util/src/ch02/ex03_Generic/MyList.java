@@ -1,4 +1,4 @@
-package ch02.ex03;
+package ch02.ex03_Generic;
 
 public interface MyList<T> {
 	

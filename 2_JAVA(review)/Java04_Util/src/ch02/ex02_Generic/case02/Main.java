@@ -1,4 +1,4 @@
-package ch02.ex02.case02;
+package ch02.ex02_Generic.case02;
 
 public class Main {
 	public static void main(String[] args) {
