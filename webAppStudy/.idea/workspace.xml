@@ -33,6 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_basic/2_JAVA(review)",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -41,9 +42,9 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="애플리케이션.L04Counter (1)">
-    <configuration name="L04Counter (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="first.L04Counter" />
+  <component name="RunManager" selected="애플리케이션.L10Lamda">
+    <configuration name="L09Timer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="first.L09Timer" />
       <module name="webAppStudy" />
       <extension name="coverage">
         <pattern>
@@ -55,8 +56,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="L04Counter (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="first.L04Counter" />
+    <configuration name="L09_3 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="first.L09_3" />
       <module name="webAppStudy" />
       <extension name="coverage">
         <pattern>
@@ -68,8 +69,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="L04Counter (3)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="first.L04Counter" />
+    <configuration name="L09_3 (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="first.L09_3" />
       <module name="webAppStudy" />
       <extension name="coverage">
         <pattern>
@@ -81,8 +82,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="L04Counter (4)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="first.L04Counter" />
+    <configuration name="L09_3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="first.L09_3" />
       <module name="webAppStudy" />
       <extension name="coverage">
         <pattern>
@@ -94,8 +95,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="L04Counter (5)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="first.L04Counter" />
+    <configuration name="L10Lamda" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="first.L10Lamda" />
       <module name="webAppStudy" />
       <extension name="coverage">
         <pattern>
@@ -109,11 +110,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.L04Counter (1)" />
-        <item itemvalue="애플리케이션.L04Counter (5)" />
-        <item itemvalue="애플리케이션.L04Counter (4)" />
-        <item itemvalue="애플리케이션.L04Counter (3)" />
-        <item itemvalue="애플리케이션.L04Counter (2)" />
+        <item itemvalue="애플리케이션.L10Lamda" />
+        <item itemvalue="애플리케이션.L09_3 (2)" />
+        <item itemvalue="애플리케이션.L09_3 (1)" />
+        <item itemvalue="애플리케이션.L09_3" />
+        <item itemvalue="애플리케이션.L09Timer (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -126,6 +127,10 @@
       <option name="presentableId" value="Default" />
       <updated>1673918782765</updated>
       <workItem from="1673918784214" duration="21949000" />
+      <workItem from="1673999473787" duration="28142000" />
+      <workItem from="1674036754867" duration="9283000" />
+      <workItem from="1674046204490" duration="2663000" />
+      <workItem from="1674086696753" duration="11699000" />
     </task>
     <servers />
   </component>
