@@ -1,4 +1,4 @@
-import javax.annotation.processing.SupportedSourceVersion;
+package first.REMOVE.OOPtest;
 
 interface LamdaTest{
     void run();

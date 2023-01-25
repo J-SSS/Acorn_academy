@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/2_JAVA(review).iml" filepath="$PROJECT_DIR$/2_JAVA(review).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java01_Basic/Java01_Basic.iml" filepath="$PROJECT_DIR$/Java01_Basic/Java01_Basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java02_OOP/Java02_OOP.iml" filepath="$PROJECT_DIR$/Java02_OOP/Java02_OOP.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java03_OOP_Part2/Java03_OOP_Part2.iml" filepath="$PROJECT_DIR$/Java03_OOP_Part2/Java03_OOP_Part2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java04_Util/Java04_Util.iml" filepath="$PROJECT_DIR$/Java04_Util/Java04_Util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Java05_Advanced/Java05_Advanced.iml" filepath="$PROJECT_DIR$/Java05_Advanced/Java05_Advanced.iml" />
     </modules>
   </component>
 </project>
