@@ -31,21 +31,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_basic/webAppStudy",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "settings.sync",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dongr/Desktop/Acorn_basic/webAppStudy&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="애플리케이션.first.L12SteamIntemediate">
+}</component>
+  <component name="RunManager" selected="애플리케이션.L15StreamEx">
     <configuration name="L11StreamAPI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="first.L11StreamAPI" />
       <module name="webAppStudy" />
@@ -59,12 +59,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="L12SteamIntemediate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.acon.L12SteamIntemediate" />
+    <configuration name="L13StreamTerminal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="first.L13StreamTerminal" />
       <module name="webAppStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acon.*" />
+          <option name="PATTERN" value="first.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -72,19 +72,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="L14StreamCollect" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="first.L14StreamCollect" />
       <module name="webAppStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="first.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RunGame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="cardGame.RunGame" />
+    <configuration name="L15StreamEx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.acon.L15StreamEx" />
       <module name="webAppStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="cardGame.*" />
+          <option name="PATTERN" value="com.acon.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -144,26 +150,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="first.REMOVE.OOPtest.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="first.REMOVE.OOPtest.Main" />
-      <module name="webAppStudy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="first.REMOVE.OOPtest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.L15StreamEx" />
+        <item itemvalue="애플리케이션.L14StreamCollect" />
+        <item itemvalue="애플리케이션.L13StreamTerminal" />
         <item itemvalue="애플리케이션.first.L12SteamIntemediate" />
         <item itemvalue="애플리케이션.L11StreamAPI" />
-        <item itemvalue="애플리케이션.first.REMOVE.OOPtest.Main" />
-        <item itemvalue="애플리케이션.L12SteamIntemediate" />
-        <item itemvalue="애플리케이션.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +179,9 @@
       <workItem from="1674569421557" duration="119000" />
       <workItem from="1674605169121" duration="19000" />
       <workItem from="1674606916355" duration="6521000" />
-      <workItem from="1674613557282" duration="6011000" />
+      <workItem from="1674613557282" duration="27460000" />
+      <workItem from="1674691871193" duration="1359000" />
+      <workItem from="1674700930547" duration="1167000" />
     </task>
     <servers />
   </component>

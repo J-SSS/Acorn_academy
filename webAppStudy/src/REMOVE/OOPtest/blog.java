@@ -1,4 +1,4 @@
-package first.REMOVE.OOPtest;
+package REMOVE.OOPtest;
 
 interface LamdaTest{
     void run();

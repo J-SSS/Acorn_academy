@@ -1,5 +1,6 @@
 package first;
 
+import java.lang.constant.DynamicCallSiteDesc;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -7,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 import java.util.Set;
+import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -47,6 +49,15 @@ public class L13StreamTerminal {
     public static void main(String[] args) {
         //StreamAPI 의 최종연산
         //forEach(Consumer (T)->{} )  : 보통 결과를 출력할 때 많이 사용
+        //reduce(BinaryOperator(n1,n2)->n3) : 하나의 결과를 반환하기 위해 사용
+        //Collecc(Collector.to~) : 스트림의 자료를 컬렉션(List.Set.Map)의 자료형으로 반환
+        //count() : 스트림의 길이 반환
+        //max,min(comparator)
+        //sum(),average() : 기본형 스트림에만 존재함
+        //(all,none,any)Match() : (모두,아무것도,하나라도) 검사식에 충족하는지를 검사
+
+
+
         L13StreamTerminal out=new L13StreamTerminal();
         ArrayList<Person> personList=new ArrayList<Person>();
         personList.add(out.new Person("김유진",2000,"여자"));
@@ -61,6 +72,23 @@ public class L13StreamTerminal {
 
         ArrayList<String> nameList=new ArrayList<String>();
 
+        List<Object> maleName = personList.stream()
+                .filter((Person p) -> {return p.gender=="남자";})
+                .map((Person p)->{return p.getName();})
+                .collect(Collectors.toList());
+        System.out.println(maleName);
+
+
+        //2000년 이후에 태어난 사람의 이름을 배열로 반환하세요.
+
+        List<Object> yName = personList.stream()
+                .filter((Person p) -> {return p.birth>=2000;})
+                .map((Person p)->{return p.getName();})
+                .collect(Collectors.toList());
+        System.out.println("급식 : " + yName);
+
+        System.out.println("급식 : " + yName);
+
         //Collection은 Stream을 반환하는 함수를 제공 (List,Set)
         //Map 은 entrySet() 으로 key와 value를 Entry로 갖는 Set으로 변경해서 stream 작성
 
@@ -70,6 +98,7 @@ public class L13StreamTerminal {
                 .map((Person p)->{return p.getName();})
                 .peek((String name)->{System.out.println("30살 이하의 여성의 이름  :"+name);})
                 .collect(Collectors.toList());
+
 
         System.out.println(nameList2);
 
@@ -120,9 +149,10 @@ public class L13StreamTerminal {
                 .reduce((name1,name2)->name1+", "+name2);
         System.out.println(names);
 
-        //Stream.of(data,data,data) =>Stream 객체로 반환
+        //Stream.of(data,data,data) => 매개변수로 작성된 데이터를 스트림 자료로 변환
 
         Stream<Integer> numStream=Stream.of(-13,13,20,50,1,100,-1);
+        //1/// 모든 자료의 제곲값을 더해봇[요
         List<Integer> numsList=numStream
                 .map((num)->num*num)
                 .collect(Collectors.toList());
@@ -132,6 +162,7 @@ public class L13StreamTerminal {
         Stream<Integer> numStream2=Stream.of(-13,13,20,50,1,100,-1);
         Set<Integer> numsSet=numStream2
                 .map((num)->num*num)
+
                 .collect(Collectors.toSet());
         System.out.println(numsSet);
 
@@ -140,6 +171,7 @@ public class L13StreamTerminal {
                 .collect(Collectors.toList());
         System.out.println(nameList3);
 
+        //Person의 태어난 해(birth)로 key를, 이름(name)을 value로 정의한 Map을 반환
         Map<Integer,String> personMap=personList.stream()
                 .collect(Collectors.toMap((p)->p.getBirth(),(p)->p.getName()));
         System.out.println(personMap);

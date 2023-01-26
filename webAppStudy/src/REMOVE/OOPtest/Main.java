@@ -1,4 +1,4 @@
-package first.REMOVE.OOPtest;
+package REMOVE.OOPtest;
 
 public class Main {
     public static void main(String[] args) {

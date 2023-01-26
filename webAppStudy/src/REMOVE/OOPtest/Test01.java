@@ -1,4 +1,4 @@
-package first.REMOVE.OOPtest;
+package REMOVE.OOPtest;
 
 public class Test01 {
 

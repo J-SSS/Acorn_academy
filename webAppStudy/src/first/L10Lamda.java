@@ -29,7 +29,7 @@ public class L10Lamda {
         Supplier<String> supplier = ()->{return "";}; //리턴만 존재하는 함수
         Supplier<String> supplier2 = ()->""; //블럭이 없으면 return을 자동으로 수행
 
-        BinaryOperator<Integer> operator = ( i, i2)->i+i2; // 매개변수가 하나
+        BinaryOperator<Integer> operator = (i, i2)->i+i2; // 매개변수가 하나
         UnaryOperator<Integer> operator2 = (i) -> i; //매개변수가 둘
         System.out.println("130+50=" + operator.apply(130,50));
 
