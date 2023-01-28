@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="WebAppTest" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Test1" target="1.8" />
+      <module name="Test222" target="1.8" />
+      <module name="Test333" target="1.8" />
+      <module name="webApp" target="1.8" />
+      <module name="WebAppStudy" target="1.8" />
+      <module name="WebAppStudyTest" target="1.8" />
+      <module name="WebAppTest" target="1.8" />
+      <module name="WebTest" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

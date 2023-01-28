@@ -146,16 +146,14 @@ public class L15StreamEx {
 
         //모든 학년을 그룹으로 나누고 학년 마다  반 그룹의 수를 구하세요
         Map<Integer, Map<Integer, Long>> map8 = studentList.stream()
-//                .collect(Collectors.groupingBy(Student::getHak,
-//                        .collect(Collectors.groupingBy((Student s) -> s.getHak() ,
-                          .collect(Collectors.groupingBy((Student s) -> {return s.getHak();} ,
-//                        .collect(Collectors.groupingBy((Student s) -> {s.getHak();} ,
+                .collect(Collectors.groupingBy(Student::getHak,
+//                        .collect(Collectors.groupingBy((Student s) -> s.getHak(); ,
+//                        .collect(Collectors.groupingBy((Student s) ->  s.getHak();} ,
 //                        .collect(Collectors.groupingBy((Student s) -> {s.getHak();}; ,
 //                        .collect(Collectors.groupingBy((Student s) -> {s.getHak()}; ,
                         Collectors.groupingBy(Student::getBan, Collectors.counting())));
 
-//        System.out.println(map8);
-
+        System.out.println(map8);
 
     }
 }

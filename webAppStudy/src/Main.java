@@ -14,29 +14,25 @@ public class Main {
          *
          */
 
-        Object[] iArr = {13,3,10,12,100,50};
+        Object[] iArr = {13, 3, 10, 12, 100, 50};
         int sum1 = 0; // iArr의 모든 값을 더하세요
 
-        for(int i = 0 ; i< iArr.length ; i++) {
+        for (int i = 0; i < iArr.length; i++) {
             sum1 += (int) iArr[i];
         }
         System.out.println(sum1);
 
 
-
-
-
-        Object[] iArr2 = {13,3,10,"12",100,"삼",50};
+        Object[] iArr2 = {13, 3, 10, "12", 100, "삼", 50};
         int sum2 = 0; //iArr의 모든 값을 더하세요.(정수로 형 불가한 데이터만 제외하고 or 정수만)
 
-        for(int i = 0 ; i< iArr2.length ; i++) {
+        for (int i = 0; i < iArr2.length; i++) {
             try {
-                if(!(iArr2[i] instanceof Integer)) {
+                if (!(iArr2[i] instanceof Integer)) {
                     sum2 += Integer.parseInt((String) iArr2[i]);
-                }else
+                } else
                     sum2 += (int) iArr2[i];
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
             }
         }
         System.out.println(sum2);
@@ -45,38 +41,35 @@ public class Main {
         ////////////////////////////////////////
 
         int sum3 = 0;
-        for(Object o : iArr2) {
+        for (Object o : iArr2) {
             try {
-                if(o instanceof Integer) {
-                    sum3 += Integer.parseInt((String) (o+""));
-                }
-                else
+                if (o instanceof Integer) {
+                    sum3 += Integer.parseInt((String) (o + ""));
+                } else
                     sum3 += Integer.parseInt((String) o);
-                }
-
-            catch (Exception e){
+            } catch (Exception e) {
 
             }
         }
         System.out.println(sum3);
 
 
-		List iList = new ArrayList();
-		iList.add(13);
-		iList.add(3);
-		iList.add(10);
-		iList.add("12");
-		iList.add(100);
-		iList.add("삼");
-		iList.add(50);
-		//Stream API로 모두 더한 결과를 내세요.
-		//filter로 정수만 남기고 maptoint로 정수스트림으로 바꾼 후 sum하세요
-		//reduce, map, mapInt, sum, filter 추천
+        List iList = new ArrayList();
+        iList.add(13);
+        iList.add(3);
+        iList.add(10);
+        iList.add("12");
+        iList.add(100);
+        iList.add("삼");
+        iList.add(50);
+        //Stream API로 모두 더한 결과를 내세요.
+        //filter로 정수만 남기고 maptoint로 정수스트림으로 바꾼 후 sum하세요
+        //reduce, map, mapInt, sum, filter 추천
 
-		iList.stream().filter(i -> i instanceof Integer).mapToInt(i ->(int) i).sum();
-		System.out.println(iList.stream().filter(i -> i instanceof Integer).mapToInt(i ->(int) i).sum());
-
+        iList.stream().filter(i -> i instanceof Integer).mapToInt(i -> (int) i).sum();
+        System.out.println(iList.stream().filter(i -> i instanceof Integer).mapToInt(i -> (int) i).sum());
 
 
     }
+
 }

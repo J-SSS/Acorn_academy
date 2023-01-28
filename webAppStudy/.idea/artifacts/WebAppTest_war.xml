@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="WebAppTest:war">
+    <output-path>$PROJECT_DIR$/WebAppTest/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>WebAppTest</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="WebAppTest-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="WebAppTest:war exploded" />
+    </root>
+  </artifact>
+</component>

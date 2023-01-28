@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/Test1" />
+    <file type="web" url="file://$PROJECT_DIR$/Test222" />
+    <file type="web" url="file://$PROJECT_DIR$/Test333" />
+    <file type="web" url="file://$PROJECT_DIR$/webApp" />
+    <file type="web" url="file://$PROJECT_DIR$/WebAppStudy" />
+    <file type="web" url="file://$PROJECT_DIR$/WebAppStudyTest" />
+    <file type="web" url="file://$PROJECT_DIR$/WebAppTest" />
+    <file type="web" url="file://$PROJECT_DIR$/WebTest" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/WebAppTest/pom.xml" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
