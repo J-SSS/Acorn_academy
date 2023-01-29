@@ -2,6 +2,8 @@ package com.example.webapptest.servlet;
 
 
 
+import sun.jvm.hotspot.runtime.VM;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,13 +11,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+
 //자바 파일이 동적리소스가 되려면 httpServlet 타입이어야한다.
 //톰캣이 동적리소스를 실행할 때 HttpServlet 객체만 실행가능
 //해당 서블릿을 DD에 등록해야 동적리소스로 배포가능함.
 public class L01SumRequest extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
 
         //해당 동적 페이지를 브라우저에서 url로 호출하면 doGet이 실행된다.
         //실행의 결과는 매개변수인 resp로 작성하면 문서로 반환된다.

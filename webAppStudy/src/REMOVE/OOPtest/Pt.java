@@ -1,8 +1,19 @@
 package REMOVE.OOPtest;
 
-public class Pt {
+import java.io.OutputStream;
+import java.io.PrintStream;
+
+public class Pt extends PrintStream{
+    public Pt(OutputStream out) {
+        super(out);
+    }
+
     void ln(){
-        java.lang.System.out.println("test");
+        System.out.println(Pt.class);
+        System.out.println(getClass());
+        System.out.println(PrintStream.class);
+
+
     };
 
 }

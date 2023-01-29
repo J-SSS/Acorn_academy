@@ -40,7 +40,6 @@ public class L17JDBCPreparedStatement {
                 String ename = rs.getString(2);
                 String job = rs.getString(3);
                 int mgr = rs.getInt(4);
-                System.in.
                 System.out.println(empno + "\t::\t" + ename + "\t::\t" + job + "\t::\t" + mgr);
             }
 

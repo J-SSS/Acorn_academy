@@ -79,13 +79,26 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Tomcat 서버.Tomcat 9.0.71">
+  <component name="RunManager" selected="애플리케이션.Main">
     <configuration name="L17JDBCPreparedStatement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="first.L17JDBCPreparedStatement" />
       <module name="webAppStudy" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="first.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="REMOVE.OOPtest.Main" />
+      <module name="webAppStudy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="REMOVE.OOPtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -194,6 +207,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.Main" />
         <item itemvalue="애플리케이션.L17JDBCPreparedStatement" />
       </list>
     </recent_temporary>
@@ -224,6 +238,7 @@
       <workItem from="1674778386857" duration="15502000" />
       <workItem from="1674799016792" duration="11110000" />
       <workItem from="1674824959657" duration="3351000" />
+      <workItem from="1674975229750" duration="8142000" />
     </task>
     <servers />
   </component>
