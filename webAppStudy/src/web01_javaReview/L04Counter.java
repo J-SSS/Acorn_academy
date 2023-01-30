@@ -1,4 +1,4 @@
-package first;
+package web01_javaReview;
 
 import javax.swing.*;
 import java.awt.*;

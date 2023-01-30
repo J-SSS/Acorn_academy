@@ -1,4 +1,4 @@
-package first;
+package web01_javaReview;
 // 작명규칙 (숫자로 시작하면 안되고, 연산을 사용하지 않는다(-+=/%), $ _ # 은 사용하는데 사용하는 경우가 제한적임 )
 // #: 프라이빗한 이름, $필드이름에, 주로 사용...
 
@@ -15,9 +15,6 @@ package first;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 class BtnActionHandler implements ActionListener {
 

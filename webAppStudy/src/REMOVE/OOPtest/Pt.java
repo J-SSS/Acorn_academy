@@ -12,6 +12,7 @@ public class Pt extends PrintStream{
         System.out.println(Pt.class);
         System.out.println(getClass());
         System.out.println(PrintStream.class);
+//        System.out.println(w);
 
 
     };

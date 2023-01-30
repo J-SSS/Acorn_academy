@@ -1,4 +1,4 @@
-package first;
+package web01_javaReview;
 interface InterTest1{
     void a();
 }

@@ -1,4 +1,4 @@
-package first;
+package web01_javaReview;
 
 public class L06Casting {
     public static void main(String[] args) {

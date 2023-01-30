@@ -1,8 +1,7 @@
-package first;
+package web01_javaReview;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.function.*;
 

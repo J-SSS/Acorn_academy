@@ -1,4 +1,4 @@
-package first;
+package web02_JDBC;
 
 
 import java.sql.*;

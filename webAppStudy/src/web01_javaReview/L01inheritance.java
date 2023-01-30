@@ -1,4 +1,4 @@
-package first;
+package web01_javaReview;
 
 class A{ //A.java 문서를 만들기는 하지만 배포할 수 없다. public이 아니기 때문에...
     public void a(){
@@ -52,7 +52,7 @@ public class L01inheritance { //java 문서의 주인이면서 배포가능한 �
 
         C c = new C();
         B b = c;
-        first.A a = c;
+        web01_javaReview.A a = c;
         Object o = c;
         c = (C) o; //int i = (int)13.3; 같은 기본형의 형변환과는 원리가다르다.
         // 타입의 다형성 : 객체가 부모의 타입이 될 수 있는 것

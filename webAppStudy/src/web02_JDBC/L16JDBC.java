@@ -1,6 +1,4 @@
-package first;
-import com.mysql.cj.jdbc.Driver;
-import com.mysql.cj.xdevapi.Collection;
+package web02_JDBC;
 //mysql에서 제공하는 접속패키지.
 
 

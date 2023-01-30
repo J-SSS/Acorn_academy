@@ -1,6 +1,5 @@
-package first;
+package web01_javaReview;
 
-import javax.xml.stream.events.StartDocument;
 import java.util.Scanner;
 
 public class L07Thread {

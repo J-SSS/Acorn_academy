@@ -1,4 +1,4 @@
-package first;
+package web01_javaReview;
 
 import java.util.stream.Stream;
 

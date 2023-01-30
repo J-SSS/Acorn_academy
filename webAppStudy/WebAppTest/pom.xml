@@ -43,7 +43,6 @@
         <!-- (1번 방법) mvnrepository에서 검색하여 입력할 수 있음-->
         <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
         <!-- 빨간불 뜨면 마우스 오른쪽 버튼 눌러서 메이븐-다시로드 클릭 -->
-
         <!-- (2번 방법) 인텔리제이에서 디펜던시를 자동으로 완성해줌 (alt + insert) -->
         <dependency>
             <groupId>com.mysql</groupId>

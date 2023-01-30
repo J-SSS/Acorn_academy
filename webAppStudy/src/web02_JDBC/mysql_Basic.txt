@@ -1,0 +1,90 @@
+//////////////////////
+create
+//////////////////////
+create table member( 
+name varchar(255)
+, birth date
+, id varchar(255)
+, sal int
+);
+
+//////////////////////
+insert
+//////////////////////
+
+insert into member (id, name, birth, signup, sal) value ('hong123', '홍길동', '1980-1-25', now(), 200);
+
+select * from member;
+
+
+
+//////////////////////
+
+not null, unique key, primary key
+
+uk = 대표성은 없으나 하나만 존재하는 키 , not null을 갖지 않음
+pk = 데이터에 대해 대표성을 갖는 키. 오직 1필드만 정의 가능, 인덱스(목차)를 등록하여 빠른 호출 가능
+pk는 not null + unique + index를 한 방에 등록하는 대표 키.
+
+//////////////////////
+update
+//////////////////////
+
+update member set id = 'hong3345' where id is null
+
+where은 if문과 같은 역할
+id=null은 인식하지 못하는 언어가 있어서
+is로 쓰는데 함수랑 비슷한 역할을 함
+null 외에는 항상 =를 사용
+
+//////////////////////
+delete
+//////////////////////
+
+delete from member where id is null;
+
+
+//////////////////////
+제약조건
+//////////////////////
+
+ alter table member modify id varchar(255) not null;
+ (not null; 을 빼고 다시 입력하면 제약조건을 삭제하는 명령어 없이도 덮어씌울수있음)
+
+
+alter table member add unique(id);
+
+mysql> alter table member add constraint member_uk_id unique(id);
+
+constraint member_uk_id 는 제약조건에 member_uk_id라는 이름을 부여함 
+
+그러나 unique는 null값을 허용하기 때문에  not null;을 함께 써주는 것이 필요함
+
+---------
+
+alter table member add primary key(id);
+
+//////////////////////
+외래키 참조키
+//////////////////////
+외래키, 참조키, 관계형이란 의미를 제공하는 키:
+
+
+//////////////////////
+조인 = 관계형 데이터베이스
+//////////////////////
+table1 * table2 로 출력하는것 = 크로스조인
+
+중복하는것 기준으로 출력 = 이너조인
+where emp.deptno = dept.deptno;
+
+where 대신에 조인임을 명시해줄 수 있음
+ => inner join dept on emp.deptno = dept.deptno;
+
+
+참조의 제약조건 => 참조값에 없는 값은 insert 할 수 없음
+
+
+
+
+insert into emp (empno, ename, job, sal, deptno) value ('9999', '경 민', '프로그래머', 9999.99,50);
