@@ -1,0 +1,187 @@
+﻿1. select * from tab; //mysql> show tables;  
+
+2. desc emp; // dept 라는 tabble 구조 보기
+
+
+3. SCOTT 계정의 EMP 테이블 구조(desc emp;)
+        EMPNO(사원번호)
+	ENAME(이름)
+	JOB(직책)
+	MGR(직속상사 사원번호)
+	HIREDATE(입사일)
+	SAL(급여)
+	COMM(성과급)
+	DEPTNO(부서번호)
+
+
+4. EMP 테이블에 담긴 모든 사원 레코드를 조회해 보자.
+
+	A) SELECT * FROM emp;
+
+5. SELECT 구조
+   	SELECT 컬럼,컬럼...
+        FROM 테이블명 
+        WHERE 조건 
+        GROUP BY 구문 
+        UNION/UNION ALL/INTERSECT/MINUS 구문 
+        ORDER BY 구문
+	LIMIT startRow, rows 페이징 구문
+
+         
+6.    문제1)  사원명과 입사일을 조회하시오.
+
+	A1) SELECT ENAME,HIREDATE FROM EMP;
+
+	A2) SELECT ENAME as 사원명, HIREDATE as 입사일 FROM EMP;
+	*) as : Aliases의 약자 (생략가능)
+
+	A3) SELECT ENAME '사원명', HIREDATE '입사일' FROM EMP; 
+	*) as를 생략한경우 ''로 묶어주기
+
+
+7.  커미션이 없는 사람을 조회하시오.
+
+	 A) SELECT * FROM EMP WHERE  COMM IS NULL;
+
+8. 문제2)  사원번호와 이름을 조회하시오.
+
+	A) SELECT * EMPNO '사원번호', ENAME '이름' FROM EMP;
+
+
+9. 문제3)총 사원수를 구하시오.
+
+	A) SELECT COUNT(EMPNO) FROM EMP;
+
+10. 문제4)부서번호가 10이고 JOB이 매니저인 사람을 조회하세요.
+	
+	*)WHERE 조건 구문
+	- 반복문 안에서 IF절과 유사하게 동작(SELECT가 TABLE의 모든 자료를 반복문으로 출력하는 것과 유사함)
+	- TABLE의 특정 레코드를 추출하는데 사용함
+	- ( WHERE 칼럼 = A ) : 테이블의 특정 칼럼이  A와 같은 것만 추출
+	- MYSQL은 문자열 데이터를 DATE나 숫자로 형변환 하기 쉽다.
+	- 수를 형변환 불가한 문자열로 비교연산해도 오류가 발생하지 않는다. 단지 없는 조건이 될 뿐.
+
+	A) SELECT * FROM EMP WHERE DEPTNO = 10 AND JOB = 'manager';
+
+
+11. 문제5)급여가 2500이상 되는 사원을 조회하시오.
+
+
+	*) 비교연산 Operaters
+	- = : 같은지 (수, 문자열, Date 비교연산 가능, null은 비교연산이 불가능)
+	- >= : 이상 (수만)
+	- > : 초과
+	- < : 미만
+	- <= : 이하
+	- !=,<> : 같지않은
+	- is Null : 데이터가 null이 아닌 것
+	- in not Null : 데이터가 null이 아닌 것
+	- 칼럼 Between A and B : a부터 b까지 (칼럼 >= A and 칼럼<= B)
+	- 칼럼 in (A, B, C) : a이거나 b이거나 c인것 (칼럼 = A or 칼럼 = B or...)
+	- 칼럼 in (SELECT) : 서브쿼리 형태로 사용가능
+
+	*) AND or NOT 연산자
+	- AND : &&, 교집합, 모든 조건이 true인지를 검사
+	- OR : ||, 합집합, 하나라도 조건이 true인지 검사
+	- NOT : 해당 조건이 아는 것
+
+	A) SELECT * FROM EMP WHERE SAL >= 2500;
+
+
+12. 문제6)사원들 중 이름이 S로 시작하는 사원의 사원 번호와 이름을    조회하시오.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   1. LIKE 는 % 와 _(와일드카드)문자와 함께 검색 시 사용
+   2. SELECT EMPNO,ENAME FROM EMP 
+WHERE ENAME LIKE 'S%';
+   3. SELECT EMPNO,ENAME FROM EMP 
+WHERE ENAME LIKE 'S____'; //S로 시작하고 앞에 4자리인
+13. 문제7)사원 이름에 T가 포함된 사원의 사원 번호와 이름을 조회하시오.
+
+
+
+
+
+
+   1. SELECT EMPNO,ENAME FROM EMP 
+WHERE ENAME LIKE '%T%';
+
+
+14. 문제8-1)커미션이 300, 500,1400인 사원의 사번,이름, 커미션을 조회하시오.
+
+
+	A1) SELECT EMPNO,ENAME,COMM FROM EMP WHERE COMM = 300 OR COMM = 500 OR COMM = 1400;
+	A2) SELECT EMPNO,ENAME,COMM FROM EMP WHERE COMM IN (300,500,1400);
+
+
+15. 문제8-2)커미션이 300,500,1400이 아닌 사원을  NOT IN()로 조회
+
+
+	A2) SELECT * FROM EMP WHERE COMM NOT IN (300,500,1400);
+	*) NOT은 COMM의 앞에 있어도, 뒤에 있어도 가능
+	*) Null은 비교연산이 불가해서 몇 명 안나옴
+
+
+	*) null인 사람을 찾으려면? SELECT * FROM EMP WHERE COMM IS Null;
+
+
+16. 문제9)부서번호가 10번이 아닌 사원을 조회하세요. 
+
+
+	A1) WHERE NOT DEPTNO = 10;
+	A2) WHERE DEPTNO <> 10;
+	A3) WHERE DEPTNO != 10;
+	A3) WHERE DEPTNO ^= 10;        //mysql에서 사용할 수 없음
+
+
+17. 문제10) 급여가 2000이상이고 3000이하인 직원을 모두 조회하세요.
+
+
+	A1) SELECT * FROM EMP WHERE SAL >= 2000 AND SAL <= 3000;
+	A2) SELECT * FROM EMP WHERE SAL BETWEEN 2000 AND 3000;
+
+
+18. 문제11) 급여가 2000이하와 3000이상인 직원을 모두 조회하세요.
+
+
+  	A1) SELECT * FROM EMP WHERE SAL <= 2000 OR SAL >= 3000;
+	A2) SELECT * FROM EMP WHERE SAL NOT BETWEEN 2000 AND 3000;
+
+
+
+
+19. HW) 사원의 실제 급여는 SAL*10이다.  사원 이름과 컴미션, 사원의 실제급여, 사원의 실제급여 + 커미션을 조회하세요.
+
+	*)  IFNULL(칼럼, value) : 해당 칼럼의 null을 다른 값으로 변경
+	*) COMM에 NULL 때문에 실제급여 + 커미션이 되지 않는다. NULL도 중요한 데이터로 취급되기 때문이다. IFNULL or  COALESCE 내장함수로  NULL을 0으로 바꾸고 계산하면된다.
+
+	A1) SELECT ENAME, COMM, SAL*10, SAL*10 + COALESCE(COMM,0) as '총급여' FROM EMP;
+	A2) SELECT ENAME, COMM, SAL*10, SAL*10 + IFNULL(COMM,0) as '총급여' FROM EMP;
+
+
+	*) where로 검색한 결과가 출력되기때문에 총급여라는 필드는 현재 검색범위에서 존재하지 않는 상태라
+	총급여라는 필드를 조건문에 넣어서는 검색할 수 없음
+
+	AA)FROM에 가상테이블을 만들어서 이름을 정해주고, 거기서 where문을 실행함
+SELECT e.* FROM (SELECT *, (ifnull(comm,0)+sal) '총급여' from emp) as e WHERE e.총급여>=2500;
+
+
+
+
+
+
+
+
+

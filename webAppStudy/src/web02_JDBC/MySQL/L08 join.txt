@@ -1,0 +1,292 @@
+﻿★. FK와 제약조건 (참조의 무결성)
+- 외래키는 꼭 다른 테이블의 대표키를 지정할 수 있다
+- FOREIGN KEY(FK) REFERENCES 다른테이블(PK)
+- 참조하는 테이블(FK를 가진)을 자식테이블, 참조되는 테이블을 부모라 부른다
+- 외래키의 제약조건으로 자식은 부모가 갖지 않은 PK를 참조할 수 없다
+- 또한 부모의 PK를 참조하는 자식이 있다면 부모의 PK를 수정삭제 할 수 없다
+- (기본값) ON UPDATE Restrict ON DELETE Restrict - 수정과 삭제는 엄격하다
+- ON UPDATE CASCADE : 부모의 PK를 변경시 자식의 FK도 같이 변경
+- ON UPDATE SET NULL : 자식을 null로 변경
+- ON DELETE CASCADE : 부모 레코드가 삭제되면 자식도 삭제
+- ON DELETE SET NULL : 자식을 null로 변경
+=> ID가 PK로 돼있을 때, CASCADE상태로 ID삭제시 자식도 삭제됨(글삭)
+=> SET NULL은 게시글의 ID정보가 없어짐. 다만 이렇게는 잘 안쓰고 탈퇴회원을 구분하는 별도의 레코드를 준다
+=> NULL이 많아지면 데이터관리가 답없어짐
+
+
+
+* Join
+   * 둘 이상의 테이블을 연결하여 데이터를 검색
+   * join의 방식으로 크게 3가지(Equi,Non_Equi,Self Join)로 나눈다.
+   * 보통 외래키로 두 테이블을 조인할 수 있으며 외래키가 아니더라도 조인해서 연결할 수 있다
+   * 두 테이블을 연결하여 하나의 결과로 추출할 수 있어서 관계형 데이터베이스라 부른다
+
+////////////////
+1. Cross Join
+////////////////
+   1. CROSS JOIN 절은 조인되는 두 테이블에서 곱집합을 반환
+   2. 공통점이 없는 두 테이블의 모든 데이터를 생성하기 위하여 사용
+   3. Cartesina Product을 구할때 사용
+   4. 왼쪽 테이블을 기준으로 오른쪽 테이블의 열을 곱한 결과
+   5.  m열을 가진 테이블과 n열을 가진 테이블이 교차 조인되면 m*n 개의 열을 생성
+   6. SELECT ename FROM emp CROSS JOIN dept
+   7. CROSS JOIN을 생략하고 ',' 사용 가능
+
+
+////////////////
+2. Equi Join
+////////////////
+   1.  조인하는 테이블 간에 공통된 값(Foreign key)을 이용하여 조인한다.  
+   2. Equi Join은 공통된 값 만을 이용하는  Inner Join과 
+   3. 공통된 값을 이용하고 남은 데이터들도 조인하는 Outer Join이 있다.
+   4. 공통된 값을 비교할 때 Where절을 사용하지 않는 조인을 ANSI Join이라 부른다. 
+   1. A a INNER JOIN B b ON a.key = b.f_key
+   2. A JOIN B USING (key)
+   3. A NATURAL JOIN B -> 어떤걸 합치는지 명시성이 떨어져서 잘 안씀
+=> ANSI join은 공통문법이라 모든 db에서 공통적으로 사용 가능함)
+
+////////////////
+3. Inner Join
+////////////////
+   1. 가장 흔한 결합방식
+   2. 일반적인 형태
+
+SELECT e.empno, e.ename, d.dname FROM dept d, emp e WHERE d.deptno = e.deptno;
+
+   3. INNER JOIN을 사용한 예제
+
+SELECT e.empno, e.ename, d.dname FROM dept d INNER JOIN emp e ON d.deptno = e.deptno;
+   4. 콤마(,) 대신 INNER JOIN을 사용 할 수 있다.
+
+   5.  INNER는 생략 가능하다.
+   6.  Join 조건은 ON 절에 온다.
+   7. 두 테이블의 칼럼이 같다면 ON 대신 USING(DEPTNO)로 대체 가능하다. 
+   4. NATURAL JOIN을 이용하여 조인하는 예제(잘 안씀)
+
+SELECT  e.empno, e.ename, d.dname FROM  dept d NATURAL JOIN emp e;
+
+   8. NATURAL JOIN을 사용 하면 동일한 컬럼을 내부적으로 모두조인 하므로, ON절이 생략 가능하다.
+   5. JOIN~USING절을 이용하여 조인하는 예제
+
+SELECT e.empno, e.ename, deptno FROM emp e JOIN dept d
+
+USING (deptno);
+   9. NATURAL JOIN의 단점은 동일한 이름을 가지는 칼럼은 모두 조인이 되는데, USING 문을 사용하면 칼럼을 선택해서 조인할 수 있다.(잘안씀)
+  10.두 테이블을 결합할 때 결합의 조건을 만족하는 튜플(레코드,row)만 출력하는 방식
+
+////////////////
+4. OUTER JOIN 
+////////////////
+   0 . 두 테이블을 결합할 때 조건을 만족하지 않는 행들 까지도 출력하는 방식
+   1. 2개 이상의 테이블이 조인될 때 조인 조건을 만족하지 않는 행들까지도 출력
+   2. ENAME 이 'KING'직원의 DEPTNO를 NULL로 바꾼다.
+   3. UDATE EMP SET DEPTNO=NULL WHRER ENAME = 'KING'
+   4. INNER JOIN의 결과가 12개였지만 UDATE 후 11개로 변경됨
+   5. KING의 DEPTNO가 DEPT TABLE에 만족하는 값이 없기 때문
+   6. 이때 KING도 JOIN의 결과로 나타내기 위해 LEFT OUTER JOIN을 사용한다.
+
+////////////////
+   7. LEFT JOIN
+////////////////
+   0. 두 테이블의 결합시 왼쪽 테이블의 레코드가 오른쪽 테이블과 결합조건에 맞지 않더라도 출력하는 방식
+   1. LEFT JOIN은 오른쪽 테이블에 조인시킬 컬럼의 값이 없는 경우 사용한다.
+select * from emp left join dept on emp.deptno=dept.deptno;
+   2. SELECT ename,deptno,dname  FROM EMP e LEFT JOIN DEPT d on e.deptno = d.deptno;
+   3. (오라클용)SELECT e.ename, e.deptno, d.dname FROM EMP e , DEPT d where e.deptno=d.deptno(+);
+   4. KING이 출력 되지만 나머지 칼럼은 NULL
+
+////////////////
+   8. RIGHT JOIN
+////////////////
+   0. 두 테이블의 결합시 오른쪽 테이블의 레코드가 왼쪽 테이블과 결합 조건에 맞지 않더라고 출력하는 방식
+   1. RIGHT JOIN은 왼쪽 테이블에 조인시킬 컬럼의 값이 없는 경우 사용한다.
+   2. SELECT ename,deptno,dname 
+FROM EMP e RIGHT JOIN DEPT d 
+USING(deptno);
+   3. SELECT e.ename, e.deptno,d.deptno, d.dname 
+FROM EMP e , DEPT d 
+where e.deptno(+)=d.deptno;
+   4. DEPTNO 40인 부서가 출력되지만 ename = NULL
+
+////////////////
+   9. FULL OUTER JOIN (MySQL X)
+////////////////
+   0. 양쪽 테이블의 결합 조건이 만족하지 않는 레코드를 출력할 때
+   1. FULL OUTERL JOIN은 양쪽 테이블 모두 Outer Join걸어야 하는 경우 사용 한다.
+   2. SELECT e.ename, e.deptno, d.dname 
+FROM EMP e FULL OUTER JOIN DEPT d 
+on e.deptno=d.deptno;
+   3. (XXX )이때 join의 조건을 on or using을 써야 한다.
+   4. mysql 에서는 union으로 합집합 결과를 출력해야 한다.
+   5. (SELECT e.ename, e.deptno, d.dname 
+FROM EMP e LEFT OUTER JOIN DEPT d 
+on e.deptno = d.deptno) 
+UNION
+(SELECT e.ename, e.deptno, d.dname 
+FROM EMP e RIGHT OUTER JOIN DEPT d 
+on e.deptno = d.deptno);
+
+
+SELECT * FROM ((SELECT e.ename,d.* FROM EMP e LEFT JOIN DEPT d USING (deptno))union(SELECT e.ename,d.* FROM EMP e RIGHT JOIN DEPT d USING (deptno))) as f ORDER by f.deptno;
+
+
+////////////////
+   5. Non_Equi Join
+////////////////
+   1. 테이블 간에 공통된 값이 없는 조인
+   2. cross join이 일어난다. (두 테이블의 곱)
+   3. where의 검색 조건으로 많이 사용되며 두 테이블 간 공통된 값이 없음으로 동등(=) 이외의 연산자로 검색한다.
+   4. SELECT e.ename,e.sal,s.grade
+FROM emp e, salgrade s;
+   5. 위의 쿼리에서 사원의 급여에 따른 등급을 표시하세요.
+   6. WHERE e.sal BETWEEN s.losal AND s.hisal;
+
+////////////////
+   6. Self Join
+////////////////
+   1. Equi Join과 같지만 하나의 테이블에서 조인이 일어난다.
+   2. 같은 테이블에 대해 두 개의 alias를 사용하여 FROM절에 두 개의 테이블을 사용하는 것처럼 조인한다.
+   3. 사원의 메니저명을 조회하는 Self Join 예제
+SELECT e.ename, a.ename "Manager"
+FROM emp e, emp a
+WHERE e.mgr = a.empno;
+   7. 문제1)dallas에서 근무하는 직원의 이름, 직업, 부서번호, 부서이름을 출력하라
+   8. 문제2)accounting 부서 소속 사원의 이름과 입사일을 출력하세요.
+   9. 문제3)직급이 manager인 사원의 이름,부서명을 출력하세요.
+   10. 문제4)급여 등급이3등급 이상인 직원의 사원 이름과 사원의 관리자 이름, 급여와 급여 등급을 급여 등급 순으로 출력하라.
+   11. 문제5)커미션을 받는 사원의 사원이름, 부서이름,  실제급여(급여+커미션), 실제급여의 등급을 실제급여 순으로 출력하세요.
+   12. 문제6) EMP TABLE을 SELF JOIN해서 smith씨와 동일한 근무지에서 근무하는 사원의 이름을 출력하세요.
+
+
+
+13. 문제7)
+
+1. 1996-07-08'(Orders.OrderDate) 에 주문된 주문 상세(OrderDetails) 내역과  주문된 상품 이름(Products.ProductName), 배송업체 이름(Shippers.ShipperName)을 출력하세요!
+
+2. 고객의 고향이 'USA'(Customers.Country)인 사람이 주문한 주문(Orders)과 고객이름(Customers.CustomerName), 주문을 받은 직원 전체이름 (Employees.LastName+FirstName)을 직원번호 순으로 정렬하며 출려하세요!
+
+3. 공급업체가(Suppliers.Country) 'USA'에 위치한 상품(Products)과 상품의 분류 이름(Suppliers.SupplierName)을 상품 분류 및 가격 순으로 정렬하며 출력하세요.
+
+
+SELECT odd.*, p.ProductName, sh.ShipperName  FROM OrderDetails as odd
+JOIN Products as p USING(ProductId)
+JOIN Orders as od USING(OrderId)
+JOIN Shippers as sh USING(ShipperID)
+WHERE od.OrderDate = '1996-07-08'; 
+;
+	
+
+
+SELECT cs.CustomerName, od.*, concat(LastName,' ',FirstName) as EmpName FROM Orders as od
+JOIN Customers cs USING(CustomerID)
+JOIN Employees emp USING(EmployeeID)
+WHERE cs.Country = 'USA'
+ORDER BY od.EmployeeID
+;
+
+
+SELECT pd.*, sp.SupplierName FROM Products as pd
+JOIN Suppliers as sp USING(SupplierID)
+WHERE sp.Country = 'USA'
+ORDER BY sp.SupplierName, pd.Price
+;
+
+ select a.empno, a.ename, a.mgr, b.ename as 상사 from emp a left join emp b on a.mgr=b.empno order by mgr;
+select a.empno, a.ename, a.mgr, b.ename as 상사, c.ename as 상상사 from emp a left join emp b on a.mgr=b.empno left join emp c on b.mgr = c.empno order by mgr;
+
+   13. 문제1) 답
+
+	SELECT e.ename, e.job, e.deptno, d.dname 
+        FROM EMP e JOIN DEPT d USING(deptno) 
+        WHERE LOWER(d.loc) = 'dallas';
+
+ select e.ename, e.job, e.deptno, d.dname from emp e join dept d using(deptno) where d.loc = 'dallas';;
+
+   14. 문제2) 답
+
+        SELECT ename, hiredate
+        FROM EMP NATURAL JOIN DEPT
+        WHERE LOWER(dname) = 'accounting';
+
+select e.ename, e.hiredate from emp e join dept d on d.dname='accounting';
+
+   15. 문제3) 답
+        SELECT ename, dname 
+        FROM EMP JOIN DEPT 
+        USING(deptno)
+        WHERE LOWER(job) = 'MANAGER';
+
+select ename, dname from emp join dept using(deptno) where job='manager';
+
+   16. 문제4) 답
+SELECT e.ename, a.ename "Manager",e.sal, s.grade
+FROM EMP e LEFT OUTER JOIN EMP a 
+ON e.mgr = a.empno
+CROSS JOIN SALGRADE s
+WHERE e.sal BETWEEN s.losal AND s.hisal
+AND s.grade >2 ORDER BY s.grade;
+
+select a.ename, b.ename '관리자명', a.sal, c.grade from emp a left join emp b on a.mgr=b.empno join salgrade c on a.sal between c.losal and c.hisal and c.grade>2 order by c.grade;
+
+
+   17. 문제5) 답
+        SELECT e.ename, e.job, e.deptno, e.sal+e.comm, d.dname,s.grade
+        FROM EMP e JOIN DEPT d CROSS JOIN SALGRADE s
+        ON e.deptno = d.deptno
+        WHERE e.sal+e.comm BETWEEN s.losal AND s.hisal 
+        AND e.comm >0 
+ORDER BY s.grade;
+
+select a.ename, a.job, a.sal+a.comm, c.grade from emp a join salgrade c on a.sal between c.losal and c.hisal where a.comm is not null order by a.sal+a.comm;
+
+
+   18. 문제6) 답
+SELECT e.ename, a.ename
+FROM EMP e JOIN EMP a 
+ON e.deptno = a.deptno 
+WHERE e.ename = 'SMITH' AND a.ename <> 'SMITH';
+
+
+select a.ename, b.ename '같은부서' from emp a join emp b using(deptno) where a.ename = 'smith' and b.ename <>'smith';
+
+
+
+
+//////////밑에있는건 먼지모르겠음
+
+	SELECT 
+ e.*,m.ename '상사', s.grade
+ FROM EMP e 
+  LEFT JOIN EMP m
+   ON e.mgr=e.empno
+  LEFT JOIN SALGRADE s
+   ON e.sal BETWEEN s.losal and s.hisal
+  WHERE s.grade>=3
+
+
+
+
+
+
+SELECT 
+ e.ename, (e.sal+IFNULL(e.comm,0)) r_sal ,m.ename '상사',
+ s.grade,d.dname
+ FROM EMP e 
+  LEFT JOIN EMP m
+   ON e.mgr=e.empno
+  LEFT JOIN SALGRADE s
+   ON (e.sal+IFNULL(e.comm,0)) BETWEEN s.losal and s.hisal
+  LEFT JOIN DEPT d
+   ON e.deptno=d.deptno
+  ORDER BY r_sal
+
+
+  
+select e.ename, d.dname, e.sal + ifnull(e.comm, 0) as total, s.grade 
+from emp e 
+inner join dept d 
+on e.deptno = d.deptno 
+inner join salgrade s 
+on e.sal + ifnull(e.comm, 0) between s.losal and s.hisal 
+where ifnull(comm, 0) 
+order by total;

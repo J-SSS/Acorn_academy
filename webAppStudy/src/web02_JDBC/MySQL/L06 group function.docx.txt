@@ -1,0 +1,62 @@
+﻿* 그룹 함수? (=집계함수)
+그룹 함수는 하나 이상의 행을 그룹으로 묶어 연산하여 총합, 평균 등을 하나의 결과로 나타낸다.  
+그룹 함수는 단일 행 함수 또는 단일 칼럼을 사용할 수 없다.
+예)FUNCTION(칼럼) // 칼럼을 한 개의 그룹으로 보고 단일 결과를 출력하세요.
+1. 그룹함수의 종류
+   1. SUM()                 //그룹의 누적 합계
+   2. AVG()                 //그룹의 평균
+   3. COUNT(A) //그룹의 칼럼 A 중 NULL을 제외한 총 개수
+   4. COUNT(DISTINCT A) //그룹의 칼럼 A 중  중복된 값과 NULL을 제외한 총 개수. DISTINCT는 GROUP BY와 동일 
+   5. MAX()                //그룹의 최대값
+   6. MIN()                //그룹의 최소값
+   7. STDDEV()        //그룹의  표준편차
+   8. VARIANCE() //그룹의 분산
+2. 문제1) 사원의 급여 총액을 구하세요.
+
+	SELECT SUM(SAL) FROM EMP ;
+
+3. 문제2) 사원의 커미션 총액을 구하세요.
+
+	SELECT SUM(COMM) FROM EMP ;
+
+4. 문제3) 부서가 30인 사원의 급여 총액을 구하세요.
+
+	SELECT SUM(SAL) FROM EMP WHERE DEPTNO = 30;
+
+5. 문제4) 사원의 평균 급여를 구하세요.
+
+	SELECT AVG(SAL) FROM EMP;
+
+6. 문제5) 부서가 10인 사원의 평균 급여를 구하세요.
+
+	SELECT AVG(SAL) FROM EMP WHERE DEPTNO = 10;
+
+7. 문제6) 사원의 가장 높은 급여와 가장 낮은 급여를 구하세요.
+
+	SELECT MAX(SAL), MIN(SAL) FROM EMP;
+
+8. 문제7) 커미션을 받는 사람의 수를 출력하세요. 
+
+	SELECT COUNT(COMM) FROM EMP;
+
+9. 문제8) 사원의 직업 개수를 출력하세요.
+
+	SELECT COUNT(DISTINCT JOB) FROM EMP;
+	
+
+	*). DISTINCT는 중복을 그룹(삭제)-> GROUP BY와 비슷
+
+
+10. 문제9) 부서가 10 인 사원의 수는
+
+	SELECT COUNT(*) FROM EMP WHERE DEPTNO = 10;
+
+11. 문제10) 가장 최근에 입사한 사원과, 가장 오래된 사원의 입사 일을 출력하세요.
+
+	SELECT MAX(HIREDATE), MIN(HIREDATE) FROM EMP;
+
+12. 문제11)부서가 30인 사원 중 커미션을 받는 사원의 수는 
+
+	SELECT COUNT(*) FROM EMP WHERE DEPTNO = 30 AND COMM>0;
+
+13. 심화문제 => 입사일의 평균을 구하세요

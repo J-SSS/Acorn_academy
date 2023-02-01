@@ -1,0 +1,118 @@
+/////////////////수학 함수
+
+* ABS(숫자) : 절대값 계산
+* CEILING(숫자) : 올림
+* FLOOR(숫자) : 내림
+* ROUND(숫자) : 반올림
+* CONV(숫자, 기존 진수, 바꿀 진수) : 기존 진수에서 다른 진수로 바꿔주는 함수
+* MOD(숫자1, 숫자2), 숫자1 % 숫자2 : 숫자1을 숫자2로 나눈 나머지 반환
+* POW(숫자1, 숫자2) : 숫자1을 숫자2만큼 거듭제곱한 값 반환
+* SQRT(숫자) : 숫자의 제곱근 반환 
+* RAND() : 0이상 1미만의 실수 랜덤값 출력
+* SIGN(숫자) : 숫자가 양수, 0, 음수인지 구해 1, 0, -1 중 하나 반환
+* TRUNCATE(숫자, 정수): 소수점 기준으로 정수 위치까지 구하고 나머지 버림
+
+/////////////////날짜/시간 함수
+
+* ADDDATE(날짜, 차이), SUBDATE(날짜, 차이): 날짜를 기준으로 차이를 더하거나 뺀 날짜 반환
+* ADDTIME(날짜/시간, 시간), SUBTIME(날짜/시간, 시간): 날짜/시간을 기준으로 시간을 더하거나 뺀 결과 반환
+* CURDATE(), CURTIME(), NOW(), SYSDATE()
+   * CURDATE(), CURTIME(): 현재 연-월-일 반환, 현재 시:분:초 반환
+   * NOW(), SYSDATE(): 현재 연-월-일 시:분:초 반환
+* YEAR(날짜), MONTH(날짜), DAY(날짜), HOUR(시간), MINUTE(시간), SECOND(시간), MICROSECOND(시간)
+
+   * 날짜 또는 시간에서 연, 월, 일, 시, 분 초, 밀리초 구함
+   * DATE(), TIME() : DATETIME 형식에서 연-월-일과 시:분:초 출력
+   * DATEDIFF(날짜1, 날짜2), TIMEDIFF(날짜1 또는 시간1, 날짜1 또는 시간2) : 날짜1-날짜2 결과 반환
+   * DAYOFWEEK(날짜), MONTHNAME(), DAYOFYEAR(날짜)
+   * DAYOFWEEK(): 요일(1~7: 일요일부터 토요일) 반환
+   * MONTHNAME(): 월의 영문이름 반환
+   * DAYOFYEAR(): 1년 중 몇 번째 날인지(1~366) 반환
+   * LAST_DAY(날짜): 입력한 월의 마지막 날짜 반환
+   * MAKEDATE(연도, 정수): 연도의 첫날부터 정수만큼 지난 날짜 반환
+   * MAKETIME(시, 분, 초): 시, 분, 초 이용해 시:분:초 TIME 형식 만들어줌
+   * PERIOD_ADD(연월, 개월수): 연월부터 개월수만큼 지난 연월 반환
+   * PERIOD_DIFF(연월1, 연월2): 연월1-연월2 개월 수 반환
+   * QUARTER(날짜): 날짜가 4분기 중에서 어느 분기에 해당하는지 반환
+   * TIME_TO_SEC(시간): 시간을 초 단위로 반환
+
+/////////////////내장 함수(시스템/정보 함수)
+
+   * USER(), DATABASE(): 현재 사용자와 현재 선택된 데이터베이스 반환
+   * FOUND_ROWS(): 바로 앞 쿼리문에서 조회된 행의 개수 반환
+   * ROW_COUNT(): 바로 앞의 INSERT, DELETE, UPDATE 문에서 삽입, 삭제, 수정된 행의 개수 반환
+   * SLEEP(초): 쿼리 실행 잠깐 멈춤
+   * VERSION(): 현재 MySQL 버전 출력
+
+/////////////////문자열 함수
+
+   * ASCII(아스키코드), CHAR(숫자)
+BBIT_LENGTH, CHAR_LENGHT, LENGTH
+   * BIT_LENGTH(): 할당된 비트크기 반환
+   * CHAR_LENGTH(): 문자 개수 반환
+   * LENGTH(): 할당된 바이트 수 반환
+   * 영문: 문자당 1바이트, 한글: 문자당 3바이트 
+
+
+   * CONCAT(문자열1, 문자열2, ...), CONCAT_WS(문자열1, 문자열2, ...)
+   * CONCAT(): 문자열을 이어주는 함수
+   * CONCAT_WS(): 구분자와 함께 문자열 이어줌
+   * ELT, FIELD, FIND_IN_SET, INSTR, LOCATE
+   * ELT(위치, 문자열1, 문자열2,...) : 첫 번쩨 인수인 위치에 적힌 숫자를 보고 그 숫자 위치에 있는 문자열을 반환
+   * FIELD(찾을 문자열, 문자열1, 문자열2, ...) : 찾을 문자열의 위치를 찾아 반환, 없으면 0 반환
+   * FIND_INSET(찾을 문자열, 문자열 리스트) : 찾을 문자열을 문자열 리스트에서 찾아 위치 반환
+   * INSTR() : 기준 문자열에서 부분 문자열 찾아 그 시작 위치 반환
+   * LOCATE() : INSTR()와 동일, 인자의 순서가 반대
+   * 둘, 2, 2, 3, 3 출력되는 예제
+   * LOWER, UPPER
+   * 대문자를 소문자, 소문자를 대문자로 바꿈
+   * INSERT(기준 문자열, 위치, 길이, 삽입할 문자열)
+   * 기준 문자열의 위치부터 길이만큼 지우고 삽입할 문자열 끼워넣기
+   * LEFT(문자열, 길이), RIGHT(문자열, 길이)
+   * 왼쪽 또는 오른쪽에서 문자열 길이만큼 반환
+   * LPAD(문자열, 길이, 채울 문자열), RPAD(문자열, 길이, 채울 문자열)
+   * 문자열을 길이만큼 늘리고 빈 곳을 채울 문자열로 채움
+   * LTRIM(), RTRIM()
+   * 문자열의 왼쪽, 오른쪽 공백 제거
+   * TRIM(문자열), TRIM(방향 자를문자열 FROM 문자열)
+   * 문자열의 앞뒤 공백 모두 없앰
+   * 방향: 앞 LEADING, 양쪽 BOTH, 뒤 TRAILING
+   * REPEAT(문자열, 횟수)
+   * 문자열을 횟수만큼 반복
+   * REPLACE(문자열, 원래 문자열, 바꿀 문자열)
+   * 문자열에서 원래 문자열 찾아 바꿀 문자열로 치환
+   * REVERSE(문자열)
+   * 문자열 거꾸로 반환
+   * SPACE(길이)
+   * 길이만큼의 공백 반환
+   * SUBSTRING(문자열, 시작위치, 길이), SUBSTRING(문자열 FROM 시작위치 FOR 길이)
+   * 시작위치부터 길이만큼 문자 반환
+   * 길이 생략하면 문자열 긑까지 반환
+   * SUBSTRING_INDEX(문자열, 구분자, 횟수)
+   * 문자열에서 구분자가 왼쪽부터 횟수 번째 나오면 그 이후 문자열 버리고 앞 문자열 출력
+   * 횟수가 음수면 오른쪽부터 셈, 왼쪽 남은 문자열 버리고 출력
+
+ /////////////////MySQL 논리함수
+
+	IF()
+	 IF(test, value1, value2)
+	 test가 참이면 값1, 그렇지 않으면 값2
+
+	IFNULL()
+	 IFNULL(value, value2)
+	 value 가 NULL 이면  value2, 그렇지 않으면 value
+
+	ISNULL()
+	 ISNULL(expr)
+	 expr이 NULL 이면 1, 그렇지 않으면 0
+
+	NULLIF()
+	 NULLIF(value1, value2)
+	 value1 = value2 NULL 반환 value1 != value2 value1 값 반환
+
+	 CASE()
+	 CASE value 
+  WHEN '비교값1' THEN result1
+  WHEN '비교값2' THEN result2
+ END
+	 value를 비교값과 비교하여 result를 반환한다.
