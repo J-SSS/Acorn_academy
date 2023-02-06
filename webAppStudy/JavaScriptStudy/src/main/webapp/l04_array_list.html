@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js의 배열</title>
+</head>
+<body>
+  <h1>길이와 index를 사용하는 자료형 Array</h1>
+  <p>JS에는 java의 Array가 없고 ArrayList와 거의 동일한 자료가 있다.</p>
+
+  <h2>object와 array의 차이</h2>
+  <ul>
+      <li>Array는 자료의 순서인 index와 길이가 무조건 존재한다.</li>
+      <li>Object는 key와 value로 이루어진 자료 구조...(==자바의 Map)</li>
+      <li>Object는 인덱스와 길이가 존재하지 않는다.</li>
+      <li>Array의 index를 키로 사용은 하지만, 물리적으로 존재하지 않는 순서다</li>
+      <li>JS에는 key가 순서가 있고 길이가 있는 object를 array로 변환하는 함수가 있다</li>
+  </ul>
+
+  <h2>배열의 필드 접근법</h2>
+  <ul>
+      <li>list.0 (x)</li>
+      <li>list[0] (o)</li>
+      <li>list.get(index)</li>
+  </ul>
+
+<script>
+  //자바에서 기본형 변수는 null을 참조할 수 없다!!
+  //int [] arr = new int[4]; // [0,0,0,0]
+  //Object [] arr = new Object[4]; //[null,null,null,null]
+  //js 기본형, object, 사용자 정의 object, Array, Map,set
+
+  const arr = new Array();
+  arr.push("안녕"); //java의 add와 같음
+  arr.push("경민이야!");
+  arr.push(38);
+  console.log(arr)
+  //arr.map(); //내부반복문의 기능 : 매개변수로 오는 함수를 반복해서 실행함
+
+  const liArr = arr.map(function (v) {
+    // return "<li>" + v + "</li>"; //문자열 li
+    let li = document.createElement("li"); // 노트객체 li
+    li.innerText=v;
+    return li;
+  });
+  console.log(liArr);
+
+  const o = {}; //new Object();
+  const arr2 = []; // new Array()랑 똑같은 표현
+  const arr3 ={list:[{},{},{}]};
+  const arr4 = [20,22,38,40,33]; //Array는 key가 필요 없다
+  console.log(arr4[2]); //2는 key가 아니라 index를 참조하는것
+  //자바는 key를 수로 쓸 수 없으나 js는 가능(제한적으로)
+  /*
+  자바
+  String 1 = "동일" -> 자바에서는 불가능
+
+ //Object는 필드에 index가 존재하지 않는다.
+  function Person(name){
+    this.name = name;
+    //this.1 = 1    ->JS에서도 이렇게는 불가능한데
+  }
+
+  const p = new Person();
+  p[1] = "경민"; 이런식으로 쓰면 1이 키가 됨
+   */
+</script>
+</body>
+</html>

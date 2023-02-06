@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>변수와 상수</title>
+</head>
+<body>
+
+      <h1>변수와 상수에 대해 배워보자</h1>
+      <p>js 변수와 상수는 타입을 명시하지 않는다(모든 타입의 데이터를 참조할 수 있다.)</p>
+
+      <h2>변수 var과 let</h2>
+      <ul>
+          <li>js의 변수는 타입을 명시하지 않는다.</li>
+          <li>변수는 변할 수 있는 수로 참조하는 데이터를 바꿀 수 있다.</li>
+          <li>var : 윈도우 필드로 정의되고 전역에만 선언 가능하다.</li>
+          <li>let : scope({}블럭을 의미)가 명확한 변수로서 es6 문법이다</li>
+      </ul>
+
+      <h2>상수와 const</h2>
+      <p>처음 선언하면 참조하는 data를 바꿀 수 없는 것을 상수라하고 es6에서 추가되었다
+          (자료형이나 함수를 선언할때 흔히 사용) 예) Math.PI처럼 변하지 않는 정보</p>
+    <script>
+      var a; // undefined (js에서 기본형으로 취급함 : undefined 오류를 없애기 위해)
+      console.log(a); // java를 포함한 대부분의 언어에서는 초기화 안하면 오류를 띄움
+
+      a = null; // null도 기본형으로 취급한다.
+      console.log(1+a); // null을 0으로 형변환
+
+      a = 13; // 변수 a가 변하 수 있어서 변수임!
+      console.log(a);
+
+      a = "안녕"; // js의 변수는 모든 타입의 데이터를 참조할 수 있다.
+      console.log(a + "하세요~");
+
+      //int n=10; // java의 변수
+      let i=30; // var와 동일한데 var는 전역에만 선언 가능(hoisting)
+
+      // const PI; (X)// 상수는 선언과 동시에 대입해야한다
+      // cont PI = 3.14;
+
+      const arr=[1, 2, 3, 4, 5];
+      console.log(arr);
+      //arr = 13 (X) ; // arr가 참조하는 data자체를 변경하는 것은 불가능
+      arr[0] = 100; //arr이 참조하는 data의 필드는 변경 가능
+
+    </script>
+
+</body>
+</html>

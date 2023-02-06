@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>var의 호이스팅 현상</title>
+</head>
+<body>
+    <h1>var의 호이스팅 현상</h1>
+    <p>hoisting : 끌어올린다는 의미로 var이 지역에서 선언되더라도
+        전역에서 사용되는 현상을 의미한다</p>
+    <p>var 변수는 전역의 필드인 window에 선언되기 때문에 scope가 없고 (=영역을 구분할 수 없고)
+    무조건 전역에 호출된다</p>
+    <p>이를 오류라고 할 수는 없으나 지역변수가 없는 것은 프로그래밍에 한계를 만들 수 있기에 let을 만들었다</p>
+
+<script>
+    var a = 10;
+    {
+        var a = 20;
+        console.log("지역 : " + a); //20
+    }
+    console.log("전역 : " + a) //10이 나와야하는데 실제론 20이 나옴
+    //지역변수 a와 전역변수a가 구분이 확실하다면 전역의 a가 10이 나와야하는데 20이 나오는것임
+    //지역에서 선언했는데 전역의 변수가 바뀐다고 해서 호이스팅이라고 함
+
+
+    let b = 10;
+    {
+        let b = 20;
+        console.log("지역 : " + b);
+    }
+    console.log("전역 : " + b)
+    //java는 함수 안에서 부모영역에 선언한 변수이름을 자식 영역에서 사용할 수 없다 (필드는 예외)
+    //var는 윈도우의 필드로 변수를 선언하는 명령어이기 때문에 hoisting 현상이 발생한다
+    //windows : 브라우저 객체로 js가 실행될때 브라우저와 관련된 모든 필드를 포함하는 최상위 객체로 생성
+    //자바에 굳이 비유하면 JVM에 존재하는 필드라고 하면 됨
+    //windows.document : 브라우저에서 불러온 html문서를 객체로 생성하는 것
+    //window.document.(node : id,getElementBy~~.QuearySelector ...등) = DOM탐색기, node트라벨링 = node객체
+    //=> html에 작성된 태그를 객체로 생성한 것 (node: 가지에 달린 무언가...)
+    //DOMtree : HTML에 작성된 태그를 tree의 형상으로 구성하는 것(tag -> node)
+    console.log(window);
+    console.log(window.document)
+    console.log(window.a)
+    //a가 window의 필드로 선언되었기때문에 a는 전역이다.
+
+    window.c=100; //== var b =100로 선언하는것과 같음
+    {
+        window.c=99; // == var b = 10;
+    }
+    console.log("window.c : " + c)
+
+</script>
+
+
+
+</body>
+</html>

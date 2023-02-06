@@ -6,10 +6,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="JavaScriptStudy" />
         <module name="WebAppTest" />
+        <module name="GitWebStudy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="GitWebStudy" target="1.8" />
+      <module name="JavaScriptStudy" target="1.8" />
       <module name="Test1" target="1.8" />
       <module name="Test222" target="1.8" />
       <module name="Test333" target="1.8" />

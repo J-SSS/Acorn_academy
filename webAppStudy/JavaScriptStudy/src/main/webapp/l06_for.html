@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자료형과 반복문</title>
+</head>
+<body>
+  <h1>자료형을 반복문으로 검사해 보자~</h1>
+  <h2>Array</h2>
+  <ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+
+  <h3>문제1 다음 리스트의 모든 값을 더하세요</h3>
+  <ul id = "ex1">
+    <li>1</li>
+    <li>4</li>
+    <li>9</li>
+    <li>16</li>
+    <li>25</li>
+    <li>36</li>
+    <li>49</li>
+    <li></li>
+  </ul>
+  <p id = "ex1Result"></p>
+
+  <script>
+
+
+ /*
+  ex1.children HTMLCollection 배열인데 Array보다 필드가 적은 배열
+  ex1.getElementsByTagName("li")
+  ex1.childrend[0].innerText
+*/
+
+  const arr1 = document.getElementById("ex1").children;
+  let sum1 = 0;
+  for(let a of arr1){
+    sum1 += Number(a.innerText);
+  }
+  document.getElementById("ex1Result").innerHTML=sum1;
+
+   console.log(sum1)
+
+  </script>
+
+  <h3>ex2 li에 작성된 문자열을 li의 color 로 변경하세요!</h3>
+  <ul id="ex2H3">
+    <li>red</li>
+    <li>lightblue</li>
+    <li>rgb(100,200,150)</li>
+    <li>yellow</li>
+    <li>rgba(255,255,255,.5)</li>
+    <li>#00FF11</li>
+    <li>#0F1</li>
+  </ul>
+
+  <script>
+
+    const arr2 = document.getElementById("ex2H3").children;
+    ex2H3.onmouseenter=function (e) {
+      for (let a of arr2) {
+        a.style.color = a.innerText
+      }
+    }
+    ex2H3.onmouseout=function (e) {
+      for (let a of arr2) {
+        a.style.color = "black"
+      }
+    };
+
+
+  </script>
+
+  <h3>문제3 다음 리스트에서 수를 제외한 모든 값을 더하세요~(힌트 NaN)</h3>
+  <ul id="ex3">
+    <li>18.33em</li>
+    <li>1</li>
+    <li>4.3</li>
+    <li>9.00</li>
+    <li>십오</li>
+    <li>16</li>
+    <li>25.12</li>
+    <li>36</li>
+    <li>null</li>
+    <li>49</li>
+  </ul>
+
+  <script>
+    const arr3 = document.getElementById("ex3").children
+    let sum3 = '';
+    for(let a of arr3){
+      if (isNaN(Number(a.innerText))){
+        sum3 += a.innerText;
+      }
+    }
+    console.log(sum3)
+  </script>
+
+
+
+  <h2>Object</h2>
+<script>
+  /* java while
+int i=0; //선언식
+while(i<arr.length){ //검사식
+    i++; //증감식
+}
+Iterator i=arr; //Iterable 객체
+while(i.next()){
+    i.nextValue();
+}
+while(true){} //application 의 무한 반복문
+ */
+
+
+
+  const arr =[10,-20,30,55,200,-250]; //모든 값을 더하세요
+
+  let sum = 0;
+  for(let i = 0; i<arr.length; i++){
+    sum+=arr[i];
+  }
+  console.log("arr의 모든 자료를 더한 값 : " + sum)
+
+  for (let a of arr){ //자바의 for each문
+    sum+=a
+  }
+  for (let i in arr){ //in은 key를 반환하는데 Array일때는 index를 반환
+    sum+=arr[i];
+  }
+  // array에서는 for of를 쓰고, object는 for in을 씀
+
+
+
+</script>
+
+</body>
+</html>

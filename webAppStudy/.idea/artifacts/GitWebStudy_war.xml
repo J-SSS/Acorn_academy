@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GitWebStudy:war">
+    <output-path>$PROJECT_DIR$/AcornRemoteStudy2/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>GitWebStudy</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="GitWebStudy-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="GitWebStudy:war exploded" />
+    </root>
+  </artifact>
+</component>
