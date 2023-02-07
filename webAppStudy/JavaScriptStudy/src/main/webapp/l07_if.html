@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>if switch</title>
+</head>
+<body>
+<button onclick="myFunction1()">Sort Alphabetically</button>
+<button onclick="myFunction2()">Sort Numerically</button>
+
+<p id="demo"></p>
+
+<script>
+    const points = [40, 100, 1, 5, 25, 10];
+    document.getElementById("demo").innerHTML = points;
+
+    function myFunction1() {
+        points.sort();
+        document.getElementById("demo").innerHTML = points;
+    }
+
+    function myFunction2() {
+        points.sort(function(a, b){return a - b});
+        document.getElementById("demo").innerHTML = points;
+    }
+</script>
+
+    <h1>if문과 switch와 삼항 연산자</h1>
+    <div>
+        성적 입력 :
+        <input id = "ex1Score" type="text" >
+        <pre>
+        (0~100만 입력이 가능하도록)
+        1.oninput으로 문자열이 입력되면 입력한 문자열만 삭제하고 입력받은 값이 100보다 작아야한다
+        2.onchange로 입력 받은 문자열이 정수가 아니거나 0~100사이가 아니면 Alert으로 경고를 띄우고 다시 입력받도록
+            </pre>
+    </div>
+    <h2>입력요소에서 발생하는 이벤트</h2>
+    <ul>
+        <li>onchange : 입력요소에 값을 변경하고 focus가 벗어나는 것</li>
+        <li>onfocus : 입력요소에 입력을 대기하고 있는 상태</li>
+        <li>onblur : focus 중인 상태에서 벗어나는 것</li>
+        <li>oninput : 입력요소에 값을 입력할 때 마다 발생</li>
+        <li>onselected : 입력요소에 입력한 문자열을 마우스로 드래그해서 선택할 때 발생
+        <li>onsubmit : 폼요소에 서브밋 버튼을 누르면 폼에 양식을 제출하면서 발생</li>
+    </ul>
+
+    <h2>switch 장점과 특징</h2>
+    <ul>
+        <li>가독성이 좋다.(유지보수) (if의 조건을 파악하기 어렵다.)</li>
+        <li>if문 보다 훨씬 빠르다</li>
+        <li>switch 는 기본형만 비교연산 가능 (단점)</li>
+        <li>switch 는 복잡한 조건을 사용할 수 없다.</li>
+    </ul>
+
+<script>
+    const ex1Score = document.getElementById("ex1Score");
+    console.log(ex1Score)
+
+    ex1Score.oninput=function (e) {
+            let input = this.value
+
+            if (!isNaN(this.value) && (input >= 0 && input <= 100)) {
+
+                this.value = input;
+
+            } else if (input < 0 || input > 100) {
+
+                alert("0~100사이의 수만 입력하세요!!")
+                this.value = '';
+
+            }
+                // else {
+            //     alert("문자열은 삭제됩니다");
+            //     this.value = '';
+            //     for(let i = 0 ; i < input.length ; i++){
+            //         if(!isNaN(input.charAt(i))){
+            //             this.value+= input.charAt(i)
+            //         }
+            //     }
+            // }
+            else {
+                    let preval = input.slice(0, input.length-1)
+                            this.value = preval;
+                            alert("문자열은 삭제됩니다");
+
+                }
+    }
+
+
+
+
+    // ex1Score.onchange=function (e) {
+    //
+    //     let input = this.value
+    //
+    //     if (!isNaN(this.value) && (input >= 0 && input <= 100)) {
+    //
+    //         this.value = input;
+    //         alert(`성적은 ${gradeApp(input)}입니다!`)
+    //
+    //     } else if (input < 0 || input > 100) {
+    //
+    //         alert("0~100사이의 수만 입력하세요!!")
+    //         this.value = 0;
+    //
+    //     } else alert("문자열 입력 불가")
+    // }
+    //
+    // function gradeApp(score){
+    //     let grade = '';
+    //
+    //     (score >= 95) ? grade = 'A+'
+    //     : (score>=90) ? grade = 'A0'
+    //     : (score>=85) ? grade = 'B+'
+    //     : (score>=80) ? grade = 'B0'
+    //     : (score>=75) ? grade = 'C'
+    //     : (score>=70) ? grade = 'D'
+    //     : grade = 'F';
+    //
+    //     return grade;
+    // }
+
+    function gradeApp(score){
+        let grade = '';
+
+        let num = Math.round(score/10);
+
+        switch(num) {
+            case 10 : grade = 'A+'
+                break;
+            case 9 : grade = 'A0'
+                break;
+            case 8 : grade = 'B+'
+                break;
+            case 7 : grade = 'B0'
+                break;
+            case 6 : grade = 'C'
+                break;
+            case 5 : grade = 'C'
+                break;
+            default : grade = 'F'
+                break;
+        }
+        return grade;
+    }
+    // function gradeApp(score){
+    //     /* console.log(Math.round(score/10));//반올림
+    //      console.log(Math.floor(score/10));//내림 -1.1 -> -2
+    //      console.log(Math.trunc(score/10));//버림 -1.1 -> -1*/
+    //     let grade;
+    //     switch (Math.trunc(score/10)){
+    //         case 10 : grade="A+"; break;
+    //         case 9 : grade="A"; break;
+    //         case 8 : grade="B"; break;
+    //         case 7 : grade="C"; break;
+    //         case 6 : grade="D"; break;
+    //         default : grade="F"; break;
+    //     }
+    //     if(Math.round(score/10)-Math.trunc(score/10)){
+    //         grade+="+";
+    //     }
+    //     return grade;
+    // }
+
+
+    //
+    //
+    // ex1Score.onfocus=function (e){
+    //     console.log("입력요소에 focus를 했습니다")
+    // }
+    // ex1Score.onblur=function (e){
+    //     console.log("입력요소에서 벗어났습니다")
+    // }
+    // ex1Score.oninput=function (e){
+    //     console.log("입력한 값", e.target.value)
+    // }
+    // ex1Score.onchange=function (e) {
+    //     console.log("값을 바꾸고 벗어남", e.target.value)
+    // }
+    // ex1Score.onselect=function (e){
+    //     console.log()
+    // }
+
+
+</script>
+</body>
+</html>

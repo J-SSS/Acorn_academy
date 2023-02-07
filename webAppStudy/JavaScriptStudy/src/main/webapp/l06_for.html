@@ -35,15 +35,46 @@
   ex1.children HTMLCollection 배열인데 Array보다 필드가 적은 배열
   ex1.getElementsByTagName("li")
   ex1.childrend[0].innerText
-*/
 
+  document는 Object임
+  dom traveling의 결과로 단수가 나오는 것과 복수가 나오는 것이 있음
+  단수 : id, formName(==forms["formName]), parentNode, parentElement
+  단수함수 : getElementByID(id), querySelector("cssSelector")
+
+  복수 : children :자식노드(=태그로된노드), childNodes : 텍스트노트 +자식노드  => HTMLCollection 배열이 반환
+  복수함수 : getElementsByTagName("tag"), getElementsByClassName("class"), => HTMlCollection반환 (구식이라 필드가 별로없음)
+  querySelectorAll("cssSelector") => NodeList로 반환(내부반복문을 포함하는 배열타입)
+
+ parentNode, children, childNode : 해당노드와 관계된 노드에 대한 정보를 이미 갖고있음. 새롭게 탐색하지않음
+ 반면, get이나 query는 새롭게 탐색함
+
+
+ css는 CascadingStyleSheet
+ 1. cascading : 부모 요소의 스타일을 자식이 따른다는 개념
+ 2. cascading : 선택자의 우선순위가 존재한다 : tag 1점 class 10점 id # 100점, inline 1000, !important
+ 3. cascading : External Style > internal Style > Inline Style
+ inLine Style : 요소에 직접 쓰거나 자바스크립트로 요소를 찾아서 스타일을 주면 인라인에 적용된다(js로 요소를 동적으로 만들기 위해 사용)
+ 브라우저가 HTML을 노드 개체로 만들기 전에 꼭 domTree를 생성한다?? css명세서를 이용해 그래픽을 그려낸다
+
+ 스타일은 노트 개체의 속성이다 !!
+ 노트 개체의 이벤트 속성(GUI가 동작하기 위해 최소의 장치)
+ eventlistner가 너무 훌륭하게 동작해서 모든 이벤트를 처리할수있음
+ EventListenr : 이벤트가 발생하는 것을 무한히 대기(무한반복문). 멀티 스레드로 처리하는 객체(비동기)
+ => 이는 멀티스레드로 동작하는 것 처럼 보이지만 물리적으로는 하나의 스레드만을 점유한다. 이런 것을 경량스레드라고 부른다.
+
+ ex2H3.onclick = function(){} //콜백함수 (실행할 때 호출되는 함수)
+ 이벤트속성은 필드함수이고, 콜백함수로 재정의해야한다
+ 이벤트가 발생할 때 마다 호출되기에 콜백함수이다
+*/
+document.parent
   const arr1 = document.getElementById("ex1").children;
   let sum1 = 0;
   for(let a of arr1){
     sum1 += Number(a.innerText);
   }
   document.getElementById("ex1Result").innerHTML=sum1;
-
+//innerHTML은 문자열을 노드로 개체로 만들어서 해당노드의 자식으로 넣어주는 필드
+ //innerText 문자열을 텍스트노드로 해당노드의 자식에게 추가하는 필드
    console.log(sum1)
 
   </script>
@@ -61,10 +92,17 @@
 
   <script>
 
+    // const ul = document.getElementById("ex2H3")
+
     const arr2 = document.getElementById("ex2H3").children;
+
     ex2H3.onmouseenter=function (e) {
+      this.style.color ="red" // => this는 함수가 아니라 함수가 실행된 객체를 반환함
+      e.target // => this와 같은 역할
+      ex2H3 // => this가 의미하는 것
       for (let a of arr2) {
         a.style.color = a.innerText
+        console.log(e)
       }
     }
     ex2H3.onmouseout=function (e) {
@@ -91,14 +129,15 @@
   </ul>
 
   <script>
-    const arr3 = document.getElementById("ex3").children
+
     let sum3 = '';
-    for(let a of arr3){
-      if (isNaN(Number(a.innerText))){
+    for(let a of ex3.children){
+      if (isNaN(a.innerText)){
         sum3 += a.innerText;
       }
     }
     console.log(sum3)
+
   </script>
 
 

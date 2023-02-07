@@ -20,8 +20,8 @@
         <li><a href="l04_array_list.html">04. 배열(ArrayList [] (Array와 List를 구분하지않음)</a></li>
         <li><a href="l05_function.html">05. 함수</a></li>
         <li><a href="l06_for.html">06. 반복문 (for, 내부반복문, iterator 반복문)</a></li>
-        <li><a href="">07. 배열의 내부 반복문과 정렬</a></li>
-        <li><a href="">07. If,Switch</a></li>
+        <li><a href="l07_if.html">07. If,Switch</a></li>
+        <li><a href="">08. 배열의 내부 반복문과 정렬</a></li>
         <li><a href="">09. 함수와 타입</a></li>
         <li><a href="">10. JSON과 object</a></li>
         <li><a href="">11. 브라우저 객체 window와 document</a></li>
