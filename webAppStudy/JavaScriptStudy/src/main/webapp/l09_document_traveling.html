@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>document란?</title>
+</head>
+<body>
+    <h1>document와 window</h1>
+    <p>자바스크립트를 브라우저에서 실행하면 브라우저와 관련된 정보를 window에 저장하고 전역 설정한다
+    <br>브라우저에서 출력하는 html문서를 객체로 만들어서 document에 저장된다
+    </p>
+    <ul>
+      <li>window : BOM Browser Object Model 브라우저정보와 전역</li>
+      <li>window.document : DOM Document Object Model html 문서를 객체로 제공</li>
+      <li>DOM Tree : 문서에 존재하는 태그들을 중첩(자식)관계로 그래프를 그린 것</li>
+      <li>DOM Tree root : 모든 태그의 조상 html or body태그</li>
+      <li>DOM Tree 자식 : 해당 태그의 바로 하위 중첩 태그 (node>childNode)</li>
+      <li>DOM Tree 자손 : 해당 태그의 모든 하위 태그 (node childNode)</li>
+      <li>DOM Tree 형제 : 해당 태그와 인접한 태그들 (node~sibilng)</li>
+      <li>DOM Tree 부모 : 해당 태그를 중첩하는 태그 (선택자 없음)</li>
+      <li>DOM Tree 조상 : 해당 태그를 중첩하는 태그의 부모 or 부모의 부모....</li>
+      <li></li>
+    </ul>
+    <h2>node에 필드로 존재하는 부모 자식 관계1 </h2>
+    <p>textNode + elementNode를 찾는 필드</p>
+    <ul>
+      <li>node.parentNode : 부모 노드</li>
+      <li>node.childNodes : 자식노드들[]</li>
+      <li>node.firstChild : 첫번째 자식</li>
+      <li>node.lastChild : 마지막 자식</li>
+      <li>node.previousSibling : 인접한 이전 형제</li>
+      <li>node.nextSibling : 인접한 다음 형제</li>
+    </ul>
+
+
+    <h2>node에 필드로 존재하는 부모 자식 관계2 </h2>
+    <p>elementNode를 찾는 필드</p>
+    <ul>
+      <li>node.parentElement : 부모 노드</li>
+      <li>node.children : 자식노드들[]</li>
+      <li>node.firstElementChild : 첫번째 자식</li>
+      <li>node.lastElementChild : 마지막 자식</li>
+      <li>node.previousElementSibling : 인접한 이전 형제</li>
+      <li>node.nextElementSibling : 인접한 다음 형제</li>
+    </ul>
+    <h2>document를 탐색하는 함수들</h2>
+    <ul>
+      <li>document(node).getElementById("id") : id로 노드를 검색후 node 한 개를 return</li>
+      <li>document(node).getElementsByTagName("tag") : 요소 이름으로 노드들을 검색 (return HTMLCollection)</li>
+      <li>document(node).getElementsByClassName("class") : 클래스 이름으로 노드들을 검색 (return HTMLCollection)</li>
+      <li>document(node).getElementsByName("name") : name 속성으로 노드들을 검색 (return HTMLCollection)</li>
+      <li>document(node).querySelector(css) : css 선택자로 노드를 검색 (return node)</li>
+      <li>document(node).querySelectorAll(css) : css 선택자로 노드들을 검색 (return nodeList)</li>
+      <li>node.closest(css) : 해당 노드의 조상 중에 선택자와 동일한 노드가 있으면 반환</li>
+      <li>document(node).matches(css) : 해상 선택자의 노드가 있는지 검색 (return boolean) </li>
+      <li>node.contains(css) : 해당 선택자의 노드가 조상인지 확인 (return boolean) </li>
+    </ul>
+
+    <h2>미리 지정되는 node 변수들</h2>
+    <ul id="test3">
+      <li>id를 정의하면 id와 동일한변수가 해당 노드를 참조</li>
+      <li>form에 name을 정의하면 name과 동일한 변수가 해당 form 노드를 참조</li>
+      <li>form에 중첩된 input 요소에 name을 작성하면 form노드의 자식으로 참조가능</li>
+      <li>form에 중첩된 여러 input 요소에 같은 name을 작성하면 RadioNodeList로 반환됨
+           (만약 type이 radio면 checked된 value가 반환된다)
+      </li>
+      <li>document.body : 무조건 1개만 존재하는 모든 요소의 부모 body</li>
+    </ul>
+
+    <h2>table node에 열과 셀을 검색</h2>
+    <ul>
+        <li>tableNode.rows[수] : 해당 테이블의 n번째 tr</li>
+        <li>tableNode.rows[수].cells[수] : 해당 테이블의 n번째 tr에 n번째 td</li>
+        <li></li>
+        <li></li>
+    </ul>
+    
+    <table id="userTable">
+        <tr>
+            <td>경민</td>
+            <td>38</td>
+            <td>강사</td>
+        </tr>
+        <tr>
+            <td>우상</td>
+            <td>20</td>
+            <td>학생</td>
+        </tr>
+        <tr>
+            <td>희선</td>
+            <td>21</td>
+            <td>학생</td>
+        </tr>
+    </table>
+    <script>
+        userTable.rows[2].style.background="red";
+        userTable.rows[1].cells[0].style.border="1px solid purple";
+    </script>
+
+    <form name="loginForm" id="loginFormId">
+        <div>
+            id : <input name="id" value="acornCkm">
+        </div>
+        <div>
+            로그인 유지:
+            <input type="radio" name="state" value="1" checked>
+            유지 x:
+            <input type="radio" name="state" value="2" checked>
+        </div>
+    </form>
+
+    <h2>선택자 연습 문제</h2>
+    <style>
+/*Internal Style 보통 header에 작성함.. */
+/*boxContainer 안에 .box들을 inline-block에 배경색이 lightgray로 만드세요*/
+
+    #boxContainer>.box{
+        /*height : auto ; 블럭 내부의 컨텐츠의 높이 만큼 블럭의 높이를 지정*/
+        width: 200px;
+        height: 200px;
+        display: inline-block;
+        background-color: lightgray;
+        text-align: center;
+        line-height: 200px;
+    }
+    </style>
+    <div id="boxContainer">
+        <p class="box">
+            <span>저는</span>
+            <strong>박스1</strong>
+            <span>입니다!</span>
+        </p>
+        <p class="box">
+            <span>저는</span>
+            <strong>박스2</strong>
+            <span>입니다!</span>
+        </p>
+        <p class="box">
+            <span>저는</span>
+            <strong>박스3</strong>
+            <span>입니다!</span>
+        </p>
+        <p class="box">
+            <span>저는</span>
+            <strong>박스4</strong>
+            <span>입니다!</span>
+        </p>
+        <p class="box">
+            <span>저는</span>
+            <strong>박스5</strong>
+            <span>입니다!</span>
+        </p>
+    </div>
+
+    <script>
+        const box = document.getElementById("boxContainer").children
+
+        for(let i = 0 ; i<box.length ; i++){
+           box[i].onmouseenter=function (e) {
+               console.log("on")
+               e.target.style.border = "3px solid red"
+           }
+            box[i].onmouseout=function (e) {
+                console.log("off")
+                e.target.style.border = "none"
+            }
+            box[i].onclick=function (e){
+                box[i-1].style.display = "none"
+                box[i+1].style.display = "none"
+
+                // this.previousElementSibling.style.display = "none"
+                // this.nextElementSibling.style.display = "none"
+
+            }
+        }
+
+    </script>
+
+    <h2>선택자 문제2</h2>
+    <table id="ex2Table" style="width: 100%">
+        <tr>
+            <td>1</td>
+            <td>경민</td>
+            <td>38</td>
+            <td>강사</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>윤식</td>
+            <td>24</td>
+            <td>학생</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>은주</td>
+            <td>25</td>
+            <td>학생</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>동홍</td>
+            <td>26</td>
+            <td>학생</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>동일</td>
+            <td>35</td>
+            <td>학생</td>
+        </tr>
+    </table>
+    <script>
+        //ex2Table의 모든 td 를 선택하세요
+        //모든 td에 마우스를 올리면(onmouseover) border를 1px solid 로 지정하세요
+        //이때 td가 속한 tr의 배경색을 lightgray로 바꾸세요
+        //마우스가 td 에서 빠져 나가면 td에 정의된 board와 background를 제거하세요
+
+        const table = document.getElementById("ex2Table")
+        const tds = table.getElementsByTagName("td");
+
+        Array.from(tds).forEach((td)=>{
+            td.onmouseenter=function (e) {
+                e.target.style.border="1px solid red"
+                e.target.parentNode.style.background = "lightgray"
+            }
+            td.onmouseout=function (e) {
+                e.target.style.border="none"
+                e.target.parentNode.style.background = "none"
+            }
+        })
+
+    </script>
+</body>
+</html>

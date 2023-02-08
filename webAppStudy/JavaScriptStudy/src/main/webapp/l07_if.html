@@ -52,7 +52,33 @@
         <li>switch 는 기본형만 비교연산 가능 (단점)</li>
         <li>switch 는 복잡한 조건을 사용할 수 없다.</li>
     </ul>
+    <h2>js의 Boolean()이 true false를 반환하는 것들</h2>
+    <ul>
+        <!--0이 아닌 모든수, 객체등등 일단 뭐가 있으면 true임-->
+        <li>1 : <script>document.write(Boolean(1))</script></li>
+        <li>11 : <script>document.write(Boolean(11))</script></li>
+        <li>-11 : <script>document.write(Boolean(-11))</script>
+        0이 아닌 모든[[수]]는 true임~...Infinity까지도...</li>
+        <li>new Object(): <script>document.write(Boolean(new Object()))</script></li>
+        <li>{} : <script>document.write(Boolean({}))</script>(new Object(), 자료형)</li>
+        <li>[] : <script>document.write(Boolean([]))</script>(new Array(), 자료형)</li>
+        <li>new String() : <script>document.write(Boolean(new String()))</script></li>
 
+
+        <!--false인것들-->
+        <li>""(내용는 기본형) : <script>document.write(Boolean(""))</script></li>
+        <li>undefined : <script>document.write(Boolean(undefined))</script></li>
+        <li>NaN : <script>document.write(Boolean(NaN))</script></li>
+        <li>null : <script>document.write(Boolean(null))</script></li>
+        <li>0 : <script>document.write(Boolean(0))</script></li>
+
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+
+    </ul>
 <script>
     const ex1Score = document.getElementById("ex1Score");
     console.log(ex1Score)

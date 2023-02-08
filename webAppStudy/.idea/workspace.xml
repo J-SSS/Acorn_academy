@@ -12,7 +12,8 @@
     <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l06_for.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l06_for.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l02_primaritve_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l02_primaritve_type.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l07_if.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l07_if.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +67,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/dongr/Desktop/Acorn_basic/webAppStudy/AcornRemoteStudy2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -76,7 +78,7 @@
     &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.일반&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -353,11 +355,24 @@
       <workItem from="1675642271296" duration="27570000" />
       <workItem from="1675690700523" duration="1008000" />
       <workItem from="1675728406888" duration="24222000" />
+      <workItem from="1675814893376" duration="11597000" />
+      <workItem from="1675833990907" duration="10685000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
