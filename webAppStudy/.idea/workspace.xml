@@ -12,8 +12,8 @@
     <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l02_primaritve_type.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l02_primaritve_type.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l07_if.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l07_if.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l06_for.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l06_for.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l09_document_traveling.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l09_document_traveling.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,6 +357,8 @@
       <workItem from="1675728406888" duration="24222000" />
       <workItem from="1675814893376" duration="11597000" />
       <workItem from="1675833990907" duration="10685000" />
+      <workItem from="1675846416121" duration="26000" />
+      <workItem from="1675901268421" duration="19541000" />
     </task>
     <servers />
   </component>

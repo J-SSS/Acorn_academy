@@ -22,11 +22,11 @@
         <li><a href="l06_for.html">06. 반복문 (for, 내부반복문, iterator 반복문)</a></li>
         <li><a href="l07_if.html">07. If,Switch</a></li>
         <li><a href="l08_array_Iteration.html">08. 배열의 내부 반복문(Iteration)과 정렬</a></li>
-        <li><a href="l09_document_traveling.html">12. document domtree와 node 객체</a></li>
-        <li><a href="">09. 함수와 타입</a></li>
+        <li><a href="l09_document_traveling.html">09. document domtree와 node 객체</a></li>
+        <li><a href="l10_event.html">10. event</a></li>
         <li><a href="">10. JSON과 object</a></li>
         <li><a href="">11. 브라우저 객체 window와 document</a></li>
-        <li><a href="">13. js를 참조하는 방법들 (태그, 파일(defer async))</a></li>
+        <li><a href="test.html">13. js를 참조하는 방법들 (태그, 파일(defer async))</a></li>
     </ul>
 
 </nav>

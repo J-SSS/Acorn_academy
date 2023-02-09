@@ -44,7 +44,7 @@
       <li>node.nextElementSibling : 인접한 다음 형제</li>
     </ul>
     <h2>document를 탐색하는 함수들</h2>
-    <ul>
+    <ul id="test2">
       <li>document(node).getElementById("id") : id로 노드를 검색후 node 한 개를 return</li>
       <li>document(node).getElementsByTagName("tag") : 요소 이름으로 노드들을 검색 (return HTMLCollection)</li>
       <li>document(node).getElementsByClassName("class") : 클래스 이름으로 노드들을 검색 (return HTMLCollection)</li>
@@ -52,9 +52,30 @@
       <li>document(node).querySelector(css) : css 선택자로 노드를 검색 (return node)</li>
       <li>document(node).querySelectorAll(css) : css 선택자로 노드들을 검색 (return nodeList)</li>
       <li>node.closest(css) : 해당 노드의 조상 중에 선택자와 동일한 노드가 있으면 반환</li>
-      <li>document(node).matches(css) : 해상 선택자의 노드가 있는지 검색 (return boolean) </li>
-      <li>node.contains(css) : 해당 선택자의 노드가 조상인지 확인 (return boolean) </li>
+      <li class="red">document(node).matches(css) : 해상 선택자의 노드가 있는지 검색 (return boolean) </li>
+      <li class="blue">node.contains(css) : 해당 선택자의 노드가 조상인지 확인 (return boolean) </li>
     </ul>
+    <script>
+        console.log(document.getElementById("test2"))
+        for(let a of document.getElementById("test2").children){
+            a.style.textShadow = "5px 5px 1px gray";
+        }
+        document.querySelector('#test2>.red').style.color="red"
+        document.querySelector('#test2>.blue').style.color="blue"
+
+        /*
+        querySelector는 querySelectorAll처럼 복수의 node를 검색 후 맨 위에 있는 것을 반환
+        getElementById는 id선택자를 1개 찾는다. 처음부터 1개 찾으니까 성능이 좋음
+        HTML을 유지보수하다보면 중첩을 더 복잡하게 하게 될 경우가 있다.
+        => 자식 선택자보다 자손 선택자가 유지보수에 더 유리하나, 자손 전체를 찾기에 성능면에선 불리함
+         */
+
+
+
+
+
+
+    </script>
 
     <h2>미리 지정되는 node 변수들</h2>
     <ul id="test3">
@@ -165,13 +186,22 @@
                 e.target.style.border = "none"
             }
             box[i].onclick=function (e){
-                box[i-1].style.display = "none"
-                box[i+1].style.display = "none"
+                // box[i-1].style.background = "red"
+                // box[i+1].style.background = "blue"
 
-                // this.previousElementSibling.style.display = "none"
-                // this.nextElementSibling.style.display = "none"
+                 //
+                 // for (let a of document.querySelectorAll('.box ~.box')){
+                 //     a.style.background = "red"
+                 // }
 
+                this.previousElementSibling.style.background = "red"
+                this.nextElementSibling.style.background = "blue"
+                console.log("??")
             }
+            // box[i].onclick=new function (e){
+            //     console.log("??")
+            // }
+
         }
 
     </script>

@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>event</title>
+</head>
+<body>
+<!-- onmouseleave=function(event){""} 생략되어 있음-->
+<h1
+        onmouseenter="event.target.style.color='red';"
+        onmouseleave="this.style.color='black'"
+>document 에 event 속성에 대해 알아보자</h1>
+<p>이벤트란 GUI 를 제공하는 모든 어플이나 플랫폼에서 제공하는 것(osx,window,java.swing,browser.dom)</p>
+<ul>
+    <li>GUI : Graphic User Interface 마우스로 화면을 클릭하는 인터페이스를 제공</li>
+    <li>+ GUI 이벤트 : 화면을 제어할때 발생하는 것을 이벤트 (마우스,키보드 이벤트)</li>
+    <li>+ form 이벤트 : 양식을 제출하기 위해 form 요소에서 발생하는 것들 (change,input,submit ...)</li>
+    <li>window 이벤트 : 브라우저에서 발생하는 이벤트 (resize,scroll)</li>
+    <li>touch 이벤트 : 손가락의 터치로 발생하는 이벤트 (touch)</li>
+    <li>...</li>
+    <li>이벤트 리스너 : 이벤트 루프로 (무한 반복문) 이벤트가 발생하는 것을 감시한다.</li>
+</ul>
+<h2>GUI 즉 마우스에서 발생하는 이벤트 속성</h2>
+<ul style="list-style: none;">
+    <li onclick="this.style.background='gray'">
+        onclick : 해당 노드에 마우스를 클릭하면 발생
+    </li>
+    <li ondblclick="this.style.background='lightblue'">
+        ondblclick : 해당 노드에 마우스를 더블 클릭하면 발생
+    </li>
+    <li  onmousedown="this.style.color='purple'">
+        onmousedown : 해당 노드에 마우스를 누르고 있는 상태
+    </li>
+    <li onmouseup=" this.style.color='green';
+                        this.style.border='2px dotted';">
+        onmouseup : 누르고 있던 마우스를 때는 행위
+    </li>
+    <li onmouseenter="event.target.style.border='1px solid'">
+        <strong>+ onmouseenter :</strong>
+        <span>해당 노드에 마우스 포인터가 들어가면</span>
+        (자손 노드에 이벤트 버블링이 발생하지 않음)
+    </li>
+    <li onmouseleave="event.target.style.border='1px solid'">
+        <strong>+ onmouseleave :</strong>
+        <span>노드에 있던 마우스 포인터가 나가면</span>
+        (자손 노드에 이벤트 버블링이 발생하지 않음)
+
+    </li>
+    <li onmouseover="event.target.style.border='1px solid'">
+        <strong>- onmouseover :</strong>
+        <span>해당 노드에 마우스 포인터가 들어가면</span>
+        (자손 노드에 이벤트 버블링이 발생함)
+    </li>
+    <li onmouseout="event.target.style.border='1px solid'">
+        <strong>- onmouseout :</strong>
+        <span>해당 노드에 마우스 포인터가 들어가면</span>
+        (자손 노드에 이벤트 버블링이 발생함)
+    </li>
+    <li oncontextmenu="this.style.color='orange'">
+        oncontextmenu : 마우스 오른쪽 클릭 (오른쪽 클릭 방지용)
+    </li>
+</ul>
+
+<h2>이벤트 정의하는 방법</h2>
+<ul>
+    <li onclick="this.style.textDecoration='overline'">
+        요소의 이벤트 속성을 직접 재정의 하는 방법
+        (onclick="")==(onclick=function(event){"";})
+    </li>
+    <li id="node1">
+        script 태그에서 node 찾아서 이벤트 속성을 재정의
+        <ul>
+            <li>(주의) node 가 생성된 후에 찾아야한다.</li>
+            <li>(주의**) 한노드에 같은 이벤트는 한번만 정의 가능하다.</li>
+            <li>(주의) 콜백함수를 화살표함수로 사용하면 this 선택자를 사용할 수 없다.(개발자 어렵다.)</li>
+        </ul>
+    </li>
+    <script>
+        const node1=document.getElementById("node1");
+        node1.onclick=function(e){
+            this.style.background='lightgreen';
+        }
+        node1.onclick=node1ClickHandler;
+        //1번 방법 : node1에 onclick 발생하면 node1ClickHandler 함수를 호출 및 실행하라
+        node1.onclick=function (e){//익명함수 :이름이 없는 함수
+            node1ClickHandler(e);
+        }
+        //2번 방법  :node1에 onclick 발생하면 익명함수를 호출하고 익명함수가 node1ClickHandler 를 실행한다.
+        //함수 여러개를 실행으로 정의 가능
+
+        //node1.onclick=node1ClickHandler(e); //3번방법 잘못된 정의 방법 (주의!)
+
+        function node1ClickHandler(e){
+            this.style.color='rgb(200,100,200)';
+            return 13;
+        }
+    </script>
+    <li id="node2">
+        node.addEventListener("event",function(e){}) 를 이용해서 이벤트 재정의
+        <ul>
+            <li>특징1 : 콜백 함수를 여러개 동시에 정의 가능</li>
+            <li>특징2 : addEventListener 로만 정의 가능한 이벤트가 존재함 (DOMContentLoaded,wheel,..)</li>
+            <li>특징3 : 필드로 함수를 재정의하는 것이 낯설어서 등장했다.</li>
+        </ul>
+    </li>
+    <script>
+        node2.addEventListener("click",function (e){ //callbackfuc1
+            this.style.textDecoration='underline';
+        });
+        node2.addEventListener("click",function (e){//callbackfuc2
+            this.style.color='blueviolet';
+        });
+        /*
+        node2.onclick=callbackfuc1; //한번에 하나씩
+        node2.onclick=(e)=>{ //한번에 여러개의 콜백함수 실행
+            callbackfuc1(e);
+            callbackfuc2(e);
+        };
+         */
+    </script>
+</ul>
+<h2>콜백함수의 매개변수 event </h2>
+<p>이벤트 리스너가 콜백함수를 실행할때 이벤트 정보를 콜백함수에 전달하는 매개변수 (이벤트정보)</p>
+<ul>
+    <li>e.target : 이벤트가 발생한 요소 (이벤트가 자손에게 전달되어서 정의한 요소와 발생한 요소가 다르다.)</li>
+    <li>e.currentTarget : 이벤트를 정의한 요소 (== 콜백함수 this)</li>
+    <li>e.type : 이벤트 이름</li>
+    <li>e.preventDefault() : 이벤트의 전달을 막는 함수 (이벤트버블링,양식제출)</li>
+</ul>
+<!--   5시 까지 쉬었다가 예제만 만들어 보고 쉬겠습니다~ 버블링은 모던 예습 해보세요~ -->
+
+
+<h2>모던 자바스크립트의 이벤트 예제1</h2>
+<p>요소의 속성으로 이벤트를 지정한 것과 addEventListener 를 같이 사용하면 ??</p>
+<input id="elem" type="button" value="클릭해 주세요."/>
+
+<script>
+    //기본형을 제외하고 무엇이든간에 다른 것이 생성된다.
+
+    function handler1() { alert('감사합니다!');}
+    function handler2() {alert('다시 한번 감사합니다!');}
+
+    elem.onclick = () => alert("안녕하세요.");
+    elem.addEventListener("click", handler1); // 감사합니다!
+    elem.addEventListener("click", handler2); // 다시 한번 감사합니다!
+</script>
+
+<input id="elem2" type="button" value="클릭해 주세요."/>
+
+<script>
+    function handler1() { alert('감사합니다!');}
+    function handler2() {alert('다시 한번 감사합니다!');}
+
+    elem2.addEventListener("click", handler1); // 감사합니다!
+    elem2.addEventListener("click", handler2); // 다시 한번 감사합니다!
+    elem2.onclick = () => alert("안녕하세요.");
+    elem2.onclick = () => alert("덮은 안녕하세요.");
+    elem2.removeEventListener("click",handler2);
+
+</script>
+
+
+<h2>PointerEvent(MouseEvent) Object 내역 예제 </h2>
+<p>마우스에서 발생하는 이벤트에 대한 정보</p>
+<style>
+    #ball{
+        border: 4px solid;
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        /*부모가 상대적 위치일 때 부모기준으로 바뀐다*/
+        margin: 0;
+        left: 0px;
+        top: 0px;
+        transition: all ease-in 1s;
+        border-radius: 50%;
+    }
+</style>
+<div id="ex3Container"
+     style="height: 500px;
+         border: 2px solid;
+         position: relative;">
+    <p id="ball"> </p>
+</div>
+<script>
+    const ball=document.getElementById("ball");
+    const ex3Container=document.getElementById("ex3Container");
+    // ball.onclick=function (e){
+    //     ball.style.left="200px";
+    //     ball.style.top="300px";
+    // }
+
+        //모던 자바스크립트에서 마우스 따라다니는 공 문제를 완성하세요~!
+        //힌트! css 는 단위를 무조건 작성해야 한다.
+    ex3Container.onclick=function (e){
+            ball.style.left=`${e.offsetX}px`
+            ball.style.top=`${e.offsetY}px`
+            console.log(e)
+    }
+</script>
+</body>
+</html>
