@@ -24,7 +24,7 @@
         <li><a href="l08_array_Iteration.html">08. 배열의 내부 반복문(Iteration)과 정렬</a></li>
         <li><a href="l09_document_traveling.html">09. document domtree와 node 객체</a></li>
         <li><a href="l10_event.html">10. event</a></li>
-        <li><a href="">10. JSON과 object</a></li>
+        <li><a href="l11_image_slide.html">10. JSON과 object</a></li>
         <li><a href="">11. 브라우저 객체 window와 document</a></li>
         <li><a href="test.html">13. js를 참조하는 방법들 (태그, 파일(defer async))</a></li>
     </ul>
@@ -37,7 +37,7 @@
     //HTML 문서가 브라우저에서 로딩되면서 스크립트 태그가 있으면 실행된다.
     //만약 스크립트 문서가 참조되고 있으면 다운받고 실행한다.
 
-    alert("안녕하세요? 스크립트로 경고창을 생성했습니다.")
+    // alert("안녕하세요? 스크립트로 경고창을 생성했습니다.")
     console.log("안녕하세요? 스크립트로 경고창을 생성했습니다.")
 
 </script>

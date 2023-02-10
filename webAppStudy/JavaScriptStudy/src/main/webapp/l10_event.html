@@ -163,6 +163,13 @@
 
 <h2>PointerEvent(MouseEvent) Object 내역 예제 </h2>
 <p>마우스에서 발생하는 이벤트에 대한 정보</p>
+<p id="clientInfo"></p>
+<p id="domInfo"></p>
+<p id="nodeInfo"></p>
+<p id="screenInfo"></p>
+
+
+
 <style>
     #ball{
         border: 4px solid;
@@ -173,14 +180,17 @@
         margin: 0;
         left: 0px;
         top: 0px;
-        transition: all ease-in 1s;
+        transition: all ease-in 0.5s;
         border-radius: 50%;
+        /*transform: translate(-50px, -50px);*/
     }
 </style>
 <div id="ex3Container"
      style="height: 500px;
-         border: 2px solid;
+     width: 500px;
+         border: 10px solid;
          position: relative;">
+
     <p id="ball"> </p>
 </div>
 <script>
@@ -193,11 +203,104 @@
 
         //모던 자바스크립트에서 마우스 따라다니는 공 문제를 완성하세요~!
         //힌트! css 는 단위를 무조건 작성해야 한다.
+
     ex3Container.onclick=function (e){
-            ball.style.left=`${e.offsetX}px`
-            ball.style.top=`${e.offsetY}px`
-            console.log(e)
+        if(e.offsetY>400){
+            ball.style.top=`${e.offsetY-100}px`
+            ball.style.left=`${e.offsetX-50}px`
+        }
+        else if (e.offsetX<100){
+            ball.style.left=`${e.offsetX-50}px`
+            ball.style.top=`${e.offsetY-50}px`
+        }
+        else {
+            ball.style.left=`${e.offsetX-100}px`
+            ball.style.top=`${e.offsetY-50}px`
+        }
+
+        //clientInfo, domInfo, nodeInfo, screenInfo
+        clientInfo.innerHTML=`x: ${e.clientX}, y:${e.clientY} (브라우저)`;
+        domInfo.innerHTML=`x: ${e.pageX}, y:${e.pageY} (문서)`
+        nodeInfo.innerHTML=`x: ${e.offsetX}, y:${e.offsetY}(노드개체)`
+        screenInfo.innerHTML=`x: ${e.screenX}, y:${e.screenY} (모니터)`
+        // ul#dropDownMenu>li*4>strong{대메뉴$$}+(ul.menu>(li>a[href='#']{소메뉴$$})*4)
     }
 </script>
+<style>
+    #dropDownMenu{
+        display: flex;
+        margin-bottom: 200px ;
+    }
+    #dropDownMenu>li{
+        margin-left: 50px;
+    }
+    .menu {
+        padding-left: 20px;
+        max-height: 0;
+        overflow: hidden;
+        transition: all linear 0.5s;
+        }
+
+
+</style>
+    <h2>열렸다 닫히는 메뉴 만들기</h2>
+    <p>#dropDownMenu>li에 마우스를 올리면 li의 형제인 .menu를 화면에 보이게 하세요</p>
+    <ul id="dropDownMenu">
+        <li><strong>대메뉴01</strong>
+            <ul class="menu">
+                <li><a href="#">소메뉴01</a></li>
+                <li><a href="#">소메뉴02</a></li>
+                <li><a href="#">소메뉴03</a></li>
+                <li><a href="#">소메뉴04</a></li>
+            </ul>
+        </li>
+        <li><strong>대메뉴02</strong>
+            <ul class="menu">
+                <li><a href="#">소메뉴01</a></li>
+                <li><a href="#">소메뉴02</a></li>
+                <li><a href="#">소메뉴03</a></li>
+                <li><a href="#">소메뉴04</a></li>
+            </ul>
+        </li>
+        <li><strong>대메뉴03</strong>
+            <ul class="menu">
+                <li><a href="#">소메뉴01</a></li>
+                <li><a href="#">소메뉴02</a></li>
+                <li><a href="#">소메뉴03</a></li>
+                <li><a href="#">소메뉴04</a></li>
+            </ul>
+        </li>
+        <li><strong>대메뉴04</strong>
+            <ul class="menu">
+                <li><a href="#">소메뉴01</a></li>
+                <li><a href="#">소메뉴02</a></li>
+                <li><a href="#">소메뉴03</a></li>
+                <li><a href="#">소메뉴04</a></li>
+            </ul>
+        </li>
+    </ul>
+<script>
+    const dropDown =document.querySelectorAll("#dropDownMenu>li")
+
+    for(let f of dropDown){
+
+        f.onmouseenter=function (){
+            f.querySelector(".menu").style.maxHeight="200px"
+
+            }
+        f.onmouseout=function (){
+
+            f.querySelector(".menu").style.maxHeight="0px"
+
+
+        }
+        }
+
+
+
+
+
+</script>
+
 </body>
 </html>

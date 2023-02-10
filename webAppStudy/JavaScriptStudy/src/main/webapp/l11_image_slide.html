@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 슬라이더 예제</title>
+</head>
+<body>
+<style>
+    .imageContainer .images{
+        display: flex;
+        list-style: none;
+        justify-content: center;
+    }
+    .imageContainer .images img{
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        display: none;
+    }
+    .imageContainer .images li.active img{
+        display: block;
+    }
+    .imageContainer .navigations{
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    .imageContainer .navigations>li{
+        width: 25px;
+        height: 25px;
+        margin: 0 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imageContainer .nextNavigations{
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        width: 350px;
+        margin: auto;
+        position: relative;
+        top: -130px;
+        height: 0;
+        font-size: xx-large;
+    }
+    .navigations>li:hover,.nextNavigations>li:hover{
+        cursor: pointer;
+        color: blue;
+    }
+</style>
+<h1>이미지 슬라이더 만들기 1번문제</h1>
+<p>navigations 의 수를 누르면 해당 수와 동일한 위치의 이미지만 화면에 보이게 하세요!</p>
+<div id="imageSlider" class="imageContainer">
+    <ul class="images">
+        <li class="active"><img src="img/물총새.jpeg" alt=""></li>
+        <li><img src="img/백조.jpeg" alt=""></li>
+        <li><img src="img/벌새.jpeg" alt=""></li>
+        <li><img src="img/부엉이.jpeg" alt=""></li>
+        <li><img src="img/올빼미.jpeg" alt=""></li>
+        <li><img src="img/참새.jpeg" alt=""></li>
+    </ul>
+    <ul class="nextNavigations">
+        <li class="prevBtn"><</li>
+        <li class="nextBtn">></li>
+    </ul>
+    <ul class="navigations">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</div>
+<script>
+
+    const btn = document.querySelectorAll(".navigations>li")
+    const img = document.querySelectorAll(".images>li")
+    const pBtn = document.querySelector(".prevBtn")
+    const nBtn = document.querySelector(".nextBtn")
+    let index = 0;
+
+    btn.forEach((e, i)=>{
+        e.onclick=function (e){
+
+            // .images>li중에서 active 있으면 초기화
+            img.forEach((e)=>{
+                e.classList.remove("active")
+            })
+
+            // index 일치하는 .images>li 개체에 active 추가
+            img[i].classList.add("active")
+
+            // 마지막에 누른 사진 = 인덱스로 추출
+            index = i;
+        }
+    })
+
+    pBtn.onclick=function (e){
+        // 첫번째 인덱스에서 한 번 더 버튼 누르면 맨 뒤로 이동
+        if (index==0) index=6
+
+        if(index!=0){
+            // .images>li중에서 active 있으면 초기화
+            img.forEach((e)=>{
+                e.classList.remove("active")
+            })
+
+            // 현재 index보다 1 작은 개체 활성화
+            img[index-1].classList.add("active")
+
+            // 변수 index를 1 감소켜서, 방금 활성화된 개체의 [index]와 변수 index를 일치
+            index--;
+        }
+
+    }
+
+
+    nBtn.onclick=function (e){
+        // 마지막 인덱스에서 한 번 더 버튼 누르면 맨 앞으로 이동
+        if (index==5) index=-1;
+
+        if(index!=5){
+
+            // .images>li중에서 active 있으면 초기화
+            img.forEach((e)=>{
+                e.classList.remove("active")
+            })
+
+            // 현재 index보다 1 큰 개체 활성화
+            img[index+1].classList.add("active")
+
+            // 변수 index를 1 증가켜서 활성화된 개체의 [index]와 변수 index를 일치
+            index++;
+        }
+    }
+</script>
+<hr>
+
+<style>
+    .sliderContainer .container{
+        position: relative;
+        width: 400px;
+        height: 230px;
+        border: 1px solid;
+        margin: auto;
+        box-sizing: border-box;
+        overflow: hidden;
+
+    }
+    .sliderContainer .images{
+        display: flex;
+        padding-left: 0;
+        list-style: none;
+        justify-content: center;
+        position: absolute;
+        transition: all linear 0.5s;
+
+    }
+    .sliderContainer .images img{
+        width: 250px;
+        height: 200px;
+        margin: 0px 10px;
+        object-fit: cover;
+
+    }
+    .sliderContainer .images li.active img{
+        display: block;
+    }
+    .sliderContainer .navigations{
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+    }
+    .sliderContainer .navigations>li{
+        width: 25px;
+        height: 25px;
+        margin: 0 5px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sliderContainer .nextNavigations{
+        padding: 0;
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
+        width: 500px;
+        margin: auto;
+        position: relative;
+        top: -130px;
+        height: 0;
+        font-size: xx-large;
+    }
+    .sliderContainer>li:hover,.nextNavigations>li:hover{
+        cursor: pointer;
+        color: blue;
+    }
+</style>
+
+
+<h1>이미지 슬라이더 만들기 2번문제</h1>
+<p>navigations 의 수를 누르면 이미지 번호의 이미지가 중앙에 오도록 하세요!</p>
+<p>next 와 prev 버튼을 누르면 이전과 다음 이미지가 중앙에 오도록 하세요!</p>
+<div id="imageSlider2" class="sliderContainer">
+    <div class="container">
+        <ul class="images">
+            <li><img src="img/물총새.jpeg" alt=""></li>
+            <li><img src="img/백조.jpeg" alt=""></li>
+            <li class="active"><img src="img/벌새.jpeg" alt=""></li>
+            <li><img src="img/부엉이.jpeg" alt=""></li>
+            <li><img src="img/올빼미.jpeg" alt=""></li>
+            <li><img src="img/참새.jpeg" alt=""></li>
+        </ul>
+    </div>
+    <ul class="nextNavigations">
+        <li class="prevBtn"><</li>
+        <li class="nextBtn">></li>
+    </ul>
+    <ul class="navigations">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ul>
+</div>
+<script>
+    const btn2 = document.querySelectorAll("#imageSlider2 .navigations>li")
+    const img2 = document.querySelectorAll("#imageSlider2 .images>li")
+
+    const container = document.querySelector(".container");
+    const imgBox2 = document.querySelector("#imageSlider2 .images")
+    const pBtn2 = document.querySelector("#imageSlider2 .prevBtn")
+    const nBtn2 = document.querySelector("#imageSlider2 .nextBtn")
+
+    let index2 = 0; // 위치파악용
+    let mid = container.clientWidth/2 - img2[0].clientWidth/2 //중앙정렬을 위한 계산값
+    let shift = mid;
+
+    pBtn2.onclick=function (e){
+        if(index2<=0) {  //중앙정렬
+            imgBox2.style.marginLeft= `${mid}px` // 맨 앞의 사진인 경우 최초 중앙정렬값 유지
+        } else {
+            shift += img2[index2].clientWidth // 사진 가로사이즈만큼 마진 이동해주면 다음사진도 중앙정렬 유지됨
+            imgBox2.style.marginLeft=`${shift}px`
+            index2 -- // 인덱스 감소시켜서 범위 밖으로 벗어나는것을 방지
+        }
+    }
+
+    nBtn2.onclick=function (e){
+        if(index2<5){ //마지막 사진이 아닌 경우에만 동작
+            shift -= img2[index2].clientWidth
+            imgBox2.style.marginLeft=`${shift}px`
+            index2++
+        }
+    }
+</script>
+</body>
+</html>
