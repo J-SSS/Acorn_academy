@@ -88,54 +88,63 @@
         e.onclick=function (e){
 
             // .images>li중에서 active 있으면 초기화
-            img.forEach((e)=>{
+            img.forEach((e,i)=>{
                 e.classList.remove("active")
+                btn[i].style.backgroundColor="white"
             })
 
-            // index 일치하는 .images>li 개체에 active 추가
+            // .images>li 중에서 onClick과 일치하는 위치에 active클래스 부여
             img[i].classList.add("active")
+            e.target.style.backgroundColor="gray"
 
-            // 마지막에 누른 사진 = 인덱스로 추출
+            // 방금 누른 버튼 -> 인덱스로 추출해서 나중에 좌우 화살표 작동시칼때 사용함
             index = i;
         }
     })
 
     pBtn.onclick=function (e){
         // 첫번째 인덱스에서 한 번 더 버튼 누르면 맨 뒤로 이동
-        if (index==0) index=6
+        if (index==0) index = btn.length+1
 
         if(index!=0){
+            // 인덱스 이동
+            index--;
+
             // .images>li중에서 active 있으면 초기화
-            img.forEach((e)=>{
+            img.forEach((e, i)=>{
                 e.classList.remove("active")
+                btn[i].style.backgroundColor="white"
             })
 
             // 현재 index보다 1 작은 개체 활성화
-            img[index-1].classList.add("active")
+            img[index].classList.add("active")
+            btn[index].style.backgroundColor="gray"
 
-            // 변수 index를 1 감소켜서, 방금 활성화된 개체의 [index]와 변수 index를 일치
-            index--;
+
         }
 
     }
 
 
     nBtn.onclick=function (e){
-        // 마지막 인덱스에서 한 번 더 버튼 누르면 맨 앞으로 이동
+        // 마지막 사진을 img[-1]처럼 취급해서, 마지막사진에서 한 번 더 이동하면 img[0]을 만날 수 있도록 함
         if (index==5) index=-1;
 
         if(index!=5){
+            // 인덱스 이동
+            index++;
 
             // .images>li중에서 active 있으면 초기화
-            img.forEach((e)=>{
+            img.forEach((e, i)=>{
                 e.classList.remove("active")
+                btn[i].style.backgroundColor="white"
             })
 
-            // 현재 index보다 1 큰 개체 활성화
-            img[index+1].classList.add("active")
+            // 현재 index에 해당하는개체 활성화
+            img[index].classList.add("active")
+            btn[index].style.backgroundColor="gray"
 
-            // 변수 index를 1 증가켜서 활성화된 개체의 [index]와 변수 index를 일치
-            index++;
+
         }
     }
 </script>
@@ -243,22 +252,20 @@
     const pBtn2 = document.querySelector("#imageSlider2 .prevBtn")
     const nBtn2 = document.querySelector("#imageSlider2 .nextBtn")
 
-    let index2 = 0; // 위치파악용
-    let mid = container.clientWidth/2 - img2[0].clientWidth/2 //중앙정렬을 위한 계산값
-    let shift = mid;
+    let index2 = 0; // 위치파악용..
+    let shift = (container.clientWidth - img2[0].clientWidth)/2 //첫번째 사진을 중앙정렬 하기 위한 계산값
 
     pBtn2.onclick=function (e){
-        if(index2<=0) {  //중앙정렬
-            imgBox2.style.marginLeft= `${mid}px` // 맨 앞의 사진인 경우 최초 중앙정렬값 유지
+        if(index2==0) {  // 첫 번째 사진을 중앙정렬해줌
+            imgBox2.style.marginLeft= `${shift}px`
         } else {
-            shift += img2[index2].clientWidth // 사진 가로사이즈만큼 마진 이동해주면 다음사진도 중앙정렬 유지됨
+            shift += img2[index2].clientWidth // 현재 사진 가로사이즈만큼 left마진 증가시킴
             imgBox2.style.marginLeft=`${shift}px`
-            index2 -- // 인덱스 감소시켜서 범위 밖으로 벗어나는것을 방지
+            index2 -- // 인덱스 감소시켜서 위치파악
         }
     }
-
     nBtn2.onclick=function (e){
-        if(index2<5){ //마지막 사진이 아닌 경우에만 동작
+        if(index2<5){ //마지막 사진이 아닌 경우에만 동작하며, 현재 사진의 가로사이즈만큼 좌로 이동
             shift -= img2[index2].clientWidth
             imgBox2.style.marginLeft=`${shift}px`
             index2++

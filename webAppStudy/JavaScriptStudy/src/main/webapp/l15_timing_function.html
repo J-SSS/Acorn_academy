@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>무한 반복문인 타이밍 함수에 대해 알아보자</title>
+</head>
+<body>
+<h1>무한 반복문 setTimeout 과 setInterval 을 알아보자!</h1>
+<h2>setInterval(callBackFunc,milliseconds) return threadNum:
+    밀리초마다 콜백함수를 호출하는 무한 반복문 (멀티스레드)
+</h2>
+<h3>setInterval 로 시계 만들기</h3>
+<p id="calendar"></p>
+<p id="clock"></p>
+<h2>clearInterval(threadNum) : setInterval 로 생성된 스레드를 삭제하는 함수
+    <button id="clearClock">clock 일꾼(thread) 삭제</button>
+</h2>
+
+<h2>setTimeout(eventHandler,milliSec) return threadNum :
+    밀리초 후에(대기하고 있다) 콜백함수를 실행하는 무한 반복문 (멀티스레드)
+</h2>
+<h3>3초 뒤에 알림 띄우기!
+    <button onclick="window.alertNum=setTimeout(()=>{
+            alert('안녕! 일꾼 번호 :'+alertNum);
+        },3000)">알림!</button>
+</h3>
+<h2>clearTimeout(threadNum) : setTimeout 의 스레드를 삭제하는 함수
+    <button onclick="clearTimeout(window.alertNum)">알람 멈추기</button>
+</h2>
+<script>
+    "use strict"; //var 을 사용하지 못하고 this 가 window 로 이지하지 않는 문법 (es5문법만 사용)
+    //var 왜 호이스팅이 일어나고 window 왜 전역의 this 인지 배운사람은 잘 아는데..
+    //처음 js 접하는 사람을 이것을 오류로 취급을 해서 "use strict" 으로 쓰면 var 을 지우고 this 가 window 를 가르키지 않는다.
+    //화살표함수 같은 es5 문법을 쓰면 자동으로  "use strict"이 붙는다.!!
+    const date=new Date();
+    let y=date.getFullYear();
+    let m=date.getUTCMonth()+1; //0~11
+    let d=date.getUTCDate();
+    let day=date.getUTCDay(); //0~6 월~일
+    let days=["일","월","화","수","목","금","토"];
+    let dateStr=`${y}년 ${m}월 ${d}일 ${days[day]}요일`;
+    console.log(dateStr);
+    calendar.innerText=dateStr
+    const clockNode=document.getElementById("clock");
+
+
+    let inervalNum=setInterval(()=>{
+        clockNode.innerText=clock()+" 일꾼번호:"+inervalNum;
+    },1000);
+
+    function clock(){
+        const date=new Date(); //생성한 시점에 시간
+        let h=date.getUTCHours();
+        let m=date.getUTCMinutes();
+        let s=date.getUTCSeconds();
+        return `${h}시 ${m}분 ${s}초`;
+    }
+    clearClock.addEventListener("click",(e)=>{
+
+        clearInterval(inervalNum); //일꾼 삭제 (java 는 반복을 멈추는 것을 권장)
+    })
+</script>
+
+
+
+</body>
+</html>

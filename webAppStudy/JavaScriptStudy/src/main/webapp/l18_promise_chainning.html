@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>프라미스 체이닝과 프라미스화</h1>
+    <h2>프라미스 체이닝으로 2초 뒤 알람을 5번 동기화하기...
+    <button id="testBtn1">알람!</button></h2>
+
+    <h2>프라미스 체이닝 방법</h2>
+    <p>Promise.then()함수가 Promise 객체를 반환하면 다시 .then으로 동기화 할 수 있다.</p>
+    <pre>
+        new Promise(
+    </pre>
+
+    <script>
+        teestBtn1.onclick= testBtn1Handler;
+        function testBtn1Handler(e){
+
+            new Promise((res)=>{
+                setTimeout(()=>{
+                    alert("2초 뒤!!")
+                    res();
+                },2000);
+            }).then((resM)=>{
+                return new Promise((res)=>{
+                    setTimeout(()=>{
+                        alert("2초 뒤!!")
+                        res();
+                    },2000);
+                }).then((resM)=>{
+                    return new Promise((res)=>{
+                        setTimeout(()=>{
+                            alert("2초 뒤!!")
+                            res();
+                        },2000);
+                    }
+                ).then((res)=>{
+                        setTimeout(()=>{
+                            alert("2초 뒤!!")
+                            res();
+                        },2000);
+
+            })
+        })
+        })
+        }
+
+
+
+
+        //alert이 2초뒤에 뜨면 다시 2초 뒤, 또 다시 2초뒤, 또 다시 2초뒤 알람이 발생하게 하고싶다~!
+        // setTimeout(()=>{
+        //     alert("2초뒤");
+        //         setTimeout(()=>{
+        //             alert("2초뒤")
+        //                 setTimeout(()=>{
+        //                     alert("2초뒤")
+        //                         setTimeout(()=>{
+        //                             alert("2초뒤")
+        //                         },2000)
+        //                 },2000)
+        //         },2000)
+        // },2000)
+    </script>
+
+    <button id="textBtn2">프라미스화!!</button>
+    <script>
+        function setTimeAlertPromise(time) {
+            return new Promise((res) => {
+                setTimeout(() => {
+                    alert(`${time}초 뒤!!`)
+                    res();
+                }, 2000);
+            });
+        }
+        textBtn2.onclick=function (e){
+            setTimeAlertPromise(1)
+            .then((res)=>{
+                return setTimeAlertPromise(2);
+            }).then((res)=>{
+                return setTimeAlertPromise(3);
+            }).then((res)=>{
+                setTimeAlertPromise(4);
+            })
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fetch API와 Ajax</title>
+</head>
+<body>
+    <h1>Promise화 된 비동기 통신 API fetch</h1>
+
+    <h2>empListJson.do와 비동기통신하기 (fetch)
+    <button onclick="loadEmpListJson()">로드</button>
+    </h2>
+    <pre id="empListCont"></pre>
+  <script>
+      function loadEmpListJson(){
+          fetch("empListJson.do", {method:"GET"}).then((resp)=>{ //응답한내역 전체 (응답한 내역 어떻게 처리할건지 정해야함)
+              //resp.text() // 응답한 내역을 문자열로 처리하는 Promise
+              //resp.json() // 응답한 내역을 문자열과 Object로 파싱처리하는 Promise를 반환
+              return resp.json();
+
+              //** 첫번째 Json에서 처리타입을 정해주는것은 fetch 문법의 약속임)
+
+          }).then((empList)=>{
+              console.log(empList);
+              empListCont.innerHTML=(empList);
+          })
+      }
+
+  </script>
+    <h2>XMLHttpRequest의 프라미스화</h2>
+    <h3>
+        <a href="javascript:void(0)" id="loadImgListBtn">
+            프라미스화 한 함수로 ajax/imgList.html불러오기
+        </a>
+    </h3>
+    <div id="imgCont"></div>
+    <hr>
+    <hr>
+<script>
+    loadImgListBtn.onclick=function (e){
+        fetchApi("ajax/imgList.html").then((resp)=>{
+            console.log(resp)
+            imgCont.innerHTML=resp;
+        }).catch((errorMsg)=>{
+            alert("호출실패!" + errorMsg)
+        })
+    } //fetch함수에는 reject를 정의하지 않고 있다.
+    function fetchApi(url,method="GET"){
+        return new Promise((resolve)=>{
+            const req=new XMLHttpRequest(); //req.readyState==0
+            req.open(method,url); //req.readyState==1
+            req.send(); //통신시작 // 1~2사이의 상태
+
+            // req.readyState==2 : 서버가 반환한 응답헤더(상태)를 받았을 때
+            //req.readyState==3 : 서버에서 모든 응답을 완료했을 때
+
+            //통신완료 //req.readyState==4 : 응답받은 내용을 모두 처리 했을 때 (=완료)
+            req.onload = function (e){
+                let responseText = req.responseText;
+                if(req.status==200){
+                    let responseText=req.responseText;
+                    resolve(responseText);
+                } else {//404 : 요청한 리소스가 없는경우, 500: 요청한 리소스에 오류가 있는 경우
+                    reject(new Error(req.status+"오류"));
+                }
+            }
+        });
+    }
+</script>
+
+    <style>
+        table, tr, td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        thead>tr{
+            background-color: lightgray;
+            font-weight: bold;
+        }
+        td {
+            width: 250px;
+            text-align: center;
+        }
+    </style>
+
+    <h3>과제 : dept 리스트를 json으로 반환하는 서블릿을 만들고 ajax로 호출하세요(L19참고...)</h3>
+    <p>
+        <!--deptListJson.do-->
+        <button id="deptBtn1">XMLHttpResquest로 호출</button>
+        <button id="deptBtn2">XMLHttpREquest의 프라미스화로 호출</button>
+        <button id="deptBtn3">fetch로 호출 호출</button>
+    </p>
+    <table>
+        <thead>
+        <tr>
+            <td>부서번호</td><td>부서이름</td><td>지역명</td>
+        </tr>
+        </thead>
+        <tbody id="output">
+
+        </tbody>
+    </table>
+<script>
+    const btn1 = document.getElementById("deptBtn1");
+    const btn2 = document.getElementById("deptBtn2");
+    const btn3 = document.getElementById("deptBtn3");
+
+    let url = "deptListJson.do";
+    let method = "GET";
+
+
+    btn1.onclick=Quiz01;
+    btn2.onclick=Quiz02;
+    btn3.onclick=Quiz03;
+
+    function Quiz01 (){
+        const req1 = new XMLHttpRequest();
+        req1.open(method,url)
+        req1.send();
+        req1.onload=function (){
+            console.log(req1.status)
+            console.log("되나?!?")
+            let deptJson = JSON.parse(req1.responseText);
+            output.innerHTML=parseTable(deptJson);
+        }
+    }
+
+    function Quiz02 () {
+        new Promise((resolve)=>{
+            const req1 = new XMLHttpRequest();
+            req1.open(method,url)
+            req1.send();
+            req1.onload=function () {
+                let deptJson = JSON.parse(req1.responseText);
+                resolve(deptJson);
+            }
+        }).then((deptJson)=>{
+                output.innerHTML=parseTable(deptJson);
+        })
+    }
+
+    function Quiz03 ()  {
+        fetch(url,{method:method}).then((resp)=>{
+
+            return resp.json();
+
+        }).then((deptJson)=>{
+
+            output.innerHTML=parseTable(deptJson);
+
+        })
+    }
+
+    function parseTable(Json){
+        let table=" ";
+        Json.forEach((e)=>{
+            for(let key in e){
+                table+=`<td>${e[key]}</td>`
+            }
+            table+="</tr>"
+        });
+        return table;
+    }
+
+
+
+</script>
+</body>
+</html>

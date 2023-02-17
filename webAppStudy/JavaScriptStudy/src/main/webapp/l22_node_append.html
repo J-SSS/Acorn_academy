@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>node 생성과 추가</title>
+</head>
+<body>
+    <h1>node 생성과 추가하기</h1>
+    <p>html 문서가 화면에 그대로 출력되고있다는 착각을 많이 하는데....화면에 출력하고 있는 것은 node객체다</p>
+    <h2>document.createNode(TagName);</h2>
+    <h2>document.createTextNode("문자열"); : 텍스트노드 개체를 생성하는 함수</h2>
+    <h2>노드 개체를 추가해주는 함수</h2>
+    <ul>
+      <li>Node.append(node) :</li>
+      <li>Node.prepend(node) :</li>
+      <li>Node.after(node) :</li>
+      <li>Node.before(node) :</li>
+      <li>Node.replaceWith(node) :</li>
+    </ul>
+
+<script>
+    console.log("<div>윤식씨~ 화이팅~!</div>"); //문자열인 데이터
+    const div = document.createElement("div"); //브라우저에서 출력되는 요소 노드객체(다른요소 포함가능)
+    const text = document.createTextNode("윤식씨 화이팅~") //브라우저에서 출력되는 텍스트노드객체(다른요소 포함 불가)
+    div.append(text);
+</script>
+</body>
+</html>

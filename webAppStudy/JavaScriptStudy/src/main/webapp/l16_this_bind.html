@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>this bind</title>
+</head>
+<body>
+<h1>this 와 bind 와 화살표 함수</h1>
+<ul>
+    <li>this : 객체 필드(멤버) 접근자</li>
+    <li>super : 부모의 필드 접근자</li>
+    <li>bind : this 가 정의하고 있는 객체</li>
+    <li>function.bind(Object) : 해당 함수에 this 로 특정 Object 를 고정할 수 있다.</li>
+    <li>this 소실  : 타입에서 내부의 필드에서 this 가 다른 객체를 가르키는 현상 </li>
+</ul>
+<h2>this 소실이 발생하는 이유!</h2>
+<ul>
+    <li>콜백함수를 정의할때 this 는 콜백함수를 실행하는 객체가 된다.</li>
+    <li>이때 this 가 콜백함수를 정의하는 타입이기를 기대할때 this 소실이 발생했다고 한다. </li>
+    <li>예) 이벤트를 정의한 함수내부의 this 가 그 함수를 정의한 타입으로 기대하지만 이벤트가 발생한 노드개체가 this 가 된다.</li>
+    <li>예) 타이밍함수를 정의한 함수내부의 this 가 그 함수를 정의한 타입이기를 기대하지만 타이밍함수를 실행, 생성하는 window 가 된다. </li>
+</ul>
+<h2>this 소실을 해결하는 2가지 방법</h2>
+<ul>
+    <li>함수의 bind()로 내가 원하는 this 로 고정한다.</li>
+    <li>this 를 bind 하지 못하는 화살표함수를 사용한다~ </li>
+</ul>
+<!-- 15분까지 쉬었다가 오세요~-->
+
+<p>timer : <strong id="timerStr"></strong></p>
+<script>
+    //타이머 타입
+    //타이머 객체를 생성후 호출하면 화면출력되도록 정의
+    class Timer{
+        time;id;
+        constructor(id,time=3) {
+            this.time=time;
+            this.id=id;
+        }
+        printDom (){
+            //this 로 필드가 접근 가능
+            const node=document.getElementById(this.id);
+            node.innerText=this.time;
+        }
+        start (){
+            //this 소실  : this 가 실행하는 객체를 bind 하며서 생기는 문제
+            //setInterval 을 실행하는 객체는 window 기 때문에 setInterval 의 콜백함수의 this 는 window 를 가르킨다.
+            //bind 로 this 를 Timer 의 멤버로 고정한 새로운 함수를 콜백함수로 사용하면 this 소실을 막을 수 있다.
+            const newFunc=this.setTime.bind(this);
+            window.setInterval(newFunc,1000);
+        }
+        setTime (){
+            this.time--;
+            this.printDom();
+        }
+
+    }
+    const timer=new Timer("timerStr",5);
+    timer.printDom();
+    timer.start();
+</script>
+<hr>
+<h3>timer 예제 2</h3>
+<div>
+    <button id="startBtn">start</button>
+    <strong id="timerTxt"></strong>
+    <button id="stopBtn">stop</button>
+</div>
+<script>
+    function TimerApp(startBtnId,stopBtnId,timerTxtId,time=5){
+        this.startBtn=document.getElementById(startBtnId);
+        this.stopBtn=document.getElementById(stopBtnId);
+        this.timerTxt=document.getElementById(timerTxtId);
+        this.time=time;
+        //this 소실의 구원자~~!!!! 화살표함수~~~
+
+        // this.startBtn.onclick= function (e){
+        //     //setInterVal 1초 1씩 줄어드는 것을 출력하는 것이 목표!
+        //     //this 소실 : onclick 을 실행하는 버튼을 this 바인드하고 있다.
+        //     console.log(this);
+        //     alert("스타트!");
+        //     this.timerTxt.innerText=this.time;
+        // }.bind(this); //bind(Timer.this) : 하면 함수의 this 를 실행하는 객체가 아니라 Timer로 고정
+        this.startBtn.onclick=(e)=>{
+            ///화살표 함수의 this 는 실행하는 객체를 포함하는 필드를 this로 인식한다.(한번 건너띈다.)
+            //prototype 을 생성하는 함수는(function)은 실행하는 객체의 필드를 this 로 bind 하는 함수를 포함하고 있다.(함수가 타입이라서)
+            //==화살표 함수는 타입이 될 수 없고 bind 함수도 없어서 this 를 바인딩하지 못해서 밖에 있는 함수의 필드가 this 가 된다.
+            //==화살표 함수의 this 는 화살표 함수를 재정의한 객체를 포함하는 함수의 this 다.
+            //==화살표함수의 this 를 정의(바이드)하지 못해서 그 밖에 있는 함수가 this 가 된다.
+            this.timerTxt.innerText=this.time;
+            window.tt = setInterval((e) => {
+                this.time--;
+                this.timerTxt.innerText = this.time;
+            }, 1000);
+        }
+        this.stopBtn.onclick=(e)=>{
+            clearInterval(tt);
+        }
+    }
+    const timer2 = new TimerApp("startBtn","stopBtn","timerTxt",3)
+
+</script>
+<hr>
+<h2>타이머 어플 3</h2>
+<form name="timerForm">
+    <p>
+        시간 : <input type="number" name="time" value="5000"> 밀리초
+    </p>
+    <p>
+        실행 간격 : <input type="number" name="interval" value="1000"> 밀리초
+    </p>
+    <p>
+        출력 : <input type="text" name="out" readonly>
+    </p>
+    <p>
+        <button type="button" name="start">시작</button>
+        <button type="button" name="stop">멈춤</button>
+        <button type="button" name="exit">종료</button>
+    </p>
+</form>
+<script>
+    class TimerApplication {
+        constructor(formName) {
+            this.form = document.forms[formName];
+
+            this.startBtn = this.form.start;
+            this.stopBtn = this.form.stop;
+            this.exitBtn = this.form.exit;
+            this.outNode = this.form.out;
+            this.timeNode = this.form.time;
+            this.intervalNode = this.form.interval;
+        }
+
+        start() {
+            this.outNode.value = this.timeNode.value
+            this.startBtn.onclick = function () {
+
+                window.st = setInterval((e) => {
+                    this.outNode.value--;
+                }, this.intervalNode.value)
+            }.bind(this)
+        }
+        exit() {
+            this.exitBtn.onclick = () => {
+                this.timeNode.value = 5000;
+                clearInterval(st)
+            }
+        }
+        stop() {
+            this.stopBtn.onclick = () => {
+                clearInterval(st)
+            }
+            }
+        }
+
+    const ta = new TimerApplication("timerForm");
+    ta.start();
+    ta.exit();
+    ta.stop();
+
+
+</script>
+
+
+</body>
+</html>

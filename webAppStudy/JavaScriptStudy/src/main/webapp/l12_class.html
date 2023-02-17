@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 의 class</title>
+</head>
+<body>
+<h1>js의 static sugar class 문법!</h1>
+
+<h2>프로토타입 기반 언어</h2>
+<ul>
+    <li>타입을 명시하면 프로토타입 객체를 생성하는 언어</li>
+    <li>객체 생성시 프로토타입 객체를 기반으로 생성한다.</li>
+    <li>타입간의 상속은 프로토타입간의 체인으로 구현한다.(__proto__)</li>
+    <li>자바스크립트에서는 function 을 선언하면 프로타입객체가 만들어져서 함수형 언어라고도 부른다.</li>
+    <li>이름 있는 함수 (기명함수) : js 엔진 (V8) 코드를 실행하기 전에 해당 함수를 프로토타입 객체로 생성=>함수의 호이스팅</li>
+    <li>이름이 없는 함술 (익명함수) : 코드를 실행하면서 익명함수를 프로토타입 객체로 생성 (함수의 호이스팅을 막고 최초실행 속도를 빠르게 하기 위해 ) </li>
+    <li>이름이 있는 함수를 변수에 대입(기명함수표현식) : 익명함수와 동작이 같은데 재귀호출이 가능하다.</li>
+</ul>
+<h2>자바에서 타입(클래스)을 정의하는 방법</h2>
+<pre>
+        class Type{
+            String name;
+            int age;
+            Type(String name,int age){
+                this.name=name;
+                this.age=age;
+            }
+            Type(String name){
+                this.name=name;
+                this.age=25;
+            }
+        }
+    </pre>
+<h2>자바스크립트에서 타입(기명함수)을 정의하는 방법1</h2>
+<pre>
+        function Type(name,age){
+            this.name=name;
+            this.age=age;
+        }
+    </pre>
+<h2>자바스크립트에서 타입(익명함수)을 정의하는 방법2</h2>
+<p>호이스팅현상이 없고 js 최초실행이 빠르다.</p>
+<pre>
+        const Type=function (name,age){
+            this.name=name;
+            this.age=age;
+            this.hello=function(){
+                new Type(); (X) 불가능
+            }
+        }
+    </pre>
+<h2>자바스크립트에서 타입(기명함수 표현식)을 정의하는 방법3</h2>
+<p>호이스팅현상이 없고 js 최초실행이 빠르고 재귀호출이 가능</p>
+<pre>
+        const Type=function name(name,age){
+            this.name=name;
+            this.age=age;
+            this.hello=function(){
+                new name(); (O) 가능
+            }
+        }
+    </pre>
+<h2>자바스크립트에서 타입(class)을 정의하는 방법3</h2>
+<p>호이스팅 현상이 없고, 객체지향 문법을 사용해서 상속할 수 있다.</p>
+<p>타입의 멤버(프로퍼티,속성,필드)를 정의할때 전역변수에서 this 를 사용할 수 없다.
+    (함수나 생성자에서 사용가능)</p>
+<pre>
+        class Type{
+            job="학생";
+            interests=["독서","농구"];
+            constructor(name,age){ //생성자로 정의됨
+                this.name=name;
+                this.age=age;
+            }
+            func(){ this.a="aa"}
+            func=function (){};
+            func=()=>{}
+        }
+        const t=new Type();
+        t.name;
+        t.job;
+        t.func();
+    </pre>
+<script>
+    //type
+    function Person(name,age,job,gender="남자"){
+        //gender="남자" : js 에서 가능한 문법 (js 오버로드를 할 수 없다.)
+        this.name=name;
+        this.age=age;
+        this.job=job;
+        this.gender=gender;
+    }//Person type
+    //Person 타입으로 만든 객체
+    const p0=new Person("석정",25,"dba"); //Person 으로 생성한 객체
+    const p1=new Person("경민",38,"강사"); //Person 으로 생성한 객체
+    console.log(p0);
+    console.log(p1);
+    //Object 에 필드를 정의해서 만드는 객체
+    const p2={name : "은정",age :20, job :"프로그래머", gender:"여자"};
+    const p3={name : "동홍",age :26, job :"백엔드개발자", gender:"남자"};
+    console.log(p2);
+    console.log(p3);
+    //Type 을 정의하는 이유 : 재사용 (객체를 쉽게 생성하기 위해서)
+
+    class Person2{ //function 과 같은데 문법만 존재
+        //js :  this. 자동으로 필드를 생성
+        //java : 필드를 전역에 명시해야한다.
+        name;age;job;gender; //js에서 필드는 let, var, const, this 를 사용하지 않는다.
+        constructor(name,age,job,gender="여자") {
+            //this 는 해당 타입이 객체가 되었을 때 필드 접근자
+            this.name=name;
+            this.age=age;
+            this.job=job;
+            this.gender=gender;
+        }
+        hello0=function (){};
+        hello=()=>{};
+        hello2(){};
+    }//GC가 존재하는 프로그래밍 언어는 객체를 따로 삭제하면 안된다! (java,js)
+    const p4=new Person2("재연",25,"풀스택");
+    console.log(p4)
+    /*화살표함수는 프로토타입이 생성되지 않기 때문에 생성자를 호출할 수없고(객체를만들수없다),this 도 존재하지 않는다.
+    const sum=(a,b)=>{this.a=a; this.b=b};
+    console.log(sum.prototype);
+    console.log(new sum(10,20));
+    * */
+    //Prototype : function 과 class 를 명시(작성)하면 생성되는 타입
+    //생성자는 프로토타입에 존재
+    console.log(Person.prototype);
+    console.log(Person2.prototype);
+    //__proto__ : 프로토타입의 부모 프로토타입을 참조하는 링크 or 객체의 프로토타입을 참조
+    console.log(p0.prototype); //객체는 자신을 생성한 프로토타입을 __proto__로 참조 가능
+    console.log(p0.__proto__);
+
+    console.log(p0.__proto__=== Person.prototype); //자료형의 동등비교는 완전히 같은지 묻는 것
+    console.log( p0 instanceof  Person); //instanceof 객체의 타입을 검사 (부모도 검사 가능)
+    console.log( p0 instanceof  Object)
+    console.log(p0.valueOf());//Object.valueOf() 로 객체명세를 출력
+    console.log(p0.toString()); //Object.toString()
+    //객체에 대한 설명을 출력(valueOf가 자동으로 필드를 모두 출력해서 재정의 하지 않는편)
+
+
+    class A{
+        a="a.안녕";
+    }
+    class B extends A{
+        b="b.안녕";
+    }
+    class C extends B{
+        c="c.안녕";
+        b="C.b잘가!"; //부모의 필드를 재정의
+    }
+    const c=new C();
+    console.log(c); //Object.valueOf()가 재정의되서 모든 필드가 하나에 있는 것처럼 출력됨
+    //java 의 상속 : C가 부모의 필드 모두를 갖고 C를 기반으로 객체를 생성
+    //js의 상속 : A,B,C 프로토타입은 별개고 객체를 만들때 모든 프로토 타입을 기반으로 생성
+
+    function E(){
+        this.a="E.a";
+    }
+    function F(){
+        this.b="F.b";
+        F.prototype=new E(); //프로토 타입의 상속
+    }
+    function G(){
+        this.c="G.c";
+        this.a="G.a"; //F.a를 재정의
+        this.__proto__=new F();
+    }
+    const g=new G();
+    console.log(g);
+    console.log(g.a)
+    console.log(g.b)
+
+    console.log(c.__proto__);//C.prototype
+    console.log(c.__proto__.__proto__) //B.prototype
+    console.log(c.__proto__.__proto__.__proto__)//A.prototype
+    console.log(c.__proto__.__proto__.__proto__.__proto__)//Object.prototype
+    console.log(c.__proto__.__proto__.__proto__.__proto__.__proto__)//null
+
+    //위에 처럼 프로토타입을 체인을 하려면 조금 어려운 방법이 필요해서 객체를 상속받음 (프로토타입도 객체다)
+    console.log(g.__proto__);//G.prototype
+    console.log(g.__proto__.__proto__) //new F()
+    console.log(g.__proto__.__proto__.__proto__)//new E()
+    console.log(g.__proto__.__proto__.__proto__.__proto__)//Object.prototype
+    console.log(g.__proto__.__proto__.__proto__.__proto__.__proto__)//null
+
+
+</script>
+</body>
+</html>

@@ -10,9 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.71/conf/logging.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.71/conf/logging.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.71/conf/server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.71/conf/server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JavaScriptStudy_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JavaScriptStudy_war_exploded.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l10_event.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l10_event.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l11_image_slide.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l11_image_slide.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +28,7 @@
       <list>
         <option value="Class" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -67,6 +72,8 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.13.0&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/dongr/Desktop/Acorn_basic/webAppStudy/AcornRemoteStudy2&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -77,7 +84,7 @@
     &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.일반&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;shared-indexes&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -91,6 +98,12 @@
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\src\web02_JDBC" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\JavaScriptStudy\src\main\webapp" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.acorn.javascriptstudy" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="excludedTypes">
@@ -100,13 +113,13 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Tomcat 서버.index.jsp">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="REMOVE.OOPtest.Main" />
-      <module name="webAppStudy" />
+  <component name="RunManager" selected="Node.js.L02HttpModule.js">
+    <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.acorn.javascriptstudy.test" />
+      <module name="JavaScriptStudy" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="REMOVE.OOPtest.*" />
+          <option name="PATTERN" value="com.acorn.javascriptstudy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -114,15 +127,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GitWebStudy의 전부" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="GitWebStudy" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="l19_ajax_xmlhttprequest.html (1)" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/JavaScriptStudy_war_exploded/l19_ajax_xmlhttprequest.html">
+      <method v="2" />
     </configuration>
-    <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/JavaScriptStudy_war_exploded/index.jsp">
+    <configuration name="L02HttpModule.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/NodeJsStudy/L02HttpModule.js" working-dir="$PROJECT_DIR$/NodeJsStudy">
+      <method v="2" />
+    </configuration>
+    <configuration name="l01HelloNodeJs.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/NodeJsStudy/l01HelloNodeJs.js" working-dir="$PROJECT_DIR$/NodeJsStudy">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false">
@@ -214,10 +225,8 @@
         </option>
       </method>
     </configuration>
-    <configuration name="index.jsp" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080//JavaScriptStudy_war_exploded" />
-      <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
-      <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+    <configuration name="index.jsp (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/JavaScriptStudy_war_exploded/index.jsp" />
       <deployment>
         <artifact name="JavaScriptStudy:war exploded">
           <settings>
@@ -226,7 +235,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="a916215e-6641-447a-8e4e-c989e3b80653" />
+        <option name="BASE_DIRECTORY_NAME" value="20b83307-86c4-47da-b27c-7ec2532efc34" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -234,7 +243,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="1544" />
+        <option name="DEBUG_PORT" value="5978" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -304,18 +313,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JavaScript 디버그.index.jsp" />
-      <item itemvalue="JUnit.GitWebStudy의 전부" />
+      <item itemvalue="JavaScript 디버그.l19_ajax_xmlhttprequest.html (1)" />
+      <item itemvalue="Node.js.L02HttpModule.js" />
+      <item itemvalue="Node.js.l01HelloNodeJs.js" />
       <item itemvalue="Tomcat 서버.Tomcat 9.0.71" />
-      <item itemvalue="Tomcat 서버.index.jsp" />
-      <item itemvalue="애플리케이션.Main" />
+      <item itemvalue="Tomcat 서버.index.jsp (1)" />
+      <item itemvalue="애플리케이션.test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Tomcat 서버.index.jsp" />
-        <item itemvalue="JavaScript 디버그.index.jsp" />
-        <item itemvalue="JUnit.GitWebStudy의 전부" />
-        <item itemvalue="애플리케이션.Main" />
+        <item itemvalue="Node.js.L02HttpModule.js" />
+        <item itemvalue="Node.js.l01HelloNodeJs.js" />
+        <item itemvalue="Tomcat 서버.index.jsp (1)" />
+        <item itemvalue="애플리케이션.test" />
+        <item itemvalue="JavaScript 디버그.l19_ajax_xmlhttprequest.html (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -359,6 +370,25 @@
       <workItem from="1675846416121" duration="26000" />
       <workItem from="1675901268421" duration="19541000" />
       <workItem from="1675988094268" duration="21678000" />
+      <workItem from="1676035890580" duration="3740000" />
+      <workItem from="1676089316125" duration="2255000" />
+      <workItem from="1676247253236" duration="21789000" />
+      <workItem from="1676283838309" duration="278000" />
+      <workItem from="1676290671304" duration="999000" />
+      <workItem from="1676333413904" duration="22012000" />
+      <workItem from="1676420002743" duration="6994000" />
+      <workItem from="1676431638542" duration="972000" />
+      <workItem from="1676437547723" duration="11391000" />
+      <workItem from="1676452389086" duration="1000" />
+      <workItem from="1676452429744" duration="28000" />
+      <workItem from="1676506733319" duration="28012000" />
+      <workItem from="1676592609207" duration="476000" />
+      <workItem from="1676593096654" duration="10853000" />
+      <workItem from="1676611122296" duration="2673000" />
+      <workItem from="1676613807993" duration="147000" />
+      <workItem from="1676613965874" duration="1494000" />
+      <workItem from="1676615471349" duration="4318000" />
+      <workItem from="1676619802930" duration="2680000" />
     </task>
     <servers />
   </component>
