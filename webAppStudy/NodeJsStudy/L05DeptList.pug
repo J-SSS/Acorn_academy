@@ -1,0 +1,23 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+    body
+        h1 pug로 html을 서버에서 렌더하자..!!
+        h2 템플릿 엔진과 pug
+        p 템플릿 엔진 : view를 렌더링하는 머신(jvm처럼)으로서 v8엔진과 별도로 동작
+        p view렌더 : 서버사이드에 html을 만들 때 view와 동적페이지를 분리해서 만드는 것을 말한다
+        p pug : node와 express에서 가장 많이 사용되는 템플릿 엔진으로, xml을 파이썬이나 Sass처럼 tab으로 포함관계 구현
+        p 숙제 : empListPug.do 만들어보기
+
+        table
+            thead
+                tr
+                    th 부서번호
+                    th 부서이름
+                    th 부서위치
+            tbody
+                -for(let dept of deptList)
+                    tr
+                        td=dept.DEPTNO
+                        td=dept.DNAME
+                        td=dept.DLOC

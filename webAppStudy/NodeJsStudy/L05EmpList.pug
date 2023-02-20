@@ -1,0 +1,51 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+
+    style.
+        thead{
+            background-color: lightgray;
+            }
+        table, th, tr, td{
+            border: 1px dashed gray;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 2px 5px;
+        }
+        tbody>tr>td:first-child{
+            background-color: beige;
+            font-weight: bold;
+        }
+    body
+
+        h1 ### pug로 EmpList 불러오기 ###
+
+        table
+
+            thead
+
+                tr
+
+                    th 사원번호
+
+                    th 사원이름
+                    th 부서
+                    th 관리번호
+                    th 입사일
+                    th 임금
+                    th 성과급
+                    th 부서번호
+            tbody
+                -for(let emp of empList)
+                    tr
+                        td
+                            a(href=`EmpDetail.do?empno=${+emp.EMPNO}`)=emp.EMPNO
+                        td=emp.ENAME
+                        td=emp.JOB
+                        td=emp.MGR
+                        td=emp.HIREDATE.toLocaleDateString()
+                        td=emp.SAL
+                        td=emp.COMM
+                        td=emp.DEPTNO
+
+

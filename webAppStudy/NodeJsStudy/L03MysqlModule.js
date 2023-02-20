@@ -1,4 +1,4 @@
-const http = require("http");
+const http = require("http2");
 const url = require("url");
 const mysql=require("mysql");
 const querStr=require("querystring");
@@ -9,7 +9,8 @@ const mysqlConnInfo={
     user: "root",
     password:"mysql123",
 }
-
+// 1.http - > http2로 하다가 실행할 때 바꿔서 실행
+// expressjs : nodejs 프레임워크를 실무에서 사용함..!!
 http.createServer((req,resp)=>{
     console.log(req.url);
     const urlObj=url.parse(req.url);

@@ -5,115 +5,184 @@
     <title>비동기 실행을 동기화 하기</title>
 </head>
 <body>
-    <h1>멀티 스레드간의 비동기된 상태를 동기화 하는 방법</h1>
-    <h2>
-      <button id="testBtn">알람!</button>
-      경고창 3초 뒤에 뜨고 2초 뒤에 경고창 뜨게 하려면...</h2>
-    <p>
-      코드를 연이어 작성해서 동기된 동작을 기대하지만 setTimeout()은 thread를 생성하기 때문에
-        비동기된 동작을 보이면서 2초 뒤 경고가 먼저 뜨게된다.
-    </p>
-  <script>
+<h1>멀티 스레드 간의 비동기된 상태를 동기화 하는 방법과 promise</h1>
+
+<h2>
+    <button id="testBtn">알람!</button>
+    경고창 3초뒤에 뜨고 경고창 뜨고 다시 2초 뒤에 경고창 뜨게 하려면 ...
+</h2>
+<p>
+    코드를 연이어 작성해서 동기된 동작기대하지만 setTimeout() 은 thread 를 생성하기 때문에
+    비동기된 동작을 보이면서 2초 뒤 경고가 먼저 뜨게된다.
+</p>
+
+<script>
     testBtn.onclick=function (e){
-      window.setTimeout(()=>{alert("화면이 열리고 3초 뒤 경고!!")},3000)
-      window.setTimeout(()=>{alert("2초 뒤 다시 경고!!!!")},2000)
+        window.setTimeout(()=>{
+            alert("화면이 열리고 3초 뒤 경고!")
+        },3000);
+        //Thread.join() : java 는 위의 Thread 가 종료될 때 까지 기다리는 함수가 존재 (js는 없다.)
+        window.setTimeout(()=>{
+            alert("경고창이 열리고 2초 뒤 다시 경고!")
+        },2000);
     }
-  </script>
-    <h2><button id="testBtn2"></button>
-    콜백 지옥으로 비동기 코드를 동기화하기!</h2>
-    <p>멀티스레드인 코드의 특정 시점을 동기화하고 싶다면 그 코드가 종료되는 시점에서 다시 함수 호출하는 형식으로
-    동기화 할 수 있다.
-    이런 현상이 계속 반복되면 중첩으로 코드가 복잡해져서 콜백지옥이라부른다.
-    </p>
-    <p>자바스크립트의 대부분이 멀티스레드로 동작하는데 동기화를 위해서 콜백지옥을 만들게된다
-    타이밍함수, ajax, 이벤트리스너등등....모두 멀티스레드로 동작함</p>
+</script>
+<h2><button id="testBtn2">알람!</button> 콜백 지옥으로 비동기 코드를 동기화 하기!</h2>
+<p>
+    멀티 스레드인 코드의 특정 시점을 동기하고 싶다면 그 코드가 종료되는 시점(스레드 종료 시점이 아니라)에서
+    다시 함수 호출(콜백함수)하는 형식으로 동기화 할 수 있다.
+    이런 형상이 계속 반복되면 중첩으로 코드가 복잡해져서 콜백지옥이라 부른다.
+</p>
+<p>
+    자바스크립트의 대부분의 일(타이밍함수,AJAX,이벤트리스너(nodejs))이 멀티스레드로 동작한다.
+    때문에 스레드의 종료시점을 동기하기 위해 콜백지옥을 만드는 일이 발생한다.
+</p>
 <script>
     testBtn2.onclick=function (e){
         window.setTimeout(()=>{
-            alert("화면이 열리고 3초 뒤 경고!!")
+            alert("3초뒤 알람");
+            window.setTimeout(()=>{
+                alert("알람이 뜨고 2초뒤");
                 window.setTimeout(()=>{
-                    alert("2초 뒤 다시 경고!!!!")
+                    alert("또 2초뒤?");
                 },2000)
-        },3000)
+            },2000)
+        },3000);
     }
 </script>
-    <style>
-        #circleBox{
-          border-radius: 50%;
-            width: 0px;
-            height: 0px;
-            background-color: red;
-            /*animation: moveBox 2s forwards;*/
-            margin-left: 0;
-        }
-        /*@keyframes moveBox {*/
-        /*    50%{*/
-        /*        width: 200px; height: 200px;*/
-        /*        margin-left: 0;*/
-        /*    }*/
-        /*    100%{*/
-        /*        margin-left: calc(100% - 200px) ;*/
-        /*    }*/
-        /*}*/
-    </style>
-    <h3>0~200까지 커지는 원을 만들고, 오른쪽 끝으로 이동</h3>
-    <div>
-        <p id="circleBox"></p>
-    </div>
-
-    <script>
-        /*
-        브라우저에서 애니메이션 작성법 :
-        1.transition(복잡한거 불가)
-        2. animation
-        3. 자바스크립트 setInterval
-         */
-        let w = 0;
-        const circleBox = document.getElementById("circleBox")
-        let cBox = setInterval((e)=>{
-          circleBox.style.width=(++w)+"px"
-          circleBox.style.height=(++w)+"px"
-            if(w==200){
-                clearInterval(cBox)
-                setInterval(()=>{
-                    circleBox.style.marginLeft=200+"px"
-                },10)
-            }
-        },10)
-        // let leftEnd = circleBox.parentElement.clientWidth
-        // let left = 0;
-        // let cMove = setInterval(()=>{
-        //     circleBox.style.marginLeft=(++left)+"px"
-        //     if(leftEnd==left)clearInterval(cMove)
-        // })
-
-
-    </script>
-    //오른쪽 끝으로 이동하는 interval을 만들어보세요~
-    //크기가 200일때 오른쪽으로 이동하는~
-
-    <h2>멀티스레드간의 동기화를 위한 콜백지옥 탈출을 위해 등장한 영웅!? promise</h2>
-    <p>콜백지옥만 탈출하지 코드는 더 어려워진다... 진정한 구원자 async함수가 등장한다!!</p>
-    <h3><button id="testBtn3">알람!!</button> 3초 뒤 알람이 뜨고 2초 뒤 알람!!</h3>
+<style>
+    #circleBox{
+        border-radius: 50%;
+        width: 0px;
+        height: 0px;
+        background-color: red;
+        margin-left: 0;
+        /*animation-name: moveBox;*/
+        /*animation-duration: 2s;*/
+        /*animation-fill-mode: forwards;*/
+    }
+    /*@keyframes moveBox {*/
+    /*    0%{width: 0px; height: 0px;}*/
+    /*    50% {width: 200px; height: 200px;}*/
+    /*    100% {*/
+    /*        width: 200px;*/
+    /*        height: 200px;*/
+    /*        margin-left: calc(100% - 200px)*/
+    /*    }*/
+    /*}*/
+</style>
+<h3>0~200까지 커지는 원을 만들고 오른쪽 끝으로 이동(꼭 원이 다 커지면 이동하세요!)</h3>
+<div>
+    <p id="circleBox"></p>
+</div>
 <script>
-    testBtn3.onclick=function (e) {
-        const p = new Promise((resolve)=>{
+    <!--   브라우저에서 애니매이션 작성법 : 1.transition(복잡한 X),2.animation,3.js로 만드는     -->
+    let w=0;
+    const circleBox=document.getElementById("circleBox");
+    let leftEnd=circleBox.parentElement.clientWidth-200;
+    let left=0;
+
+    let circleBoxNum=setInterval(()=>{
+        circleBox.style.width=(++w)+"px";
+        circleBox.style.height=(++w)+"px";
+        //if(w==200)return; //해당함수만 종료하지 다음의 콜백함수를 종료하진 않는다.
+        if(w==200){
+            clearInterval(circleBoxNum);
+            let moveLeftNum=setInterval(()=>{
+                circleBox.style.marginLeft=(++left)+"px";
+                if(leftEnd==left)clearInterval(moveLeftNum);
+            },1);
+        }
+    },10)
+    //오른쪽 끝으로 이동하는 interval 을 만들어보세요~
+    //크기가 200일때 오른쪽으로 이동하는 interval 을 만들어 보세요!
+
+</script>
+
+<h2>멀티스레드간의 동기화를 위한 콜백지옥 탈출을 위해 등장한 영웅!? Promise </h2>
+<p>콜백지옥만 탈출하지 코드는 더 어려워진다.. ㅠㅠ 진정한 구원자 async 함수가 등장한다!</p>
+<h3><button id="testBtn3">알람!!</button> 3초뒤 알람이 뜨고 2초뒤 알람</h3>
+<script>
+    //11시 3분 까지 쉬었다가 공이 200 200에서  100 100 까지 작아졌다 이동시키세요~ (Promise)
+    testBtn3.onclick=function (e){
+        const p=new Promise((resolve)=>{
             setTimeout(()=>{
-                alert("3초 뒤 알람!");
-                resolve("알람성공!!")
-                //동기화 하고 싶은 시점에서 resolve 함수를 실행하면 .then에 오는 첫번째 콜백함수가 동기화되어 실행됨
-                //만약 오류가 발생하거나 동기화하면안될때는 reject함수를 실행하면 .then 에 오는 두 번째 콜백함수가 실행됨
+                alert("3초뒤 알람!");
+                resolve("알람성공");
+                //동기하고 싶은 시점에서 resolve 함수를 실행하면 .then 에 오는 첫번째 콜백함수가 동기화 되서 실행된다!
+                //막약에 오류가 발생하거나 동기화하면 안될때 reject 함수를 실행하면 .then 에 오는 두번째 콜백함수가 실행된다!
             },3000)
         }).then((resolveMsg)=>{
             setTimeout(()=>{
-                alert(resolveMsg+"2초 뒤 알람")
+                alert(resolveMsg+" 2초뒤 알람")
             },2000)
-
+        });
+    }
+</script>
+<h3>볼을 클릭하면 작아졌다가 커지고 이동하는 볼~ ( 애니메션 효과를 script+transition )</h3>
+<style>
+    #redBall{
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        position: relative;
+        background-color: red;
+        left: 0;
+        transition: all ease-in 1s;
+        /*  transition 처음에 지정된 스타일 속성만 애니매이션을 적용  */
+    }
+    #redBall.small{
+        width: 100px;
+        height: 100px;
+    }
+    #redBall.moveLeft{
+        left: calc(100% - 200px);
+    }
+</style>
+<div>
+    <p id="redBall"></p>
+</div>
+<script>
+    // redBall.onclick=function (e) {
+    //     setTimeout(()=>{
+    //         this.classList.add("small");
+    //         setTimeout(()=>{
+    //             this.classList.add("moveLeft");
+    //             this.classList.remove("small");
+    //         },1000);
+    //     },1000);
+    // }
+    redBall.onclick=function (e){
+        new Promise((res,rej)=>{
+            setTimeout(()=>{
+                try {
+                    this.classList.add("small");
+                    res("안녕!"); //fulfilled
+                    //then 의 첫번째 콜백함수가 실행됨
+                }catch (e){
+                    rej(new Error("node 찾기 실패")); //rejected
+                    //then 의 두번째 콜백함수 또는 catch 의 콜백함수가 실행 (reject 의 매개변수로 Error 를 생성해야함)
+                }
+            },1000);
+        }).then((resMsg)=>{
+            //resolve()를 실행할때 보낸 매개변수를 첫번째 콜백함수의 매개변수가 받는다.
+            //첫번째 실행에서 처리된 결과나 상태 메세지를 보낼때
+            setTimeout(()=>{
+                this.innerText=resMsg;
+                this.classList.add("moveLeft");
+                this.classList.remove("small");
+            },1000);
+        }).catch((errorMsg)=>{
+            console.log("catch 에서 에러를 잡는다 "+errorMsg);
+        }).finally(()=>{
+            console.log("성공(fulfilled)이든 실패(rejected)든 실행 finally");
         })
     }
-
-    //Promise는 완벽한 동기화를 하기에는 부족함이 있고 코드가 복잡해지는 경향
-    //reject finally, error 같은 추가 기능은 깊이있게 안함
+    //Promise 는 완벽한 동기화를 하기에는 부족함(async 함수보다)이 있고 코드가 더더 복잡히지는 경향이 있다.
+    //reject finally, catch 같은 추가 기능을 깊이 있게 다루지 않겠습니다~(설명만 보세요~)
+    //모질라사이트(웹표준을 제시하는 사이트) Promise 로는 완벽한 동기화의 한계가 있어서 async 함수를 사용하세요! 하고 권장함
+    //12시까지 쉬었다가 오세요~~~
 </script>
+
 </body>
 </html>

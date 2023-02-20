@@ -5,183 +5,194 @@
     <title>비동기식 통신 ajax</title>
 </head>
 <body>
-    <h1>Asynchronous JavaScript And XML</h1>
-    <p>자바스크립트로 xml을 비동기식 통신으로 불러오는 것!</p>
-    <ul>
-      <li>http 통신에서 동기식이란?? : 브라우저가 url로 요청한 페이지 1개를 로드하는 것(일상적인 경우)</li>
-      <li>http 통신에서 비동기식이란?? : 브라우저가 로드한 페이지에서 다른 페이지를 요청하는 것</li>
-      <li>xml : 비동기식 통신에서의 xmL은 html문서를 의미한다.</li>
-      <li>자바스크립트로 비동기식 통신 : js의 XMLHTTPRequest객체가 비동기식 통신을 하도록 지원한다.</li>
-      <li>AJAX : 자바스크립트로 비동기식 통신을 하면 AJAX라 부른다.</li>
-    </ul>
-    <h2>AJAX의 등장이유 ??</h2>
-    <ul>
-        <li>한개의 url이 문서를 1번 로드하는 브라우저의 인터페이스가 불편해서 등장(서버사이드 렌더링)</li>
-        <li>작은 데이터를 얻기위해 전체 페이지를 로드하는 것이 비효율적이다...</li>
-        <li>문서를 요청할 때 마다 중복되는 리소스를 매번 다운로드 받는다.
-            (비용증가,브라우저가 캐시를 저장해서 조금은 만회하긴함...)</li>
-        <li>유저 인터페이스를 편하게하고 비용도 절감함.</li>
-    </ul>
-    <p>
-        <button id="loadDomBtn"> ajax/imgList.html 문서 불러오기 !!</button>
-    </p>
-    <div id="ajaxContainer" style="border: 1px solid red"></div>
+<h1>Asynchronous JavaScript And XML</h1>
+<p>자바스크립트로 xml 을 비동기식 통신으로 불러오는 것!</p>
+<ul>
+    <li>
+        http 통신에서 동기식이란? : 브라우저가 url 로 요청한 페이지 1개를 로드하는 것 (일반적)
+    </li>
+    <li>
+        http 통신에서 비동기식이란? : 브라우저가 로드한 페이지에서 다른 페이지를 요청하는 것 (특수)
+    </li>
+    <li>xml : 비동기식 통신에서의 xml 은 html 문서를 의미한다.</li>
+    <li>자바스크립트로 비동기식 통신 : js의 XMLHTTPRequest 객체가 비동기식 통신을 하도록 지원한다.</li>
+    <li>AJAX : 자바스크립트로 비동기식 통신을 하면 AJAX 라 부른다.</li>
+</ul>
+<h2>AJAX 의 등장이유 ??</h2>
+<ul>
+    <li>한개의 url 이 문서를 1번 로드하는 브라우저의 인터페이스가 불편해서 등장(서버 사이드 렌더링)</li>
+    <li>작은 데이터를 얻기위해 전체 페이지를 로드하는 것이 비효율적(비용)이라서</li>
+    <li>
+        문서를 요청할 때 마다 중복되는 리소스를 매번 다운로드 받는다
+        (비용증가,브라우저가 캐시로 저장해서 조금 만회하는 중).
+    </li>
+    <li>유저 인터페이스를 편하게하고 비용을 절감한다.</li>
+</ul>
+<p>
+    <button id="loadDomBtn"> ajax/imgList.html 불러오기</button>
+</p>
+<div id="ajaxContainer" style="border: 1px solid">
+</div>
 <script>
     loadDomBtn.onclick=function (e){
         let url="ajax/imgList.html";
-        const req = new XMLHttpRequest();
+        const req=new XMLHttpRequest();
         req.open("GET",url); //준비단계
-        req.send(); //해당 url의 문서를 불러온다.
-         //문서를 요청하면 받아오는데까지 시간이 걸린다.
         req.onload=function (e){
-            console.log(e)
-            //통신이 성공했을 때 실행되는 콜백함수를 정의
+            //통신의 성공했을때(이벤트) 실행되는 콜백함수를 정의
             //통신에 걸린 시간이나 어떤 통신인지에 대한 내역을 포함
-            console.log(req.responseText)//받아온 문서를 문자열로 변환한 것
+            //console.log(e)
+            //console.log(req.responseText)//받아온 문서를 문자열로 변환한것
             ajaxContainer.innerHTML=req.responseText;
         }
+        req.send();//해당 url의 문서를 불러온다.
+
+        //문서를 요청하면 받아오는데 까지 시간이 조금 걸린다
         // setTimeout(()=>{
-        //     console.log(req.responseText);
-        // },10)
+        //     console.log(req.responseText);//불러온 문서의 문자열
+        // },1);
     }
 </script>
 
-    <form name="signupForm">
-        <div>
-            <p>
-                <label>id :
-                    <input name="userId"
-                           placeholder="id를 입력하세요~!">
-                </label>
-            </p>
-            <p id="userIdMsg">멋진 아이디 입니다...2!!</p>
-        </div>
-    </form>
-    <script>
-        const signupForm = document.forms["signupForm"];
-        signupForm.userId.onchange=function (e){
-            let val = this.value;
-            alert("입력값 :" + val)
-            let url = "ajax/idCheck.json" //emp.empno가 중복되어있는지 확인하는 동적페이지를 작성하면 된다!!
-            const req=new XMLHttpRequest();
-            req.open("GET",url);
-            req.send();
-            req.onload=function (e){
-                let jsonStr = req.responseText;
-                const checkObj = JSON.parse(jsonStr);
-                console.log(JSON.parse(jsonStr))
-                //문자열인 json을 Object로 형변환하는 함수가 있음
-
-                let msg = (checkObj.check)? "멋진아이디" : "사용중인 아이디";
-                userIdMsg.innerText=msg;
-
-            }
-        }
-    </script>
-
-    <h2>personList.json을 AJAX로 불러와서 table로 만들어보자
-        <button id="personListLoadBtn">로드</button></h2>
-
-    <table>
-        <thead>
-            <tr>
-                <th>이름</th>
-                <th>나이</th>
-                <th>직업</th>
-                <th>결혼여부</th>
-            </tr>
-        </thead>
-        <tbody id="personTbody">
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-        </tr>
-        </tbody>
-    </table>
-    <script>
-        personListLoadBtn.onclick=personListLoad;
-        function personListLoad(){
-            const req = new XMLHttpRequest();
-            req.open("GET","./ajax/personList.json");
-            req.send();
-            req.onload=function (e){
-                let respTxt = req.responseText;
-                //문자열인 객체몀세서.. JSON!
-                //문자열을 객체로 표현한 것이기 때문에 다시 객체가 될수도 있다~!
-                let personList = JSON.parse(respTxt); //JSON을 Object로 변환하는 함수
-                console.log(personList)
-
-                //Object의 반복문 = (자바에서는 불가능)
-                //in 연산자 : 객체에 해당 키가 있는지를 확인하는 연산자
-                //=>for( in )문은 객체의 키만 빼와서 forEach를 돌리는 문법
-                let tableStr=" ";
-                personList.forEach((p)=>{
-                    for(let key in p){
-                        tableStr+=`<td>${p[key]}</td>`
-                    }
-                    tableStr+="</tr>"
-                });
-                personTbody.innerHTML=tableStr;
-
-            }
-            // setTimeout(()=>{
-            //     console.log(req.responseText); //문자열로 통신한 내역
-            // })
-        }
-    </script>
-<hr>
-<hr>
-
-    <h2>동적 페이지(서블릿)를 JSON으로 반환하고 AJAX로 통신해보자~! </h2>
-    <p><a href="empListJson.do">동기식</a></p>
-    <p><a class="loadEmpBtn" href="javascript:void(0);" data-url="empListJson.do">비동기식으로 모든 사원 불러오기</a></p>
-<!-- data-* 유저가 정의하는 속성-->
-
-    <p><a class="loadEmpBtn" href="javascript:void(0);" data-url="empListJson.do?deptno=10">비동기식으로 10 부서의 사원 불러오기</a></p>
-    <p><a class="loadEmpBtn" href="javascript:void(0);" data-url="empListJson.do?deptno=20">비동기식으로 20 부서의 사원 불러오기</a></p>
-    <p><a class="loadEmpBtn" href="javascript:void(0);" data-url="empListJson.do?deptno=30">비동기식으로 30 부서의 사원 불러오기</a></p>
-
-    <h3>사원리스트</h3>
-    <table>
-        <thead>
-        <tr>
-            <th>사번</th>
-            <th>이름</th>
-            <th>직책</th>
-            <th>급여</th>
-            <th>부서</th>
-        </tr>
-        </thead>
-        <tbody id="empTbody">
-
-        </tbody>
-    </table>
+<form name="signupForm">
+    <div>
+        <p>
+            <label>id :
+                <input name="userId"
+                       placeholder="id를 입력하세요">
+            </label>
+        </p>
+        <p id="userIdMsg"></p>
+    </div>
+</form>
 <script>
-    const loadEmpBtns = document.getElementsByClassName("loadEmpBtn");
-    const empTbody = document.getElementById("empTbody");
-    for(const loadEmpBtn of loadEmpBtns){ //
+    const signupForm=document.forms["signupForm"];
+    signupForm.userId.onchange=function (e){
+        let val=this.value;
+        //입력받은 아이디가 중복되었는지 서버에 물어본다
+        let url="ajax/idCheck.json";
+        const req=new XMLHttpRequest();
+        req.open("GET","ajax/idCheck.json");
+        req.onload=function (e){
+            let jsonStr=req.responseText;
+            //요청한 문서를 문자열로 해석
+            const checkObj=JSON.parse(jsonStr);
+            //문자열인 json을 Object 로 형변환 하는 함수
+            console.log(jsonStr);
+            console.log(b.check);
+
+            console.log(checkObj)
+            let msg=(checkObj.check)?"멋진 아이디":"사용 중인 아이디";
+            userIdMsg.innerText=msg;
+        }
+        req.send();
+    }
+</script>
+<h2>
+    personList.json 을 AJAX 로 불러와서 table 로 출력해보자~
+    <button id="personListLoadBtn">로드</button>
+</h2>
+<table>
+    <thead>
+    <tr>
+        <th>이름</th>
+        <th>태어난해</th>
+        <th>직업</th>
+        <th>결혼</th>
+    </tr>
+    </thead>
+    <tbody id="personTbody"></tbody>
+</table>
+<script>
+    personListLoadBtn.onclick=personListLoad;
+    function personListLoad(){
+        const req=new XMLHttpRequest();
+        //req.open("GET","http://localhost:8080/JavaScriptTeacher/ajax/personList.json");
+        req.open("GET","./ajax/personList.json");
+        req.onload=function (e){
+            let respText=req.responseText;
+            //문자열인 JSON 을 받았다.(객체를 문자열로 표현한 것이기 때문에 다시 객체가 될 수 있다.)
+            let personList=JSON.parse(respText); //JSON 을 Object 로 변환하는 함수
+            console.log(personList);
+            //Object 반복문 (자바에서는 불가능!!!)
+            //in 연산자 : 객체에 해당 키가 있는지 확인하는 연산자
+            let tableStr="";
+            personList.forEach((p)=>{
+                tableStr+="<tr>";
+                for(let key in p){
+                    tableStr+=`<td>${p[key]}</td>`;
+                }
+                tableStr+="</tr>";
+            });
+            personTbody.innerHTML=tableStr;
+            //문자열인 html 을 node 로 생성해서 추가해주는 필드
+        }
+        req.send();
+    }
+    //10시 5분까지
+</script>
+<h2>동적페이지(서블릿)를 JSON 으로 반환하고 AJAX 로 통신해 보자</h2>
+<p><a href="empListJson.do">동기식으로 페이지 불러오기</a></p>
+<p>
+    <a class="loadEmpBtn" href="javascript:void(0);"
+       data-url="empListJson.do">
+        비동기식으로 모든 사원 불러오기
+    </a>
+</p>
+<p>
+    <a  class="loadEmpBtn" href="javascript:void(0);"
+        data-url="empListJson.do?deptno=10">
+        비동기식으로 10부서의 사원 불러오기
+    </a>
+</p>
+<p>
+    <a class="loadEmpBtn" href="javascript:void(0);"
+       data-url="empListJson.do?deptno=20">
+        비동기식으로 20부서의 사원 불러오기
+    </a>
+</p>
+<p>
+    <a class="loadEmpBtn" href="javascript:void(0);"
+       data-url="empListJson.do?deptno=30">
+        비동기식으로 30부서의 사원 불러오기
+    </a>
+</p>
+
+<h3>사원 리스트</h3>
+<table>
+    <thead>
+    <tr>
+        <th>사번</th>
+        <th>이름</th>
+        <th>직책</th>
+        <th>급여</th>
+        <th>부서</th>
+    </tr>
+    </thead>
+    <tbody id="empTbody">
+    </tbody>
+</table>
+<script>
+    const loadEmpBtns=document.getElementsByClassName("loadEmpBtn");//[a,a,a,a]
+    const empTbody=document.getElementById("empTbody");
+    for(const loadEmpBtn of loadEmpBtns){ //2시까지 식사하고 오세요~(서블릿만 수정하면 됩니다~ )
         loadEmpBtn.onclick=loadEmp;
     }
-
-
     function loadEmp(){
         let url=this.dataset.url;
-        // alert(url)
-        const req = new XMLHttpRequest();
+        const req=new XMLHttpRequest();
         req.open("GET",url)
-        req.send();
-        req.onload=function (){
-            let empListJson = req.responseText;
-            const empList = JSON.parse(empListJson);
+        req.onload=function(){
+            let empListJson=req.responseText;
+            const empList=JSON.parse(empListJson);
             printEmpList(empList);
         }
+        req.send();
     }
-    function printEmpList(empList){ //table의 문자열로 출력해주는 함수
-        let html = "";
+    function printEmpList(empList){ //table 의 문자열로 출력해주는 함수
+        let html="";
         empList.forEach((emp)=>{
-            html += "<tr>";
+            html+="<tr>";
             for(let key in emp){
                 html+=`<td>${emp[key]}</td>`
             }
@@ -189,7 +200,6 @@
         })
         empTbody.innerHTML=html;
     }
-
 
 </script>
 

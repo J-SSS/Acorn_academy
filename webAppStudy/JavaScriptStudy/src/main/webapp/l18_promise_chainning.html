@@ -5,87 +5,126 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>프라미스 체이닝과 프라미스화</h1>
-    <h2>프라미스 체이닝으로 2초 뒤 알람을 5번 동기화하기...
-    <button id="testBtn1">알람!</button></h2>
+<h1>프라미스 체이닝과 프라미스화 </h1>
+<h2>
+    프라이스 체이닝으로 2초뒤 알람을 5번 동기화 하기
+    <button id="testBtn1">알람!</button>
+</h2>
+<h2>프라미스 체이닝의 방법</h2>
+<p>Promise.then() 함수가 Promise 객체를 반환하면 다시 .then 으로 동기화 할 수 있다.</p>
+<pre>
+        new Promise((resolve)=>{
+            ......
+            resolve(처리내역);
+        }).then((처리내역)=>{
+            resolve()를 실행한 시점에 해당 콜백함수가 실행되면서 동기화
+        });
 
-    <h2>프라미스 체이닝 방법</h2>
-    <p>Promise.then()함수가 Promise 객체를 반환하면 다시 .then으로 동기화 할 수 있다.</p>
-    <pre>
-        new Promise(
+        //then 다시 Promise 객체를 반화하면 그 다음 then 이 다시 동기화를 한다.
+        new Promise((resolve)=>{
+            ......
+            resolve(1 처리내역);
+        }).then((1 처리내역)=>{
+            return new Promise((resolve)=>{
+                ......
+                resolve(2 처리내역);
+            });
+        }).then((2 처리내역)=>{
+            return new Promise((resolve)=>{
+                ........
+                resolve(3 처리내역)
+            });
+        }).then((3 처리내역)=>{
+                ..... 4번째 처리 끝~
+        })
+
+
     </pre>
-
-    <script>
-        teestBtn1.onclick= testBtn1Handler;
-        function testBtn1Handler(e){
-
-            new Promise((res)=>{
+<script>
+    //alert 2초뒤 나오면 다시 2초뒤 또 다시 2초뒤 또 다시 2초뒤에 알람이 발생하게 하고 싶다~
+    testBtn1.onclick=testBtn1Handler;
+    function testBtn1Handler(e){
+        new Promise((res)=>{
+            setTimeout(()=>{
+                alert("2초뒤 알람");
+                res();
+            },2000);
+        }).then((resM)=>{
+            return new Promise((res)=>{
                 setTimeout(()=>{
-                    alert("2초 뒤!!")
+                    alert("2초뒤 알람!");
                     res();
                 },2000);
-            }).then((resM)=>{
-                return new Promise((res)=>{
-                    setTimeout(()=>{
-                        alert("2초 뒤!!")
-                        res();
-                    },2000);
-                }).then((resM)=>{
-                    return new Promise((res)=>{
-                        setTimeout(()=>{
-                            alert("2초 뒤!!")
-                            res();
-                        },2000);
-                    }
-                ).then((res)=>{
-                        setTimeout(()=>{
-                            alert("2초 뒤!!")
-                            res();
-                        },2000);
-
-            })
-        })
-        })
-        }
-
-
-
-
-        //alert이 2초뒤에 뜨면 다시 2초 뒤, 또 다시 2초뒤, 또 다시 2초뒤 알람이 발생하게 하고싶다~!
-        // setTimeout(()=>{
-        //     alert("2초뒤");
-        //         setTimeout(()=>{
-        //             alert("2초뒤")
-        //                 setTimeout(()=>{
-        //                     alert("2초뒤")
-        //                         setTimeout(()=>{
-        //                             alert("2초뒤")
-        //                         },2000)
-        //                 },2000)
-        //         },2000)
-        // },2000)
-    </script>
-
-    <button id="textBtn2">프라미스화!!</button>
-    <script>
-        function setTimeAlertPromise(time) {
-            return new Promise((res) => {
-                setTimeout(() => {
-                    alert(`${time}초 뒤!!`)
-                    res();
-                }, 2000);
             });
-        }
-        textBtn2.onclick=function (e){
-            setTimeAlertPromise(1)
-            .then((res)=>{
-                return setTimeAlertPromise(2);
-            }).then((res)=>{
-                return setTimeAlertPromise(3);
-            }).then((res)=>{
-                setTimeAlertPromise(4);
+        }).then((resM)=>{
+            return new Promise((res)=>{
+                setTimeout(()=>{
+                    alert("2초뒤 알람!!");
+                    res();
+                },2000)
+            });
+        }).then((resM)=>{
+            setTimeout(()=>{
+                alert("2초뒤 알람 끝!!!")
+            },2000)
+        })
+    }
+
+
+    // setTimeout(()=>{
+    //     alert("2초뒤");
+    //     setTimeout(()=>{
+    //         alert("2초뒤");
+    //         setTimeout(()=>{
+    //             alert("2초뒤")
+    //             setTimeout(()=>{
+    //                 alert("2초뒤")
+    //             },2000);
+    //         },2000);
+    //     },2000);
+    // },2000);
+</script>
+<h2>프라미스 객체를 반환하는 프라미스화</h2>
+<p>
+    <button id="testBtn2">연속 알람!</button>
+    프라미스 체이닝을 위해서 then 함수에 프라미스 객체를 생성하는 것이 너무너무 복잡해서 프로미스화를 한다.
+</p>
+
+<script>
+    function sum(a,b){
+        return a+b;
+    }
+
+    console.log(sum(19,4));
+    //then 서 반활할 Promise 객체를 함수에서 반환하도록 한다.
+    function setTimeAlertPromise(sec=2){ //프라미스화!!
+        return (
+            new Promise((res)=>{
+                setTimeout(()=>{
+                    alert(`${sec}초뒤 알람!`);
+                    res();
+                },1000*sec);
             })
-        }
-    </script>
+        );
+    }
+    //fetch() ajax api 는 프라미스화가 되어있어서
+    testBtn2.onclick=function (e){
+
+        setTimeAlertPromise(0)
+            .then((resM)=>{
+                return setTimeAlertPromise(1);
+            }).then((resM)=>{
+            return setTimeAlertPromise(2);
+        }).then((resM)=>{
+            return setTimeAlertPromise(3);
+        }).then((resM)=>{
+            setTimeAlertPromise(4);
+        });
+    }
+
+</script>
+
+
+
 </body>
 </html>
