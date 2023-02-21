@@ -1,0 +1,43 @@
+html(lang="en")
+    head
+        title SCOTT.emp CRUD
+        meta(charset="UTF-8")
+        link(rel="stylesheet" href="/public/css/empList.css")
+    body
+        h1 사원 등록 폼 (Insert)
+            form(name="empInsertForm", action="/empInsert.do", method="POST")
+                p
+                    span 사번 :
+
+                    input(value="", name="empno")
+                    //type="hidden" 보이지 않지만 넘어가는 파라미터
+                p
+                    span 이름 :
+                    input(value="", name="ename")
+
+                p
+                    span 직책 :
+                    input(value="", name="job")
+
+                p
+                    span 급여 :
+                    input(value="", name="sal")
+
+                p
+                    span 입사일 : mysql.now()로 호출
+
+                p
+                    span 상여금 :
+                    input(value="", name="comm")
+
+                p
+                    span 상사 :
+                    input(value="", name="mgr")
+
+                p
+                    span 부서 :
+                    input(value="", name="deptno")
+
+                p
+                    button(type="submit") 등록제출
+

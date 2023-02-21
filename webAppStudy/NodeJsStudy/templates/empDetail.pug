@@ -1,0 +1,36 @@
+html(lang="en")
+    head
+        title SCOTT.emp CRUD
+        meta(charset="UTF-8")
+        link(rel="stylesheet" href="/public/css/empList.css")
+    body
+        h1 사원 상세 리스트 (Read)
+            //p=empList
+            div
+                p
+                    span 사번 :
+                    strong=emp.EMPNO
+                p
+                    span 이름 :
+                    strong=emp.ENAME
+                p
+                    span 직책 :
+                    strong=emp.JOB
+                p
+                    span 급여 :
+                    strong=emp.SAL
+                p
+                    span 입사일 :
+                    strong=emp.HIREDATE.toLocaleDateString("ko-KR")
+                p
+                    span 상여금 :
+                    strong=emp.COMM
+                p
+                    span 상사 :
+                    strong=emp.MGR
+                p
+                    span 부서 :
+                    strong=emp.DEPTNO
+                p
+                    a(href="empUpdate.do?empno="+emp.EMPNO) 수정폼
+

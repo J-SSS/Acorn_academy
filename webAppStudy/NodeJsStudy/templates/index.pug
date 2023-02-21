@@ -1,0 +1,32 @@
+html(lang="en")
+    head
+        title SCOTT.emp CRUD
+        meta(charset="UTF-8")
+    body
+        h1 사원 Data CRUD
+        p Create, Reade, Update, Delete
+        ol
+            li 사원 리스트 조회(Read List)
+            li 사원 상세 조회(Read Detail)
+            li 사원 등록 폼
+            li 사원 등록 action(Create Insert)
+                ul
+                    li 사원 번호 중복확인 (Read Ajax)
+                    li 사원 등록 성공시 => 사원 리스트로 이등(Redirect)
+                    li 사원 등록 실패시 등록 폼으로 이동
+            li 사원 수정,삭제 폼 (Read Detail)
+            li 사원 수정 action (Update)
+                ul
+                    li 사원 수정 성공시 => 사원 상세로 이등(Redirect)
+                    li 사원 수정 실패시 수정 폼으로 이동(Redirect)
+            li 사원 삭제 action (Delete)
+                ul
+                    li 사원 삭제 성공시 => 사원 상세로 이등(Redirect)
+                    li 사원 삭제 실패시 수정 폼으로 이동(Redirect)
+        nav
+            ul
+                li
+                    a(href="/empList.do") 사원 리스트 조회(Read)
+                li
+                    a(href="/empInsert.do") 사원 등록(Create)
+

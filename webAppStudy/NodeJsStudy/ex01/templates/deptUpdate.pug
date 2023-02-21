@@ -1,0 +1,47 @@
+html(lang="en")
+    head
+        title SCOTT.emp CRUD
+        meta(charset="UTF-8")
+    style.
+        thead {
+            background-color: lightgray;
+        }
+
+        table, th, tr, td {
+            border: 1px dashed gray;
+            border-collapse: collapse;
+            text-align: center;
+            padding: 2px 5px;
+        }
+
+        tbody > tr > td:first-child {
+            background-color: beige;
+            font-weight: bold;
+        }
+    body
+        h1 사원 등록 폼 (Insert)
+            form(name="deptInsertForm", action="/deptInsert.do", method="POST")
+                table
+                    thead
+                        tr
+                            th 항목
+                            th 내용
+
+                    tbody
+                        tr
+                            td 부서번호
+                            td
+                                input(value="", name="deptno")
+                        tr
+                            td 부 서 명
+                            td
+                                input(value="", name="dname")
+                        tr
+                            td 지 역
+                            td
+                                input(value="", name="loc")
+                        tr
+                            td
+                            td
+                                button(type="submit") 수정
+

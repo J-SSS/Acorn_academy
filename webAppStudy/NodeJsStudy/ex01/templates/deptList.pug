@@ -1,0 +1,38 @@
+html(lang="en")
+    head
+        title Dept CRUD
+        meta(charset="UTF-8")
+        //link(rel="stylesheet" href="/public/css/empList.css")
+        style.
+            thead {
+                background-color: lightgray;
+            }
+
+            table, th, tr, td {
+                border: 1px dashed gray;
+                border-collapse: collapse;
+                text-align: center;
+                padding: 2px 5px;
+            }
+
+            tbody > tr > td:first-child {
+                background-color: beige;
+                font-weight: bold;
+            }
+    body
+        h1 부서 리스트 (Read)
+            table
+                thead
+                    tr
+                        th 부서번호
+                        th 부서명
+                        th 지역
+                        th 상세정보
+                tbody
+                    -for(const dept of deptList)
+                     tr
+                        td=dept.DEPTNO
+                        td=dept.DNAME
+                        td=dept.LOC
+                        td
+                            a(href="deptDetail.do?deptno="+dept.DEPTNO) 상세
