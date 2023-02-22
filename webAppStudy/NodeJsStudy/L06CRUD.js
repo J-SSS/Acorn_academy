@@ -177,18 +177,43 @@ server.on("request", async (req,res)=>{
             let sql = "DELETE FROM EMP WHERE EMPNO=?";
             let del = 0; //delete 필드를 삭제하는 연산자 예약어
             try {
-                const result =  await poolPromise.execute(sql, [empno]);
+                const [result] =  await poolPromise.execute(sql, [empno]);
+                del = result.affectedRows;
             } catch (e) {
                 console.error(e)
             }
             if(del>0){
                 res.writeHead(302,{location:"/empList.do"});
-                res.end;
+                res.end();
             } else {
                 res.writeHead(302,{location:"/empUpdate.do?empno="+params.empno})
-                res.end;
+                res.end();
             }
 
+        } else if(urlObj.pathname==="/empnoCheck.do"){
+            //empno가 동일한 사원이 있으면 true를 반환하고 없으면 false
+            const resObj={checkId:false, emp:null}; //Objec를 문자열로 응답하는것을 JSON이라고 함
+
+            if(!params.empno || isNaN(params.empno)){//null, undefined,"",0...모두 false
+                res.statusCode=400; // 이 페이지에 요청을 잘못했다.. 꼭 필요한 파라미터가 없다..
+                res.end(); return;
+            }
+            let empno=parseInt(params.empno);
+            let sql="SELECT * FROM EMP WHERE EMPNO=?";
+            try {
+                const [rows,f] = await poolPromise.query(sql,[empno])
+                if(rows.length>0) {
+                    resObj.checkId=true;
+                    resObj.emp=rows[0];
+                }
+            } catch (e){
+                console.error(e) //오류가 발생하면 500
+                res.statusCode=500;
+                res.end(); return;
+            }
+            res.setHeader("content-type","application/json;charset=UTF-8;");
+            res.write(JSON.stringify(resObj));
+            res.end();
         }
 
         else { // 다른 웹앱서버는 사용법만 익히면 바로 사용가능.. 당장 쓰기는 쉽지만 고급으로 나아가기 어렵다

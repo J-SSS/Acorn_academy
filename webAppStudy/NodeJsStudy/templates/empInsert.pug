@@ -2,7 +2,8 @@ html(lang="en")
     head
         title SCOTT.emp CRUD
         meta(charset="UTF-8")
-        link(rel="stylesheet" href="/public/css/empList.css")
+        //link(rel="stylesheet" href="/public/css/empList.css")
+        script(src="/public/js/empInsert.js", defer=true)
     body
         h1 사원 등록 폼 (Insert)
             form(name="empInsertForm", action="/empInsert.do", method="POST")
@@ -10,7 +11,8 @@ html(lang="en")
                     span 사번 :
 
                     input(value="", name="empno")
-                    //type="hidden" 보이지 않지만 넘어가는 파라미터
+                p#empnoMsg
+
                 p
                     span 이름 :
                     input(value="", name="ename")
@@ -33,11 +35,13 @@ html(lang="en")
                 p
                     span 상사 :
                     input(value="", name="mgr")
-
+                p#mgrMsg /empnoCheck.do로 참조가능한 상사
                 p
                     span 부서 :
                     input(value="", name="deptno")
-
+                p#deptnoMsg /deptnoCheck.do로 참조가능한 부서번호
                 p
                     button(type="submit") 등록제출
-
+        //script.
+        //    //script. 쩜찍으면 하위요소로 인지하지 않는다
+        //    console.log(empInsertForm.empno);

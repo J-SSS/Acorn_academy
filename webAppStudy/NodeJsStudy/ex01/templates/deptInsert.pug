@@ -19,30 +19,28 @@ html(lang="en")
             font-weight: bold;
         }
     body
-        h1 부서 수정 폼 (Update)
-            form(name="deptUpdateForm", action="/deptUpdate.do", method="POST")
+        h1 부서 입력 폼 (Create)
+            form(name="deptInsertForm", action="/deptInsert.do", method="POST")
                 table
                     thead
                         tr
                             th 항목
                             th 내용
-
                     tbody
                         tr
                             td 부서번호
-                            td=dept.DEPTNO
-                                input(value=dept.DEPTNO, name="deptno", type="hidden")
-                        trw
+                            td
+                                input(value="", name="deptno")
+                        tr
                             td 부 서 명
                             td
-                                input(value=dept.DNAME, name="dname")
+                                input(value="", name="dname")
                         tr
                             td 지 역
                             td
-                                input(value=dept.LOC, name="loc")
+                                input(value="", name="loc")
                         tr
                             td
-                                a(href="/deptDelete.do?deptno=" + dept.DEPTNO) 삭제
                             td
-                                button(type="submit") 수정
+                                button(type="submit") 입력
 

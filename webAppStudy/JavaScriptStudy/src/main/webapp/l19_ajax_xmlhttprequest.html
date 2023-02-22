@@ -79,10 +79,11 @@
             const checkObj=JSON.parse(jsonStr);
             //문자열인 json을 Object 로 형변환 하는 함수
             console.log(jsonStr);
-            console.log(b.check);
+            // console.log(b.check);
 
             console.log(checkObj)
             let msg=(checkObj.check)?"멋진 아이디":"사용 중인 아이디";
+            console.log(msg)
             userIdMsg.innerText=msg;
         }
         req.send();
