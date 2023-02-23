@@ -10,14 +10,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/660c6265-c106-43b8-9de6-7487b2a23436/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/660c6265-c106-43b8-9de6-7487b2a23436/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l19_ajax_xmlhttprequest.html" beforeDir="false" afterPath="$PROJECT_DIR$/JavaScriptStudy/src/main/webapp/l19_ajax_xmlhttprequest.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NodeJsStudy/L06CRUD.js" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJsStudy/L06CRUD.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NodeJsStudy/ex01/Ex01CRUD.js" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJsStudy/ex01/Ex01CRUD.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NodeJsStudy/ex01/templates/deptDetail.pug" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJsStudy/ex01/templates/deptDetail.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NodeJsStudy/ex01/templates/deptUpdate.pug" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJsStudy/ex01/templates/deptUpdate.pug" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NodeJsStudy/ex01/templates/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJsStudy/ex01/templates/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NodeJsStudy/public/js/empInsert.js" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJsStudy/public/js/empInsert.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/NodeJsStudy/templates/empInsert.pug" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJsStudy/templates/empInsert.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NodeJsStudy/templates/empUpdate.pug" beforeDir="false" afterPath="$PROJECT_DIR$/NodeJsStudy/templates/empUpdate.pug" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,10 +28,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="HTML File" />
         <option value="Pug File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -66,45 +66,46 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.13.0&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dongr/Desktop/Acorn_basic/webAppStudy/NodeJsStudy/ex01/templates&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\dongr\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\223.8214.52\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "full.screen.before.presentation.mode": "false",
+    "javascript.nodejs.core.library.configured.version": "18.14.1",
+    "javascript.nodejs.core.library.typings.version": "18.14.0",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_basic/webAppStudy/ExpressJsStudy/public/img",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Users\\dongr\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\223.8214.52\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\ExpressJsStudy\public\img" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\ex01\templates" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\Ex01CRUD\templates" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\templates" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\public\img" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\templates" />
@@ -122,7 +123,7 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="JavaScript 디버그.l19_ajax_xmlhttprequest.html">
+  <component name="RunManager" selected="Node.js.bin\www">
     <configuration name="test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.acorn.javascriptstudy.test" />
       <module name="JavaScriptStudy" />
@@ -323,6 +324,7 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript 디버그.l19_ajax_xmlhttprequest.html" />
+      <item itemvalue="Node.js.bin\www" />
       <item itemvalue="Node.js.L02HttpModule.js" />
       <item itemvalue="Node.js.l01HelloNodeJs.js" />
       <item itemvalue="Tomcat 서버.Tomcat 9.0.71" />
@@ -404,6 +406,9 @@
       <workItem from="1676955817128" duration="12445000" />
       <workItem from="1676983247852" duration="12304000" />
       <workItem from="1677024024841" duration="14332000" />
+      <workItem from="1677070480439" duration="2862000" />
+      <workItem from="1677111352885" duration="9655000" />
+      <workItem from="1677130213615" duration="7815000" />
     </task>
     <servers />
   </component>

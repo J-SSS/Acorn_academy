@@ -104,119 +104,152 @@ server.on("request", async (req,res)=>{
             res.write(html);
             res.end();
         } else if(urlObj.pathname==="/empUpdate.do"&&req.method==="POST"){
-            //data를 수정하는 동적 리소스(액션 페이지)
-            //dml을 실행할 때는 오류가 종종 발생하기 때문에 꼭 예외처리 필요
-            //post로 오는 파라미터는 요청헤더의 본문을 해석해서 받아와야함.
-            //=> querystring은 url에 오는 파라미터만 객체로 파싱중
+            //data 를 수정한는 동적리소스 (액션페이지)
+            //dml을 실행할때는 오류가 종종 발생하기 때문에 꼭 예외처리를 하세요!
+            //querystring 은 url 에 오는 파라미터만 객체로 파싱중
+            //post 로 오는 파라미터는 요청해더의 본문을 해석해서 받아와야한다.
             let postquery="";
-            let update = 0; //0이면 실패, 1이면성공
-            req.on("data", (param)=>{
+            let update=0; //0이면 실패 1이면 성공
+            req.on("data",(param)=>{
                 postquery+=param;
-            }); //요청헤더의 문서를 읽는 읽는 이벤트
-            req.on("end", async ()=>{
-                const postPs = querystring.parse(postquery);
+            });//요청해더의 문서을 읽는 이벤트 (post 로 넘긴 querystring 불러오기)
+            req.on("end",async ()=>{
+                console.log(postquery);
+                const postPs=querystring.parse(postquery);
                 try {
-                    let sql="UPDATE EMP SET ENAME=?, SAL=?, COMM=?, JOB=?, MGR=?, DEPTNO=? WHERE EMPNO=?"
-                    const [result] = await poolPromise.execute(sql,[
+                    let sql=`UPDATE EMP SET ENAME=?,SAL=?,COMM=?,JOB=?,MGR=?,DEPTNO=?,HIREDATE=? WHERE EMPNO=?`
+                    const [result]=await poolPromise.execute(sql,[
                         postPs.ename,
-                        postPs.sal,
-                        postPs.comm,
+                        (!postPs.sal.trim())?null:Number(postPs.sal),
+                        (!postPs.comm.trim())?null:Number(postPs.comm),
                         postPs.job,
-                        postPs.mgr,
-                        postPs.deptno,
-                        postPs.empno])//DML
-                    console.log(result)
+                        (!postPs.mgr.trim())? null : Number(postPs.mgr),
+                        (!postPs.deptno.trim())? null : Number(postPs.deptno),
+                        postPs.hiredate,
+                        Number(postPs.empno)
+                    ])//11시까지 쉬었따~ 유효성검사~
+                    console.log(result);
                     update=result.affectedRows;
-                } catch (e) {
-                    console.error(e)
+                }catch (e) {
+                    console.error(e);
                 }
-                //오류 없이 잘 실행되고 업데이트도 잘 됐으면 update =1;
+                //오류없이 잘실행되고 update 도 잘되면 update=1
                 if(update>0){
-                    // 302 : redirect를 의미함 이 페이지가 응답하지 않고 다른 페이지가 응답하도록 서버 내부에서 요청함
-                    res.writeHead(302,{location:"/empDetail.do?empno="+postPs.empno})
+                    //302 : redirect 이페이지가 응답하지 않고 다른 페이지가 응답하도록 서버 내부에서 요청
+                    res.writeHead(302,{location:"/empDetail.do?empno="+postPs.empno});
                     res.end();
-                } else {
-                    res.writeHead(302,{location:"/empUpdate.do?empno="+postPs.empno})
+                }else{
+                    res.writeHead(302,{location:"/empUpdate.do?empno="+postPs.empno});
                     res.end();
-                }
-            }); //요청헤더의 문서를 모두 다 읽었을 때 발생하는 이벤트
-
-        } else if(urlObj.pathname==="/empInsert.do" && req.method==="GET"){ //등록 form
+                }//20분까지 쉬었다가 와서 삭제하고 등록해보겠습니다.
+            });//요청해더의 문서을 모두 다 읽으면 발생하는 이벤트
+        }else if(urlObj.pathname==="/empInsert.do"&&req.method==="GET"){//등록 form
             let html=pug.renderFile("./templates/empInsert.pug");
             res.write(html);
             res.end();
-        } else if(urlObj.pathname==="/empInsert.do" && req.method==="POST"){ //등록 액션
-            let postQuery="";
+        }else if(urlObj.pathname==="/empInsert.do"&&req.method==="POST"){//등록 action
+            let postQuery=""
             req.on("data",(p)=>{postQuery+=p;});
-            req.on("end", async ()=>{
+            req.on("end",async ()=>{
                 const postPs=querystring.parse(postQuery);
-                for(let key in postPs){ //input value ="" =>null값을 기대하지만 문자열 공백이 온다..(mgr,deptno,comm=>null)
-                    if(postPs[key].trim()==="") postPs[key]=null;
+                for(let key in postPs){ //input value="" => null 값을 기대하지만 문자열 공백이 온다.(mgr,deptno,comm=>null)
+                    if(postPs[key].trim()==="")postPs[key]=null;
                 }
-                let sql = `INSERT INTO EMP (empno, ename, job, mgr, hiredate, sal, comm, deptno) 
-                            VALUE (?,?,?,?,now(),?,?,?)`;
+                let sql=`INSERT INTO EMP (EMPNO, ENAME, JOB, MGR, HIREDATE, SAL, COMM, DEPTNO) 
+                                    VALUE (?,?,?,?,?,?,?,?)`;
                 let insert=0;
+
                 try {
-                    const [result] = await poolPromise.execute(sql,[postPs.empno, postPs.ename, postPs.job, postPs.mgr, postPs.sal, postPs.comm, postPs.deptno])
-                    insert=result.affectedRows
-                } catch (e) {
+                    const [result]=await poolPromise.execute(sql,
+                        [
+                            postPs.empno,
+                            postPs.ename,
+                            postPs.job,
+                            postPs.mgr,
+                            postPs.hiredate,
+                            postPs.sal,
+                            postPs.comm,
+                            postPs.deptno
+                        ]);
+                    insert=result.affectedRows;
+                }catch (e) {
                     console.error(e)
                 }
                 if(insert>0){
-                    // 302 : redirect를 의미함 이 페이지가 응답하지 않고 다른 페이지가 응답하도록 서버 내부에서 요청함
                     res.writeHead(302,{location:"/empList.do"});
                     res.end();
-                } else {
-                    res.writeHead(302,{location:"/empInsert.do?"})
+                }else{
+                    res.writeHead(302,{location:"/empInsert.do"});
                     res.end();
                 }
-            });
-        } else if(urlObj.pathname==="/empDelete.do"){ //삭제 액션 페이지
+            });//4시 15분까지 쉬었다 삭제하고 나머지 자습~ dept crud
+        }else if(urlObj.pathname==="/empDelete.do") { //삭제 액션 페이지
             let empno = Number(params.empno);
-            //400에러 직접 해보세요~
+            console.log(empno);
+            //400처리 해보세요~
             let sql = "DELETE FROM EMP WHERE EMPNO=?";
-            let del = 0; //delete 필드를 삭제하는 연산자 예약어
+            let del = 0;  //delete 필드를 삭제하는 연산자 예약어
             try {
-                const [result] =  await poolPromise.execute(sql, [empno]);
+                const [result] = await poolPromise.execute(sql, [empno]);
                 del = result.affectedRows;
             } catch (e) {
                 console.error(e)
             }
-            if(del>0){
-                res.writeHead(302,{location:"/empList.do"});
+            if (del > 0) {
+                res.writeHead(302, {location: "/empList.do"});
                 res.end();
             } else {
-                res.writeHead(302,{location:"/empUpdate.do?empno="+params.empno})
+                res.writeHead(302, {location: "/empUpdate.do?empno=" + params.empno});
                 res.end();
             }
 
         } else if(urlObj.pathname==="/empnoCheck.do"){
-            //empno가 동일한 사원이 있으면 true를 반환하고 없으면 false
-            const resObj={checkId:false, emp:null}; //Objec를 문자열로 응답하는것을 JSON이라고 함
-
-            if(!params.empno || isNaN(params.empno)){//null, undefined,"",0...모두 false
-                res.statusCode=400; // 이 페이지에 요청을 잘못했다.. 꼭 필요한 파라미터가 없다..
-                res.end(); return;
-            }
-            let empno=parseInt(params.empno);
-            let sql="SELECT * FROM EMP WHERE EMPNO=?";
-            try {
-                const [rows,f] = await poolPromise.query(sql,[empno])
-                if(rows.length>0) {
-                    resObj.checkId=true;
-                    resObj.emp=rows[0];
-                }
-            } catch (e){
-                console.error(e) //오류가 발생하면 500
-                res.statusCode=500;
-                res.end(); return;
-            }
-            res.setHeader("content-type","application/json;charset=UTF-8;");
-            res.write(JSON.stringify(resObj));
-            res.end();
+        //empno가 동일한 사원이 있으면 true 없으면 false
+        if(!params.empno || isNaN(params.empno)){ //(null,undefined,"",0(x))=>false
+            res.statusCode=400; //이 동적페이지에 요청을 잘못했다.(꼭 필요한 파라미터가 없다.)
+            res.end();return;
         }
-
-        else { // 다른 웹앱서버는 사용법만 익히면 바로 사용가능.. 당장 쓰기는 쉽지만 고급으로 나아가기 어렵다
+        let empno=parseInt(params.empno);
+        const resObj={checkId:false,emp:null}; //Object 문자열로 응답하는 JSON 이라 부른다.
+        let sql="SELECT * FROM EMP WHERE EMPNO=?";
+        try {
+            const [rows,f]=await poolPromise.query(sql,[empno]);
+            if(rows.length>0){
+                resObj.checkId=true;
+                resObj.emp=rows[0]
+            }
+        }catch (e) {
+            console.error(e); //오류가 발생하면 500 (서버에서 발생하는 오류)
+            res.statusCode=500;
+            res.end();return;
+        }
+        res.setHeader("content-type","application/json;charset=UTF-8;"); //응답하는 문서형식
+        res.write(JSON.stringify(resObj));
+        res.end();
+    }else if(urlObj.pathname==="/deptnoCheck.do"){
+        //deptno 동일한 부서가 있으면 true 없으면 false
+        if(!params.deptno || isNaN(params.deptno)){
+            res.statusCode=400;
+            res.end();return;
+        }
+        let deptno=parseInt(params.deptno);
+        const resObj={checkId:false,dept:null};
+        let sql="SELECT * FROM DEPT WHERE DEPTNO=?";
+        try {
+            const [rows,f]=await poolPromise.query(sql,[deptno]);
+            if(rows.length>0){
+                resObj.checkId=true;
+                resObj.dept=rows[0]
+            }
+        }catch (e) {
+            console.error(e);
+            res.statusCode=500;
+            res.end();return;
+        }
+        res.setHeader("content-type","application/json;charset=UTF-8;");
+        res.write(JSON.stringify(resObj));
+        res.end();
+    }else { // 다른 웹앱서버는 사용법만 익히면 바로 사용가능.. 당장 쓰기는 쉽지만 고급으로 나아가기 어렵다
             // 노드js는 원시웹앱형태라 하나하나원리를 이해할 수 있음
             res.statusCode=404;
             res.setHeader("content-type","text/html;charset=UTF-8")

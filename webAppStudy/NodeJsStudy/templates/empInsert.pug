@@ -2,46 +2,79 @@ html(lang="en")
     head
         title SCOTT.emp CRUD
         meta(charset="UTF-8")
-        //link(rel="stylesheet" href="/public/css/empList.css")
-        script(src="/public/js/empInsert.js", defer=true)
+        script(src="/public/js/empInsert.js", defer=true )
+        style.
+            form[name=empInsertForm] input{
+                border-top-style: none;
+                border-left-style: none;
+                border-right-style: none;
+            }
+            form[name=empInsertForm] input:focus {
+                outline-style: none;
+            }
+            .inputCont.error{
+                color: darkred;
+            }
+            .inputCont.success {
+                color: seagreen;
+            }
+            .inputCont.success input{
+                border-color: seagreen;
+            }
+            .inputCont.error input{
+                border-color: darkred;
+            }
     body
-        h1 사원 등록 폼 (Insert)
-            form(name="empInsertForm", action="/empInsert.do", method="POST")
+        h1 사원 등록 폼
+        form(name="empInsertForm",action="/empInsert.do",method="POST")
+            div.inputCont
                 p
                     span 사번 :
-
-                    input(value="", name="empno")
+                    input(value="",name="empno")
                 p#empnoMsg
-
+            div.inputCont
                 p
                     span 이름 :
-                    input(value="", name="ename")
-
+                    input(value="",name="ename")
+                p#enameMsg
+            div.inputCont
                 p
                     span 직책 :
-                    input(value="", name="job")
-
+                    input(value="",name="job")
+                p#jobMsg
+            div.inputCont
                 p
                     span 급여 :
                     input(value="", name="sal")
-
+                p#salMsg
+            div.inputCont
                 p
-                    span 입사일 : mysql.now()로 호출
-
-                p
-                    span 상여금 :
+                    span 상여급 :
                     input(value="", name="comm")
-
+                p#commMsg
+            p
+                span 입사일 :
+                -const now=new Date()
+                -let y=now.getUTCFullYear();
+                -let m=now.getUTCMonth()+1;
+                -m=(m<10)?`0${m}`:m;
+                -let d=now.getUTCDate();
+                -d=(d<10)?`0${d}`:d;
+                -let nowStr=`${y}-${m}-${d}`;
+                input(type="date", name="hiredate", value=nowStr)
+                //input(type="datetime-local" value="2023-02-23T12:30")
+            div.inputCont
                 p
                     span 상사 :
                     input(value="", name="mgr")
-                p#mgrMsg /empnoCheck.do로 참조가능한 상사
+                p#mgrMsg
+            div.inputCont
                 p
                     span 부서 :
-                    input(value="", name="deptno")
-                p#deptnoMsg /deptnoCheck.do로 참조가능한 부서번호
-                p
-                    button(type="submit") 등록제출
+                    input(value="",name="deptno")
+                p#deptnoMsg
+            p
+                button(type="submit") 등록제출
         //script.
-        //    //script. 쩜찍으면 하위요소로 인지하지 않는다
-        //    console.log(empInsertForm.empno);
+            //script. 하위 요소로 인지하지 않겠다.
+            console.log(empInsertForm.empno);

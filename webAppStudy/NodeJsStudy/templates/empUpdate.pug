@@ -23,44 +23,43 @@ html(lang="en")
                 li 장점 보안이 강화된다 : 파라미터의 값이 숨겨져서 넘어가기 때문에, 파라미터의 길이 제한이 없다
                 li 단점 GET보다 느리다. url을 공유할 수 없다
 
-            //p=empList
-            form(name="empUpdateForm", action="/empUpdate.do", method="POST")
+
+            form(name="empUpdateForm",action="/empUpdate.do",method="POST")
                 p
                     span 사번 :
                     strong=emp.EMPNO
-                    input(value=emp.EMPNO, name="empno", type="hidden")
+                    input(value=emp.EMPNO,name="empno",type="hidden")
                     //type="hidden" 보이지 않지만 넘어가는 파라미터
                 p
                     span 이름 :
-                    input(value=emp.ENAME, name="ename")
-
+                    input(value=emp.ENAME,name="ename")
                 p
                     span 직책 :
-                    input(value=emp.JOB, name="job")
-
+                    input(value=emp.JOB,name="job")
                 p
                     span 급여 :
-                    input(value=emp.SAL, name="sal")
-
+                    input(value=emp.SAL,name="sal")
+                p
+                    span 상여급 :
+                    input(value=emp.COMM,name="comm")
+                    -let y = emp.HIREDATE.getUTCFullYear();
+                    -let m = emp.HIREDATE.getUTCMonth() + 1;
+                    -m = (m < 10) ? `0${m}` : m;
+                    -let d = emp.HIREDATE.getUTCDate();
+                    -d = (d < 10) ? `0${d}` : d;
                 p
                     span 입사일 :
-                    input(value=emp.HIREDATE, name="hiredate" type="date")
-                    //type=date value : yyyy-mm-dd
-                    //type=datetime value : yyyy-MM-dd HH:mm
-
-                p
-                    span 상여금 :
-                    input(value=emp.COMM, name="comm")
-
+                    input(value=`${y}-${m}-${d}` ,name="hiredate", type="date")
+                    //emp.HIREDATE type Date : mysql Hiredate 의 값을 js의 Date로 파싱
+                    //type=date value : yyyy-MM-dd
+                    ///type=datetime value : yyyy-MM-dd'T'HH:mm
                 p
                     span 상사 :
-                    input(value=emp.MGR, name="mgr")
-
+                    input(value=emp.MGR,name="mgr")
                 p
                     span 부서 :
-                    input(value=emp.DEPTNO, name="deptno")
-
+                    input(value=emp.DEPTNO,name="deptno")
                 p
-                    a(href="empDelete.do?empno=" + emp.EMPNO) 삭제
+                    a(href=`/empDelete.do?empno=${emp.EMPNO}`) 삭제 &nbsp;
                     button(type="submit") 수정제출
 

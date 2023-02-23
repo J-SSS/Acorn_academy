@@ -3,6 +3,7 @@
   <component name="JavaScriptLibraryMappings">
     <file url="file://$PROJECT_DIR$" libraries="{Node.js Core}" />
     <file url="file://$PROJECT_DIR$/AcornRemoteStudy2" libraries="{Node.js Core}" />
+    <file url="file://$PROJECT_DIR$/ExpressJsStudy/expressstudent" libraries="{Node.js Core}" />
     <file url="file://$PROJECT_DIR$/JavaScriptStudy" libraries="{Node.js Core}" />
     <file url="file://$PROJECT_DIR$/WebAppTest" libraries="{Node.js Core}" />
   </component>
