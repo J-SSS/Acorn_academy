@@ -1,0 +1,63 @@
+html
+    head
+        meta(charset="UTF-8")
+    body
+        h1 안녕!!
+            span=a+b
+        //img(src="/public/img/a.jpeg",style="width=100px")
+        img(src="/img/참새.jpeg",style="width=100px")
+        h2 미들웨어로 정적리소스 처리
+            ul
+                li app.use(express.static("경로"));
+                li 확장자(.png,.jpeg,.hwp ..)가 정적리소스인 경우 public 폴더에서 찾아서 응답
+                li 응답하는 문서의 형식응 자동으로 처리한다.
+        h2 express 에서 템플릿 엔진 적용 (pug)
+            ul
+                li app.set("view engine","엔진이름");
+                li express 사이트에 명시된 템플릿 엔진 응답으로 사용
+                li app.set("views","경로") default "./views" : 템플릿 엔진 파일들의 기본 경로
+        h2 bodyParser 로 요청 해더로 넘어오는 queryString 을 미들웨어로 처리
+        h3 회원가입 폼 action=/signup.do
+        //get :http://localhost:8888/signup.do?id=hong123&name=%ED%99%8D%EA%B8%B8%EB%8F%99&job=%EC%9D%98%EC%A0%81&age=%3F%3F%3F
+        //post :http://localhost:8888/signup.do 요청해더(요청에대한 메타정보)에 쿼리스트링을 포함
+        form(action="/signup.do" method="post")
+            p
+                label 아이디
+                    input(name="id",value="hong123")
+            p
+                label 이름
+                    input(name="name",value="홍길동")
+            p
+                label 직업
+                    input(name="job",value="의적")
+            p
+                label 나이
+                    input(name="age",value="???")
+            p
+                button(type="submit") 제출
+        h3 bodyParse 가 적용된 /signup2.do
+        form(action="/signup2.do" method="post")
+            p
+                label 아이디
+                    input(name="id",value="hong123")
+            p
+                label 이름
+                    input(name="name",value="홍길동")
+            p
+                label 직업
+                    input(name="job",value="의적")
+            p
+                label 나이
+                    input(name="age",value="???")
+            p
+                button(type="submit") 제출
+
+
+
+        br
+        br
+        br
+        br
+        br
+        br
+        br

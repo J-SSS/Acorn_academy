@@ -1,0 +1,35 @@
+extends layout.pug
+block content
+    main
+        h1 사원 상세 정보 (Raed)
+        div
+            p
+                span 사번 :
+                strong=emp.EMPNO
+            p
+                span 이름 :
+                strong=emp.ENAME
+            p
+                span 직책 :
+                strong=emp.JOB
+            p
+                span 급여 :
+                strong=emp.SAL
+            p
+                span 상여급 :
+                strong=emp.COMM
+            p
+                span 입사일 :
+                strong=emp.HIREDATE && emp.HIREDATE.toLocaleDateString("ko-KR")
+            p
+                span 상사 :
+                strong=emp.MGR
+            p
+                span 부서 :
+                strong=emp.DEPTNO
+            p
+                a(href=`/emp/${emp.EMPNO}/update.do`) 수정폼
+                //일반적인 url : http://localhost:8888/emp/update.do?empno=7521
+                //rest path variable :http://localhost:8888/emp/7521/update.do
+                //http://localhost:8888/emp/detail.do?empno=7521
+                //**보통 파라미터의 이름이 db의 칼럼 명과 같아서 보안을 취약하게 할 수도 있다.
