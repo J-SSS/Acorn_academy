@@ -1,0 +1,19 @@
+{
+  "name": "expressjsteacher",
+  "version": "1.0.0",
+  "description": "express 로 웹앱만들기",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "choi kyoungmin",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "faker": "^6.6.6",
+    "mysql2": "^3.1.2",
+    "nodemon": "^2.0.20",
+    "pug": "^3.0.2"
+  }
+}
