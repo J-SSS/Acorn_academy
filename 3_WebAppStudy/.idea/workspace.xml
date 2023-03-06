@@ -10,12 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/660c6265-c106-43b8-9de6-7487b2a23436.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/660c6265-c106-43b8-9de6-7487b2a23436.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +69,7 @@
     "javascript.nodejs.core.library.configured.version": "18.14.2",
     "javascript.nodejs.core.library.typings.version": "18.14.2",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/USER/Desktop/강의자료/3_WebAppStudy",
+    "last_opened_file_path": "C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/views/users",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -85,8 +80,8 @@
     "project.structure.last.edited": "모듈",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\dongr\\AppData\\Local\\JetBrains\\Toolbox\\apps\\IDEA-U\\ch-0\\223.8214.52\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "settings.editor.selected.configurable": "terminal",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -100,11 +95,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\강의자료\3_WebAppStudy\ExpressJsBoardAdmin230302\views\users" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\ExpressJsStudy\public\img" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\ex01\templates" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\Ex01CRUD\templates" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\templates" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\templates" />
@@ -122,7 +117,7 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="데이터베이스 스크립트.webAppBoard.sql">
+  <component name="RunManager" selected="JavaScript 디버그.test.html">
     <configuration name="webAppBoard.sql" type="DatabaseScript" editBeforeRun="true" temporary="true" nameIsGenerated="true">
       <script-file value="$PROJECT_DIR$/ExpressJsBoardAdmin230302/webAppBoard.sql" />
       <script-mode>FILE</script-mode>
@@ -132,10 +127,10 @@
     <configuration name="l19_ajax_xmlhttprequest.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/webAppStudy/JavaScriptStudy/src/main/webapp/l19_ajax_xmlhttprequest.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="L02HttpModule.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/NodeJsStudy/L02HttpModule.js" working-dir="$PROJECT_DIR$/NodeJsStudy">
+    <configuration name="test.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/3_WebAppStudy/webAppStudy/ExpressJsBoardAdmin230302/test.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
-    <configuration name="l01HelloNodeJs.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/NodeJsStudy/l01HelloNodeJs.js" working-dir="$PROJECT_DIR$/NodeJsStudy">
+    <configuration name="L02HttpModule.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/NodeJsStudy/L02HttpModule.js" working-dir="$PROJECT_DIR$/NodeJsStudy">
       <method v="2" />
     </configuration>
     <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false">
@@ -227,108 +222,31 @@
         </option>
       </method>
     </configuration>
-    <configuration name="index.jsp (1)" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" temporary="true" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/JavaScriptStudy_war_exploded/index.jsp" />
-      <deployment>
-        <artifact name="JavaScriptStudy:war exploded">
-          <settings>
-            <option name="CONTEXT_PATH" value="/JavaScriptStudy_war_exploded" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="20b83307-86c4-47da-b27c-7ec2532efc34" />
-      </server-settings>
-      <predefined_log_file enabled="true" id="Tomcat" />
-      <predefined_log_file enabled="true" id="Tomcat Catalina" />
-      <predefined_log_file id="Tomcat Manager" />
-      <predefined_log_file id="Tomcat Host Manager" />
-      <predefined_log_file id="Tomcat Localhost Access" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="5978" />
-      </RunnerSettings>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
-        <option name="USE_ENV_VARIABLES" value="true" />
-        <STARTUP>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </STARTUP>
-        <SHUTDOWN>
-          <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="" />
-          <option name="VM_PARAMETERS" value="" />
-          <option name="PROGRAM_PARAMETERS" value="" />
-        </SHUTDOWN>
-      </ConfigurationWrapper>
-      <method v="2">
-        <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="JavaScriptStudy:war exploded" />
-        </option>
-      </method>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/ExpressJsBoardAdmin230302/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="JavaScript 디버그.test.html" />
       <item itemvalue="JavaScript 디버그.l19_ajax_xmlhttprequest.html" />
       <item itemvalue="Node.js.L02HttpModule.js" />
-      <item itemvalue="Node.js.l01HelloNodeJs.js" />
+      <item itemvalue="npm.start" />
       <item itemvalue="Tomcat 서버.Tomcat 9.0.71" />
-      <item itemvalue="Tomcat 서버.index.jsp (1)" />
       <item itemvalue="데이터베이스 스크립트.webAppBoard.sql" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript 디버그.test.html" />
+        <item itemvalue="npm.start" />
         <item itemvalue="데이터베이스 스크립트.webAppBoard.sql" />
         <item itemvalue="JavaScript 디버그.l19_ajax_xmlhttprequest.html" />
         <item itemvalue="Node.js.L02HttpModule.js" />
-        <item itemvalue="Node.js.l01HelloNodeJs.js" />
-        <item itemvalue="Tomcat 서버.index.jsp (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -401,6 +319,10 @@
       <workItem from="1677111352885" duration="9655000" />
       <workItem from="1677130213615" duration="7815000" />
       <workItem from="1677979152306" duration="2862000" />
+      <workItem from="1677998665928" duration="42000" />
+      <workItem from="1678061813718" duration="2490000" />
+      <workItem from="1678065461823" duration="9230000" />
+      <workItem from="1678092094222" duration="2225000" />
     </task>
     <servers />
   </component>

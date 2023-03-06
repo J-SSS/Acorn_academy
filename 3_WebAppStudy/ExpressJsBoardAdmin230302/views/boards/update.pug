@@ -1,0 +1,31 @@
+extends ../layout
+block content
+    h2.my-4 게시글 수정 양식 ( 상세 페이지 )
+    form#addUserForm(method='post' action='/boards/update.do')
+        div.form-floating.mb-3
+            input#b_id.form-control(value=board.b_id, readonly=true name='b_id', type='text' placeholder="??")
+            label(for='b_id') num
+
+        div.form-floating.mb-3
+            input#u_id.form-control(value=board.u_id, readonly=true name='u_id', type='text' placeholder="??")
+            label(for='u_id') 아이디
+        div.form-floating.mb-3
+            input#title.form-control(value=board.title, name='title', type='text' placeholder="??")
+            label(for='title') 제목
+        div.form-floating.mb-3
+            input#content.form-control(value=board.content, name='content', type='text' placeholder="??")
+            label(for='content') 내용
+        //div.form-floating.mb-3
+        //    input#imgPath.form-control(value=board.img_path, name='img_path', type='text' placeholder="??")
+        //    label(for='imgPath') 이미지경로
+        div.form-floating.mb-3
+            select#status.form-control(name='status' placeholder="??")
+                option(value='PUBLIC', selected=(board.status==='PUBLIC')) 공개
+                option(value='PRIVATE', selected=(board.status==='PRIVATE')) 비공개
+                option(value='REPORT', selected=(board.status==='REPORT')) 신고
+                option(value='BLOCK', selected=(board.status==='BLOCK')) 차단
+            label(for='status') 권한
+        div.text-end.mb-5
+            a.btn.btn-outline-danger.me-2(href=`/boards/${board.b_id}/delete.do`) 삭제
+            button#resetUserBtn.btn.btn-outline-warning.me-2(type='reset') 초기화
+            button#addUserBtn.btn.btn-outline-primary(type='submit') 수정

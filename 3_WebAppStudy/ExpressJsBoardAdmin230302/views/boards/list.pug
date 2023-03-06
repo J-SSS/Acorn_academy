@@ -1,0 +1,65 @@
+extends ../layout
+block content
+    h2.my-4 게시글 리스트
+
+    ul.nav.nav-tabs.justify-content-end
+        li.nav-item
+            a.nav-link(href="/boards/list.do" class=(params.status === undefined ? 'active' : '')) 전체
+        li.nav-item
+            a.nav-link(href="/boards/list.do?status=PUBLIC" class=(params.status === 'PUBLIC' ? 'active' : '')) 공개
+        li.nav-item
+            a.nav-link(href="/boards/list.do?status=PRIVATE" class=(params.status === 'PRIVATE' ? 'active' : '')) 비공개
+        li.nav-item
+            a.nav-link(href="/boards/list.do?status=REPORT" class=(params.status === 'REPORT' ? 'active' : '')) 신고
+        li.nav-item
+            a.nav-link(href="/boards/list.do?status=BLOCK" class=(params.status === 'BLOCK' ? 'active' : '')) 차단
+
+
+    table#userTable.table.table-striped.table-hover
+        thead
+            tr
+                th 게시글 번호
+                //th 비밀번호
+                th 아이디
+                //th 전화번호
+                //th 이메일
+                th 작성시간
+                th 최종수정시간
+                th 상태
+                th 제목
+                //th 상세주소
+                th 내용
+                th 조회수
+                // 좋아요 수 🧨 테이블 어떻게 합칠지 생각..
+                // 댓글 수  🧨
+                th.text-right 동작
+        tbody
+            each board in boards
+                tr
+                    td #{board.b_id}
+                    //td #{user.pw}
+                    td #{board.u_id}
+                    //td #{user.phone}
+                    //td #{user.email}
+                    td #{board.post_time ? board.post_time.toLocaleDateString("ko") : ""}
+                    td #{board.update_time ? board.update_time.toLocaleDateString("ko") : ""}
+                    td #{board.status}
+                    td #{board.title}
+                    //td #{user.detail_address}
+                    td #{board.content}
+                    td #{board.view_count}
+                    td.text-right
+                        a.btn.btn-outline-primary.btn-sm(href=`/boards/${board.b_id}/detail.do`) 상세
+
+    nav.mt-4.d-flex.justify-content-center
+        ul.pagination
+            li.page-item(class=(page===1) && "active")
+                a.page-link(href=`?${query}page=1`) 1
+            li.page-item(class=(page===2) && "active")
+                a.page-link(href=`?${query}page=2`) 2
+            li.page-item(class=(page===3) && "active")
+                a.page-link(href=`?${query}page=3`) 3
+            li.page-item(class=(page===4) && "active")
+                a.page-link(href=`?${query}page=4`) 4
+            li.page-item(class=(page===5) && "active")
+                a.page-link(href=`?${query}page=5`) 5
