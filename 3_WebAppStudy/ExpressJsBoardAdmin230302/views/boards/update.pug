@@ -2,19 +2,29 @@ extends ../layout
 block content
     h2.my-4 게시글 수정 양식 ( 상세 페이지 )
     form#addUserForm(method='post' action='/boards/update.do')
+        div.mb-3
+            span.btn.btn-primary.btn-sm.rounded-5=`좋아요 ${board.likes ? board.likes : 0 }`
+            span.btn.btn-danger.btn-sm.rounded-5=`싫어요 ${board.bads ? board.bads : 0 }`
+            span.btn.btn-warning.btn-sm.rounded-5=`슬퍼요 ${board.sads ? board.sads : 0 }`
+            span.btn.btn-success.btn-sm.rounded-5=`최고야 ${board.bests ? board.bests : 0}`
         div.form-floating.mb-3
             input#b_id.form-control(value=board.b_id, readonly=true name='b_id', type='text' placeholder="??")
             label(for='b_id') num
-
         div.form-floating.mb-3
             input#u_id.form-control(value=board.u_id, readonly=true name='u_id', type='text' placeholder="??")
             label(for='u_id') 아이디
         div.form-floating.mb-3
+            input#post_time.form-control(value=board.post_time, readonly=true name='post_time', type='text' placeholder="??")
+            label(for='post_time') 게시일
+        div.form-floating.mb-3
+            input#update_time.form-control(value=board.update_time, readonly=true name='update_time', type='text' placeholder="??")
+            label(for='update_time') 수정일
+        div.form-floating.mb-3
             input#title.form-control(value=board.title, name='title', type='text' placeholder="??")
             label(for='title') 제목
-        div.form-floating.mb-3
-            input#content.form-control(value=board.content, name='content', type='text' placeholder="??")
-            label(for='content') 내용
+        div.mb-3.input-group
+            label.input-group-text(for='content') 내용
+            textarea#content.form-control(name='content', type='text', rows=3, placeholder="??")=board.content
         //div.form-floating.mb-3
         //    input#imgPath.form-control(value=board.img_path, name='img_path', type='text' placeholder="??")
         //    label(for='imgPath') 이미지경로
@@ -25,7 +35,16 @@ block content
                 option(value='REPORT', selected=(board.status==='REPORT')) 신고
                 option(value='BLOCK', selected=(board.status==='BLOCK')) 차단
             label(for='status') 권한
+        div.mb-5.input-group
+            span.input-group-text 이미지#[br]삭제
+            div.form-control
+                -for(img of board.imgs)
+                    label.me-2
+                        img.img-thumbnail(src=img.img_path,style="width:200px")
+                        input.d-none(onchange="if(this.checked){this.previousElementSibling.classList.add('bg-primary')}else{this.previousElementSibling.classList.remove('bg-primary')}",type="checkbox",name="bi_id",value=img.bi_id)
+        //?bi_id=13&bi_id=15&bi_id=17 => req.body.bi_id=[13,15,17]
         div.text-end.mb-5
             a.btn.btn-outline-danger.me-2(href=`/boards/${board.b_id}/delete.do`) 삭제
             button#resetUserBtn.btn.btn-outline-warning.me-2(type='reset') 초기화
             button#addUserBtn.btn.btn-outline-primary(type='submit') 수정
+        //15분까지 쉬었다가 오세요~

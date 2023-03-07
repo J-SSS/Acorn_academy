@@ -5,7 +5,7 @@ const userService=require("../model/service/UsersService");
 router.get("/login.do",(req, res)=>{
   res.render("users/login");
 
-})
+});
 router.get("/logout.do",async (req,res)=>{
   //세션을 만료하거나 삭제하는 방법
   //1. 최초 세션을 만들고 30분 뒤 쿠키가 삭제되고 다시 서버에 요청하면 자동으로 서버의 session 도 삭제

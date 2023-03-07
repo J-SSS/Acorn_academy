@@ -1,0 +1,17 @@
+SELECT *,
+       (SELECT COUNT(*)
+            FROM board_likes l
+            WHERE l.b_id=b.b_id AND status='LIKE') likes,
+       (SELECT COUNT(*)
+            FROM board_likes l
+            WHERE l.b_id=b.b_id AND status='BAD') bads,
+       (SELECT COUNT(*)
+            FROM board_likes l
+            WHERE l.b_id=b.b_id AND status='SAD') sads,
+       (SELECT COUNT(*)
+            FROM board_likes l
+            WHERE l.b_id=b.b_id AND status='BEST') bests
+    FROM boards b;
+
+
+SELECT COUNT(*), status FROM board_likes WHERE b_id=? GROUP BY status";

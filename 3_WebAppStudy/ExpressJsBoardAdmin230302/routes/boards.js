@@ -35,22 +35,23 @@ router.post("/insert.do",async (req,res)=>{
 });
 
 router.get("/:bId/detail.do", async (req,res)=>{
-    console.log(req.params.bId);
     const board=await boardService.detail(req.params.bId);
+    console.log(board);
     if(board) {
         res.render("boards/update", {board:board});
+
     }else {
         res.redirect("/boards/list.do");
     }
 })
 
 router.post("/update.do",async (req,res)=>{
-   for(let key in req.body){
-       if(!req.body[key].trim()) {
-           req.body[key]=null;
-       }
-   }
-    console.log("req.body",req.body);
+   // for(let key in req.body){
+   //     if(key!=="bi_id" && !req.body[key].trim()) { // bi_id=>[].trim() 오류
+   //         req.body[key]=null;
+   //     }
+   // }
+   console.log("req.body",req.body);
    let update=0;
    update=await boardService.modify(req.body);
    if(update>0){

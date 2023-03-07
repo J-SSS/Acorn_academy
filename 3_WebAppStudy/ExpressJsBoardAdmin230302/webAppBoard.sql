@@ -78,7 +78,7 @@ CREATE TABLE reply_likes
 );
 #게시글에 복수로 업로드 되는 이미지의 경로(스트리밍서버의 주소 or 해당 웹앱 서버에 업로드한 상대주소)
 #board_imgs.img_path : "board_20230302_104644_046_8776.jpeg" (0)
-#board_imgs.img_path : "참새.jpeg" 파일의 고유 이름
+#board_imgs.img_path : "12.jpeg" 파일의 고유 이름
 #board_imgs.img_path : "참새2.jpeg"
 #board_imgs.img_path : "참새3참새3참새3참새@#ㄴㅇ_ㅇㅋㄹㄴ3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3참새3.jpeg"
 CREATE TABLE board_imgs
@@ -212,7 +212,7 @@ VALUES
 (6, '/img/board/13.jpg'),
 (7, '/img/board/14.jpg'),
 (8, '/img/board/15.jpg'),
-(9, '/img/board/16.jpg'),
+(9, '/img/board/99.jpg'),
 (10, '/img/board/17.jpg'),
 (11, '/img/board/18.jpg'),
 (12, '/img/board/19.jpg'),

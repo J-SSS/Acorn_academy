@@ -22,9 +22,9 @@
 //beforeAll,afterAll,beforeEach,afterEach : test 전처리 (test 로 취급하지 않음)
 //beforeAll() : 제일 처음 실행
 //afterAll() : 제일 마지막 실행
+
 //beforeEach() : 모든 test() 실행 전에
 //afterEach() : 모든 test() 실행 후에
-
 /* jest.test() 에서 사용할 수 있는 검사식
 expect(data)==비교연산: (.not.) 기대하는 값과 실제 값이 일치하는지 검사합니다. 주로 toBe(기본형), toEqual(자료형), toBeNull(), toBeTruthy(), toBeFalsy() 등의 메서드를 사용합니다.
 toThrow(함수이름): 함수 호출 시 예외가 발생하는지 검사합니다.
@@ -34,7 +34,8 @@ toHaveLength(길이): 배열이나 문자열의 길이가 일치하는지 검사
 toBeGreaterThan(>), toBeLessThan(<): 숫자가 특정 값보다 크거나 작은지 검사합니다.
 toHaveProperty(in): 객체가 특정 프로퍼티를 가지고 있는지 검사합니다.
 toHaveBeenCalled(), toHaveBeenCalledWith(): 함수가 호출되었는지, 특정 인수와 함께 호출되었는지 검사합니다.
-* */
+*
+*/
 const userDao=require("../../../model/dao/UsersDao");
 describe("model.dao.UserDao Test 진행",()=>{
     //test() 함수는 비동기코드로 순서없이 실행된다.
