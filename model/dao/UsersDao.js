@@ -9,8 +9,16 @@ class UsersDao{
     insertSql="INSERT INTO users (u_id, pw, name, phone, img_path, email, birth, gender, address, detail_address, permission) value (?,?,?,?,?,?,?,?,?,?,?)";
     deleteSql="DELETE FROM users WHERE u_id=?";
     #pool;
+    #findPage="SELECT * FROM users;";
     constructor(pool) {
         this.#pool=pool;
+    }
+    async findPage(PageVo){
+        let pageSql = this.#findPage;
+
+        // pageSql +=" LIMIT ?,?";
+        const [rows,f] = await this.#pool.query(pageSql)
+        return rows;
     }
     async findByUidAndPw(uId,pw){
         const [rows,f]=await this.#pool.query(this.findByUidAndPwSql,[uId,pw]);

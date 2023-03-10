@@ -1,13 +1,17 @@
 const pool=require("../db/WebAppBoardPool");
 const UsersDao=require("../dao/UsersDao");
 const usersDao=new UsersDao(pool);
+const PageVo = require("../vo/PageVo");
 class UsersService{
-    async list(permission,page=1){
-        if(permission){
-            return usersDao.findByPermission(permission,page);
-        }else{
-            return usersDao.fildAll(page);
-        }
+    async list(permission,page=1,reqQuery){
+        // if(permission){
+        //     return usersDao.findByPermission(permission,page);
+        // }else{
+        //     return usersDao.fildAll(page);
+        // }
+
+            const pageVo= new PageVo(page,5,reqQuery);
+        return usersDao.findPage(pageVo)
     }
     async detail(uId){
         return usersDao.findById(uId);

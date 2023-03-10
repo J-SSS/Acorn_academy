@@ -55,6 +55,7 @@ router.post("/login.do",async (req, res) => {
 
 router.get('/list.do', async function(req, res) {
   let permission=req.query.permission;
+  let reqQuery = req.query;
   let page = parseInt(req.query.page) || 1;
 
   let query = '';
@@ -63,9 +64,7 @@ router.get('/list.do', async function(req, res) {
       query += `${key}=${req.query[key]}&`;
     }
   }
-
-
-  const users=await userService.list(permission,page);
+  const users=await userService.list(permission,page,reqQuery);
   res.render("users/list",{users:users,params:req.query,query:query,page:page});
 });
 
