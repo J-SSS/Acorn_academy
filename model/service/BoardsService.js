@@ -8,14 +8,26 @@ const boardLikesDao=new BoardLikesDao(pool);
 const boardsDao=new BoardsDao(pool);
 const boardRepliesDao=new BoardRepliesDao(pool);
 //서버튜닝 : 기능개선없이 성능을 올리는 것
-
+const PageVo=require("../vo/PageVo");
 class BoardsService{
-    async list(status,page=1){
-        if(status) {
-            return boardsDao.findByStatus(status,page);
-        }else {
-            return boardsDao.findAll(page);
-        }
+    async list(status,page,reqQuery){
+        let boards;
+            let cnt = await boardsDao.countBySearch(reqQuery.field, reqQuery.value);
+            const pageVo = new PageVo(page,cnt,reqQuery);
+            boards = await boardsDao.findBySearch(pageVo);
+            boards.pageVo=pageVo;
+        // // if(status) {
+        // //     // let cnt = await boardsDao.countByStatus(status);
+        // //     // const pageVo = new PageVo(page,cnt,reqQuery);
+        // //     // boards = await boardsDao.findByStatus(status,pageVo);
+        // //     // boards.pageVo=pageVo;
+        // // }else {
+        //     let cnt = await boardsDao.countBySearch(reqQuery.field, reqQuery.value);
+        //     const pageVo = new PageVo(page,cnt,reqQuery);
+        //     boards = await boardsDao.findBySearch(pageVo);
+        //     boards.pageVo=pageVo;
+        // }
+        return boards;
     }
     async register(board) {
         return boardsDao.insertOne(board);
