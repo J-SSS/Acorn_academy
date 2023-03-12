@@ -1,7 +1,7 @@
 const pool=require("../../../model/db/WebAppBoardPool");
 const BoardsDao=require("../../../model/dao/BoardsDao");
 const boardsDao=new BoardsDao(pool);
-const PageVo=require("../../../model/vo/PageVo");
+const PageVo=require("../../../model/vo/PageVoTest");
 describe("model.dao.BoardDao test",()=>{
     test("findById",async ()=>{
        const board=await boardsDao.findById(6);

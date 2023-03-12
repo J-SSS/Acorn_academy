@@ -1,20 +1,30 @@
 extends ../layout
 block content
     h2.my-4 유저 리스트
+    include ../searchMixin
+    +searchMixin(users,"users",[
+        {att: "u_id", attName: "아이디"},
+        {att: "name", attName: "이름"},
+        {att: "post_time", attName: "가입일"},
+        {att: "birth", attName: "생일"},
+        {att: "gender", attName: "성별"},
+        {att: "address", attName: "주소"},
+        {att: "permission", attName: "등급"}
+    ])
 
     ul.nav.nav-tabs.justify-content-end
         li.nav-item
-            a.nav-link(href="/users/list.do" class=(params.permission === undefined ? 'active' : '')) 전체
+            a.nav-link(href="/users/list.do" class=((!users.pageVo.field&&!users.pageVo.value) ? 'active' : '')) 전체
         li.nav-item
-            a.nav-link(href="/users/list.do?permission=USER" class=(params.permission === 'USER' ? 'active' : '')) 일반
+            a.nav-link(href="/users/list.do?field=permission&value=USER" class=((users.pageVo.field==='permission' && users.pageVo.value === 'USER') ? 'active' : '')) 일반
         li.nav-item
-            a.nav-link(href="/users/list.do?permission=SILVER" class=(params.permission === 'SILVER' ? 'active' : '')) 실버
+            a.nav-link(href="/users/list.do?field=permission&value=SILVER" class=((users.pageVo.field==='permission' && users.pageVo.value === 'SILVER') ? 'active' : '')) 실버
         li.nav-item
-            a.nav-link(href="/users/list.do?permission=GOLD" class=(params.permission === 'GOLD' ? 'active' : '')) 골드
+            a.nav-link(href="/users/list.do?field=permission&value=GOLD" class=((users.pageVo.field==='permission' && users.pageVo.value === 'GOLD') ? 'active' : '')) 골드
         li.nav-item
-            a.nav-link(href="/users/list.do?permission=PRIVATE" class=(params.permission === 'PRIVATE' ? 'active' : '')) 비공개
+            a.nav-link(href="/users/list.do?field=permission&value=PRIVATE" class=((users.pageVo.field==='permission' && users.pageVo.value === 'PRIVATE') ? 'active' : '')) 비공개
         li.nav-item
-            a.nav-link(href="/users/list.do?permission=ADMIN" class=(params.permission === 'ADMIN' ? 'active' : '')) 관리자
+            a.nav-link(href="/users/list.do?field=permission&value=ADMIN" class=((users.pageVo.field==='permission' && users.pageVo.value === 'ADMIN') ? 'active' : '')) 관리자
 
     table#userTable.table.table-striped.table-hover
         thead
@@ -48,16 +58,5 @@ block content
                     td.text-right
                         a.btn.btn-outline-primary.btn-sm(href=`/users/${user.u_id}/detail.do`) 상세
 
-    nav.mt-4.d-flex.justify-content-center
-        ul.pagination
-            li.page-item(class=(page===1) && "active")
-                a.page-link(href=`?${query}page=1`) 1
-            li.page-item(class=(page===2) && "active")
-                a.page-link(href=`?${query}page=2`) 2
-            li.page-item(class=(page===3) && "active")
-                a.page-link(href=`?${query}page=3`) 3
-            li.page-item(class=(page===4) && "active")
-                a.page-link(href=`?${query}page=4`) 4
-            li.page-item(class=(page===5) && "active")
-                a.page-link(href=`?${query}page=5`) 5
-    //include ../pagination
+    include ../paginationMixin
+    +paginationMixin(users)

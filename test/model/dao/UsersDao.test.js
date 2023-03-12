@@ -112,13 +112,13 @@ describe("model.dao.UsersDao Test 진행",()=>{
         console.log("user :"+JSON.stringify(user));
         expect(user).not.toBeNull(); //null이 아닌지 검사
     });
-    test("findAll",async ()=>{
-        let users=await usersDao.fildAll();
-        //console.log(JSON.stringify(users)); //???
-        //Array.isArray(users); //js Array 가 배열 타입인지 검사 (x jest)
-        expect(Array.isArray(users)).toBeTruthy();
-        //expect(Array.isArray(users)).toBe(true);
-    });
+    // test("findAll",async ()=>{
+    //     let users=await usersDao.fildAll();
+    //     //console.log(JSON.stringify(users)); //???
+    //     //Array.isArray(users); //js Array 가 배열 타입인지 검사 (x jest)
+    //     expect(Array.isArray(users)).toBeTruthy();
+    //     //expect(Array.isArray(users)).toBe(true);
+    // });
     test("updateById",async ()=>{
         const user={
             u_id:"test01",

@@ -12,10 +12,12 @@ class PageVo{
     #query; //page를 제외한 쿼리
     //{status:"PUBLIC",order:"b_id",page:3} => status=PUBLIC&order=b_id&
 
+    #sqlQuery;
     #searchField; //검색할 칼럼
     #searchValue; //검색할 칼럼의 내용
     #orderField; //정렬
     #orderDirect;
+
 
     get orderDirect() {
         return this.#orderDirect;
@@ -25,17 +27,24 @@ class PageVo{
         this.#orderDirect = value;
     }
 
-    constructor(page,totalRow,reqQuery,rowLength=5) {
-        this.#page=page;
-        this.#totalRow=totalRow;
-        this.#rowLength=rowLength;
-        this.#offset=(page-1)*rowLength;
-        this.#totalPage=Math.ceil(totalRow/rowLength);
-        this.#next=page+1;
-        this.#prev=page-1;
-        this.#isNext=(this.#next<=this.#totalPage);
-        this.#isPrev=(this.#prev>=1);
-        this.#query=""; //undefined+"ab" =>"undefinedab"
+    constructor(totalRow,reqQuery,rowLength=5) {
+        /*
+        추가 1)
+        기존에 라우터에 있던
+        let page = parseInt(req.query.page) || 1; 를
+        여기로 옮겨옴
+        */
+        this.#page = parseInt(reqQuery.page) || 1;
+        this.#totalRow = totalRow;
+        this.#rowLength = rowLength;
+        this.#offset = (this.#page - 1) * rowLength;
+        this.#totalPage = Math.ceil(totalRow / rowLength);
+        this.#next = this.#page + 1;
+        this.#prev = this.#page - 1;
+        this.#isNext = (this.#next <= this.#totalPage);
+        this.#isPrev = (this.#prev >= 1);
+        this.#query = ""; //undefined+"ab" =>"undefinedab"
+
         for (let key in reqQuery) {
             if (key !== "page") {
                 this.#query += `${key}=${reqQuery[key]}&`
@@ -43,18 +52,18 @@ class PageVo{
                     this.#searchField = reqQuery[key];
                 } else if (key === "value") {
                     this.#searchValue = reqQuery[key];
-                } else if(key==="orderField"){
+                } else if (key === "orderField") {
                     this.#orderField = reqQuery[key];
-                } else if(key==="orderDirect"){
+                } else if (key === "orderDirect") {
                     this.#orderDirect = reqQuery[key];
                 }
+
             }
+            console.log(reqQuery)
         }
 
 
-
     }
-
 
     get offset() {
         return this.#offset;
@@ -107,10 +116,14 @@ class PageVo{
         return this.#rowLength;
     }
     get page(){
-        return this.#rowLength;
+        return this.#page;
     }
+
     get totalRow(){
         return this.#totalRow;
+    }
+    set totalRow(value){
+        this.#totalRow=value;
     }
     get query(){
         return this.#query;

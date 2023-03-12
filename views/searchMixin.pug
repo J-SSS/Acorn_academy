@@ -1,0 +1,29 @@
+mixin searchMixin(table,objName,items)
+
+    table#userTable.table.table-striped.table-hover
+        thead
+            tr
+                each item in items
+                    th #{item.attName}
+                th.text-right 상세
+
+    form.mx-auto.my-4(method="GET", action="/"+objName+"/list.do", style="width:550px")
+        div.input-group
+            label.input-group-text 검색
+            select.form-select(name="orderDirect")
+                option(value="") 순서
+                option(value="DESC", selected=(table.pageVo.orderDirect === "DESC")) 내림차순
+                option(value="ASC", selected=(table.pageVo.orderDirect === "ASC")) 오름차순
+
+            select.form-select(name="orderField")
+                option(value="") 정렬
+                 each item in items
+                     option(value=`${item.att}`, selected=(table.pageVo.orderField === `${item.att}`)) #{item.attName}
+
+            select.form-select(name="field")
+                option(value="") 필터
+                each item in items
+                    option(value=`${item.att}`, selected=(table.pageVo.searchField === `${item.att}`)) #{item.attName}
+
+            input.form-control(name="value", value=(table.pageVo.searchValue))
+            button.btn.btn-outline-info 제출

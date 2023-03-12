@@ -1,0 +1,18 @@
+mixin paginationMixin(table)
+    nav.mt-4.d-flex.justify-content-center
+        ul.pagination
+            li.page-item(class=(!table.pageVo.isPrev) && "disabled")
+                a.page-link(href=`?${table.pageVo.query}page=1`) first
+
+            li.page-item(class=(!table.pageVo.isPrev) && "disabled")
+                a.page-link(href=`?${table.pageVo.query}page=${table.pageVo.prev}`) prev
+
+            -for(let p=1; p <= table.pageVo.totalPage; p++)
+                    li.page-item(class=(p===table.pageVo.Page) && "active")
+                        a.page-link(href=`?${table.pageVo.query}page=${p}`)=p
+
+            li.page-item(class=(!table.pageVo.isNext) && "disabled")
+                a.page-link(href=`?page=${table.pageVo.next}`) next
+
+            li.page-item(class=(!table.pageVo.isNext) && "disabled")
+                a.page-link(href=`?page=${table.pageVo.totalPage}`) next

@@ -6,11 +6,11 @@ block content
         div.input-group
             label.input-group-text 검색
             select.form-select(name="orderDirect")
-                    option(value="") 순서
-                    option(value="DESC", selected=(params.orderDirect==="DESC")) 내림차순
-                    option(value="ASC", selected=(params.orderDirect==="ASC")) 오름차순
+                option(value="") 순서
+                option(value="DESC", selected=(params.orderDirect==="DESC")) 내림차순
+                option(value="ASC", selected=(params.orderDirect==="ASC")) 오름차순
             select.form-select(name="orderField")
-                option 정렬
+                option(value="") 정렬
                 option(value="u_id", selected=(params.orderField === "u_id")) 유저
                 option(value="post_time", selected=(params.orderField === "post_time")) 작성일
                 option(value="update_time", selected=(params.orderField === "update_time")) 수정일

@@ -9,33 +9,49 @@ class UsersDao{
     insertSql="INSERT INTO users (u_id, pw, name, phone, img_path, email, birth, gender, address, detail_address, permission) value (?,?,?,?,?,?,?,?,?,?,?)";
     deleteSql="DELETE FROM users WHERE u_id=?";
     #pool;
-    #findPage="SELECT * FROM users;";
+    #findBySearchSql="SELECT * FROM users";
+    #countBySearchSql="SELECT COUNT(*) FROM users";
     constructor(pool) {
         this.#pool=pool;
     }
-    async findPage(PageVo){
-        let pageSql = this.#findPage;
+    async findPage(pageVo){
+        let searchQuery = this.#findBySearchSql;
 
-        // pageSql +=" LIMIT ?,?";
-        const [rows,f] = await this.#pool.query(pageSql)
+        if(pageVo.searchField && pageVo.searchValue){
+            searchQuery+=` WHERE ${pageVo.searchField} LIKE '%${pageVo.searchValue}%'`;
+        }
+        searchQuery+=" ORDER BY "+((pageVo.orderField) || "post_time");
+        searchQuery+=" "+(pageVo.orderDirect || "DESC");
+        searchQuery+=" LIMIT ?,?";
+
+        const [rows,f] = await this.#pool.query(searchQuery,[pageVo.offset, pageVo.rowLength])
         return rows;
+    }
+    async countBySearch(searchField, searchValue){
+        let sql=this.#countBySearchSql;
+        if(searchField && searchValue){
+            sql+=` WHERE ${searchField} LIKE '%${searchValue}%'`;
+        }
+        const [rows,f]=await this.#pool.query(sql);
+
+        return rows[0]["COUNT(*)"];
     }
     async findByUidAndPw(uId,pw){
         const [rows,f]=await this.#pool.query(this.findByUidAndPwSql,[uId,pw]);
         return rows[0] || null;
     }
-    async fildAll(page=1){
-        let length=5;
-        const [rows,f]=await this.#pool.query(this.findAllSql,[(page-1)*length,length]);
-        return rows;
-    }
-     async findByPermission(permission,page=1){
-        //화살표 함수를 사용하면 this 가 userDao 를 포함하는 Object 를 바인드함
-        let length=5;
-        const values=[permission,(page-1)*length,length];
-        const [rows,f]=await this.#pool.query(this.findByPermissionSql,values);
-        return rows;
-    }
+    // async fildAll(page=1){
+    //     let length=5;
+    //     const [rows,f]=await this.#pool.query(this.findAllSql,[(page-1)*length,length]);
+    //     return rows;
+    // }
+    //  async findByPermission(permission,page=1){
+    //     //화살표 함수를 사용하면 this 가 userDao 를 포함하는 Object 를 바인드함
+    //     let length=5;
+    //     const values=[permission,(page-1)*length,length];
+    //     const [rows,f]=await this.#pool.query(this.findByPermissionSql,values);
+    //     return rows;
+    // }
      async findById(uId){
         const [rows,f]=await this.#pool.query(this.findByIdSql,[uId]);
         return  rows[0] || null;

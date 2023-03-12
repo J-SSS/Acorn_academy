@@ -54,18 +54,20 @@ router.post("/login.do",async (req, res) => {
 
 
 router.get('/list.do', async function(req, res) {
-  let permission=req.query.permission;
-  let reqQuery = req.query;
-  let page = parseInt(req.query.page) || 1;
 
-  let query = '';
-  for (let key in req.query) {
-    if (key !== 'page') {
-      query += `${key}=${req.query[key]}&`;
-    }
-  }
-  const users=await userService.list(permission,page,reqQuery);
-  res.render("users/list",{users:users,params:req.query,query:query,page:page});
+  console.log(req.query)
+
+  /*
+    추가 1)
+
+    userService 호출 할 때 page랑 req.query 보내던걸 간소화해서
+    req.query만 보낸다음 pageVo에서 페이징 관련 처리하도록 함
+
+   */
+
+  const users=await userService.list(req.query);
+  res.render("users/list",{users:users,params:req.query});
+
 });
 
 router.get("/insert.do",(req,res)=>{
