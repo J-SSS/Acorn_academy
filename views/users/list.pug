@@ -1,16 +1,8 @@
 extends ../layout
 block content
     h2.my-4 유저 리스트
-    include ../searchMixin
-    +searchMixin(users,"users",[
-        {att: "u_id", attName: "아이디"},
-        {att: "name", attName: "이름"},
-        {att: "post_time", attName: "가입일"},
-        {att: "birth", attName: "생일"},
-        {att: "gender", attName: "성별"},
-        {att: "address", attName: "주소"},
-        {att: "permission", attName: "등급"}
-    ])
+
+
 
     ul.nav.nav-tabs.justify-content-end
         li.nav-item
@@ -57,6 +49,19 @@ block content
                     td #{user.permission}
                     td.text-right
                         a.btn.btn-outline-primary.btn-sm(href=`/users/${user.u_id}/detail.do`) 상세
+
+
+
+    include ../searchMixin
+    +searchMixin(users,"users",[
+        {att: "u_id", attName: "아이디"},
+        {att: "name", attName: "이름"},
+        {att: "post_time", attName: "가입일"},
+        {att: "birth", attName: "생일"},
+        {att: "gender", attName: "성별"},
+        {att: "address", attName: "주소"},
+        {att: "permission", attName: "등급"}
+    ])
 
     include ../paginationMixin
     +paginationMixin(users)
