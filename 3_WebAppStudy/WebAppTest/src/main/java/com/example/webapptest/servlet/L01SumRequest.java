@@ -1,9 +1,6 @@
 package com.example.webapptest.servlet;
 
 
-
-import sun.jvm.hotspot.runtime.VM;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

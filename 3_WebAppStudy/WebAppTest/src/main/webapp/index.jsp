@@ -10,8 +10,8 @@
     <h2>동적 리소스 네비게이션</h2>
     <ul>
         <li><a href="sum.do?a=10&b=33">sum(a+b) 동적리소스</a></li>
-        <li><a href="">d</a></li>
-        <li><a href="">d</a></li>
+        <li><a href="./model1/boardList.do">model1 boards 리스트</a></li>
+        <li><a href=""></a></li>
         <li><a href=""></a></li>
         <li><a href=""></a></li>
     </ul>
@@ -55,8 +55,5 @@
         <li>web.xml : DD :development Descriptor : 배포 서술자 (배포할 동적 리소스를 서술 및 웹앱을 설정하는 곳) = 총괄지휘</li>
         <li>jsp : 동적리소스인데 정적리소스인척 하는 파일로, 템플릿엔진이라고 부름(코드는 자바인데 컴파일러 따로 존재해서 스크립트처럼 문자열을 그대로 실행</li>
     </ul>
-
-
-
 </body>
 </html>
