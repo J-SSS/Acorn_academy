@@ -14,4 +14,12 @@
         <!--/슬러시의 의미 : 서버에서부터 시작한다 -->
         <!--/url : 서버주소에서부터 url시작한다 -->
     </servlet-mapping>
+<!--    <servlet>-->
+<!--        <servlet-name>detailPage</servlet-name>-->
+<!--        <servlet-class>com.example.webapptest.servlet.BoardDetail</servlet-class>-->
+<!--    </servlet>-->
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>detailPage</servlet-name>-->
+<!--        <url-pattern>/boardDetail.do</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>
