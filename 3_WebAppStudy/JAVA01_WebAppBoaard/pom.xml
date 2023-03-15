@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.acorn</groupId>
+    <artifactId>JAVA01_WebAppBoard</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <name>WebAppBoard</name>
+    <packaging>war</packaging>
+    <!-- <project>에서는 xml로 사용할수있는 태그들을 불러옴 -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <junit.version>5.9.1</junit.version>
+    </properties>
+    <!-- 라이브러리 자동 다운 및 의존성 주입 -->
+    <dependencies>
+        <!--javax.servlet-api : 동적페이지인 jsp 라이브러리-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <!--junit : 단위테스트를 할 수 있는 라이브러리 jvm과 별개로 쥬피터엔진(2번째)로 돌림-->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- mySQL 커텍터 -->
+
+        <!-- (1번 방법) mvnrepository에서 검색하여 입력할 수 있음-->
+        <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+        <!-- 빨간불 뜨면 마우스 오른쪽 버튼 눌러서 메이븐-다시로드 클릭 -->
+        <!-- (2번 방법) 인텔리제이에서 디펜던시를 자동으로 완성해줌 (alt + insert) -->
+        <dependency>
+            <groupId>com.mysql</groupId>
+            <artifactId>mysql-connector-j</artifactId>
+            <version>8.0.32</version>
+        </dependency>
+        <!--    lombok POJO 를 자동 생성하는 라이브러리로 개발툴과 같이 연계 작업한다.    -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.26</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -3,7 +3,9 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/AcornRemoteStudy2" />
     <file type="web" url="file://$PROJECT_DIR$/GitWebStudy" />
+    <file type="web" url="file://$PROJECT_DIR$/JAVA01_WebAppBoaard" />
     <file type="web" url="file://$PROJECT_DIR$/JavaScriptStudy" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaWebAppBoardModel2" />
     <file type="web" url="file://$PROJECT_DIR$/Test1" />
     <file type="web" url="file://$PROJECT_DIR$/Test222" />
     <file type="web" url="file://$PROJECT_DIR$/Test333" />
@@ -16,9 +18,10 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/WebAppTest/pom.xml" />
         <option value="$PROJECT_DIR$/AcornRemoteStudy2/pom.xml" />
         <option value="$PROJECT_DIR$/JavaScriptStudy/pom.xml" />
+        <option value="$PROJECT_DIR$/JavaWebAppBoardModel2/pom.xml" />
+        <option value="$PROJECT_DIR$/JAVA01_WebAppBoaard/pom.xml" />
       </list>
     </option>
   </component>

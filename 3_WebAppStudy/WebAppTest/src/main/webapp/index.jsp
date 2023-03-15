@@ -55,5 +55,13 @@
         <li>web.xml : DD :development Descriptor : 배포 서술자 (배포할 동적 리소스를 서술 및 웹앱을 설정하는 곳) = 총괄지휘</li>
         <li>jsp : 동적리소스인데 정적리소스인척 하는 파일로, 템플릿엔진이라고 부름(코드는 자바인데 컴파일러 따로 존재해서 스크립트처럼 문자열을 그대로 실행</li>
     </ul>
+
+    <ul>
+        <li>model1 : 서비스로직(Model1), 요청과 응답처리(Controller),유저인터페이스인 뷰(view)가 한 페이지에 존재하는 경우</li>
+        <li>model2 : Model과 Controller, View가 분리되어있는 디자인패턴</li>
+        <li>model2 장점 : 모듈화로 인한 재사용성이 늪어나서 유지보수가 쉽다.</li>
+        <li>model2 장점 2 : 역할분담으로 생산성을 높일 수 있다</li>
+        <li>model2 장점 3 : 각 로직에서 사용되는 라이브러리(JVA,Mybatis,Sass,Less<react)나 프레임워크(Spring,Junit) 적용이 가능</li>
+    </ul>
 </body>
 </html>
