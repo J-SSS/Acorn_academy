@@ -1,15 +1,13 @@
 package com.acorn.webappboard.dao;
 
+import com.acorn.webappboard.Vo.PageVo;
 import com.acorn.webappboard.WebAppBoardConn;
 import com.acorn.webappboard.dto.BoardsDto;
-import com.mysql.cj.xdevapi.Collection;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.sql.Connection;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class BoardsDaoImpTest {
 
@@ -26,6 +24,12 @@ class BoardsDaoImpTest {
         List<BoardsDto> board = boardsDao.findAll();
         System.out.println(board);
 
+    }
+    @Test
+    void findBySearchAndPaging() throws Exception {
+//        PageVo pageVo = new PageVo();
+        List<BoardsDto> board = boardsDao.findBySearchAndPaging(new PageVo(10,2));
+        System.out.println(board);
     }
 
     @Test
@@ -63,4 +67,6 @@ class BoardsDaoImpTest {
         int delete = boardsDao.deleteByPk(2);
         System.out.println(delete);
     }
+
+
 }

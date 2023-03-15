@@ -18,6 +18,18 @@ public class BoardsDaoImp implements BoardsDao {
         this.conn = conn;
     }
 
+    public int countAll() throws Exception {
+        int cnt = 0;
+        String sql = "select * from boards";
+        pstmt = conn.prepareStatement(sql);
+        rs = pstmt.executeQuery();
+        if(rs.next()){
+            while (rs.next()){
+               cnt++;
+            }
+        }
+        return cnt;
+    }
     @Override
     public List<BoardsDto> findAll() throws Exception {
         List<BoardsDto> boards = new ArrayList<>();
@@ -28,13 +40,14 @@ public class BoardsDaoImp implements BoardsDao {
             while (rs.next()){
                 boards.add(parseBoardDto(rs));
             }
-
         }
         return boards;
     }
 
     @Override
     public List<BoardsDto> findBySearchAndPaging(PageVo pageVo) throws Exception {
+//        int cnt = countAll();
+//        pageVo = new PageVo(countAll(),);
         List<BoardsDto> boards = new ArrayList<>();
         String sql = "select * from boards LIMIT ?,?";
         pstmt = conn.prepareStatement(sql);
