@@ -38,6 +38,8 @@ public class Model1BoardDelete extends HttpServlet {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+
         //http://localhost:8080/WebAppBoard/model1/boardList.do
         // "/model1/boardList.do" => http://localhost:8080/model1/boardList.do
         String contextPath=req.getContextPath(); // == /WebAppBoard
