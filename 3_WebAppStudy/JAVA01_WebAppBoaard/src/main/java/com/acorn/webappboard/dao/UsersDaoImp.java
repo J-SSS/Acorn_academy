@@ -35,7 +35,7 @@ public class UsersDaoImp implements UsersDao{
         String sql="SELECT * FROM users WHERE u_id=?";
         pstmt= conn.prepareStatement(sql);
         pstmt.setString(1,uId);
-        rs=pstmt.execute;
+        rs=pstmt.executeQuery();
         if(rs.next()){
             user=parseUserDto(rs);
         }
