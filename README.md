@@ -15,7 +15,7 @@
 
 <details>
 <summary>
-<h2> 03. JavaScript ➕🟰 Node.js & Express (23年 1月 ~ 23年 3月)<h2>
+<h2> 03. JavaScript += Node.js & Express (23年 1月 ~ 23年 3月)<h2>
 </summary>
 
 #### 📁 2_ JAVA
