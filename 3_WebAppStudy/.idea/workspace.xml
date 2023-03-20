@@ -28,13 +28,16 @@
         <option value="HTML File" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Jsp File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JspContextManager">
+    <jsp-to-context jsp-file="file://$PROJECT_DIR$/JAVA01_WebAppBoaard/src/main/webapp/templates/headerNav.jsp" context-file="file://$PROJECT_DIR$/JAVA01_WebAppBoaard/src/main/webapp/index.jsp" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -61,53 +64,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.1&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.1&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/JAVA01_WebAppBoaard/src/main/webapp/templates/users&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/node_modules/jest&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "full.screen.before.presentation.mode": "false",
+    "javascript.nodejs.core.library.configured.version": "18.14.1",
+    "javascript.nodejs.core.library.typings.version": "18.14.1",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/JAVA01_WebAppBoaard/src/main/webapp/templates/users",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/node_modules/jest",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.customizations",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;660c6265-c106-43b8-9de6-7487b2a23436&quot;
+    "RunConfigurationTargetLRU": [
+      "660c6265-c106-43b8-9de6-7487b2a23436"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\webapp\templates\users" />
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\java\com\acorn\webappboard\service" />
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\java\com\acorn\webappboard\controller" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\webapp\public" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\WebAppTest\src" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\WebAppTest" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\WebAppTest\src\main\java\com\example\webapptest" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\templates" />
@@ -395,6 +398,9 @@
       <workItem from="1678956488804" duration="29000" />
       <workItem from="1679011978033" duration="16035000" />
       <workItem from="1679037426964" duration="244000" />
+      <workItem from="1679053750179" duration="502000" />
+      <workItem from="1679271271020" duration="996000" />
+      <workItem from="1679272379781" duration="12768000" />
     </task>
     <servers />
   </component>

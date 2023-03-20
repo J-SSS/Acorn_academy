@@ -15,8 +15,6 @@ public class UsersDaoImp implements UsersDao{
 
     @Override
     public UsersDto findByUIdAndPw(String uId, String pw) throws Exception {
-
-
         UsersDto user=null;
         String sql="SELECT * FROM users WHERE u_id=? AND pw=?";
         pstmt=conn.prepareStatement(sql);
@@ -62,8 +60,8 @@ public class UsersDaoImp implements UsersDao{
 
     @Override
     public int save(UsersDto user) throws Exception {
-        int save =0;
-        String sql = "INSERT INTO users(u_id, pw, name, phone, img_path, email, birth, gender, address, detail_address) value(?,?,?,?,?,?,?,?,?,?) ";
+        int save=0;
+        String sql="INSERT INTO users (u_id, pw, name, phone, img_path, email, birth, gender, address, detail_address) VALUE (?,?,?,?,?,?,?,?,?,?)";
         pstmt=conn.prepareStatement(sql);
         pstmt.setString(1,user.getUId());
         pstmt.setString(2,user.getPw());
@@ -76,27 +74,26 @@ public class UsersDaoImp implements UsersDao{
         pstmt.setString(9,user.getAddress());
         pstmt.setString(10,user.getDetailAddress());
         save=pstmt.executeUpdate();
-
         return save;
     }
 
     @Override
     public int updatePermissionByUIdAndPw(UsersDto user) throws Exception {
-        int updatePermission = 0;
-        String sql = "UPDATE users SET permission=? WHERE u_id=? AND pw=?";
-        pstmt = conn.prepareStatement(sql);
+        int update=0;
+        String sql="UPDATE users SET permission=? WHERE u_id=? AND pw=?";
+        pstmt=conn.prepareStatement(sql);
         pstmt.setString(1,user.getPermission());
         pstmt.setString(2,user.getUId());
         pstmt.setString(3,user.getPw());
-        updatePermission=pstmt.executeUpdate();
-        return updatePermission;
+        update=pstmt.executeUpdate(); //dml, executeQuery dql
+        return update;
     }
 
     @Override
     public int deleteByUIdAndPw(String uId, String pw) throws Exception {
-        int delete = 0;
-        String sql = "DELETE FROM users WHERE uId=? AND pw=?";
-        pstmt = conn.prepareStatement(sql);
+        int delete=0;
+        String sql="DELETE FROM users WHERE u_id=? AND pw=?";
+        pstmt=conn.prepareStatement(sql);
         pstmt.setString(1,uId);
         pstmt.setString(2,pw);
         delete=pstmt.executeUpdate();

@@ -8,7 +8,7 @@ import lombok.*;
 //@NoArgsConstructor
 //@EqualsAndHashCode
 //@ToString
-@Data //12분까지 쉬었다가 오세요~
+@Data
 public class UsersDto {
     //db 에서 _ 규칙을 사용하는 이유는 대소문자를 구분하지 않기 때문 (설정으로 대소문자를 구분하게 할 수도 있다...)
 

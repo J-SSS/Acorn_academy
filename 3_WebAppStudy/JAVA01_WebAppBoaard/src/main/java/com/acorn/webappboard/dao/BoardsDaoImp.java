@@ -25,7 +25,7 @@ public class BoardsDaoImp implements BoardsDao {
         rs = pstmt.executeQuery();
         if(rs.next()){
             while (rs.next()){
-               cnt++;
+                cnt++;
             }
         }
         return cnt;
@@ -70,7 +70,7 @@ public class BoardsDaoImp implements BoardsDao {
         pstmt.setInt(1, bId);
         rs = pstmt.executeQuery();
         if(rs.next()){
-           board = parseBoardDto(rs);
+            board = parseBoardDto(rs);
         }
         return board;
     }
