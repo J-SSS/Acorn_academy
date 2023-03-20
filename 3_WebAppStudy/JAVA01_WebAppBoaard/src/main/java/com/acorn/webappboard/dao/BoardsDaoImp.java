@@ -23,11 +23,10 @@ public class BoardsDaoImp implements BoardsDao {
         String sql = "select * from boards";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
-        if(rs.next()){
-            while (rs.next()){
-                cnt++;
-            }
+        while (rs.next()){
+            cnt++;
         }
+
         return cnt;
     }
     @Override
@@ -36,10 +35,8 @@ public class BoardsDaoImp implements BoardsDao {
         String sql = "select * from boards";
         pstmt = conn.prepareStatement(sql);
         rs = pstmt.executeQuery();
-        if(rs.next()){
-            while (rs.next()){
-                boards.add(parseBoardDto(rs));
-            }
+        while (rs.next()){
+            boards.add(parseBoardDto(rs));
         }
         return boards;
     }

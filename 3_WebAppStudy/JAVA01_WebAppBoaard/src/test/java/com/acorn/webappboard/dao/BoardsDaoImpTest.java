@@ -43,12 +43,12 @@ class BoardsDaoImpTest {
         System.out.println(board);
 
     }
-    @Test
-    void findBySearchAndPaging() throws Exception {
-//        PageVo pageVo = new PageVo();
-        List<BoardsDto> board = boardsDao.findBySearchAndPaging(new PageVo(10,2));
-        System.out.println(board);
-    }
+//    @Test
+//    void findBySearchAndPaging() throws Exception {
+////        PageVo pageVo = new PageVo();
+//        List<BoardsDto> board = boardsDao.findBySearchAndPaging(new PageVo(10,2));
+//        System.out.println(board);
+//    }
 
     @Test
     void findByBId() throws Exception {

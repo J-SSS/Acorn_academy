@@ -8,6 +8,7 @@ import java.util.List;
 public interface BoardsDao {
     List<BoardsDto> findAll() throws Exception;
     List<BoardsDto> findBySearchAndPaging(PageVo pageVo) throws Exception;
+    int countAll() throws Exception ;
     BoardsDto findByBId(int bId) throws Exception;
     int save(BoardsDto board) throws Exception;
     int updateByPk(BoardsDto board) throws Exception;

@@ -2,6 +2,8 @@ package com.acorn.webappboard.Vo;
 
 import lombok.Data;
 
+import java.util.Map;
+
 @Data
 public class PageVo {
     private int totalPage;
@@ -14,10 +16,12 @@ public class PageVo {
     private int rowLength = 5;
     private int offSet;
 
-    public PageVo(int totalRow, int page) {
+    public PageVo(Map queryString, int totalRow) {
+
         this.totalPage = totalRow/rowLength;
-        this.totalRow = totalRow;
-        this.page = page;
-        this.offSet = (page-1)*rowLength;
+//        this.totalRow = totalRow;
+//        this.page = page;
+//        this.offSet = (page-1)*rowLength;
+        this.offSet = 1;
     }
 }

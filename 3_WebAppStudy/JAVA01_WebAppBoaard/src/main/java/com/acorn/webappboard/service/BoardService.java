@@ -1,11 +1,13 @@
 package com.acorn.webappboard.service;
 
+import com.acorn.webappboard.Vo.PageVo;
 import com.acorn.webappboard.dto.BoardsDto;
 
 import java.util.List;
+import java.util.Map;
 
 public interface BoardService {
-    List<BoardsDto> boardlist(String queryString) throws Exception; // 리스트 보기(쿼리스트링 반영)
+    List<BoardsDto> boardlist(Map queryString) throws Exception; // 리스트 보기(쿼리스트링 반영)
     /*
 
     서블릿에서 : queryString = req.getQueryString() 만들어서 Boardservice.boardList(queryString) 호출
@@ -17,12 +19,11 @@ public interface BoardService {
     pageVo에서는??(2) BoardDao.findBySearch에서 sql작성시 필요한 필드들을 정의해준다.
 
      */
-    BoardsDto detail(int bId) throws Exception; // 상세보기+이미지리스트+조회수+댓글리스트(대댓글+좋아요) + 좋아요...
-    int register(BoardsDto board) throws Exception; // 이미지리스트 수정(등록,삭제) PRIVATE으로 상태만 바꾸는 것..
+    BoardsDto detail(int bId) throws Exception; // 상세보기+이미지리스트+조회수+댓글리스트(대댓글+좋아요) + 좋아요
+    int register(BoardsDto board) throws Exception; // 이미지리스트 수정(등록,삭제) PRIVATE으로 상태만 바꾸는 것
     int modify(BoardsDto board) throws Exception; // 이미지 리스트 등록
     int remove(int bId) throws Exception; // 이미지 리스트가 참조하는 서버에 저장된 이미지들 삭제
 
-    //기획이 어려운 사람들은.. 다른 프로젝트를 참고해라...
 
 
 
