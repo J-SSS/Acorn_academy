@@ -1,15 +1,13 @@
 package com.acorn.webappboard.controller;
 
 import com.acorn.webappboard.dto.UsersDto;
+import com.acorn.webappboard.lib.AESEncryption;
 import com.acorn.webappboard.service.UsersService;
 import com.acorn.webappboard.service.UsersServiceImp;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet("/users/login.do")
@@ -35,18 +33,66 @@ public class UsersLoginController extends HttpServlet {
         req.setCharacterEncoding("UTF-8");
         String uId=req.getParameter("u_id");
         String pw=req.getParameter("pw");
+        String autoLogin=req.getParameter("autoLogin");
+        String modalMsg = "";
+        String errMsg = null;
         UsersDto loginUser=null;
+
         try {
             UsersService usersService=new UsersServiceImp();
             loginUser=usersService.login(uId,pw);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.getMessage();
+            errMsg=e.getMessage();
         }
         //resp.getWriter().println(loginUser);
         //http Session : 인증같은 서비스를 위해 서버에 저장하는 객체 (쿠키로 클라이언트 아이디[JSESSIONID]와 만료시간(30분)을 지정)
         //요청이 들어온 클라이언트와 대응되는 session 이 있다면 요청정보에 담아준다.(없으면 새로 만들어 담아준다.)
         HttpSession session=req.getSession(); //session 의 타입은 Map 과 동일
-        session.setAttribute("loginUser",loginUser);
-        resp.sendRedirect(req.getContextPath()); // index.jsp 를 root 경로로 지정해 놓았다
+        if(loginUser!=null){
+            if(autoLogin!=null && autoLogin.equals("1")){ //자동로그인용 쿠키 생성
+                //쿠키로 자동로그인 구현(login.do, logout.do를 제외한 요청에서 id와 pw 쿠키가 있으면 자동으로 로그인 시도함..
+                try {
+                    //u_id : user-1 => %!#!@#@!!@%
+                    //pw : 1234 => !%@#^#@$@dDASqwe
+                    String encryptedId= AESEncryption.encryptValue(loginUser.getUId());
+                    String encryptedPw= AESEncryption.encryptValue(loginUser.getPw());
+
+                    //쿠키 및 쿠키 지속시간 설정
+
+                    Cookie idCookie=new Cookie("AUTOLOGIN_UID",encryptedId);
+                    Cookie pwCookie=new Cookie("AUTOLOGIN_PW",encryptedPw);
+                    idCookie.setMaxAge(7*24*60*60);
+                    pwCookie.setMaxAge(7*24*60*60);
+
+                    //쿠키의 유효 url naver.com/users/login.do라고 해버리면 /users/에서만 작동하니까... "/"로 해줘야뎀
+                    idCookie.setPath(req.getContextPath());
+                    pwCookie.setPath(req.getContextPath());
+
+                    //쿠키는 클라이언트가 저장하는 정보라서 응답으로 보낸다...
+                    resp.addCookie(idCookie);
+                    resp.addCookie(pwCookie);
+
+                    modalMsg="자동";
+
+                } catch (Exception e) {
+                    session.setAttribute("actionMsg","일주일간 자동 로그인 실패 "+e.getMessage());
+                    e.printStackTrace();
+                }
+            }
+            modalMsg+="로그인 성공";
+            session.setAttribute("actionMsg",modalMsg);
+            session.setAttribute("loginUser",loginUser);
+            resp.sendRedirect(req.getContextPath()); // index.jsp 를 root 경로로 지정해 놓았다
+        }else {
+            if(errMsg!=null){
+                modalMsg = "db오류 다시 시도 " + errMsg;
+            } else {
+                modalMsg = "아이디나 비밀번호를 확인하세요!";
+            }
+
+            session.setAttribute("actionMsg","아이디와 패스워드를 확인하세요!");
+            resp.sendRedirect(req.getContextPath()+"/users/login.do");
+        }
     }
 }

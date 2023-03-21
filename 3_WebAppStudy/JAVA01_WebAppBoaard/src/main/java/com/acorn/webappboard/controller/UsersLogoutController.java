@@ -2,10 +2,7 @@ package com.acorn.webappboard.controller;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
 
 @WebServlet("/users/logout.do")
@@ -14,7 +11,16 @@ public class UsersLogoutController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session=req.getSession();
         //session.invalidate();//유효시간을 0으로한다. =>세션 삭제!
-        session.removeAttribute("loginUser");//세션 객체에 있는 로그인유저만 삭제~
+
+        Cookie[] cookies=req.getCookies();
+
+        for(Cookie c: cookies ){ //LOGIN_ID, LOGIN_PW
+            c.setMaxAge(7*24*60*60);
+            c.setPath(req.getContextPath()+"/model1");
+            resp.addCookie(c);
+        }
+
+        session.removeAttribute("loginUser");
         resp.sendRedirect(req.getContextPath()+"/");
     }
 }

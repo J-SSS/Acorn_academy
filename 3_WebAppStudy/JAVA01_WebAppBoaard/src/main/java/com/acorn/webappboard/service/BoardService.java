@@ -7,16 +7,18 @@ import java.util.List;
 import java.util.Map;
 
 public interface BoardService {
-    List<BoardsDto> boardlist(Map queryString) throws Exception; // 리스트 보기(쿼리스트링 반영)
+    List<BoardsDto> boardlist(PageVo pageVo) throws Exception; // 리스트 보기(쿼리스트링 반영)
     /*
 
-    서블릿에서 : queryString = req.getQueryString() 만들어서 Boardservice.boardList(queryString) 호출
+//    컨트롤러에서 : queryString = req.getQueryString() 만들어서 Boardservice.boardList(queryString) 호출
+//
+//    서비스에서(1) : pageVo에 넣기 위한 totalRow 필요 => BoardDao에다 count메서드를 만들어서 호출하고 결과값을 totalRow 변수로 만듦
+//    서비스에서(2) : totalRow와 queryString을 pageVo(totalRow, queryString)로 호출하고 그 결과물을 BoardDao.findBySearch...에 담기
+//
+//    pageVo에서는??(1) : 받아온 totalRow 랑, queryString에 담긴 page를 이용해서 페이지 수 파악하고...
+//    pageVo에서는??(2) BoardDao.findBySearch에서 sql작성시 필요한 필드들을 정의해준다.
 
-    서비스에서(1) : pageVo에 넣기 위한 totalRow 필요 => BoardDao에다 count메서드를 만들어서 호출하고 결과값을 totalRow 변수로 만듦
-    서비스에서(2) : totalRow와 queryString을 pageVo(totalRow, queryString)로 호출하고 그 결과물을 BoardDao.findBySearch...에 담기
-
-    pageVo에서는??(1) : 받아온 totalRow 랑, queryString에 담긴 page를 이용해서 페이지 수 파악하고...
-    pageVo에서는??(2) BoardDao.findBySearch에서 sql작성시 필요한 필드들을 정의해준다.
+    => 이렇게 하려다가 서비스 계층에서 pageVo를 생성하면 이걸 템플릿에 보낼수가 없는거같아서.. 컨트롤러에 다 넣었습니다
 
      */
     BoardsDto detail(int bId) throws Exception; // 상세보기+이미지리스트+조회수+댓글리스트(대댓글+좋아요) + 좋아요
