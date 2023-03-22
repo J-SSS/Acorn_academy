@@ -27,9 +27,9 @@
         <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Jsp File" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -64,53 +64,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "full.screen.before.presentation.mode": "false",
-    "javascript.nodejs.core.library.configured.version": "18.14.1",
-    "javascript.nodejs.core.library.typings.version": "18.14.1",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/JAVA01_WebAppBoaard/src/main/webapp/templates/users",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/node_modules/jest",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.customizations",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.1&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.1&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/JAVA01_WebAppBoaard/src/main/webapp/templates/users&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/node_modules/jest&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.customizations&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "660c6265-c106-43b8-9de6-7487b2a23436"
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;660c6265-c106-43b8-9de6-7487b2a23436&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\webapp\templates\users" />
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\java\com\acorn\webappboard" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\java\com\acorn\webappboard\service" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\java\com\acorn\webappboard\controller" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\webapp\public" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\WebAppTest\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\templates" />
@@ -120,10 +120,12 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.acorn.webappboard.lib" />
       <recent name="com.acorn.webappboard.dao" />
       <recent name="com.example.webapptest" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.acorn.webappboard.filter" />
       <recent name="com.acorn.webappboard.controller" />
       <recent name="com.example.webapptest" />
       <recent name="com.example.webapptest.servlet" />
@@ -139,17 +141,33 @@
     <option name="openRunningConfigInTab" value="true" />
   </component>
   <component name="RunManager" selected="Tomcat 서버.Tomcat 9.0.71">
-    <configuration name="BoardsDaoImpTest.findByBId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="AESEncryption2Test.decryptValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="JAVA01_WebAppBoard" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acorn.webappboard.dao.*" />
+          <option name="PATTERN" value="com.acorn.webappboard.lib.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.webappboard.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.dao.BoardsDaoImpTest" />
-      <option name="METHOD_NAME" value="findByBId" />
+      <option name="PACKAGE_NAME" value="com.acorn.webappboard.lib" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.lib.AESEncryption2Test" />
+      <option name="METHOD_NAME" value="decryptValue" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AESEncryption2Test.encryptValue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JAVA01_WebAppBoard" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acorn.webappboard.lib.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.acorn.webappboard.lib" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.lib.AESEncryption2Test" />
+      <option name="METHOD_NAME" value="encryptValue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -166,22 +184,6 @@
       <option name="PACKAGE_NAME" value="com.acorn.webappboard.dao" />
       <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.dao.BoardsDaoImpTest" />
       <option name="METHOD_NAME" value="findBySearchAndPaging" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardsDaoImpTest.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JAVA01_WebAppBoard" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.acorn.webappboard.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.webappboard.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.dao.BoardsDaoImpTest" />
-      <option name="METHOD_NAME" value="save" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -295,20 +297,20 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.AESEncryption2Test.decryptValue" />
+      <item itemvalue="JUnit.AESEncryption2Test.encryptValue" />
       <item itemvalue="JUnit.BoardsDaoImpTest.findBySearchAndPaging" />
-      <item itemvalue="JUnit.BoardsDaoImpTest.findByBId" />
-      <item itemvalue="JUnit.BoardsDaoImpTest.save" />
       <item itemvalue="JUnit.BoardsDaoImpTest.updateByPk" />
       <item itemvalue="Node.js.insert.js" />
       <item itemvalue="Tomcat 서버.Tomcat 9.0.71" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.AESEncryption2Test.decryptValue" />
+        <item itemvalue="JUnit.AESEncryption2Test.encryptValue" />
         <item itemvalue="Node.js.insert.js" />
         <item itemvalue="JUnit.BoardsDaoImpTest.updateByPk" />
         <item itemvalue="JUnit.BoardsDaoImpTest.findBySearchAndPaging" />
-        <item itemvalue="JUnit.BoardsDaoImpTest.save" />
-        <item itemvalue="JUnit.BoardsDaoImpTest.findByBId" />
       </list>
     </recent_temporary>
   </component>
@@ -401,6 +403,9 @@
       <workItem from="1679053750179" duration="502000" />
       <workItem from="1679271271020" duration="996000" />
       <workItem from="1679272379781" duration="12768000" />
+      <workItem from="1679301971636" duration="113000" />
+      <workItem from="1679357213825" duration="17243000" />
+      <workItem from="1679444439890" duration="14279000" />
     </task>
     <servers />
   </component>

@@ -41,6 +41,7 @@ public class UsersLoginController extends HttpServlet {
         try {
             UsersService usersService=new UsersServiceImp();
             loginUser=usersService.login(uId,pw);
+
         } catch (Exception e) {
             e.getMessage();
             errMsg=e.getMessage();
