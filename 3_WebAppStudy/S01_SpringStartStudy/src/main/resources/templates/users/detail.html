@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+</head>
+<body>
+<main class="container">
+    <h1 class="my-4">유저 상세</h1>
+    <p>아이디 : <strong th:text="${user.getUId()}"></strong></p>
+    <p>이름 : <strong th:text="${user.getName()}"></strong></p>
+    <p>가입일 : <strong th:text="${user.getPostTime()}"></strong></p>
+    <p>프로필 : <img class="img-thumbnail" style="width: 100px" src="${user.getImgPath()}"></p>
+    <p>핸드폰: <strong th:text="${user.getPhone()}"></strong></p>
+    <p>이메일 : <strong th:text="${user.getEmail()}"></strong></p>
+    <p>생일 : <strong th:text="${user.getBirth()}"></strong></p>
+    <p>성별 : <strong th:text="${user.getGender()}"></strong></p>
+    <p>주소 : <strong th:text="${user.getAddress()}"></strong></p>
+    <p>주소상세 : <strong th:text="${user.getDetailAddress()}"></strong></p>
+    <p>등급(상태) : <strong th:text="${user.getPermission()}"></strong></p>
+    <p><a th:href="@{'./update.do'(u_id=${user.getUId()})}">수정폼</a></p>
+</main>
+</body>
+</html>
