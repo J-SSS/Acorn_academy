@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="com.acorn.webappboard.dto.BoardsDto" %>
+<%@ page import="com.acorn.webappboard.Vo.PageVo" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -9,7 +10,9 @@
 <%@include file="/templates/headerNav.jsp"%>
 <%
     Object obj = request.getAttribute("boardsDtoList");
+    Object obj2= request.getAttribute("pageVO");
     List<BoardsDto> list = (List<BoardsDto>) obj;
+    PageVo pageVo = (PageVo) obj2;
 
     /*
     [
@@ -47,13 +50,17 @@
     </tbody>
 </table>
 
-<ul>
-    <li>첫 페이지 이동</li>
-    <li>전 페이지 이동</li>
-    <% for(BoardsDto board : list) { %>
+<ul class="pagination">
+    <li class="page-item">First</li>
+    <li>Prev</li>
+    <% for(int i = 0 ; i<10 ; i++) { %>
+
+    <li><a>페이지넘버</a></li>
+
+
     <%}%>
-    <li>후 페이지 이동</li>
-    <li>끝 페이지 이동</li>
+    <li>Next</li>
+    <li>Last</li>
 </ul>
 <%--<p><%=list%></p>--%>
 <%--<%%>--%>

@@ -1,31 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/AcornRemoteStudy2/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/AcornRemoteStudy2/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/GitWebStudy/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/GitWebStudy/src/main/resources" charset="UTF-8" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
     <file url="file://$PROJECT_DIR$/JAVA01_WebAppBoaard/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/JAVA01_WebAppBoaard/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/JavaScriptStudy/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/JavaScriptStudy/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/JavaWebAppBoardModel2/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/JavaWebAppBoardModel2/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Test1/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Test1/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Test222/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Test222/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Test333/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/Test333/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebAppStudy/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebAppStudy/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebAppStudyTest/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebAppStudyTest/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/S01_SpringStartStudy/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/WebAppTest/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebAppTest/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebTest/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/WebTest/src/main/resources" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/webApp/src/main/java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/webApp/src/main/resources" charset="UTF-8" />
   </component>
 </project>

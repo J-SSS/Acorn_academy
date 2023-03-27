@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acorn.s02_springboardstudy.mapper.BoardMapper">
+    <resultMap id="BoardMap" type="BoardDto">
+        <id column="b_id" property="bId"/>
+        <result column="content" property="content"/>
+        <result column="title" property="title"/>
+        <result column="u_id" property="uId"/>
+        <result column="post_time" property="postTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="status" property="status"/>
+        <result column="view_count" property="viewCount"/>
+
+    </resultMap>
+<!--    resultmap에서 서브쿼리나 1:n도 작성할수있음-->
+<!--    SELECT LAST_INSERT_ID : auto increment로 방금 생성된 id-->
+<!--    useGeneratedKeys="true" : auto_increment로 pk를 생성하느냐??
+        keyProperty="bId" : BoartDto에 auto increment생성된 키를 반환하겠다.
+
+-->
+    <insert useGeneratedKeys="true" keyProperty="bId"  id="insertOne" parameterType="BoardDto">
+        INSERT INTO boards (u_id, title, content) VALUE (#{uId},#{title},#{content})
+    </insert>
+    <update id="updateOne" parameterType="BoardDto">
+        UPDATE boards SET title=#{title},content=#{content} WHERE b_id=#{bId}
+    </update>
+    <update id="updateStatusByBId">
+        UPDATE boards SET status=#{status} WHERE b_id=#{bId}
+    </update>
+    <delete id="deleteOne">
+    <!--    딜리트는 파라미터타입 없어도됨-->
+        DELETE FROM boards WHERE b_id=#{bId}
+    </delete>
+    <select id="findAll" resultMap="BoardMap">
+        SELECT *,b_id bId FROM boards
+    </select>
+    <select id="findByBId" resultMap="BoardMap">
+        SELECT * FROM boards WHERE b_id=#{bId}
+    </select>
+</mapper>

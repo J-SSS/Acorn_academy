@@ -9,11 +9,13 @@
 <body>
 <%@include file="/templates/headerNav.jsp"%>
 <%
-    Object obj = request.getAttribute("boardsDtoList");
-    Object obj2= request.getAttribute("pageVO");
-    List<BoardsDto> list = (List<BoardsDto>) obj;
-    PageVo pageVo = (PageVo) obj2;
+//    Object obj = request.getAttribute("boardsDtoList");
+//    Object obj2= request.getAttribute("pageVO");
+//    List<BoardsDto> list = (List<BoardsDto>) obj;
+//    PageVo pageVo = (PageVo) obj2;
 
+    List<BoardsDto> list2 = (List<BoardsDto>) request.getAttribute("boardsDtoList");
+    PageVo pageVo2 = (PageVo) request.getAttribute("pageVO");
     /*
     [
     BoardsDto(bId=3, uId=user03, postTime=2023-03-08 14:40:25.0, updateTime=2023-03-14 17:12:28.0, status=PUBLIC, title=게시글입니다, content=게시글입니다, viewCount=0),
