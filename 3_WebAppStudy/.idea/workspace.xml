@@ -10,8 +10,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.71/webapps/WebAppStudyTest_war/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.71/webapps/WebAppStudyTest_war/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.71/webapps/WebAppStudyTest_war/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.71/webapps/WebAppStudyTest_war/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../desktop.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../desktop.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -76,8 +74,8 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
     "full.screen.before.presentation.mode": "false",
-    "javascript.nodejs.core.library.configured.version": "18.14.1",
-    "javascript.nodejs.core.library.typings.version": "18.14.1",
+    "javascript.nodejs.core.library.configured.version": "18.14.2",
+    "javascript.nodejs.core.library.typings.version": "18.14.2",
     "jdk.selected.JAVA_MODULE": "17",
     "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/JAVA01_WebAppBoaard/src/main/webapp/templates/users",
     "list.type.of.created.stylesheet": "CSS",
@@ -401,6 +399,7 @@
       <workItem from="1679053750179" duration="502000" />
       <workItem from="1679271271020" duration="996000" />
       <workItem from="1679272379781" duration="12768000" />
+      <workItem from="1679324428375" duration="74000" />
     </task>
     <servers />
   </component>
