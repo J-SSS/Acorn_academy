@@ -13,11 +13,11 @@
         <li><a href="./model1/boardList.do">model1 boards 리스트</a></li>
         <li><a href="./model1/boardInsert.do">model1 boards 등록</a></li>
         <li><a href="./users/login.do">model2 users 로그인 폼</a></li>
-        <li><a href=""></a></li>
+        <li><a href="./boards/list.do">board list</a></li>
         <li><a href=""></a></li>
     </ul>
     <a href="hello-servlet">Hello Servlet</a>
-    
+
     <h2>톰캣과 Web App Server 와 Web App</h2>
     <ul>
         <li>Web App Server : 동적리소스를 반환하는 웹 서버</li>

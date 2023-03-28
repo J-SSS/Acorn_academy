@@ -6,7 +6,18 @@
 <body>
     <%@include file="/templates/headerNav.jsp"%>
     <main class="container">
-        <form name="signupForm" action="./signup.do" method="post" style="width: 500px;margin: 0 auto;">
+<%-- 파일을 파라미터로 전송하려면 어떻게 해야할까요??
+    default : form은 문자열 파라미터만 쿼리스트링(x-www-form-urlencoded) 전송(파일은 무시하고 파일 이름만 전송
+    multipart/form-data : form의 모든 데이터를 BLOB 바이너리 형식으로 전송(file ==BLOB)
+    톰캣 서블릿 : multipart/form-data를 처리할 수 없어서 cos.jar 라이버리를 사용했어야했다..
+    톰캣7, 서블릿 3.0 이상부터는 @MultipartConfig를 사용할 수 있다.
+
+    //enctype="application/x-www-form-urlencoded" default : 문자열인 데이터만 쿼리스트링으로 보낸다.(blob 데이터인 파일은 전송하지 않는다. )
+    //enctype="multipart/form-data" : 모든 데이터를 Blob 로 보낸다.(모든데이터를 파일로 취급)
+    //톰캣 blob 파라미터를 처리하기 위해서 cos jar 를 사용, express multer 를 사용
+
+--%>
+        <form name="signupForm" action="./signup.do" method="post" enctype="multipart/form-data" style="width: 500px;margin: 0 auto;">
             <h1 class="my-4">회원가입</h1>
             <p class="form-floating">
                 <input id="uIdInput" type="text" name="u_id" value="test_test1" class="form-control" placeholder="??">

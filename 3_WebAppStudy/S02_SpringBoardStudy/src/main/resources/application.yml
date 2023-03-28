@@ -1,0 +1,15 @@
+#.이 페이지에서 한글을 사용하려면 인텔리제이 설정-파일인코딩에서 utf-8로 바꿔야됨
+#Spring boot에서 mybatis가 포함되면 db접속인 DataSource를 컨테이너에서 생성하기 때문에 접속정보를 꼭 작성해야함
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/WebAppBoard
+    username: boardServerDev
+    password: mysql123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+server:
+  port: 8080
+mybatis:
+  type-aliases-package: com.acorn.s02_springboardstudy.dto
+  mapper-locations: mapper/*Mapper.xml
+

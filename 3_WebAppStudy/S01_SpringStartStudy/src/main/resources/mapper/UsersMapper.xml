@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--mapper는 어떤 인터페이스를 구현 할 것인지를 명시함-->
+<!--
+namespace경로의 id에 있는 findAll함수를 실행하면 resultType에 있는 dto형식으로 만들어짐
+-->
+
+<mapper namespace="com.acorn.s01_springstartstudy.mapper.UsersMapper">
+<!--    resultMap : DTO의 필드와 db테이블의 칼럼명이 다를 때 맵핑하기 위해 작성-->
+    <resultMap id="usersMap" type="com.acorn.s01_springstartstudy.dto.UsersDto">
+        <id column="u_Id" property="uId"/>
+        <result column="name" property="name"/>
+        <result column="pw" property="pw"/>
+        <result column="phone" property="phone"/>
+        <result column="img_path" property="imgPath"/>
+        <result column="email" property="email"/>
+        <result column="post_time" property="postTime"/>
+        <result column="birth" property="birth"/>
+        <result column="gender" property="gender"/>
+        <result column="address" property="address"/>
+        <result column="detail_Address" property="detailAddress"/>
+        <result column="permission" property="permission"/>
+
+    </resultMap>
+    <update id = "update" parameterType="com.acorn.s01_springstartstudy.dto.UsersDto">
+        UPDATE users set name = #{name}, pw = #{pw}, img_path = #{imgPath}, phone = #{phone}, email = #{email}, gender = #{gender},
+        address = #{address}, detail_address = #{detailAddress} WHERE u_id= #{uId}
+    </update>
+    <!--    resultType의 dto 필드명과 칼럼명이 같은 것을 자동으로 맵핑해짐-->
+<!--    <select id="findAll" resultType="com.acorn.s01_springstartstudy.dto.UsersDto">-->
+    <select id="findAll" resultMap="usersMap">
+        SELECT *, u_id uId FROM USERS
+    </select>
+    <select id="findByUId" resultType="com.acorn.s01_springstartstudy.dto.UsersDto">
+        SELECT *, u_id uId FROM USERS WHERE u_id = #{uId}
+    </select>
+</mapper>

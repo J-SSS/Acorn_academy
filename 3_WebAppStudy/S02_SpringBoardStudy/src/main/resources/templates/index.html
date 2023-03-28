@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Spring board</title>
+</head>
+<body>
+    <header th:include="headerNav.html"></header>
+    <main class="container">
+        <h1 class="my-4">Spring Boot(+Mybatis)로 댓글 게시판 만들기</h1>
+        <h2>maven vs gradle</h2>
+
+        <h2>객체지향(OOP)vs 관점지향 언어(Aspect-Oriented Programing)</h2>
+        <ul>
+            <li>객체지향 언어 : 필요할 때 객체를 생성 및 사용</li>
+            <li>관점지향 언어 : 사용할 객체를 관리(contaier or factory)만 하다가 필요한 곳에 주입(DI)</li>
+                관리만 하는게 컨테이너, 생성까지 해주면 팩토리
+            <li>객체지향 언어의 장점 : 코드 작성이 쉽고 흐름이 보인다.</li>
+            <li>관점지향 언어의 장점1 : 객체를 필요할 때 마다 생성하지 않기 때문에 메모리절약(서버환경에 유리)</li>
+            <li>관점지향 언어의 장점2 : 공통 관점으로 코드를 분리해서 중복 코드를 줄인다 (생산성 up, 유지보수 up)</li>
+            <li>관점지향 언어의 장점2 : 객체를 생성하는 코드가 없기 때문에 기능을 동적으로 추가하는 것이 유리하다</li>
+
+            <li>객체지향 언어의 단점 : 객체를 무분별하게 생성할 가능성이 높다</li>
+
+            <li>관점지향 언어의 단점 : 구현이 어렵고 흐름이 보이지 않는다..spring이 어려운 이유</li>
+            <li>관점지향 언어의 단점 : 관점지향을 구현하는 프레임워크에 의존적이다 </li>
+            <li></li>
+        </ul>
+        <h2>스프링과 관점지향 언어와 MVC 패턴</h2>
+        <ul>
+            <li>자바로 관점지향을 구현했기 때문에 객체지향 언어의 장점을 포함한다</li>
+            <li>스프링 컨테이너가 객체(@Component)를 관리하고 있다가 @Autowired로 정의된 필드에 주입(생성자) </li>
+            <li>객체를 주입 : Depencency Injection (DI)</li>
+            <li>@Controller : spring - web에서 관리하는 객체로 http 통신의 요청과 응답을 처리</li>
+            <li>@Service(Model) : db접속의 트랜잭션을 관리 </li>
+            <li>thymeleaf(템플릿 엔진) : src/resources/templates 하위의 html을 view로 렌더링 </li>
+        </ul>
+        <h2>spring-mybatis</h2>
+        <ul>
+            <li>mybatis : xml로 작성된 sql을 java객채로 맵핑</li>
+            <li>spring-mybatis : spring에서 mybatis를 사용할 수 있도록 최적화되어있고</li>
+                sql(session)을 객체로 생성 관리하는 컨테이너(session factiory)를 제공함
+            <li>Mapper 인터페이스 작성(@Mapper) : mybatis가 해당 인터페이스를 기반으로 sql을 java 객체를 맵핑하는 객체 생성</li>
+            <li>Mapper xml작성 및 인터페이스를 연결(namespace) : xml에 작성된 sql을 기반으로 객체 생성</li>
+            <li>** 사용할 곳에서 의존성 주입(DependencyInjection) 받기 : session factory가 </li>
+        </ul>
+    </main>
+
+
+</body>
+</html>

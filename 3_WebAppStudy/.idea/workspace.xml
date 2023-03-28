@@ -17,17 +17,40 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/S02_SpringBoardStudy">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Pug File" />
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="HTML File" />
-        <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Jsp File" />
+        <option value="spring-beans.schema" />
+        <option value="Tag Library Descriptor" />
+        <option value="HTML File" />
         <option value="Class" />
+        <option value="Interface" />
+        <option value="Mybatis Mapper" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -66,6 +89,10 @@
   "keyToString": {
     "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
     "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -77,7 +104,7 @@
     "javascript.nodejs.core.library.configured.version": "18.14.2",
     "javascript.nodejs.core.library.typings.version": "18.14.2",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/JAVA01_WebAppBoaard/src/main/webapp/templates/users",
+    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/S02_SpringBoardStudy/src/main/resources/static",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -89,7 +116,9 @@
     "project.structure.last.edited": "모듈",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.customizations",
+    "settings.build.tools.auto.reload": "SELECTIVE",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "0752e4c93d89fceb2b6e7dc026d66bef",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -104,13 +133,14 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\static" />
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S01_SpringStartStudy\src\main\resources\templates\users" />
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S01_SpringStartStudy\src\main\java\com\acorn\s01_springstartstudy" />
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S01_SpringStartStudy\src\main\resources\templates" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\webapp\templates\users" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\java\com\acorn\webappboard\service" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\java\com\acorn\webappboard\controller" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\webapp\public" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\WebAppTest\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\mapper" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\templates" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\JavaScriptStudy\src\main\webapp" />
     </key>
@@ -118,10 +148,13 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.acorn.s02_springboardstudy.mapper" />
+      <recent name="com.acorn.webappboard.lib" />
       <recent name="com.acorn.webappboard.dao" />
       <recent name="com.example.webapptest" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.acorn.webappboard.filter" />
       <recent name="com.acorn.webappboard.controller" />
       <recent name="com.example.webapptest" />
       <recent name="com.example.webapptest.servlet" />
@@ -136,73 +169,98 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Tomcat 서버.Tomcat 9.0.71">
-    <configuration name="BoardsDaoImpTest.findByBId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JAVA01_WebAppBoard" />
+  <component name="RunManager" selected="JUnit.BoardMapperTest.insertOne">
+    <configuration name="BoardMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acorn.webappboard.dao.*" />
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.webappboard.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.dao.BoardsDaoImpTest" />
+      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardMapperTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S02_SpringBoardStudy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardMapperTest" />
+      <option name="METHOD_NAME" value="findAll" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardMapperTest.findByBId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S02_SpringBoardStudy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardMapperTest" />
       <option name="METHOD_NAME" value="findByBId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardsDaoImpTest.findBySearchAndPaging" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JAVA01_WebAppBoard" />
+    <configuration name="BoardMapperTest.insertOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acorn.webappboard.dao.*" />
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.webappboard.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.dao.BoardsDaoImpTest" />
-      <option name="METHOD_NAME" value="findBySearchAndPaging" />
+      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardMapperTest" />
+      <option name="METHOD_NAME" value="insertOne" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardsDaoImpTest.save" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JAVA01_WebAppBoard" />
+    <configuration name="S02SpringBoardStudyApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acorn.webappboard.dao.*" />
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.webappboard.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.dao.BoardsDaoImpTest" />
-      <option name="METHOD_NAME" value="save" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.S02SpringBoardStudyApplicationTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardsDaoImpTest.updateByPk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JAVA01_WebAppBoard" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.acorn.webappboard.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.webappboard.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.webappboard.dao.BoardsDaoImpTest" />
-      <option name="METHOD_NAME" value="updateByPk" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="S01SpringStartStudyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="S01_SpringStartStudy" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acorn.s01_springstartstudy.S01SpringStartStudyApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="insert.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/JS03_ExpressJsStudy/public/js/emp/insert.js" working-dir="$PROJECT_DIR$/JS03_ExpressJsStudy/public/js/emp">
-      <method v="2" />
+    <configuration name="S02SpringBoardStudyApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="S02_SpringBoardStudy.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.acorn.s02_springboardstudy.S02SpringBoardStudyApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Tomcat 9.0.71" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.71" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/WebAppBoard" />
@@ -293,20 +351,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.BoardsDaoImpTest.findBySearchAndPaging" />
-      <item itemvalue="JUnit.BoardsDaoImpTest.findByBId" />
-      <item itemvalue="JUnit.BoardsDaoImpTest.save" />
-      <item itemvalue="JUnit.BoardsDaoImpTest.updateByPk" />
-      <item itemvalue="Node.js.insert.js" />
+      <item itemvalue="JUnit.BoardMapperTest" />
+      <item itemvalue="JUnit.BoardMapperTest.findByBId" />
+      <item itemvalue="JUnit.BoardMapperTest.insertOne" />
+      <item itemvalue="JUnit.S02SpringBoardStudyApplicationTests" />
+      <item itemvalue="JUnit.BoardMapperTest.findAll" />
+      <item itemvalue="Spring Boot.S02SpringBoardStudyApplication" />
+      <item itemvalue="Spring Boot.S01SpringStartStudyApplication" />
       <item itemvalue="Tomcat 서버.Tomcat 9.0.71" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.insert.js" />
-        <item itemvalue="JUnit.BoardsDaoImpTest.updateByPk" />
-        <item itemvalue="JUnit.BoardsDaoImpTest.findBySearchAndPaging" />
-        <item itemvalue="JUnit.BoardsDaoImpTest.save" />
-        <item itemvalue="JUnit.BoardsDaoImpTest.findByBId" />
+        <item itemvalue="JUnit.BoardMapperTest.insertOne" />
+        <item itemvalue="JUnit.BoardMapperTest.findByBId" />
+        <item itemvalue="JUnit.BoardMapperTest.findAll" />
+        <item itemvalue="JUnit.BoardMapperTest" />
+        <item itemvalue="JUnit.S02SpringBoardStudyApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -399,7 +459,17 @@
       <workItem from="1679053750179" duration="502000" />
       <workItem from="1679271271020" duration="996000" />
       <workItem from="1679272379781" duration="12768000" />
-      <workItem from="1679324428375" duration="74000" />
+      <workItem from="1679301971636" duration="113000" />
+      <workItem from="1679357213825" duration="17243000" />
+      <workItem from="1679444439890" duration="21844000" />
+      <workItem from="1679475588629" duration="570000" />
+      <workItem from="1679476386219" duration="1048000" />
+      <workItem from="1679530734923" duration="15771000" />
+      <workItem from="1679551057649" duration="8865000" />
+      <workItem from="1679565166814" duration="1314000" />
+      <workItem from="1679875584076" duration="13764000" />
+      <workItem from="1679893172134" duration="3035000" />
+
     </task>
     <servers />
   </component>

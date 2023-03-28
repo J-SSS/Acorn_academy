@@ -20,6 +20,12 @@
                 <input class="form-control" type="password" name="pw" value="1234">
                 <label>패스워드</label>
             </p>
+            <p class="form-check">
+                <label>
+                    <input class="form-check-input" type="checkbox" name="autoLogin" value="1">
+                    자동로그인
+                </label>
+            </p>
             <p class="text-end">
                 <a class="btn btn-outline-warning" href="./signup.do">회원가입</a>
                 <button class="btn btn-outline-primary">로그인</button>

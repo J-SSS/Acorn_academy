@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!--확장자는 html이지만 서버에서 렌더링(template engine)하는 동적페이지-->
+<!--
+spring boot 설정에서 /template폴더 하위에 있는 모든 html을 타임리프로 렌더링한다
+
+
+-->
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>안녕 스프링 부트1
+    <span th:text="1+7"></span>
+    </h1>
+    <p> 스프링 부트는 자바 웹앱을 MVC 패턴으로 개발하는 프레임워크입니다.</p>
+    <h2>spring-boot-devtools 개발자도그</h2>
+    <ul>
+        <li>spring 내부의 코드가 변경되면 서버 재시작 및 배포를 진행</li>
+        <li>크롬 브라우저와 소켓 통신을 하다가 서버 재시작을 하면 브라우저를 새로고침한다</li>
+        <li>인텔리제이에서 컴파일러 설정에 자동새로고침을 허용해줘야함</li>
+        <li>크롬 확장 프로그램에서 liveReload를 추가해야한다.</li>
+        <li>https://chrome.google.com/webstore/detail/livereload%2B%2B/ciehpookapcdlakedibajeccomagbfab/related?hl=ko</li>
+        <li>인텔리제이의 빌드-프로젝트 오토메틱 설정이 체크되어있는지 확인</li>
+    </ul>
+    <h2>spring-boot-start-web 웹앱을 개발하는 프레임워크 </h2>
+    <ul>
+        <li>tomcat(10.~)이 포함 (이클립스 재단에서 개발중인 jakarta)</li>
+        <li>톰캣의 서블릿에 해당하는 컨트롤러(@Controller)를 작성할 수 있음.(요청과 응답 처리)</li>
+        <li>컨트롤러를 작성할 때 꼭.. 처음 생성된 패키지 하위에다 작성해야한다...!!(componet-scan)</li>
+        <li>Jackson 라이브러리가 포함되어있어서 Json파싱을 편하게 할 수 있다...</li>
+        <li>RESTFull API를 제공.. 다양한 메서드(GET,POST,PUT,DELETE,PATCH), 패스의 파라미터 전송</li>
+        <li>
+            <a href="/sum.do?a=1&b=10">sum.do?a=1&b=10</a>
+        </li>
+        <li>
+            <a href="/mult.do?a=3&b=9">sum.do?a=1&b=10</a>
+        </li>
+
+    </ul>
+    <h2>spring-mybatis (session-factory)</h2>
+    <ul>
+        <li><a href="/users/list.do">DataSource를 이용한 JDBC 유저리스트</a></li>
+        <li><a href="/users/mybatisList.do">Mybatis 유저 리스트</a></li>
+    </ul>
+
+</body>
+</html>

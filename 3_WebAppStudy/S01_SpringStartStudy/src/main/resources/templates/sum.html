@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h1>
+    (파라미터로)sum.do a+b=
+    <span th:text="${#strings.concat(param.a,param.b)}+${param.b}"></span>
+  </h1>
+  <p>param : 타임리프가 뷰를 렌더링하면서 쿼리스트링을 String 객체로 변경</p>
+
+  <h1>
+    (티임리프의 변수로)sum.do a+b=
+    <span th:text="${a}+${b}"></span>
+  </h1>
+  <p>attribute로 보내주면... : 컨트롤러에서 타임리프를 렌더링 할 때 model로 전달한 객체 = 변수로만들어줌</p>
+  <p>컨트롤러에서 파라미터를 받아온경우, 타임리프에서 파라미터와 같은 이름의 매개변수를 쓰면 된다</p>
+        만약, 형 변환 불가한경우 오류가 뜬다...
+        sum.do?a=10&b=백 이라고 쓰면 sum 메소드에 자동으로 매칭이 안되니까 오류남..
+
+</body>
+</html>

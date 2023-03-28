@@ -21,10 +21,11 @@ public class BoardServiceImp implements BoardService{
     }
 
     @Override
-    public List<BoardsDto> boardlist(Map queryString) throws Exception {
-        int totalRow = boardsDao.countAll();
-        PageVo pageVo = new PageVo(queryString, totalRow);
+    public List<BoardsDto> boardlist(PageVo pageVo) throws Exception {
         return boardsDao.findBySearchAndPaging(pageVo);
+    }
+    public int countRow() throws Exception {
+        return boardsDao.countAll();
     }
 
     @Override

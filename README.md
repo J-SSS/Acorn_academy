@@ -1,17 +1,28 @@
 ---
-# 📌 TIL : Things_I_Love
-- #### 개인적으로 공부한 내용들을 주제별로 정리한 저장소입니다.
+# 📌 Acorn_Academy (2022.11 ~ 2023. 04)
+- #### [스마트 웹&앱을 활용한 IoT통합 솔루션 개발자 과정] 교육 내용 저장 공간입니다.
 - #### 항목을 클릭하면 각 주제에 대한 간단한 설명을 보실 수 있습니다.
 ---
 <details>
 <summary>
-<h2> 01. HTML&CSS (22年 11月 ~ 12月)<h2>
+<h2> 04. JAVA Spring (23年 3月 ~ 23年 4月)<h2>
 </summary>
 
-#### 📁 01_HTML&CSS 
-메모장으로 작성하는 .html부터 시작하여 HTML과 CSS의 기본적인 개념과 기능에 대한 전반적인 학습을 하였습니다.
+#### 📁 2_ JAVA
+내용입력내용입력
 <br><br><br><br><br>  
 </details>
+
+<details>
+<summary>
+<h2> 03. JavaScript += Node.js & Express (23年 1月 ~ 23年 3月)<h2>
+</summary>
+
+#### 📁 2_ JAVA
+내용입력내용입력
+<br><br><br><br><br>  
+</details>
+
 
 <details>
 <summary>
@@ -23,28 +34,16 @@
 <br><br><br><br><br>  
 </details>
 
-<details>
-<summary>
-<h2> 03. JavaScript ➕🟰 Node.js & Express (23年 1月 ~ 23年 3月)<h2>
-</summary>
-
-#### 📁 2_ JAVA
-내용입력내용입력
-<br><br><br><br><br>  
-</details>
 
 <details>
 <summary>
-<h2> 04. JAVA Spring (23年 3月 ~ 23年 4月)<h2>
+<h2> 01. HTML&CSS (22年 11月 ~ 12月)<h2>
 </summary>
 
-#### 📁 2_ JAVA
-내용입력내용입력
+#### 📁 01_HTML&CSS 
+메모장으로 작성하는 .html부터 시작하여 HTML과 CSS의 기본적인 개념과 기능에 대한 전반적인 학습을 하였습니다.
 <br><br><br><br><br>  
 </details>
-
- 
-
 
 <!--
 

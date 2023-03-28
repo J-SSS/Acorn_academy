@@ -7,14 +7,20 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="GitWebStudy" />
         <module name="JavaScriptStudy" />
-        <module name="JAVA01_WebAppBoard" />
+        <module name="GitWebStudy" />
+        <module name="S01_SpringStartStudy" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.26/8f8cf0372abf564913e9796623aac4c8ea44025a/lombok-1.18.26.jar" />
+        </processorPath>
+        <module name="S02_SpringBoardStudy.main" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="GitWebStudy" target="1.8" />
-      <module name="JAVA01_WebAppBoard" target="1.8" />
       <module name="JavaScriptStudy" target="1.8" />
       <module name="Test1" target="1.8" />
       <module name="Test222" target="1.8" />
@@ -25,5 +31,10 @@
       <module name="WebAppTest" target="1.8" />
       <module name="WebTest" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="S01_SpringStartStudy" options="-parameters" />
+    </option>
   </component>
 </project>
