@@ -10,12 +10,22 @@
         <result column="update_time" property="updateTime"/>
         <result column="status" property="status"/>
         <result column="view_count" property="viewCount"/>
-
+        <association property="user"
+                     select="com.acorn.s02_springboardstudy.mapper.UserMapper.findByUId"
+                    fetchType="lazy"/>
+        <collection property="replies"
+        select="com.acorn.s02_springboardstudy.mapper.BoardReplyMapper.findByBIdAndParentBrIdIsNull"
+        column="b_id"
+        fetchType="lazy"></collection>
     </resultMap>
+<!--    fetch=laze 지연로딩.. 호출할 때 (트리거(get,toString)) 조회-->
+<!--    fetch=eager : 즉시조회 (호출이 없어도 조회 join-->
 <!--    resultmap에서 서브쿼리나 1:n도 작성할수있음-->
 <!--    SELECT LAST_INSERT_ID : auto increment로 방금 생성된 id-->
 <!--    useGeneratedKeys="true" : auto_increment로 pk를 생성하느냐??
         keyProperty="bId" : BoartDto에 auto increment생성된 키를 반환하겠다.
+        Select="namespace.id" : resultMap으로 조회할 때 해당 필드를 다른 내역을 조회해서 파싱
+        column="b_id : 조회할 때 사용할 파라미터 값
 
 -->
     <insert useGeneratedKeys="true" keyProperty="bId"  id="insertOne" parameterType="BoardDto">

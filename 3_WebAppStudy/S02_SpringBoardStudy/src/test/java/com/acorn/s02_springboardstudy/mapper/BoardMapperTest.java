@@ -1,6 +1,7 @@
 package com.acorn.s02_springboardstudy.mapper;
 
 import com.acorn.s02_springboardstudy.dto.BoardDto;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,6 +19,7 @@ class BoardMapperTest {
     @Test
     void findAll() {
         List<BoardDto> boardList=boardMapper.findAll();
+        Assertions.assertNotNull(boardList);
         System.out.println("boardList = " + boardList);
     }
 
@@ -25,6 +27,7 @@ class BoardMapperTest {
     void findByBId() {
         BoardDto boardDto=boardMapper.findByBId(6);
         System.out.println("boardDto = " + boardDto);
+        Assertions.assertNotNull(boardDto);
     }
 
     @Test
@@ -43,6 +46,13 @@ class BoardMapperTest {
 
     @Test
     void updateOne() {
+        BoardDto board = new BoardDto();
+        board.setTitle("보드 등록 테스트 안녕!");
+        board.setBId(6);
+        board.setContent("수정되었습니다...!");
+        int update = boardMapper.updateOne(board);
+        Assertions.assertEquals(update,1); //수정성공
+        System.out.println("update = " + update);;
     }
 
     @Test
@@ -51,5 +61,10 @@ class BoardMapperTest {
 
     @Test
     void updateStatusByBId() {
+
+        int update = boardMapper.updateStatusByBId("PRIVATE",6);
+        Assertions.assertEquals(update,1); //수정성공
+        BoardDto updateBoard=boardMapper.findByBId(6);
+        System.out.println("update = " + updateBoard);;
     }
 }
