@@ -47,10 +47,10 @@
         <option value="spring-beans.schema" />
         <option value="Tag Library Descriptor" />
         <option value="HTML File" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Interface" />
         <option value="Mybatis Mapper" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -169,7 +169,28 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.BoardImgMapperTest.findByBId">
+  <component name="RunManager" selected="Spring Boot.S02SpringBoardStudyApplication">
+    <configuration name="S02_SpringBoardStudy [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/S02_SpringBoardStudy" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <configuration name="S02_SpringBoardStudy" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -189,6 +210,21 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="BoardImgMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="S02_SpringBoardStudy.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardImgMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="BoardImgMapperTest.findByBId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
@@ -205,7 +241,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardMapperTest.findByBId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardMapperTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
@@ -215,39 +251,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
       <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardMapperTest" />
-      <option name="METHOD_NAME" value="findByBId" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BoardReplyMapperTest.findByBIdAndParentBrIdIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="S02_SpringBoardStudy.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardReplyMapperTest" />
-      <option name="METHOD_NAME" value="findByBIdAndParentBrIdIsNull" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserMapperTest.findByUId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="S02_SpringBoardStudy.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.UserMapperTest" />
-      <option name="METHOD_NAME" value="findByUId" />
+      <option name="METHOD_NAME" value="findAll" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -356,22 +360,22 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Gradle.S02_SpringBoardStudy [dependencies]" />
       <item itemvalue="Gradle.S02_SpringBoardStudy" />
+      <item itemvalue="JUnit.BoardImgMapperTest" />
+      <item itemvalue="JUnit.BoardMapperTest.findAll" />
       <item itemvalue="JUnit.BoardImgMapperTest.findByBId" />
-      <item itemvalue="JUnit.BoardReplyMapperTest.findByBIdAndParentBrIdIsNull" />
-      <item itemvalue="JUnit.UserMapperTest.findByUId" />
-      <item itemvalue="JUnit.BoardMapperTest.findByBId" />
       <item itemvalue="Spring Boot.S02SpringBoardStudyApplication" />
       <item itemvalue="Spring Boot.S01SpringStartStudyApplication" />
       <item itemvalue="Tomcat 서버.Tomcat 9.0.71" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.BoardMapperTest.findAll" />
+        <item itemvalue="JUnit.BoardImgMapperTest" />
+        <item itemvalue="Gradle.S02_SpringBoardStudy [dependencies]" />
         <item itemvalue="JUnit.BoardImgMapperTest.findByBId" />
         <item itemvalue="Gradle.S02_SpringBoardStudy" />
-        <item itemvalue="JUnit.BoardMapperTest.findByBId" />
-        <item itemvalue="JUnit.UserMapperTest.findByUId" />
-        <item itemvalue="JUnit.BoardReplyMapperTest.findByBIdAndParentBrIdIsNull" />
       </list>
     </recent_temporary>
   </component>
@@ -477,7 +481,8 @@
       <workItem from="1679964768523" duration="2074000" />
       <workItem from="1679967585772" duration="6523000" />
       <workItem from="1680048803662" duration="11126000" />
-      <workItem from="1680060908349" duration="604000" />
+      <workItem from="1680060908349" duration="905000" />
+      <workItem from="1680064087387" duration="6524000" />
     </task>
     <servers />
   </component>

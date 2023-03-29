@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.acorn.s02_springboardstudy.mapper.BoardLikeMapper">
+    <insert id="insertOne" parameterType="boardLikeDto">
+        INSERT INTO board_likes (b_id, u_id, status) VALUE (#{bId}, #{uId}, #{status})
+    </insert>
+    <update id="updateOne" parameterType="boardLikeDto">
+        UPDATE board_likes SET status=#{status} WHERE u_id=#{uId} AND b_id=#{bId}
+    </update>
+    <delete id="deleteOne">
+        DELETE FROM board_likes WHERE u_id=#{uId} AND b_id=#{bId}
+    </delete>
+
+    <select id="countStatusByBId" resultType="LikeStatusCntDto">
+        SELECT
+            count(CASE WHEN status ='like' THEN 1 END) as 'like',
+            count(CASE WHEN status ='sad' THEN 1 END) as 'sad',
+            count(CASE WHEN status ='best' THEN 1 END) as 'best',
+            count(CASE WHEN status ='bad' THEN 1 END) as 'bad'
+            FROM board_likes
+            WHERE b_id={bId}
+    </select>
+    <select id="countStatusByUId" resultType="LikeStatusCntDto">
+        SELECT
+            count(CASE WHEN status ='like' THEN 1 END) as 'like',
+                count(CASE WHEN status ='sad' THEN 1 END) as 'sad',
+                count(CASE WHEN status ='best' THEN 1 END) as 'best',
+                count(CASE WHEN status ='bad' THEN 1 END) as 'bad'
+        FROM board_likes
+        WHERE u_id={uId}
+    </select>
+</mapper>

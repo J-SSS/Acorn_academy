@@ -10,6 +10,8 @@
         <result column="update_time" property="updateTime"/>
         <result column="status" property="status"/>
         <result column="view_count" property="viewCount"/>
+
+
         <association property="user"
                      select="com.acorn.s02_springboardstudy.mapper.UserMapper.findByUId"
                     fetchType="lazy"/>
