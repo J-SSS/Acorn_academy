@@ -85,59 +85,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "full.screen.before.presentation.mode": "false",
-    "javascript.nodejs.core.library.configured.version": "18.14.2",
-    "javascript.nodejs.core.library.typings.version": "18.14.2",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/S02_SpringBoardStudy/src/main/resources/static",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/node_modules/jest",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "모듈",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.build.tools.auto.reload": "SELECTIVE",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "spring.configuration.checksum": "0752e4c93d89fceb2b6e7dc026d66bef",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.2&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.2&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/Acorn_academy/3_WebAppStudy/S02_SpringBoardStudy/src/main/java/com/acorn/s02_springboardstudy/dto&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/node_modules/jest&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.build.tools.auto.reload&quot;: &quot;SELECTIVE&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;eadd11cace05804dd1e6d3ec70fd9610&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ],
-    "RunConfigurationTargetLRU": [
-      "660c6265-c106-43b8-9de6-7487b2a23436"
+    &quot;RunConfigurationTargetLRU&quot;: [
+      &quot;660c6265-c106-43b8-9de6-7487b2a23436&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\java\com\acorn\s02_springboardstudy\dto" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\static" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S01_SpringStartStudy\src\main\resources\templates\users" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S01_SpringStartStudy\src\main\java\com\acorn\s01_springstartstudy" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S01_SpringStartStudy\src\main\resources\templates" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\JAVA01_WebAppBoaard\src\main\webapp\templates\users" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\mapper" />
@@ -169,23 +169,27 @@
     </option>
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="JUnit.BoardMapperTest.insertOne">
-    <configuration name="BoardMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="S02_SpringBoardStudy.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardMapperTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+  <component name="RunManager" selected="JUnit.BoardImgMapperTest.findByBId">
+    <configuration name="S02_SpringBoardStudy" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/S02_SpringBoardStudy" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list />
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
     </configuration>
-    <configuration name="BoardMapperTest.findAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardImgMapperTest.findByBId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
@@ -194,8 +198,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardMapperTest" />
-      <option name="METHOD_NAME" value="findAll" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardImgMapperTest" />
+      <option name="METHOD_NAME" value="findByBId" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -217,7 +221,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BoardMapperTest.insertOne" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="BoardReplyMapperTest.findByBIdAndParentBrIdIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
@@ -226,24 +230,25 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardMapperTest" />
-      <option name="METHOD_NAME" value="insertOne" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.BoardReplyMapperTest" />
+      <option name="METHOD_NAME" value="findByBIdAndParentBrIdIsNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="S02SpringBoardStudyApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="UserMapperTest.findByUId" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acorn.s02_springboardstudy.*" />
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy" />
-      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.S02SpringBoardStudyApplicationTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="com.acorn.s02_springboardstudy.mapper" />
+      <option name="MAIN_CLASS_NAME" value="com.acorn.s02_springboardstudy.mapper.UserMapperTest" />
+      <option name="METHOD_NAME" value="findByUId" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -351,22 +356,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.BoardMapperTest" />
+      <item itemvalue="Gradle.S02_SpringBoardStudy" />
+      <item itemvalue="JUnit.BoardImgMapperTest.findByBId" />
+      <item itemvalue="JUnit.BoardReplyMapperTest.findByBIdAndParentBrIdIsNull" />
+      <item itemvalue="JUnit.UserMapperTest.findByUId" />
       <item itemvalue="JUnit.BoardMapperTest.findByBId" />
-      <item itemvalue="JUnit.BoardMapperTest.insertOne" />
-      <item itemvalue="JUnit.S02SpringBoardStudyApplicationTests" />
-      <item itemvalue="JUnit.BoardMapperTest.findAll" />
       <item itemvalue="Spring Boot.S02SpringBoardStudyApplication" />
       <item itemvalue="Spring Boot.S01SpringStartStudyApplication" />
       <item itemvalue="Tomcat 서버.Tomcat 9.0.71" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BoardMapperTest.insertOne" />
+        <item itemvalue="JUnit.BoardImgMapperTest.findByBId" />
+        <item itemvalue="Gradle.S02_SpringBoardStudy" />
         <item itemvalue="JUnit.BoardMapperTest.findByBId" />
-        <item itemvalue="JUnit.BoardMapperTest.findAll" />
-        <item itemvalue="JUnit.BoardMapperTest" />
-        <item itemvalue="JUnit.S02SpringBoardStudyApplicationTests" />
+        <item itemvalue="JUnit.UserMapperTest.findByUId" />
+        <item itemvalue="JUnit.BoardReplyMapperTest.findByBIdAndParentBrIdIsNull" />
       </list>
     </recent_temporary>
   </component>
@@ -469,7 +474,10 @@
       <workItem from="1679565166814" duration="1314000" />
       <workItem from="1679875584076" duration="13764000" />
       <workItem from="1679893172134" duration="3035000" />
-
+      <workItem from="1679964768523" duration="2074000" />
+      <workItem from="1679967585772" duration="6523000" />
+      <workItem from="1680048803662" duration="11126000" />
+      <workItem from="1680060908349" duration="604000" />
     </task>
     <servers />
   </component>

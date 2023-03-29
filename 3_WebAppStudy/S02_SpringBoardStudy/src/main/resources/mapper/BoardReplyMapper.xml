@@ -11,35 +11,29 @@
         <result property="imgPath" column="img_path"/>
         <result property="status" column="status"/>
         <result property="content" column="content"/>
-
     </resultMap>
-    <!--
-    resultMap.collection : 1:N관계일 때(리스트)
-    resultMap.assocication : N:1 혹은 1:1 관계일 때
-    SELECT LAST_INSERT_ID : auto increment로 방금 생성된 id
-    useGeneratedKeys="true" : auto_increment로 pk를 생성하느냐?
-    keyProperty="bId" : BoardDto에 auto inncrement생성된 키를 반환하겠다
-    -->
-
-
-    <insert id="insertOne" parameterType="boardReplyDto">
-        INSERT INTO board_replies (b_id, u_id, parent_br_id, img_path, content)
-            VALUE (#{bId}, #{uId},#{parentBrId}, #{imgPath}, #{content})
+    <insert id="insertOne" parameterType="BoardReplyDto">
+        INSERT INTO board_replies
+            (b_id, u_id, parent_br_id, img_path, content) VALUE
+            (#{bId}, #{uId}, #{parentBrId}, #{imgPath}, #{content})
     </insert>
     <update id="updateOne" parameterType="BoardReplyDto">
-        UPDATE board_replies SET img_path=#{imgPath}, content=#{content}
-            WHERE br_id=#{brId}
+        UPDATE board_replies
+        SET img_path=#{imgPath},content=#{content}
+        WHERE br_id=#{brId}
     </update>
     <delete id="deleteOne">
-        DELETE FROM board_replies WHERE br_id=#{brId}
+        DELETE FROM board_replies
+        WHERE br_id=#{brId}
     </delete>
     <select id="findByBIdAndParentBrIdIsNull" resultMap="BoardReplyMap">
         SELECT * FROM board_replies WHERE parent_br_id IS NULL AND b_id=#{bId}
     </select>
-    <select id="findByParentBrId" resultMap="BoardReplyMap">
+    <select id="findByParentBrId"  resultMap="BoardReplyMap">
         SELECT * FROM board_replies WHERE parent_br_id=#{brId}
     </select>
     <select id="findByBrId" resultMap="BoardReplyMap">
         SELECT * FROM board_replies WHERE br_id=#{brId}
+
     </select>
 </mapper>

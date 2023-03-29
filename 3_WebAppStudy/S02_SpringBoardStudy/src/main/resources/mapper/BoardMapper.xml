@@ -14,9 +14,13 @@
                      select="com.acorn.s02_springboardstudy.mapper.UserMapper.findByUId"
                     fetchType="lazy"/>
         <collection property="replies"
-        select="com.acorn.s02_springboardstudy.mapper.BoardReplyMapper.findByBIdAndParentBrIdIsNull"
-        column="b_id"
-        fetchType="lazy"></collection>
+                    select="com.acorn.s02_springboardstudy.mapper.BoardReplyMapper.findByBIdAndParentBrIdIsNull"
+                    column="b_id"
+                    fetchType="lazy"/>
+        <collection property="img"
+                    select="com.acorn.s02_springboardstudy.mapper.BoardImgMapper.findByBId"
+                    column="b_id"
+                    fetchType="lazy"/>
     </resultMap>
 <!--    fetch=laze 지연로딩.. 호출할 때 (트리거(get,toString)) 조회-->
 <!--    fetch=eager : 즉시조회 (호출이 없어도 조회 join-->
@@ -41,8 +45,11 @@
     <!--    딜리트는 파라미터타입 없어도됨-->
         DELETE FROM boards WHERE b_id=#{bId}
     </delete>
+<!--    <select id="findAll" resultMap="BoardMap">-->
+<!--        SELECT *,b_id bId FROM boards-->
+<!--    </select>-->
     <select id="findAll" resultMap="BoardMap">
-        SELECT *,b_id bId FROM boards
+        SELECT *,b_id bId FROM boards LEFT JOIN board_imgs USING (b_id)
     </select>
     <select id="findByBId" resultMap="BoardMap">
         SELECT * FROM boards WHERE b_id=#{bId}

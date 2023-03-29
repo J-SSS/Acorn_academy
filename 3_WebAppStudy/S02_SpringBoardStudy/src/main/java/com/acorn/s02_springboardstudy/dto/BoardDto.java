@@ -15,8 +15,9 @@ public class BoardDto {
     private String title;
     private String content;
     private int viewCount;
-    private List<BoardReplyDto> replies;// 1:N = boards : board_replies
     private UserDto user; // N:1 = boards : user
+    private List<BoardReplyDto> replies;// 1:N = boards : board_replies
+    private List<BoardImgDto> img; // 1:N = boards : board_imgs
 
 
 }
