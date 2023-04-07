@@ -30,13 +30,15 @@
 </summary>
 
 #### 📁 2_ JAVA(note & review)
-###### 기본개념
+#### 1. 기본개념
 - 변수, 타입(기본형과 자료형)
 - Input과 output (Scanner, BufferedReader, System.out.*)
 - 연산자(단항, 이항, 삼항)
 - 조건문과 반복문 If, Switch, For, While
-- 배열
-- 메서드
+- 배열 구조와 사용법
+- 여러가지 형태의 메서드
+#### 2. 객체 지향 문법
+#### 3. 심화(util 라이브러리 등)
 <br><br><br><br><br>  
 </details>
 
