@@ -10,50 +10,49 @@
         <result column="update_time" property="updateTime"/>
         <result column="status" property="status"/>
         <result column="view_count" property="viewCount"/>
-
-
+        <result column="login_user_like_status" property="loginUserLikeStatus"/>
+        <!--  column : 조회 결과의 로우 중의 내역 (파라미터를 전달할 수 없다.)    -->
+        <association property="likes"
+                     select="com.acorn.s02_springboardstudy.mapper.BoardLikeMapper.countStatusByBId"
+                     column="b_id"
+                     fetchType="eager"/>
         <association property="user"
-                     select="com.acorn.s02_springboardstudy.mapper.UserMapper.findByUId"
+                    select="com.acorn.s02_springboardstudy.mapper.UserMapper.findByUId"
+                    column="u_id"
                     fetchType="lazy"/>
         <collection property="replies"
                     select="com.acorn.s02_springboardstudy.mapper.BoardReplyMapper.findByBIdAndParentBrIdIsNull"
                     column="b_id"
                     fetchType="lazy"/>
-        <collection property="img"
+        <collection property="imgs"
                     select="com.acorn.s02_springboardstudy.mapper.BoardImgMapper.findByBId"
                     column="b_id"
                     fetchType="lazy"/>
     </resultMap>
-<!--    fetch=laze 지연로딩.. 호출할 때 (트리거(get,toString)) 조회-->
-<!--    fetch=eager : 즉시조회 (호출이 없어도 조회 join-->
-<!--    resultmap에서 서브쿼리나 1:n도 작성할수있음-->
-<!--    SELECT LAST_INSERT_ID : auto increment로 방금 생성된 id-->
-<!--    useGeneratedKeys="true" : auto_increment로 pk를 생성하느냐??
-        keyProperty="bId" : BoartDto에 auto increment생성된 키를 반환하겠다.
-        Select="namespace.id" : resultMap으로 조회할 때 해당 필드를 다른 내역을 조회해서 파싱
-        column="b_id : 조회할 때 사용할 파라미터 값
-
--->
-    <insert useGeneratedKeys="true" keyProperty="bId"  id="insertOne" parameterType="BoardDto">
+    <insert useGeneratedKeys="true" keyProperty="bId" id="insertOne" parameterType="BoardDto">
         INSERT INTO boards (u_id, title, content) VALUE (#{uId},#{title},#{content})
     </insert>
     <update id="updateOne" parameterType="BoardDto">
         UPDATE boards SET title=#{title},content=#{content} WHERE b_id=#{bId}
     </update>
-    <update id="updateStatusByBId">
+    <update id="updateStatusByBId" parameterType="BoardDto">
         UPDATE boards SET status=#{status} WHERE b_id=#{bId}
     </update>
+    <update id="updateIncrementViewCountBId">
+        UPDATE boards SET view_count=( view_count+1 ) WHERE b_id=#{bId}
+    </update>
     <delete id="deleteOne">
-    <!--    딜리트는 파라미터타입 없어도됨-->
         DELETE FROM boards WHERE b_id=#{bId}
     </delete>
-<!--    <select id="findAll" resultMap="BoardMap">-->
-<!--        SELECT *,b_id bId FROM boards-->
-<!--    </select>-->
     <select id="findAll" resultMap="BoardMap">
-        SELECT *,b_id bId FROM boards LEFT JOIN board_imgs USING (b_id)
+        SELECT *
+             <if test="#{loginUserId!=null}">
+                ,(SELECT status FROM board_likes WHERE b_id=boards.b_id AND u_id=#{loginUserId}) login_user_like_status
+             </if>
+            FROM boards
     </select>
     <select id="findByBId" resultMap="BoardMap">
-        SELECT * FROM boards WHERE b_id=#{bId}
+        SELECT *
+        FROM boards WHERE b_id=#{bId}
     </select>
 </mapper>

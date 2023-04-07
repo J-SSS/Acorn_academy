@@ -1,32 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.acorn.s02_springboardstudy.mapper.BoardLikeMapper">
-    <insert id="insertOne" parameterType="boardLikeDto">
-        INSERT INTO board_likes (b_id, u_id, status) VALUE (#{bId}, #{uId}, #{status})
+    <resultMap id="LikeStatusCntMap" type="LikeStatusCntDto">
+        <result property="like" column="like"/>
+        <result property="bad" column="bad"/>
+        <result property="best" column="best"/>
+        <result property="sad" column="sad"/>
+        <result property="id" column="b_id"/>
+        <association property="status"
+                     select="findByBIdAndUIdIsLoginUserId"
+                     column="b_id"
+                     fetchType="eager"/>
+    </resultMap>
+    <resultMap id="BoardLikeMap" type="BoardLikeDto">
+        <id property="blId" column="bl_id"/>
+        <result property="bId" column="b_id"/>
+        <result property="uId" column="u_id"/>
+        <result property="status" column="status"/>
+    </resultMap>
+    <insert id="insertOne" parameterType="BoardLikeDto">
+        INSERT INTO board_likes (b_id, u_id, status) VALUE (#{bId}, #{uId}, #{status});
     </insert>
-    <update id="updateOne" parameterType="boardLikeDto">
+    <update id="updateOne" parameterType="BoardLikeDto">
         UPDATE board_likes SET status=#{status} WHERE u_id=#{uId} AND b_id=#{bId}
     </update>
     <delete id="deleteOne">
         DELETE FROM board_likes WHERE u_id=#{uId} AND b_id=#{bId}
     </delete>
-
-    <select id="countStatusByBId" resultType="LikeStatusCntDto">
+    <select id="countStatusByBId" resultMap="LikeStatusCntMap">
         SELECT
-            count(CASE WHEN status ='like' THEN 1 END) as 'like',
-            count(CASE WHEN status ='sad' THEN 1 END) as 'sad',
-            count(CASE WHEN status ='best' THEN 1 END) as 'best',
-            count(CASE WHEN status ='bad' THEN 1 END) as 'bad'
-            FROM board_likes
-            WHERE b_id={bId}
+            COUNT(CASE WHEN status='LIKE' THEN 1 END ) AS 'like',
+            COUNT(CASE WHEN status='BAD' THEN 1 END ) AS 'bad',
+            COUNT(CASE WHEN status='BEST' THEN 1 END ) AS 'best',
+            COUNT(CASE WHEN status='SAD' THEN 1 END ) AS 'sad',
+            bl.b_id
+            FROM board_likes bl
+            WHERE b_id=#{bId}
     </select>
-    <select id="countStatusByUId" resultType="LikeStatusCntDto">
+    <select id="countStatusByUId" resultMap="LikeStatusCntMap">
         SELECT
-            count(CASE WHEN status ='like' THEN 1 END) as 'like',
-                count(CASE WHEN status ='sad' THEN 1 END) as 'sad',
-                count(CASE WHEN status ='best' THEN 1 END) as 'best',
-                count(CASE WHEN status ='bad' THEN 1 END) as 'bad'
-        FROM board_likes
-        WHERE u_id={uId}
+            COUNT(CASE WHEN status='LIKE' THEN 1 END ) AS 'like',
+            COUNT(CASE WHEN status='BAD' THEN 1 END ) AS 'bad',
+            COUNT(CASE WHEN status='BEST' THEN 1 END ) AS 'best',
+            COUNT(CASE WHEN status='SAD' THEN 1 END ) AS 'sad',
+            bl.b_id
+        FROM board_likes bl
+        WHERE u_id=#{uId}
+    </select>
+    <select id="findByBIdAndUId" resultMap="BoardLikeMap">
+        SELECT * FROM board_likes WHERE b_id=#{bId} AND u_id=#{uId}
+    </select>
+    <select id="findByBIdAndUIdIsLoginUserId" resultType="String">
+        SELECT status FROM board_likes WHERE b_id=#{bId} AND u_id=@loginUserId
     </select>
 </mapper>

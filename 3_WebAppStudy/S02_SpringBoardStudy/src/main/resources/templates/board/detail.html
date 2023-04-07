@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout}">
+<head>
+    <title>게시판 상세</title>
+</head>
+<p></p>
+<div layout:fragment="content">
+    <h1 class="my-4">게시판 상세</h1>
+    <section id="boardCont" class="">
+        <div class="row">
+            <div id="carouselExampleControls2" class="carousel slide d-none d-md-block col pe-0" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/public/img/board/a.jpg" class="d-block w-100" alt="게시글 이미지">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+            <div class="col ps-0">
+                <div class="card col" style="height: 75vh; overflow-y: auto" >
+                    <div class="card-header d-flex justify-content-between align-items-center
+                                bg-light position-sticky top-0" style="z-index: 999">
+                        <div>
+                            <img
+                                    th:if="${b.user.imgPath!=null}"
+                                    th:src="@{'{path}'(path=${b.user.imgPath})}"
+                                    alt="프로필 이미지"
+                                    style="width: 60px; height: 60px; object-fit: cover;" class="img-thumbnail">
+                            <strong class="ms-2" th:text="${b.user.uId}"></strong>
+                            (<strong th:text="${b.user.name}"></strong>)
+                            <small class="text-muted"> • </small>
+                        </div>
+                        <div class="dropdown">
+                            <a href="#" role="button" class="" data-bs-toggle="dropdown">
+                                <i class="bi bi-list fs-3"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a class="dropdown-item" th:href="@{'/board/{bId}/detail.do'(bId=${b.bId})}">상세</a>
+                                </li>
+                                <li><a class="dropdown-item" href="#">글쓴이가 작성한 글목록</a></li>
+                                <li><a class="dropdown-item" href="#">계정 정보</a></li>
+                                <li>
+                                    <a class="dropdown-item text-danger" href="#">
+                                        <i class="bi bi-bell-fill"></i>
+                                        신고
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="carouselExampleControls" class="carousel slide d-md-none" data-bs-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="/public/img/board/a.jpg" class="d-block w-100" alt="게시글 이미지">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <div>
+                            <div class="d-flex my-2">
+                                <div class="me-2">
+                                    작성일 : <small th:text="${#dates.format(b.postTime,'yyyy-MM-dd')}"></small>
+                                </div>
+                                <div class="">
+                                    수정일 : <small th:text="${#dates.format(b.updateTime,'yyyy-MM-dd')}"></small>
+                                </div>
+                            </div>
+                            <h5 class="card-title" th:text="${b.title}"></h5>
+                            <p class="card-text" th:text="${b.content}"></p>
+                            <hr>
+                            <h5 class="card-title d-flex justify-content-between">
+                                <span>댓글 리스트</span>
+                                <button type="button" class="btn btn-light"
+                                        th:onclick="loadReplies([[${b.bId}]])">새로고침</button>
+                            </h5>
+                            <div id="replyCont">
+                                <ul class="list-group">
+                                    <li class="list-group-item" th:each="r:${b.replies}">
+                                        <th:block th:include="/reply/detail"></th:block>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer position-sticky bottom-0 bg-light">
+                        <div class="d-flex align-items-center">
+                            <div class="likesCont">
+                                <a href="#" class="btn btn-sm btn-link" data-bs-toggle="tooltip" data-bs-title="좋아요" data-bs-placement="top">
+                                    <i class="bi bi-emoji-heart-eyes fs-4"></i>
+                                    <span th:text="${b.likes.like}"></span>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-link" data-bs-toggle="tooltip" data-bs-title="최고야">
+                                    <i class="bi bi-emoji-sunglasses fs-4"></i>
+                                    <span th:text="${b.likes.best}"></span>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-link" data-bs-toggle="tooltip" data-bs-title="나빠요">
+                                    <i class="bi bi-emoji-expressionless fs-4"></i>
+                                    <span th:text="${b.likes.bad}"></span>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-link" data-bs-toggle="tooltip" data-bs-title="슬퍼요">
+                                    <i class="bi bi-emoji-frown fs-4"></i>
+                                    <span th:text="${b.likes.sad}"></span>
+                                </a>
+                            </div>
+                            <small class="text-muted"> • </small>
+                            <div class="viewCont ms-2" data-bs-toggle="tooltip" data-bs-title="조회수">
+                                <i class="bi bi-eye fs-4"></i>
+                                <span th:text="${b.viewCount}"></span>
+                            </div>
+                        </div>
+                        <form enctype="multipart/form-data" name="replyInsertForm" action="/reply/insert.do" method="post" th:if="${session.loginUser!=null}">
+                            <hr>
+                            <input type="hidden" name="uId" th:value="${session.loginUser.uId}">
+                            <input type="hidden" name="bId" th:value="${b.bId}">
+                            <div class="mb-2 row justify-content-end">
+                                <div class="col-3 p-0 ">
+                                    <input type="text" readonly class="form-control" name="parentBrId"
+                                        placeholder="부모 댓글">
+                                </div>
+                                <div class="col p-0 ">
+                                    <input type="text" class="form-control " name="content"
+                                        placeholder="내용">
+                                </div>
+                                <button class="btn btn-primary col-auto">제출</button>
+                                <label class="btn btn-info col-auto">
+                                    <i class="bi bi-file-image text-light"></i>
+                                    <input class="d-none" type="file" name="img">
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="replyModifyModal" class="modal" tabindex="-1">
+            <div class="modal-dialog">
+                <form class="modal-content" name="replyModifyForm" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="bId">
+                    <input type="hidden" name="brId">
+                    <input type="hidden" name="imgPath">
+                    <div class="modal-header">
+                        <h5 class="modal-title">리플 수정 폼</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="replyModifyModalBody" class="modal-body">
+                        <p class="form-floating">
+                            <input type="text" name="uId" readonly class="form-control" placeholder="글쓴이">
+                            <label>글쓴이</label>
+                        </p>
+                        <p>
+                            <img name="imgPath" class="img-thumbnail" src="" alt="댓글 이미지">
+                        </p>
+                        <p class="form-floating">
+                            <input type="text" name="parentBrId" readonly class="form-control" placeholder="참조하는 부모 댓글">
+                            <label>참조하는 부모 댓글</label>
+                        </p>
+                        <p>
+                            <input type="file" name="img" class="form-control">
+                        </p>
+                        <p class="form-floating">
+                            <input type="text" name="content" class="form-control" placeholder="내용">
+                            <label>내용</label>
+                        </p>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button id="removeReplyBtn" type="button" class="btn btn-danger">삭제</button>
+                        <button type="submit" class="btn btn-primary">수정</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script th:inline="javascript">
+        const replyModifyModal=new bootstrap.Modal(document.getElementById("replyModifyModal"),{});
+        const replyCont=document.getElementById("replyCont");
+        const removeReplyBtn=document.getElementById("removeReplyBtn");
+        const replyInsertForm=document.forms["replyInsertForm"];
+        const replyModifyForm=document.forms["replyModifyForm"];
+        replyModifyForm.onsubmit=modifyReply;
+        removeReplyBtn.addEventListener("click",removeReply);
+
+        async function removeReply(){
+            let c=confirm("삭제 하시겠습니까?");
+            let url="/reply/handler.do";
+            let data=new FormData(replyModifyForm);
+            if(c){
+                const resp=await fetch(url,{method:"DELETE",body:data})
+                if(resp.status===200){
+                    const json=await resp.json();
+                    if(json.remove>0){
+                        alert("삭제 성공");
+                        loadReplies(replyModifyForm.bId.value);
+                    }else {
+                        alert("삭제 실패 (삭제된 레코드)")
+                    }
+                }else{
+                    alert("삭제 실패 status:"+resp.status);
+                }
+            }
+            replyModifyModal.hide();
+        }
+
+        async function modifyReply(e){
+            e.preventDefault();
+            let url="/reply/handler.do";
+            const data=new FormData(replyModifyForm);
+            //method GET,POST RESTAPI(ajax) PUT,DELETE,PATCH ...
+            const resp=await fetch(url,{method:"PUT",body:data});
+            if(resp.status===200){
+                const json=await resp.json();
+                if(json.modify>0){
+                    alert("수정 성공");
+                    loadReplies(replyModifyForm.bId.value);
+                }
+
+            }else{
+                alert("수정 실패 status :"+resp.status);
+            }
+            replyModifyModal.hide();
+        }
+
+
+
+        async function loadReplies(bId){
+            let url=`/reply/${bId}/list.do`
+            const resp=await fetch(url);
+            if(resp.status===200){
+                //alert("댓글 리스트 로드 성공");
+                let text=await resp.text();
+                replyCont.innerHTML=text;
+            }
+        }
+        replyInsertForm.onsubmit=registerReply;
+        async function registerReply(e){
+            e.preventDefault();
+            //multipart/form-data 로 지정된 form 은 new FormData(formNode) 객체를 생성해서 body에 추가
+            const data=new FormData(replyInsertForm);
+            let url="/reply/handler.do" //register:1(성공),0(실패)
+            const resp=await fetch(url,{method:"POST",body:data});
+            if(resp.status===200){
+                const json=await resp.json();
+                if(json.register>0){
+                    alert("등록성공");
+                    await loadReplies(replyInsertForm.bId.value);
+                }
+            }else {
+                alert("등록 실패 status :"+resp.status);
+            }
+        }
+        async function loadModifyReply(brId){
+            let url=`/reply/${brId}/detail.do`;
+            const resp=await fetch(url);
+            if(resp.status===200){
+                const json=await resp.json();
+                //{"brId":28,"parentBrId":2,"postTime":"2023-04-06T00:52:11.000+00:00","updateTime":"2023-04-06T00:52:11.000+00:00","status":"PUBLIC","imgPath":null,"content":"2번 글에 대댓글 안녕~ ","likes":null,"replies":[{"brId":29,"parentBrId":28,"postTime":"2023-04-06T00:52:37.000+00:00","updateTime":"2023-04-06T00:52:37.000+00:00","status":"PUBLIC","imgPath":null,"content":"대대댓글 안녕~","likes":{"like":0,"sad":0,"bad":0,"best":0},"replies":[],"bId":1,"uId":"Kyoungmin"}
+                replyModifyForm.querySelectorAll("[name]").forEach((input)=>{
+                   let key=input.name;
+                   //input.value : input type='file'에는 value 가 없음
+                    if(key in json){
+                        if(key==="imgPath"){input.src=json[key];}
+                        input.value=json[key];
+
+                    }
+                });
+                replyModifyModal.show();
+            }else{
+                alert("불러오기 실패 stauts : "+resp.status)
+            }
+        }
+    </script>
+</div>
+</html>
+
+
+
+
+
+
+
+
+
+
+

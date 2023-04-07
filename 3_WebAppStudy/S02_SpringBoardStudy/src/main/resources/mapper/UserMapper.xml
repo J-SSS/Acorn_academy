@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.acorn.s02_springboardstudy.mapper.UserMapper">
-    <resultMap id="UsersMap" type="UserDto">
+    <resultMap id="UserMap" type="UserDto">
         <id column="u_id" property="uId"/>
         <result column="name" property="name"/>
         <result column="pw" property="pw"/>
@@ -15,8 +15,43 @@
         <result column="detail_address" property="detailAddress"/>
         <result column="permission" property="permission"/>
     </resultMap>
-    <select id="findByUId" resultMap="UsersMap">
+    <update id="setLoginUserId">
+        SET @loginUserId=#{uId}
+    </update>
+    <update id="setLoginUserIdNull">
+        SET @loginUserId=NULL;
+    </update>
+    <insert id="insertOne" parameterType="UserDto">
+        INSERT INTO users (u_id, pw, name, phone, img_path, email, birth, gender, address, detail_address)
+        VALUE (#{uId},#{pw},#{name},#{phone},#{imgPath},#{email},#{birth},#{gender},#{address},#{detailAddress})
+    </insert>
+    <update id="updateOne" parameterType="UserDto">
+        UPDATE users SET
+            pw=#{pw},
+            name=#{name},
+            phone=#{phone},
+            img_path=#{imgPath},
+            email=#{email},
+            birth=#{birth},
+            gender=#{gender},
+            address=#{address},
+            detail_address=#{detailAddress}
+            WHERE u_id=#{uId}
+    </update>
+    <update id="updatePwByUId" parameterType="UserDto">
+        UPDATE users SET pw=#{pw} WHERE u_id=#{uId};
+    </update>
+    <delete id="deleteByUIdAndPw" parameterType="UserDto">
+        DELETE FROM users WHERE u_id=#{uId} AND pw=#{pw}
+    </delete>
+    <select id="findByUId" resultMap="UserMap">
         SELECT * FROM users WHERE u_id=#{uId}
     </select>
-</mapper>
+    <select id="findByUIdAndPw" resultMap="UserMap">
+        SELECT * FROM users WHERE u_id=#{uId} AND pw=#{pw}
 
+    </select>
+    <select id="findUIdByEmailAndPhoneAndName" resultType="java.lang.String">
+        SELECT u_id FROM users WHERE email=#{email} AND phone=#{phone} AND name=#{name}
+    </select>
+</mapper>

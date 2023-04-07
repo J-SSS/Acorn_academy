@@ -12,12 +12,14 @@ public class BoardDto {
     private Date postTime; //default CURRENT_TIMESTAMP
     private Date updateTime; //default on update CURRENT_TIMESTAMP
     private String status; //enum [PUBLIC,PRIVATE,REPORT,BLOCK]
-    private String title;
+    private String title="타이틀없음";
     private String content;
     private int viewCount;
-    private UserDto user; // N:1 = boards : user
-    private List<BoardReplyDto> replies;// 1:N = boards : board_replies
-    private List<BoardImgDto> img; // 1:N = boards : board_imgs
+    private String loginUserLikeStatus; //로그인한 유저가 좋아요 한 내역 (board_likes uk(b_id,u_id))
+    private LikeStatusCntDto likes; //1 : N = boards : board_likes 이지만 집계한 결과만 조회
+    private UserDto user; //N : 1 = boards : users
+    private List<BoardReplyDto> replies;//1 : N = boards : board_replies
+    private List<BoardImgDto> imgs;//1:N = boars : board_imgs
 
 
 }

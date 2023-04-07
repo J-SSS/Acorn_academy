@@ -6,11 +6,8 @@
         <result property="bId" column="b_id"/>
         <result property="imgPath" column="img_path"/>
     </resultMap>
-
-
-    <insert id="insertOne" parameterType="BoardImgDto">
-        INSERT INTO board_imgs (b_id, img_path)
-            VALUE (#{bId}, #{imgPath} )
+    <insert id="insertOne" useGeneratedKeys="true" keyProperty="biId">
+        INSERT INTO board_imgs (b_id, img_path) VALUE (#{bId}, #{imgPath})
     </insert>
     <delete id="deleteOne">
         DELETE FROM board_imgs WHERE bi_id=#{biId}

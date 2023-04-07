@@ -10,6 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../desktop.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../desktop.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,61 +86,62 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;18.14.2&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;18.14.2&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/USER/Desktop/Acorn_academy/3_WebAppStudy/S02_SpringBoardStudy/src/main/java/com/acorn/s02_springboardstudy/dto&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs.jest.jest_package&quot;: &quot;C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/node_modules/jest&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;모듈&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.build.tools.auto.reload&quot;: &quot;SELECTIVE&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;eadd11cace05804dd1e6d3ec70fd9610&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "full.screen.before.presentation.mode": "false",
+    "javascript.nodejs.core.library.configured.version": "18.14.2",
+    "javascript.nodejs.core.library.typings.version": "18.14.2",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "C:/Users/USER/Desktop/Acorn_academy/3_WebAppStudy/S02_SpringBoardStudy",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/Users/USER/Desktop/강의자료/3_WebAppStudy/ExpressJsBoardAdmin230302/node_modules/jest",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "모듈",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.build.tools.auto.reload": "SELECTIVE",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "eadd11cace05804dd1e6d3ec70fd9610",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ],
-    &quot;RunConfigurationTargetLRU&quot;: [
-      &quot;660c6265-c106-43b8-9de6-7487b2a23436&quot;
+    "RunConfigurationTargetLRU": [
+      "660c6265-c106-43b8-9de6-7487b2a23436"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\java\com\acorn\s02_springboardstudy\dto" />
       <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\static" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S01_SpringStartStudy\src\main\resources\templates\users" />
-      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S01_SpringStartStudy\src\main\java\com\acorn\s01_springstartstudy" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\test\java\com\acorn\s02_springboardstudy" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\java\com\acorn\s02_springboardstudy\ex" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\java\com\acorn\s02_springboardstudy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\static" />
       <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\mapper" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\NodeJsStudy\templates" />
       <recent name="C:\Users\dongr\Desktop\Acorn_basic\webAppStudy\JavaScriptStudy\src\main\webapp" />
@@ -154,11 +156,11 @@
       <recent name="com.example.webapptest" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
       <recent name="com.acorn.webappboard.filter" />
       <recent name="com.acorn.webappboard.controller" />
       <recent name="com.example.webapptest" />
       <recent name="com.example.webapptest.servlet" />
-      <recent name="com.acorn.javascriptstudy" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -214,7 +216,7 @@
       <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -229,7 +231,7 @@
       <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -245,7 +247,7 @@
       <module name="S02_SpringBoardStudy.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.acorn.s02_springboardstudy.mapper.*" />
+          <option name="PATTERN" value="com.acorn.s02_springboardstudy.ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -363,10 +365,10 @@
       <item itemvalue="Gradle.S02_SpringBoardStudy [dependencies]" />
       <item itemvalue="Gradle.S02_SpringBoardStudy" />
       <item itemvalue="JUnit.BoardImgMapperTest" />
-      <item itemvalue="JUnit.BoardMapperTest.findAll" />
       <item itemvalue="JUnit.BoardImgMapperTest.findByBId" />
-      <item itemvalue="Spring Boot.S02SpringBoardStudyApplication" />
+      <item itemvalue="JUnit.BoardMapperTest.findAll" />
       <item itemvalue="Spring Boot.S01SpringStartStudyApplication" />
+      <item itemvalue="Spring Boot.S02SpringBoardStudyApplication" />
       <item itemvalue="Tomcat 서버.Tomcat 9.0.71" />
     </list>
     <recent_temporary>
@@ -488,6 +490,12 @@
       <workItem from="1680152938202" duration="2372000" />
       <workItem from="1680157536879" duration="789000" />
       <workItem from="1680223026059" duration="1225000" />
+      <workItem from="1680493849991" duration="34000" />
+      <workItem from="1680573870004" duration="29000" />
+      <workItem from="1680579354896" duration="612000" />
+      <workItem from="1680613351729" duration="26000" />
+      <workItem from="1680741365833" duration="16000" />
+      <workItem from="1680871350661" duration="2385000" />
     </task>
     <servers />
   </component>
