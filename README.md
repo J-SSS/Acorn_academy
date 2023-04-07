@@ -30,7 +30,13 @@
 </summary>
 
 #### 📁 2_ JAVA(note & review)
-내용입력내용입력
+###### 기본개념
+- 변수, 타입(기본형과 자료형)
+- Input과 output (Scanner, BufferedReader, System.out.*)
+- 연산자(단항, 이항, 삼항)
+- 조건문과 반복문 If, Switch, For, While
+- 배열
+- 메서드
 <br><br><br><br><br>  
 </details>
 
@@ -41,7 +47,12 @@
 </summary>
 
 #### 📁 01_HTML&CSS 
-메모장으로 작성하는 .html부터 시작하여 HTML과 CSS의 기본적인 개념과 기능에 대한 전반적인 학습을 하였습니다.
+- HTML5 : HTML개요 및 기본 태그 사용법, 시멘틱 태그, form 태그
+- CSS3 : 선택자, 레이아웃, Animation 및 Transition, 미디어 쿼리, 웹 폰트
+- JS : 이벤트 기본 사용법
+  
+![bulb](https://user-images.githubusercontent.com/118149752/230606230-a95b2370-0927-43ac-8348-6a21ccdc4b96.gif)
+![1](https://user-images.githubusercontent.com/118149752/230605838-85e5945b-46b5-44f2-bce9-0ed03331e2b2.png)
 <br><br><br><br><br>  
 </details>
 
