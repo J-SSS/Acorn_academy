@@ -8,7 +8,7 @@
 <h2> 04. JAVA Spring (23年 3月 ~ 23年 4月)<h2>
 </summary>
 
-#### 📁 2_ JAVA
+#### 📁 3_ WebAppStudy / S01, S02
 내용입력내용입력
 <br><br><br><br><br>  
 </details>
@@ -18,7 +18,7 @@
 <h2> 03. JavaScript += Node.js & Express (23年 1月 ~ 23年 3月)<h2>
 </summary>
 
-#### 📁 2_ JAVA
+#### 📁 3_ WebAppStudy / JS01, JS02, JS03
 내용입력내용입력
 <br><br><br><br><br>  
 </details>
@@ -29,7 +29,7 @@
 <h2> 02. JAVA 기본 문법 (22年 12月 ~ 22年 1月)<h2>
 </summary>
 
-#### 📁 2_ JAVA
+#### 📁 2_ JAVA(note & review)
 내용입력내용입력
 <br><br><br><br><br>  
 </details>
