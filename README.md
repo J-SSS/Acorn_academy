@@ -8,7 +8,7 @@
 <h2> 04. JAVA Spring (23年 3月 ~ 23年 4月)<h2>
 </summary>
 
-#### 📁 3_ WebAppStudy / S01, S02
+### 📁 3_ WebAppStudy / S01, S02
 내용입력내용입력
 <br><br><br><br><br>  
 </details>
@@ -18,7 +18,7 @@
 <h2> 03. JavaScript += Node.js & Express (23年 1月 ~ 23年 3月)<h2>
 </summary>
 
-#### 📁 3_ WebAppStudy / JS01, JS02, JS03
+### 📁 3_ WebAppStudy / JS01, JS02, JS03
 내용입력내용입력
 <br><br><br><br><br>  
 </details>
@@ -29,16 +29,16 @@
 <h2> 02. JAVA 기본 문법 (22年 12月 ~ 22年 1月)<h2>
 </summary>
 
-#### 📁 2_ JAVA(note & review)
-#### 1. 기본개념
+### 📁 2_ JAVA(note & review)
+### 1. 기본개념
 - 변수, 타입(기본형과 자료형)
 - Input과 output (Scanner, BufferedReader, System.out.*)
 - 연산자(단항, 이항, 삼항)
 - 조건문과 반복문 If, Switch, For, While
 - 배열 구조와 사용법
 - 여러가지 형태의 메서드
-#### 2. 객체 지향 문법
-#### 3. 심화(util 라이브러리 등)
+### 2. 객체 지향 문법
+### 3. 심화(util 라이브러리 등)
 <br><br><br><br><br>  
 </details>
 
@@ -48,7 +48,7 @@
 <h2> 01. HTML&CSS (22年 11月 ~ 12月)<h2>
 </summary>
 
-#### 📁 01_HTML&CSS 
+### 📁 01_HTML&CSS 
 - HTML5 : HTML개요 및 기본 태그 사용법, 시멘틱 태그, form 태그
 - CSS3 : 선택자, 레이아웃, Animation 및 Transition, 미디어 쿼리, 웹 폰트
 - JS : 이벤트 기본 사용법
