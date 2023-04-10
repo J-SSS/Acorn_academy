@@ -9,10 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../desktop.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../desktop.ini" afterDir="false" />
-    </list>
+    <list default="true" id="6dcf3821-b9f4-4a6a-a948-e604bdc1e272" name="변경" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,11 +44,11 @@
         <option value="Jsp File" />
         <option value="spring-beans.schema" />
         <option value="Tag Library Descriptor" />
-        <option value="HTML File" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
         <option value="Interface" />
         <option value="Mybatis Mapper" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -102,10 +99,10 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
     "full.screen.before.presentation.mode": "false",
-    "javascript.nodejs.core.library.configured.version": "18.14.2",
-    "javascript.nodejs.core.library.typings.version": "18.14.2",
+    "javascript.nodejs.core.library.configured.version": "18.14.1",
+    "javascript.nodejs.core.library.typings.version": "18.14.1",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/USER/Desktop/Acorn_academy/3_WebAppStudy/S02_SpringBoardStudy",
+    "last_opened_file_path": "C:/Users/dongr/Desktop/Acorn_academy/3_WebAppStudy/S02_SpringBoardStudy/src/main/resources/static/public/js",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -119,7 +116,7 @@
     "project.structure.side.proportion": "0.2",
     "settings.build.tools.auto.reload": "SELECTIVE",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "eadd11cace05804dd1e6d3ec70fd9610",
+    "spring.configuration.checksum": "0752e4c93d89fceb2b6e7dc026d66bef",
     "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2022.3.2\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -134,11 +131,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\static\public\js" />
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources" />
+      <recent name="C:\Users\dongr\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\templates\board" />
       <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy" />
       <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\test\java\com\acorn\s02_springboardstudy" />
-      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources" />
-      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\java\com\acorn\s02_springboardstudy\ex" />
-      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\java\com\acorn\s02_springboardstudy" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\S02_SpringBoardStudy\src\main\resources\static" />
@@ -496,6 +493,9 @@
       <workItem from="1680613351729" duration="26000" />
       <workItem from="1680741365833" duration="16000" />
       <workItem from="1680871350661" duration="2385000" />
+      <workItem from="1680942908216" duration="257000" />
+      <workItem from="1681085132586" duration="945000" />
+      <workItem from="1681086120953" duration="13116000" />
     </task>
     <servers />
   </component>
