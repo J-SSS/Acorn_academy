@@ -1,0 +1,26 @@
+form#replyResgister.p-4.border.collapse(method="post", action="/replies/insert.do",enctype="multipart/form-data")
+    p.text-end.h4 댓글 등록 폼
+    div.row
+        div.form-floating.col
+            input.form-control(name="b_id",value=board.b_id,readonly=true)
+            label 글번호
+        div.form-floating.col
+            input.form-control(name="u_id",value=loginUser.u_id,readonly=true)
+            label 댓글 작성자
+        div.form-floating.col
+            select.form-control.w-100(name="status")
+                option(value="PUBLIC") 공개
+                option(value="PRIVATE") 비공개
+                //option(value="REPORT") 신고
+                //option(value="BLOCK") 차단
+            label 댓글 상태
+    div.my-2.input-group
+        label.input-group-text 이미지
+        input.form-control(type="file",name="img_path")
+
+    div.form-floating
+        textarea.form-control(name="content")
+        label 내용
+    div.mt-2.text-end
+        button.btn.btn-outline-warning.me-2(type="reset") 초기화
+        button.btn.btn-outline-primary(type="submit") 등록

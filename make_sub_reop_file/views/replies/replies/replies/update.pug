@@ -1,0 +1,32 @@
+form.p-4.border(method="post", action="/replies/update.do",enctype="multipart/form-data")
+    input(name="b_id",value=rrr.b_id,hidden=true)
+    p.text-end.h4 댓글 수정 폼
+    div.row
+        div.form-floating.col
+            input.form-control(name="br_id",value=rrr.br_id,readonly=true)
+            label 댓글 번호
+        div.form-floating.col
+            input.form-control(name="u_id",value=rrr.u_id,readonly=true)
+            label 댓글 작성자
+        div.form-floating.col
+            select.form-control.w-100(name="status")
+                option(value="PUBLIC",selected=(rrr.status==="PUBLIC")) 공개
+                option(value="PRIVATE",selected=(rrr.status==="PRIVATE")) 비공개
+                option(value="REPORT",selected=(rrr.status==="REPORT")) 신고
+                option(value="BLOCK",selected=(rrr.status==="BLOCK")) 차단
+            label 댓글 상태
+    if(rrr.img_path)
+        div.my-2.input-group
+            span.input-group-text 기존 이미지
+            input.btn-check(id=`delCheck${rr.br_id}`,name="del_img", value=1 type="checkbox" autocomplete="off")
+            label.btn.btn-outline-danger(for=`delCheck${rrr.br_id}`) 삭제
+            input.form-control(name="origin_img_path",value=rrr.img_path,readonly=true)
+    div.my-2.input-group
+        label.input-group-text 새 이미지
+        input.form-control(type="file",name="new_img")
+    div.form-floating
+        textarea.form-control(name="content")=rrr.content
+        label 내용
+    div.mt-2.text-end
+        button.btn.btn-outline-warning.me-2(type="reset") 초기화
+        button.btn.btn-outline-primary(type="submit") 등록

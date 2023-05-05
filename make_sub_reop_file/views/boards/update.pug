@@ -1,0 +1,60 @@
+extends ../layout
+block content
+    h2.my-4 게시글 수정 양식 ( 상세 페이지 )
+    form#addUserForm(method='post' action='/boards/update.do')
+        //board.bis=[{ cnt: 4, status: 'LIKE' },{ cnt: 2, status: 'SAD' },{ cnt: 3, status: 'BEST' },{ cnt: 1, status: 'BAD' }]
+        -const bisObj={LIKE: {text: "좋아요", className:"btn-outline-primary",cnt:0},BAD: {text: "싫어요", className: "btn-outline-danger",cnt:0},SAD: {text: "슬퍼요", className: "btn-outline-warning",cnt:0},BEST: {text: "최고야", className: "btn-outline-success",cnt:0}}
+        -for (const bl of board.bls)
+            -bisObj[bl.status].cnt=bl.cnt
+        div.mb-3
+            -for (const key in bisObj)
+                span.btn.btn-sm.rounded-5.me-2(class=bisObj[key].className)=`${ bisObj[key].text } ${bisObj[key].cnt}`
+        div.form-floating.mb-3
+            input#b_id.form-control(value=board.b_id, readonly=true name='b_id', type='text' placeholder="??")
+            label(for='b_id') num
+        div.form-floating.mb-3
+            input#u_id.form-control(value=board.u_id, readonly=true name='u_id', type='text' placeholder="??")
+            label(for='u_id') 아이디
+        div.form-floating.mb-3
+            input#post_time.form-control(value=board.post_time, readonly=true name='post_time', type='text' placeholder="??")
+            label(for='post_time') 게시일
+        div.form-floating.mb-3
+            input#update_time.form-control(value=board.update_time, readonly=true name='update_time', type='text' placeholder="??")
+            label(for='update_time') 수정일
+        div.form-floating.mb-3
+            input#title.form-control(value=board.title, name='title', type='text' placeholder="??")
+            label(for='title') 제목
+        div.mb-3.input-group
+            label.input-group-text(for='content') 내용
+            textarea#content.form-control(name='content', type='text', rows=3, placeholder="??")=board.content
+        //div.form-floating.mb-3
+        //    input#imgPath.form-control(value=board.img_path, name='img_path', type='text' placeholder="??")
+        //    label(for='imgPath') 이미지경로
+        div.form-floating.mb-3
+            select#status.form-control(name='status' placeholder="??")
+                option(value='PUBLIC', selected=(board.status==='PUBLIC')) 공개
+                option(value='PRIVATE', selected=(board.status==='PRIVATE')) 비공개
+                option(value='REPORT', selected=(board.status==='REPORT')) 신고
+                option(value='BLOCK', selected=(board.status==='BLOCK')) 차단
+            label(for='status') 권한
+        div.mb-5.input-group
+            span.input-group-text 이미지#[br]삭제
+            div.form-control
+                -for(img of board.imgs)
+                    label.me-2
+                        img.img-thumbnail(src=img.img_path,style="width:200px")
+                        input.d-none(onchange="if(this.checked){this.previousElementSibling.classList.add('bg-primary')}else{this.previousElementSibling.classList.remove('bg-primary')}",type="checkbox",name="bi_id",value=img.bi_id)
+        //?bi_id=13&bi_id=15&bi_id=17 => req.body.bi_id=[13,15,17]
+        div.text-end.mb-5
+            a.btn.btn-outline-danger.me-2(href=`/boards/${board.b_id}/delete.do`) 삭제
+            button#resetUserBtn.btn.btn-outline-warning.me-2(type='reset') 초기화
+            button#addUserBtn.btn.btn-outline-primary(type='submit') 수정
+    div
+        h3.d-flex.justify-content-between
+            span 댓글 리스트
+            a.btn.btn-outline-secondary(href="#replyResgister", role="button", data-bs-toggle="collapse" ) 등록폼
+        //enctype="application/x-www-form-urlencoded" default : 문자열인 데이터만 쿼리스트링으로 보낸다.(blob 데이터인 파일은 전송하지 않는다. )
+        //enctype="multipart/form-data" : 모든 데이터를 Blob 로 보낸다.(모든데이터를 파일로 취급)
+        //톰캣 blob 파라미터를 처리하기 위해서 cos jar 를 사용, express multer 를 사용
+        include ../replies/insert
+        include ../replies/list

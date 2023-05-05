@@ -1,0 +1,17 @@
+nav.mt-4.d-flex.justify-content-center
+    ul.pagination
+        li.page-item(class=(!boards.pageVo.isPrev) && "disabled")
+            a.page-link(href=`?${boards.pageVo.query}page=1`) first
+
+        li.page-item(class=(!boards.pageVo.isPrev) && "disabled")
+            a.page-link(href=`?${boards.pageVo.query}page=${boards.pageVo.prev}`) prev
+
+        -for(let p=1; p <= boards.pageVo.totalPage; p++)
+                li.page-item(class=(p===boards.pageVo.Page) && "active")
+                    a.page-link(href=`?${boards.pageVo.query}page=${p}`)=p
+
+        li.page-item(class=(!boards.pageVo.isNext) && "disabled")
+            a.page-link(href=`?page=${boards.pageVo.next}`) next
+
+        li.page-item(class=(!boards.pageVo.isNext) && "disabled")
+            a.page-link(href=`?page=${boards.pageVo.totalPage}`) next

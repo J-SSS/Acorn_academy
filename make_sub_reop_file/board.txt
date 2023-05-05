@@ -1,0 +1,69 @@
+database WebAppBoard
+user WebAppBoardDBA pw webApp123
+//부서 CURD
+유저 USERS
+    u_id (입력) varchar pk
+    pw varchar not null
+    name varchar not null
+    phone (본인인증) varchar not null
+    img_path varchar not null
+    email varchar not null
+    post  datetime not null
+    birth date not null
+    성별
+    주소
+    상세주소
+    권한 (관리자 0,유저 bronze 1, silver 2, gold 3,)
+
+게시글 Boards
+    b_id (auto_increment)
+    u_id
+    포스트시간
+    상태(공지2,일반1,신고0,숨기기-1)
+    제목
+    내용
+    조회수+1
+게시글_좋아요 BoardLikes
+    bl_id 게시글_id+유저_id
+    b_게시글_id
+    u_유저_id
+    상태 (좋아요1,싫어요0)
+댓글_좋아요 ReplyLikes
+    rl_id 댓글_id+유저_id
+    rr_id
+    u_id
+    상태 (좋아요1,싫어요0)
+게시글_이미지 BoardImgs
+    bi_id (auto_increment)
+    b_id
+    경로(파일업로드 경로)
+
+게시글_댓글 BoardReplies
+    br_id (auto_increment)
+    b_id
+    r_id : 대댓글
+    포스트시간
+    이미지_경로
+    내용 (글꼴 크기 html)
+
+해시태그  HashTags
+    h_id (auto_increment)
+    게시글_id
+    태그
+//처음배워보는 것 ! 게시판 유사 고민!!
+문의사항
+    id
+    유저_id
+    제목
+    내용
+    비밀글 상태 boolean(bit)
+문의사항_답변
+    id
+    문의사항_id
+    유저_id
+    답변
+
+    1 #허원준
+    2 #허원준
+    3 #허 허원준(2)
+

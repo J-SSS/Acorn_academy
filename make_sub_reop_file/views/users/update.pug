@@ -1,0 +1,50 @@
+extends ../layout
+block content
+    h2.my-4 유저 수정 양식 ( 상세 페이지 )
+    form#addUserForm(method='post' action='/users/update.do')
+        div.form-floating.mb-3
+            input#u_id.form-control(value=user.u_id, readonly=true name='u_id', type='text' placeholder="??")
+            label(for='u_id') 아이디
+        div.form-floating.mb-3
+            input#pw.form-control(value=user.pw, name='pw', type='password' placeholder="??")
+            label(for='pw') 비밀번호
+        div.form-floating.mb-3
+            input#name.form-control(value=user.name, name='name', type='text' placeholder="??")
+            label(for='name') 이름
+        div.form-floating.mb-3
+            input#imgPath.form-control(value=user.img_path, name='img_path', type='text' placeholder="??")
+            label(for='imgPath') 이미지경로
+        div.form-floating.mb-3
+            input#phone.form-control(value=user.phone, name='phone', type='text' placeholder="??")
+            label(for='phone') 전화번호
+        div.form-floating.mb-3
+            input#email.form-control(value=user.email, name='email', type='email' placeholder="??")
+            label(for='email') 이메일
+        div.form-floating.mb-3
+            -let birthStr = user.birth ? user.birth.toISOString().slice(0, 10) : '';
+            input#birth.form-control(value=birthStr, name='birth', type='date' placeholder="??")
+            label(for='birth') 생년월일
+        div.form-floating.mb-3
+            select#gender.form-control(name='gender')
+                option(value='FEMALE', selected=(user.gender==="FEMALE")) 여성
+                option(value='MALE', selected=(user.gender==="MALE")) 남성
+                option(value='NONE', selected=(user.gender==="NONE")) 미정
+            label(for='gender') 성별
+        div.form-floating.mb-3
+            input#address.form-control(value=user.address, name='address', type='text' placeholder="??")
+            label(for='address') 주소
+        div.form-floating.mb-3
+            input#detail_address.form-control(value=user.detail_address, name='detail_address', type='text' placeholder="??")
+            label(for='detail_address') 상세주소
+        div.form-floating.mb-3
+            select#permission.form-control(name='permission' placeholder="??")
+                option(value='ADMIN', selected=(user.permission==='ADMIN')) 관리자
+                option(value='USER', selected=(user.permission==='USER')) 일반 사용자
+                option(value='SILVER', selected=(user.permission==='SILVER')) 실버 회원
+                option(value='GOLD', selected=(user.permission==='GOLD')) 골드 회원
+                option(value='PRIVATE', selected=(user.permission==='PRIVATE')) 비공개 회원
+            label(for='permission') 권한
+        div.text-end.mb-5
+            a.btn.btn-outline-danger.me-2(href=`/users/${user.u_id}/delete.do`) 삭제
+            button#resetUserBtn.btn.btn-outline-warning.me-2(type='reset') 초기화
+            button#addUserBtn.btn.btn-outline-primary(type='submit') 수정

@@ -1,0 +1,50 @@
+extends layout
+
+block content
+  h1.my-4 게시판 서비스 관리자 페이지
+  p.text-muted Express js 로 MVC 패턴 구현
+
+  h2 서비스(Model)을 설계하자
+  p.text-muted 서비스란 유저가 실제로 받을 수 있는 액션에 해당하며 보통 데이터베이스에서 일어난다.
+  h3 관리자 페이지의 유저 서비스 (/model/service/UserService)
+  p.text-muted 관리자 페이지에서는 유저를 관리할 수 있다. 이때 차단(수정)을 하거나 삭제 등록 조회를 할 수 있어야 한다.
+  ul
+    li list : (등급이 일반,실버,골드,관리자,비공개) 회원 리스트 조회(게시글 및 댓글 작성 수, 좋아요를 한수, 페이징)
+    li list : (등급이 일반,실버,골드,관리자,비공개) 회원 리스트 검색(pw,img_path 제외, 페이징)
+    li detail : (등급이 일반,실버,골드,관리자,비공개) 회원 상세 조회
+    li permissionModify : 회원 등급 수정
+    li modify : 회원 정보 수정 (아이디,이메일,폰 제외)
+    li remove : 회원 삭제
+    li register : 회원 등록
+    li checkId : 회원 아이디 체크 (ajax,return json)
+  h3 유저 서비스를 위해서 db에 쿼리를 실행하는 객체 /model/dao/UsersDao 설계 (Dao :DBAccessObject)
+  p.text-muted 서비스 dao 를 분리해서 쿼리의 재사용과 서비스의 트랙잭션 구현을 돕는다.
+  // 친구 송금 (서비스) : 나의 계좌에서 돈이 줄어드는 업데이트, 거래내역에 송금이력이 등록 ,친구계좌에 돈이 늘어나는 업데이트
+  //막약... 송금중에 거래내역에 송금이력이 등록을 실패(오류) 이때는 진행하던 쿼리를 취소 복구(rollback)해야한다.
+  //이때 여러 실행의 묶음을 트랙잭션이라 부르고 복구 되는 시점을 commit(save point) 지점이라 부른다.
+  ul
+    // 이과정을 spring(유저 페이지 서비스 구현) 에서 똑같이(더 심화!! 더 고급!!!) 한번 더 한다!
+    //ORM => 쿼리를 자동 생성 라이브러리
+    //(Object 구조와 함수 이름으로 쿼리를 자동 생성)
+    li findByPermission(permission,field,val,page=1) : SELECT * FROM users u WHERE permission=?
+      ul
+        li 서브쿼리 내역
+        li board_cnt : SELECT COUNT(*) FROM boards b WHERE b.u_id=u.u_id
+        li reply_cnt : SELECT COUNT(*) FROM board_replies r WHERE r.u_id=u.u_id
+        li board_likes_cnt : SELECT COUNT(*) FROM board_likes bl WHERE bl.u_id=u.u_id
+        li reply_likes_cnt : SELECT COUNT(*) FROM reply_likes rl WHERE rl.u_id=u.u_id
+        li 검색 조회
+        li if(field && val)  AND ${field} like '%${val}%'
+        //=> AND name like '%최%', AND post_time like '%2023-03%'
+        li 페이징 기능 (SELECT 문 제일 끝에 LIMIT 를 작성)
+        li page(default:1) : LIMIT startRows(=(page-1)*length), length;
+        // 한페이지당 row 를 20(length)개씩 보여주세요!
+        // 1 page  0~19
+        // 2 page  20~39
+        // 3 page  40~59
+        // ..
+    li findById(String) : SELECT * FROM users WHERE u_id=?
+    //findByU_id(X) "_'필드예약어 == u.id
+    li updatePermissionById(String p,String id) : UPDATE SET permission=? WHERE u_id=?
+    li updateById(Users) : UPDATE SET Users WHERE u_id=?
+    li insertOne(Users) : INSERT INTO (Users) VALUE (?...);

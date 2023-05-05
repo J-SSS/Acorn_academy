@@ -1,0 +1,31 @@
+ul.ms-2(style="list-style:none")
+    -for (const rrr of rr.replies)
+        li
+            div.card
+                div.row.g-0
+                    if(rrr.img_path)
+                        div.col-md-3
+                            img.img-fluid.rounded(src=rrr.img_path)
+                    div(class=(rrr.img_path)?"col-md-9":"")
+                        div.card-body
+                            p.card-text
+                                small.pe-3=`댓글번호 : ${rrr.br_id}`
+                                small.px-3=`글쓴이 : ${rrr.u_id}`
+                                small.px-3=`댓글상태 : ${rrr.status}`
+                            //p
+                            //    span.btn.btn-sm.btn-outline-primary.rounded-5.me-2=`좋아요 ${r.rls.LIKE}`
+                            //    span.btn.btn-sm.btn-outline-danger.rounded-5.me-2=`싫어요 ${r.rls.BAD}`
+                            //    span.btn.btn-sm.btn-outline-warning.rounded-5.me-2=`슬퍼요 ${r.rls.SAD}`
+                            //    span.btn.btn-sm.btn-outline-success.rounded-5.me-2=`최고야 ${r.rls.BEST}`
+                            p.card-text.d-flex
+                                small.pe-3.text-muted=`작성일 : ${rrr.post_time.toLocaleString("ko-KR")}`
+                                small.text-muted=`수정일 : ${rrr.update_time.toLocaleString("ko-KR")}`
+                            p.card-text=rrr.content
+                    ul.nav.nav-tabs
+                        li.nav-item
+                            a.nav-link(href=`#replyModify${rrr.br_id}`, role="button", data-bs-toggle="collapse") 수정
+                        li.nav-item
+                            a(href=`/replies/${rrr.br_id}/${rrr.b_id}/delete.do`).nav-link 삭제
+                    div.collapse(id=`replyModify${rrr.br_id}`)
+                        include update
+

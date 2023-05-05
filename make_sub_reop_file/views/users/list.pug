@@ -1,0 +1,67 @@
+extends ../layout
+block content
+    h2.my-4 유저 리스트
+
+
+
+    ul.nav.nav-tabs.justify-content-end
+        li.nav-item
+            a.nav-link(href="/users/list.do" class=((!users.pageVo.field&&!users.pageVo.value) ? 'active' : '')) 전체
+        li.nav-item
+            a.nav-link(href="/users/list.do?field=permission&value=USER" class=((users.pageVo.field==='permission' && users.pageVo.value === 'USER') ? 'active' : '')) 일반
+        li.nav-item
+            a.nav-link(href="/users/list.do?field=permission&value=SILVER" class=((users.pageVo.field==='permission' && users.pageVo.value === 'SILVER') ? 'active' : '')) 실버
+        li.nav-item
+            a.nav-link(href="/users/list.do?field=permission&value=GOLD" class=((users.pageVo.field==='permission' && users.pageVo.value === 'GOLD') ? 'active' : '')) 골드
+        li.nav-item
+            a.nav-link(href="/users/list.do?field=permission&value=PRIVATE" class=((users.pageVo.field==='permission' && users.pageVo.value === 'PRIVATE') ? 'active' : '')) 비공개
+        li.nav-item
+            a.nav-link(href="/users/list.do?field=permission&value=ADMIN" class=((users.pageVo.field==='permission' && users.pageVo.value === 'ADMIN') ? 'active' : '')) 관리자
+
+    table#userTable.table.table-striped.table-hover
+        thead
+            tr
+                th 아이디
+                //th 비밀번호
+                th 이름
+                //th 전화번호
+                //th 이메일
+                th 가입일
+                th 생년월일
+                th 성별
+                th 주소
+                //th 상세주소
+                th 권한
+                th.text-right 동작
+        tbody
+            each user in users
+                tr
+                    td #{user.u_id}
+                    //td #{user.pw}
+                    td #{user.name}
+                    //td #{user.phone}
+                    //td #{user.email}
+                    td #{ user.post_time ? user.post_time.toLocaleDateString("ko") : ""}
+                    td #{ user.birth ? user.birth.toLocaleDateString("ko") : ""}
+                    td #{user.gender}
+                    td #{user.address}
+                    //td #{user.detail_address}
+                    td #{user.permission}
+                    td.text-right
+                        a.btn.btn-outline-primary.btn-sm(href=`/users/${user.u_id}/detail.do`) 상세
+
+
+
+    include ../searchMixin
+    +searchMixin(users,"users",[
+        {att: "u_id", attName: "아이디"},
+        {att: "name", attName: "이름"},
+        {att: "post_time", attName: "가입일"},
+        {att: "birth", attName: "생일"},
+        {att: "gender", attName: "성별"},
+        {att: "address", attName: "주소"},
+        {att: "permission", attName: "등급"}
+    ])
+
+    include ../paginationMixin
+    +paginationMixin(users)
