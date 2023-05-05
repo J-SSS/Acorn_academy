@@ -1,16 +1,22 @@
-ul(style="list-style:none")
+ul.ms-2(style="list-style:none")
     -for (const rr of r.replies)
         li
             div.card
                 div.row.g-0
-                    div.col-md-3
-                        img.img-fluid.rounded(src=rr.img_path)
-                    div.col-md-9
+                    if(rr.img_path)
+                        div.col-md-3
+                            img.img-fluid.rounded(src=rr.img_path)
+                    div(class=(rr.img_path)?"col-md-9":"")
                         div.card-body
                             p.card-text
                                 small.pe-3=`댓글번호 : ${rr.br_id}`
                                 small.px-3=`글쓴이 : ${rr.u_id}`
                                 small.px-3=`댓글상태 : ${rr.status}`
+                            p
+                                span.btn.btn-sm.btn-outline-primary.rounded-5.me-2=`좋아요 ${rr.rls.LIKE}`
+                                span.btn.btn-sm.btn-outline-danger.rounded-5.me-2=`싫어요 ${rr.rls.BAD}`
+                                span.btn.btn-sm.btn-outline-warning.rounded-5.me-2=`슬퍼요 ${rr.rls.SAD}`
+                                span.btn.btn-sm.btn-outline-success.rounded-5.me-2=`최고야 ${rr.rls.BEST}`
                             p.card-text.d-flex
                                 small.pe-3.text-muted=`작성일 : ${rr.post_time.toLocaleString("ko-KR")}`
                                 small.text-muted=`수정일 : ${rr.update_time.toLocaleString("ko-KR")}`
@@ -21,8 +27,9 @@ ul(style="list-style:none")
                         li.nav-item
                             a.nav-link(href=`#replyReply${rr.br_id}`, role="button", data-bs-toggle="collapse") 대댓글작성
                         li.nav-item
-                            a.nav-link 삭제
+                            a(href=`/replies/${rr.br_id}/${rr.b_id}/delete.do`).nav-link 삭제
                     div.collapse(id=`replyModify${rr.br_id}`)
                         include update
                     div.collapse(id=`replyReply${rr.br_id}`)
-                        include insert
+                        include replyInsert
+                include replies/list

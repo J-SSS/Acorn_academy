@@ -3,7 +3,7 @@ form.p-4.border(method="post", action="/replies/insert.do",enctype="multipart/fo
     div.row
         div.form-floating.col
             input(name="b_id",value=board.b_id,hidden=true)
-            input.form-control(name="parent_br_id",value=r.br_id,readonly=true)
+            input.form-control(name="parent_br_id",value=rr.br_id,readonly=true)
             label 부모 댓글 번호
         div.form-floating.col
             input.form-control(name="u_id",value=loginUser.u_id,readonly=true)

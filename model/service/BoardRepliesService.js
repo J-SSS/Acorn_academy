@@ -7,5 +7,13 @@ class BoardRepliesService{
         let insertId=await boardRepliesDao.insertOne(reply);
         return insertId;
     }
+    async modify(reply){
+        let modify=await boardRepliesDao.updateById(reply);
+        return modify;
+    }
+    async remove(brId){
+        let del=await boardRepliesDao.deleteById(brId);
+        return del;
+    }
 }
 module.exports=BoardRepliesService;
