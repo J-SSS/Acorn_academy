@@ -14,18 +14,37 @@ router.get("/logout.do",async (req,res)=>{
   //4. delete req.session.key (권장 하지 않음!)
   req.session.destroy((err)=>{
     if(err) console.error(err); //거의 발생하지 않는다.
+    res.cookie("autoLoginPw","",{maxAge:0,signed:false})
+    res.cookie("autoLoginId","",{maxAge:0,signed:false})
     res.redirect("/");
   })
 });
 router.post("/login.do",async (req, res) => {
-  let uId = req.body.u_id;
-  let pw = req.body.pw;
+  // let u_id = req.body.u_id;
+  // let pw = req.body.pw;
+  // let autoLogin=req.body.autoLogin;
+  let { u_id, pw, autoLogin }=req.body; //11분까지 쉬었다가 오세요
+  //autoLogin 이 있으면 id와 pw cookie 로 만들어서 저장한후 자동로그인 사용!
   let user = null;
-  if (uId && pw) {
-    user = await userService.login(uId, pw);
+  if (u_id && pw) {
+    user = await userService.login(u_id, pw);
   }
   if(user){
     req.session.loginUser=user; //session : 서버에 유지되는 정보
+    const cookieOpt={
+      httpOnly: true, //http 통신에서만 쿠카를 사용(쿠키 탈취 해킹 방지)
+      signed: true, //암호화하겠다.
+      maxAge: 7*24*60*60*1000 //현재를 기준으로 만료시간
+    }
+    if(autoLogin && autoLogin==="1"){
+      //오늘날짜 1970.01.01 부터 작성된 밀리세컨즈로 받을 수 있다  Date.now();
+      //Date.now()+7*24*60*60*1000
+      //res.cookie("autoLoginId",user.u_id,{expires:new Date(Date.now()+7*24*60*60*1000)});
+      //res.cookie("autoLoginPw",user.pw,{expires:new Date(Date.now()+7*24*60*60*1000)});
+      res.cookie("autoLoginId",user.u_id,cookieOpt);
+      res.cookie("autoLoginPw",user.pw,cookieOpt);
+
+    }
     res.redirect("/");
   }else{
     res.redirect("/users/login.do");
@@ -35,18 +54,20 @@ router.post("/login.do",async (req, res) => {
 
 
 router.get('/list.do', async function(req, res) {
-  let permission=req.query.permission;
-  let page = parseInt(req.query.page) || 1;
 
-  let query = '';
-  for (let key in req.query) {
-    if (key !== 'page') {
-      query += `${key}=${req.query[key]}&`;
-    }
-  }
+  console.log(req.query)
 
-  const users=await userService.list(permission,page);
-  res.render("users/list",{users:users,params:req.query,query:query,page:page});
+  /*
+    추가 1)
+
+    userService 호출 할 때 page랑 req.query 보내던걸 간소화해서
+    req.query만 보낸다음 pageVo에서 페이징 관련 처리하도록 함
+
+   */
+
+  const users=await userService.list(req.query);
+  res.render("users/list",{users:users,params:req.query});
+
 });
 
 router.get("/insert.do",(req,res)=>{

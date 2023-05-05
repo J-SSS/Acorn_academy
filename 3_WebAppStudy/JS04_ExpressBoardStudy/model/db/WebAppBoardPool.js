@@ -8,5 +8,5 @@ const conInfo={
 }
 const pool=mysql.createPool(conInfo);
 //console.log(pool); //접속 테스트
-const poolpromise=pool.promise()
+const poolpromise=pool.promise();
 module.exports=poolpromise;

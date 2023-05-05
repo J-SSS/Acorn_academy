@@ -6,9 +6,152 @@
   <component name="ChangeListManager">
     <list default="true" id="60041798-06c5-46dd-9bee-29c2aa13cadb" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/.idea/dataSources/660c6265-c106-43b8-9de6-7487b2a23436/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/.idea/dataSources/660c6265-c106-43b8-9de6-7487b2a23436/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/desktop.ini" beforeDir="false" afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/bin/www" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/bin/www" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/BoardImgsDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/BoardImgsDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/BoardLikesDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/BoardLikesDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/BoardsDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/BoardsDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/UsersDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/UsersDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/db/WebAppBoardPool.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/db/WebAppBoardPool.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/service/BoardsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/service/BoardsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/service/UsersService.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/service/UsersService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/routes/boards.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/routes/boards.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/routes/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/BoardDao.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/BoardDao.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/BoardImsDao.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/BoardImsDao.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/BoardLikesDao.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/BoardLikesDao.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/UsersDao.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/UsersDao.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/service/BoardService.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/service/BoardService.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/boards/insert.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/boards/insert.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/boards/list.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/boards/list.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/boards/update.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/boards/update.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/error.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/error.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/index.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/index.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/layout.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/layout.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/users/insert.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/users/insert.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/users/list.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/users/list.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/users/login.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/users/login.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/users/update.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/users/update.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/app.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/bin/www" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/board.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/jest.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/dao/BoardImgsDao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/dao/BoardLikesDao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/dao/BoardRepliesDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/BoardRepliesDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/dao/BoardsDao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/dao/ReplyLikesDao.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/dao/ReplyLikesDao.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/dao/UsersDao.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/db/WebAppBoardPool.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/service/BoardRepliesService.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/service/BoardRepliesService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/service/BoardsService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/service/UsersService.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/vo/PageVo.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/vo/PageVo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/model/vo/PageVoTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/model/vo/PageVoTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-grid.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-grid.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-grid.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-reboot.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-utilities.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-utilities.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-utilities.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-utilities.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/css/bootstrap.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.esm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.esm.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.esm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.esm.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/bootstrap/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/board/12.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/board/13.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/board/14.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/board/15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/board/99.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678333793148_869..gif" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678333793148_869..gif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678338579372_756.png" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678338579372_756.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678338715740_48.png" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678338715740_48.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678338801923_989.png" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678338801923_989.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678339653695_775.png" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678339653695_775.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678339804773_416.png" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678339804773_416.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678339981561_202.png" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678339981561_202.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678341228670_543.png" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678341228670_543.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678342671150_249.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678342671150_249.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678343293316_630.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678343293316_630.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/img/reply/reply_1678344104949_722.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/public/img/reply/reply_1678344104949_722.jpeg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/public/stylesheets/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/routes/boards.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/routes/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/routes/replies.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/routes/replies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/routes/users.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/test/model/dao/BoardDao.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/test/model/dao/BoardImsDao.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/test/model/dao/BoardLikesDao.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/test/model/dao/BoardRepliesDao.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/test/model/dao/BoardRepliesDao.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/test/model/dao/UsersDao.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/test/model/service/BoardService.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/upload/ed91bb11dc25a42bd1498329e0b5398d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/boards/insert.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/boards/list.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/boards/update.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/error.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/headerNav.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/index.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/layout.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/pagination.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/pagination.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/paginationMixin.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/paginationMixin.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/insert.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/insert.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/list.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/list.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/replies/insert.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/replies/insert.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/replies/list.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/replies/list.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/replies/replies/list.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/replies/replies/list.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/replies/replies/update.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/replies/replies/update.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/replies/replyInsert.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/replies/replyInsert.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/replies/update.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/replies/update.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/replyInsert.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/replyInsert.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/replies/update.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/replies/update.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/searchMixin.pug" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/JS04_ExpressBoardStudy/views/searchMixin.pug" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/users/insert.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/users/list.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/users/login.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/views/users/update.pug" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/webAppBoard.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/make_sub_reop_file/webAppBoardDummyData.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +174,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/USER/Desktop/Acorn_academy",
+    "last_opened_file_path": "C:/Users/USER/Desktop/Acorn_academy/3_WebAppStudy/JS04_ExpressBoardStudy/public/stylesheets",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,6 +187,18 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\JS04_ExpressBoardStudy\public\stylesheets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\JS04_ExpressBoardStudy\views\users" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\JS04_ExpressBoardStudy\views" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\JS04_ExpressBoardStudy\views\boards" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\JS04_ExpressBoardStudy\test\model\service" />
+      <recent name="C:\Users\USER\Desktop\Acorn_academy\3_WebAppStudy\JS04_ExpressBoardStudy\test\model\dao" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="디폴트 작업">
@@ -60,6 +215,7 @@
       <workItem from="1677940219662" duration="143000" />
       <workItem from="1677978964646" duration="183000" />
       <workItem from="1680869977503" duration="1312000" />
+      <workItem from="1683288697250" duration="775000" />
     </task>
     <servers />
   </component>

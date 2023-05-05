@@ -1,4 +1,4 @@
-extends ../layout
+extends views/layout
 block content
     h2.my-4 관리자(ADMIN) 로그인 양식
     p 로그인 : id 와 pw 가 동일한 유저가 있다면 서버에 user 정보를 저장해서 유지 시킴으로서(session) 접속하고 있는 것 처럼 서비스를 제공하는 것
@@ -10,6 +10,9 @@ block content
         div.form-floating.mb-3
             input#pw.form-control(name='pw', type='password', value="admin123", placeholder="??")
             label(for='pw') 비밀번호
+        div.form-check
+            label.form-check-label 일주간 로그인 유지(자동로그인)
+            input.form-check-input(type="checkbox", name="autoLogin", value="1")
         div.text-end.mb-5
             button#resetUserBtn.btn.btn-outline-warning.me-3(type='reset') 초기화
             button#addUserBtn.btn.btn-outline-primary(type='submit') 로그인
@@ -33,3 +36,7 @@ block content
         li 만약 30분 안에 재접속을 하면 쿠키의 만료시간을 30분으로 초기화 시켜서 세션을 유지시킨다.
         li **session 객체 자체에 만료시간(setTimeout)을 지정할 수 있지만 서버가 부담을 가질 수 있기 때문에 보통 쿠키의 만료시간을 이용한다.
         li 서버가 재시작하면 서버에 저장된 세션 객체가 삭제됨.(memorystore 모듈을 사용하면 서버컴퓨터 메모리에 따로 저장함 )
+    h2 expressjs 세션과 쿠키
+    ul
+        li express-session : 서버에 세션객체를 만든다. 이때 세션의 만료시간을 쿠키로 검사(connect.sid)
+        li cookie-parser : 브라우저에 cookie 전달(key:value,파기시간)하고 브라우저가 보낸 쿠키(문자열)를 객체로 파싱한다.

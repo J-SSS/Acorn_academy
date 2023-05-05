@@ -1,57 +1,77 @@
-const boardsDao = require("../dao/BoardsDao");
-const boardImsDao = require("../dao/BoardImgsDao");
-const boardLikesDao = require("../dao/BoardLikesDao");
-
+const pool=require("../db/WebAppBoardPool");
+const BoardsDao = require("../dao/BoardsDao");
+const BoardImsDao = require("../dao/BoardImgsDao");
+const BoardLikesDao=require("../dao/BoardLikesDao");
+const BoardRepliesDao=require("../dao/BoardRepliesDao")
+const boardImsDao = new BoardImsDao(pool);
+const boardLikesDao=new BoardLikesDao(pool);
+const boardsDao=new BoardsDao(pool);
+const boardRepliesDao=new BoardRepliesDao(pool);
+//서버튜닝 : 기능개선없이 성능을 올리는 것
+const PageVo=require("../vo/PageVo");
 class BoardsService{
-    async list(status,page=1){
-        if(status) {
-            return boardsDao.findByStatus(status,page);
-        }else {
-            return boardsDao.findAll(page);
-        }
+    async list(status,page,reqQuery){
+        let boards;
+            let cnt = await boardsDao.countBySearch(reqQuery.field, reqQuery.value);
+            const pageVo = new PageVo(page,cnt,reqQuery);
+            boards = await boardsDao.findBySearch(pageVo);
+            boards.pageVo=pageVo;
+        // // if(status) {
+        // //     // let cnt = await boardsDao.countByStatus(status);
+        // //     // const pageVo = new PageVo(page,cnt,reqQuery);
+        // //     // boards = await boardsDao.findByStatus(status,pageVo);
+        // //     // boards.pageVo=pageVo;
+        // // }else {
+        //     let cnt = await boardsDao.countBySearch(reqQuery.field, reqQuery.value);
+        //     const pageVo = new PageVo(page,cnt,reqQuery);
+        //     boards = await boardsDao.findBySearch(pageVo);
+        //     boards.pageVo=pageVo;
+        // }
+        return boards;
     }
     async register(board) {
         return boardsDao.insertOne(board);
     }
     async detail(bId){
-        //boards : board_imgs = 1 : N
         const board=await boardsDao.findById(bId);
+        const bls=await boardLikesDao.groupByStatusFindByBid(bId);
         const imgs=await boardImsDao.findByBId(bId);
+        const replies=await boardRepliesDao.findByBid(bId);
         board.imgs=imgs;
-
-        //boards : board_likes = 1:N
-        //board_likes의 그룹핑된 수
-
-        const likes = await boardLikesDao.groupByStatusFindByBidSql(bId);
-        for(const like of likes){
-            if(like.status=='LIKE') board.likes = like.cnt;
-            else if(like.status=='SAD') board.sads = like.cnt;
-            else if(like.status=='BAD') board.bads = like.cnt;
-            else if(like.status=='BEST') board.bests = like.cnt;
+        board.bls=bls;
+        board.replies=replies;
+        //대댓글 !!
+        if(board.replies && Array.isArray(board.replies)){
+            for(let i=0; i<board.replies.length; i++){
+                let br_id=board.replies[i].br_id;
+                const replies=await boardRepliesDao.findByParentBrId(br_id);
+                board.replies[i].replies=replies;
+            }
         }
-        console.log("??????????")
+
+        //boards : board_imgs = 1 : N
+        //boards : board_likes = 1 : N
+        //boards : board_replies = 1 :N
+        //board_replies (댓글): board_replies (대댓글) = 1: N (Self join)
         return board;
     }
-    async modify(board){ //[], [12, 15, 16...]
-        let del = await  boardsDao.updateById(board);
-
-        // board.bi_id => [] or [12,15,16...]
-        // board.bi_id => undefined, 12 , [12,15]
+    async modify(board){
+        let del=await boardsDao.updateById(board);
+        //board.bi_id=>[] or ["12", "15", "16"]
+        //board.bi_id=>undefined, "122"  , ["12", "315"]
         if(board.bi_id && Array.isArray(board.bi_id)){
-            for(let biId of board.bi_id){
+            for (let biId of board.bi_id){
                 del+=await boardImsDao.deleteById(biId);
             }
-        } else if(board.bi_id){
+        }else if(board.bi_id){
             del+=await boardImsDao.deleteById(board.bi_id);
         }
         return del;
     }
     async remove(bId){
-        let del = await boardsDao.deleteOne(bid);
-
+        let del=await boardsDao.deleteOne(bId);
         return del;
     }
-
     async searchUidList(uId){
         return boardsDao.findByUid(uId);
     }

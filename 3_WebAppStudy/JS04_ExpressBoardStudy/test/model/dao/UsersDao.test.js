@@ -34,10 +34,12 @@ toHaveLength(길이): 배열이나 문자열의 길이가 일치하는지 검사
 toBeGreaterThan(>), toBeLessThan(<): 숫자가 특정 값보다 크거나 작은지 검사합니다.
 toHaveProperty(in): 객체가 특정 프로퍼티를 가지고 있는지 검사합니다.
 toHaveBeenCalled(), toHaveBeenCalledWith(): 함수가 호출되었는지, 특정 인수와 함께 호출되었는지 검사합니다.
-*
 */
-const userDao=require("../../../model/dao/UsersDao");
-describe("model.dao.UserDao Test 진행",()=>{
+const pool=require("../../../model/db/WebAppBoardPool");
+const UsersDao=require("../../../model/dao/UsersDao");
+const usersDao=new UsersDao(pool);
+
+describe("model.dao.UsersDao Test 진행",()=>{
     //test() 함수는 비동기코드로 순서없이 실행된다.
     let i=0;
     beforeAll(async ()=>{
@@ -56,7 +58,7 @@ describe("model.dao.UserDao Test 진행",()=>{
             permission:"ADMIN"
         };
         try{
-            let insert=await userDao.insertOne(user);
+            let insert=await usersDao.insertOne(user);
             console.log("등록 : "+insert)
         }catch (e) {
             console.error(e);
@@ -64,7 +66,7 @@ describe("model.dao.UserDao Test 진행",()=>{
     });
     afterAll(async ()=>{
         console.log("deleteOne test01 삭제");
-        let del=await userDao.deleteOne("test01");
+        let del=await usersDao.deleteOne("test01");
         console.log("삭제:"+del);
     })
     test("insertOne test02 등록 및 삭제",async ()=>{
@@ -83,7 +85,7 @@ describe("model.dao.UserDao Test 진행",()=>{
         };
         let insert=0;
         try {
-            insert=await userDao.insertOne(user);
+            insert=await usersDao.insertOne(user);
             console.log("등록 : "+insert);
         }catch (e) {
             console.error(e)
@@ -92,7 +94,7 @@ describe("model.dao.UserDao Test 진행",()=>{
         }
         let del=0;
         try {
-            del=await userDao.deleteOne(user.u_id);
+            del=await usersDao.deleteOne(user.u_id);
         }catch (e) {
             console.error(e);
         }
@@ -101,22 +103,22 @@ describe("model.dao.UserDao Test 진행",()=>{
     });
 
     test("findById",async ()=>{
-        let user=await userDao.findById("test01");
+        let user=await usersDao.findById("test01");
         console.log("user :"+JSON.stringify(user));
         expect(user).not.toBeNull(); //null이 아닌지 검사
     });
     test("findByUidAndPw",async ()=>{
-        let user=await userDao.findByUidAndPw("test01","1234");
+        let user=await usersDao.findByUidAndPw("test01","1234");
         console.log("user :"+JSON.stringify(user));
         expect(user).not.toBeNull(); //null이 아닌지 검사
     });
-    test("findAll",async ()=>{
-        let users=await userDao.fildAll();
-        //console.log(JSON.stringify(users)); //???
-        //Array.isArray(users); //js Array 가 배열 타입인지 검사 (x jest)
-        expect(Array.isArray(users)).toBeTruthy();
-        //expect(Array.isArray(users)).toBe(true);
-    });
+    // test("findAll",async ()=>{
+    //     let users=await usersDao.fildAll();
+    //     //console.log(JSON.stringify(users)); //???
+    //     //Array.isArray(users); //js Array 가 배열 타입인지 검사 (x jest)
+    //     expect(Array.isArray(users)).toBeTruthy();
+    //     //expect(Array.isArray(users)).toBe(true);
+    // });
     test("updateById",async ()=>{
         const user={
             u_id:"test01",
@@ -131,8 +133,8 @@ describe("model.dao.UserDao Test 진행",()=>{
             detail_address:"하남시",
             permission:"ADMIN"
         };
-        let update=await userDao.updateById(user);
-        let resultUser=await userDao.findById("test01");
+        let update=await usersDao.updateById(user);
+        let resultUser=await usersDao.findById("test01");
         console.log(JSON.stringify(resultUser));
         delete user.birth;
         delete resultUser.birth;

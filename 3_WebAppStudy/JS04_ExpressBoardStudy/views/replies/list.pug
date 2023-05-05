@@ -30,8 +30,8 @@ ul.ps-0(style="list-style:none")
                         li.nav-item
                             a(href=`/replies/${r.br_id}/${r.b_id}/delete.do`).nav-link 삭제
                     div.collapse(id=`replyModify${r.br_id}`)
-                        include update
+                        include views/replies/update
                     div.collapse(id=`replyReply${r.br_id}`)
-                        include replyInsert
+                        include views/replies/replyInsert
                 div
-                    include replies/list
+                    include views/replies/replies/list

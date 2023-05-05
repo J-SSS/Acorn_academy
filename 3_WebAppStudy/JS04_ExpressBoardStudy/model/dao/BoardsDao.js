@@ -1,51 +1,104 @@
-const pool=require("../db/WebAppBoardPool");
-const boardDao={
+//const pool=require("../db/WebAppBoardPool");
+class BoardsDao{
+    #findAllSql="SELECT * FROM boards LIMIT ?,?";
+    // #countAllSql = "SELECT COUNT(*) FROM boards LIMIT ?,?";
+    #countAllSql = "SELECT COUNT(*) FROM boards";
 
-    findAllSql: "SELECT * FROM boards LIMIT ?,?",
-    findByIdSql: "SELECT * FROM boards WHERE b_id=?",
-    // findByIdSql: ` SELECT *, (SELECT COUNT(*)
-    //         FROM board_likes l
-    //         WHERE l.b_id=b.b_id AND status='LIKE') likes,
-    //             (SELECT COUNT(*)
-    //         FROM board_likes l
-    //         WHERE l.b_id=b.b_id AND status='BAD') bads,
-    //             (SELECT COUNT(*)
-    //         FROM board_likes l
-    //         WHERE l.b_id=b.b_id AND status='SAD') sads,
-    //             (SELECT COUNT(*)
-    //         FROM board_likes l
-    //         WHERE l.b_id=b.b_id AND status='BEST') bests
-    //         FROM boards b where b_id=?`,
-    //findByIdSql: "SELECT * FROM boards LEFT JOIN board_imgs USING(b_id) WHERE b_id=?",
-    findByUidSql: "SELECT * FROM boards WHERE u_id=?",
-    findByStatusSql: "SELECT * FROM boards WHERE status=? LIMIT ?,?",
-    updateSql: "UPDATE boards SET title=?, content=?, status=? WHERE b_id=?",
-    insertSql: "INSERT INTO boards (u_id,title,content ,status) value (?,?,?,?)",
-    deleteSql: "DELETE FROM boards WHERE b_id=?",
+    #findByIdSql="SELECT * FROM boards WHERE b_id=?";
+    #findByStatusSql= "SELECT * FROM boards WHERE status=? LIMIT ?,?";
+    #countByStatusSql="SELECT COUNT(*) FROM boards WHERE status=?";
+    // #findBySearchSql="SELECT * FROM boards WHERE ?=? LIMIT ?,?"
+    // #findBySearchSql="SELECT * FROM boards WHERE 'u_id' like 'use' LIMIT ?,?" //오류발생
+    // #findBySearchSql="SELECT * FROM boards WHERE u_id like '%use%' LIMIT ?,?" //
+    #findBySearchSql="SELECT * FROM boards"; //쿼리가 상태에 따라 변하는 것을 다이나믹 쿼리라고 함
+    #countBySearchSql="SELECT COUNT(*) FROM boards"; //검색이 있으면 검색결과를 카운트함
 
-    findAll : async function(page=1){
-        let length=5;
-        const[rows,f]=await pool.query(this.findAllSql,[(page-1)*length, length]);
+
+    // findByIdSql=
+    //     `SELECT *,
+    //        (SELECT COUNT(*)
+    //             FROM board_likes l
+    //             WHERE l.b_id=b.b_id AND status='LIKE') likes,
+    //        (SELECT COUNT(*)
+    //             FROM board_likes l
+    //             WHERE l.b_id=b.b_id AND status='BAD') bads,
+    //        (SELECT COUNT(*)
+    //             FROM board_likes l
+    //             WHERE l.b_id=b.b_id AND status='SAD') sads,
+    //        (SELECT COUNT(*)
+    //             FROM board_likes l
+    //             WHERE l.b_id=b.b_id AND status='BEST') bests
+    //         FROM boards b WHERE b_id=?`,
+    //findByIdSql: "SELECT * FROM boards LEFT JOIN board_imgs USING(b_id) WHERE b_id=?";
+    #findByUidSql= "SELECT * FROM boards WHERE u_id=?";
+    #updateSql= "UPDATE boards SET title=?, content=?, status=? WHERE b_id=?";
+    #insertSql= "INSERT INTO boards (u_id,title,content ,status) value (?,?,?,?)";
+    #deleteSql= "DELETE FROM boards WHERE b_id=?";
+    #pool;
+    constructor(pool) {
+        this.#pool=pool;
+    }
+    async findBySearch(pageVo){
+        //검색이 있다면 pageVo.searchField pageVo.searchValuedl null이 아님
+        let searchQuery=this.#findBySearchSql;
+        if(pageVo.searchField && pageVo.searchValue){
+            searchQuery+=` WHERE ${pageVo.searchField} LIKE '%${pageVo.searchValue}%'`;
+        }
+        searchQuery+=" ORDER BY "+((pageVo.orderField) || "post_time");
+        searchQuery+=" "+(pageVo.orderDirect || "DESC");
+
+        searchQuery+=" LIMIT ?,?";
+
+        const [rows,f]=await this.#pool.query(searchQuery,[pageVo.offset,pageVo.rowLength]);
         return rows;
-    },
-    findById : async function(bId){
-        const [rows,f]=await pool.query(this.findByIdSql,[bId]);
+    }
+    async countBySearch(searchField, searchValue){
+        let sql=this.#countBySearchSql;
+        if(searchField && searchValue){
+            sql+=` WHERE ${searchField} LIKE '%${searchValue}%'`;
+        }
+        const [rows,f]=await this.#pool.query(sql);
+
+        return rows[0]["COUNT(*)"];
+    }
+
+
+    // async findAll (pageVo){
+    //     const[rows,f]=await this.#pool.query(this.#findAllSql,[pageVo.offset,pageVo.rowLength]);
+    //     return rows;
+    // };
+    // async countAll(){
+    //     let count=0;
+    //     const [rows,f]=await this.#pool.query(this.#countAllSql);
+    //     //rows = [COUNT(*)]
+    //     // 16
+    //     count=rows[0]["COUNT(*)"];
+    //     return count;
+    // };
+    async  findById (bId){
+        const [rows,f]=await this.#pool.query(this.#findByIdSql,[bId]);
         return rows[0] || null;
-    },
+    };
 
-    findByUid : async function(uId){
-        const [rows,f]=await pool.query(this.findByUidSql,[uId]);
+    async findByUid (uId){
+        const [rows,f]=await this.#pool.query(this.#findByUidSql,[uId]);
         return rows[0] || null;
-    },
+    };
 
-    findByStatus : async function(status,page=1) {
-      let length=5;
-      const values=[status, (page-1)*length,length]
-      const [rows,f]= await pool.query(this.findByStatusSql,values);
-      return rows;
-    },
+    // async findByStatus (status,pageVo) {
+    //
+    //   const values=[status, pageVo.offset, pageVo.rowLength]
+    //   const [rows,f]= await this.#pool.query(this.#findByStatusSql,values);
+    //   return rows;
+    // };
+    // async countByStatus (status){
+    //     let count=0;
+    //     const [rows,f]=await this.#pool.query(this.#countByStatusSql,[status]);
+    //     count=rows[0]["COUNT(*)"];
+    //     return count;
+    // }
 
-    updateById : async function(board) {
+    async updateById (board) {
         let update=0;
         const values=[
             board.title,
@@ -55,15 +108,15 @@ const boardDao={
 
         ];
         try{
-            const [result]=await pool.execute(this.updateSql, values);
+            const [result]=await this.#pool.execute(this.#updateSql, values);
             update=result.affectedRows;
         }catch (e) {
-            throw new Error(e); // ???? 🧨예외위임?
+            throw new Error(e);
         }
         return update;
-    },
+    };
 
-    insertOne : async function(board) {
+    async insertOne (board) {
         let insert=0;
         const values=[
             board.u_id,
@@ -72,23 +125,22 @@ const boardDao={
             board.status
         ];
         try{
-            const [result]=await pool.execute(this.insertSql,values);
+            const [result]=await this.#pool.execute(this.#insertSql,values);
             insert=result.affectedRows;
         }catch (e) {
             throw new Error(e);
         }
         return insert;
-    },
-    deleteOne : async function(bId){
+    };
+     async deleteOne (bId){
         let del=0;
         try{
-            const [result, f]=await pool.execute(this.deleteSql,[bId]);
+            const [result, f]=await this.#pool.execute(this.#deleteSql,[bId]);
             del=result.affectedRows;
         }catch(e){
             throw new Error(e);
         }
         return del;
     }
-
 }
-module.exports=boardDao;
+module.exports=BoardsDao;

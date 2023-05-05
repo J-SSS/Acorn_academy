@@ -1,6 +1,7 @@
-const boardImsDao=require("../../../model/dao/BoardImgsDao");
-const {log} = require("debug");
-//insert delete 테스트!!
+const pool=require("../../../model/db/WebAppBoardPool");
+const BoardImsDao=require("../../../model/dao/BoardImgsDao");
+const boardImsDao=new BoardImsDao(pool);
+
 describe("boardImsDao test",()=>{
    test("findByBId 로 게시글의 이미지 리스트 불러오기",async ()=>{
         const imgs=await  boardImsDao.findByBId(6);
@@ -20,6 +21,4 @@ describe("boardImsDao test",()=>{
         const del=await boardImsDao.deleteById(35);
        console.log(del)
    });
-
-
 });

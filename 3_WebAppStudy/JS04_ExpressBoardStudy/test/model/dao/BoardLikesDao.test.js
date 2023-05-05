@@ -1,12 +1,11 @@
-const boardLikesDao = require("../../../model/dao/BoardLikesDao");
-const boardDao = require("../../../model/dao/BoardsDao");
+const pool=require("../../../model/db/WebAppBoardPool");
+const BoardLikesDao=require("../../../model/dao/BoardLikesDao");
+const boardLikesDao=new BoardLikesDao(pool);
 
-describe("test", ()=>{
-    test("test", async ()=>{
-        const board=await boardLikesDao.groupByStatusFindByBidSql(1)
-
-        console.log(board);
-    })
-})
-
-
+describe("BoardLikesDao test",()=>{
+   test("",async ()=>{
+      const bls=await boardLikesDao.groupByStatusFindByBid(6);
+      console.log(bls);
+      expect(Array.isArray(bls)).toBeTruthy();
+   });
+});
