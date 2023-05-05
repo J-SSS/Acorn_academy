@@ -20,7 +20,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="$PROJECT_DIR$/JAVA01_WebAppBoaard/target/JAVA01_WebAppBoard-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/JAVA01_WebAppBoardModel2/target/JAVA01_WebAppBoard-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="JAVA01_WebAppBoard/web/Web" />
     </root>

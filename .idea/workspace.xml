@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="60041798-06c5-46dd-9bee-29c2aa13cadb" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/.idea/dataSources/660c6265-c106-43b8-9de6-7487b2a23436/storage_v2/_src_/schema/sys.zb4BAA.zip" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/.idea/dataSources/660c6265-c106-43b8-9de6-7487b2a23436/storage_v2/_src_/schema/sys.zb4BAA.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3_WebAppStudy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/3_WebAppStudy/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/desktop.ini" beforeDir="false" afterPath="$PROJECT_DIR$/desktop.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +31,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/USER/Desktop/강의자료/3_WebAppStudy",
+    "last_opened_file_path": "C:/Users/USER/Desktop/Acorn_academy",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDK",
     "project.structure.proportion": "0.15",
@@ -49,6 +59,7 @@
       <workItem from="1677940186547" duration="28000" />
       <workItem from="1677940219662" duration="143000" />
       <workItem from="1677978964646" duration="183000" />
+      <workItem from="1680869977503" duration="1312000" />
     </task>
     <servers />
   </component>
