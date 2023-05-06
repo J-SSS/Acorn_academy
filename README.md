@@ -5,13 +5,24 @@
 ---
 <details>
 <summary>
-<h2> 04. JAVA Spring (23年 3月 ~ 23年 4月)<h2>
+<h2> 05. JAVA Spring Boot (23年 4月)<h2>
 </summary>
-
 ### 📁 3_ WebAppStudy / S01, S02
+내용입력내용입력
+  
+<br><br><br><br><br>  
+</details>
+  
+<details>
+<summary>
+<h2> 04. JAVA Servlet&JSP(23年 3月)<h2>
+</summary>
+### 📁 3_ WebAppStudy / JAVA01, JAVA02
+  
 내용입력내용입력
 <br><br><br><br><br>  
 </details>
+  
 
 <details>
 <summary>
