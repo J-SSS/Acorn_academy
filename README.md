@@ -5,13 +5,24 @@
 ---
 <details>
 <summary>
-<h2> 04. JAVA Spring (23年 3月 ~ 23年 4月)<h2>
+<h2> 05. JAVA Spring Boot (23年 4月)<h2>
 </summary>
-
 ### 📁 3_ WebAppStudy / S01, S02
 내용입력내용입력
+  
 <br><br><br><br><br>  
 </details>
+  
+<details>
+<summary>
+<h2> 04. JAVA Servlet&JSP(23年 3月)<h2>
+</summary>
+### 📁 3_ WebAppStudy / JAVA00, JAVA01
+### MVC Model1
+내용입력내용입력
+<br><br><br><br>
+</details>
+  
 
 <details>
 <summary>
@@ -20,7 +31,7 @@
 
 ### 📁 3_ WebAppStudy / JS01, JS02, JS03
 내용입력내용입력
-<br><br><br><br><br>  
+<br><br><br><br>
 </details>
 
 
@@ -33,13 +44,41 @@
 ### 1. 기본개념
 - 변수, 타입(기본형과 자료형)
 - Input과 output (Scanner, BufferedReader, System.out.*)
-- 연산자(단항, 이항, 삼항)
-- 조건문과 반복문 If, Switch, For, While
-- 배열 구조와 사용법
+- 연산자(산술, 증감, 비교/관계, 논리, 삼항, 문자열 결합 등)
+- 조건문과 반복문 If, Switch, For, While, enhanced for
+- 분기문 break, continue, return
+- 배열(1차원, 2차원, ㄱ변)
 - 여러가지 형태의 메서드
+<br><br>
 ### 2. 객체 지향 문법
+- 클래스와 객체
+- 생성자, this, 오버로딩
+- 접근지정자 (private, public, protected, default)
+- 정보은닉 (POJO, 캡슐화)
+- static, final, 싱글톤 패턴
+<br><br>
+- 상속(extends)과 오버라이딩
+- 다형성(polymorphism)과 오버로딩, 오버라이딩
+- 타입변환(업캐스팅, 다운캐스팅)
+- IS-A관계(상속), HAS-A 관계(composition)
+- 추상클래스, 추상메소드, 템플릿 메소드 패턴
+- 인터페이스, 추상메소드와 구현(implements), 다중 구현
+- 앱 3계층(DAO - Service - Presentation)
+<br><br>
 ### 3. 심화(util 라이브러리 등)
-<br><br><br><br><br>  
+- Object 클래스(equals, hashCode, toString)
+- String 클래스
+- Class 클래스
+- 컬렉션 프레임워크(제네릭)
+<br><br>
+- 내부 클래스와 익명 클래스(익명 객체)
+- 람다식
+- 스트링
+- 예외처리
+- 입출력
+- 쓰레드
+
+<br><br><br><br>
 </details>
 
 
@@ -55,7 +94,7 @@
   
 ![bulb](https://user-images.githubusercontent.com/118149752/230606230-a95b2370-0927-43ac-8348-6a21ccdc4b96.gif)
 ![1](https://user-images.githubusercontent.com/118149752/230605838-85e5945b-46b5-44f2-bce9-0ed03331e2b2.png)
-<br><br><br><br><br>  
+<br><br><br><br>
 </details>
 
 <!--
